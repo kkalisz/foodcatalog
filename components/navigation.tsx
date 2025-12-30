@@ -4,9 +4,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MapPin, Menu } from "lucide-react"
 import { useState } from "react"
+import { useAuth } from "@/providers/AuthContext"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const { user } = useAuth();
 
   return (
     <nav className="border-b bg-card sticky top-0 z-50">
@@ -23,21 +25,15 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-foreground hover:text-primary transition">
-              Discover
+              Przeglądaj
             </Link>
             <Link href="/about" className="text-foreground hover:text-primary transition">
-              About
+              O nas
             </Link>
           </div>
 
           {/* Auth Buttons */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" asChild className="hidden sm:inline-flex">
-              <Link href="/login">Sign In</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/owner-dashboard">Owner Portal</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}

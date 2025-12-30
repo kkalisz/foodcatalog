@@ -1,18 +1,32 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BarChart3, Eye, MessageSquare, TrendingUp, Plus, Settings, LogOut, Menu } from "lucide-react"
+import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from "lucide-react"
 import { DashboardStats } from "@/components/dashboard-stats"
-import { getOwnerSession, clearOwnerSession } from "@/lib/auth"
+import { RestaurantsList } from "@/components/restaurants-list"
+import { EditRestaurantModal } from "@/components/edit-restaurant-modal"
+import { useAuth } from "@/providers/AuthContext"
+import { useRouter } from "next/navigation"
 
-// Mock restaurant data for demo
-const DEMO_RESTAURANTS = [
+//types
+import { PublicRestaurant } from "../../../data/types/publicRestaurant"
+import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
+import { db } from "@/lib/firebase/client"
+import { t } from "i18next"
+import { error } from "console"
+// Mock owner data
+const OWNER_STATS = {
+  totalViews: 2451,
+  totalReviews: 145,
+  averageRating: 4.7,
+  monthlyTrend: 12,
+}
+
+const OWNER_RESTAURANTS = [
   {
-    id: "1",
+    id: 1,
     name: "La Familia Trattoria",
     status: "active",
     views: 1203,
@@ -20,195 +34,173 @@ const DEMO_RESTAURANTS = [
     rating: 4.8,
     image: "/italian-restaurant-interior.jpg",
   },
-  {
-    id: "2",
-    name: "Mama's Kitchen",
-    status: "active",
-    views: 1248,
-    reviews: 56,
-    rating: 4.6,
-    image: "/cozy-kitchen.jpg",
-  },
+
+
 ]
 
 export default function OwnerDashboard() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
-  const [user, setUser] = useState<any>(null)
-  const [restaurants, setRestaurants] = useState(DEMO_RESTAURANTS)
+  const [showEditModal, setShowEditModal] = useState(false)
+  const [selectedRestaurant, setSelectedRestaurant] = useState<any>(null)
+  const { user, logout } = useAuth();
+  const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([])
+  const [loading, setLodaing] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const session = getOwnerSession()
-    if (!session) {
-      router.push("/owner/login")
-    } else {
-      setUser(session.user)
-      setIsLoading(false)
+  const router = useRouter()
+
+
+  const fetchRestaurants = async () => {
+    if (!user) return
+
+    setLodaing(true)
+
+    try {
+      const q = query(
+        collection(db, "public_restaurants"),
+        where("firmId", "==", user.uid)
+      )
+
+      const snapshot = await getDocs(q)
+
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...(doc.data() as Omit<PublicRestaurant, "id">),
+      }))
+
+      setRestaurants(data)
+    } catch (error) {
+      console.error("Error fetching restaurants:", error)
+    } finally {
+      setLodaing(false)
     }
-  }, [router])
-
-  const handleLogout = () => {
-    clearOwnerSession()
-    router.push("/owner/login")
   }
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-muted/30">
-        <div className="text-center">
-          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-muted-foreground">Loading...</p>
-        </div>
-      </div>
-    )
+  const fetchUser = async (uid: string) => {
+
+    const ref = doc(collection(db, "users", uid))
+    const snap = await getDoc(ref)
+
+    if (!snap.exists()) {
+      throw new Error("Dane uzytkownika nie istenieja")
+    }
+
+    return snap.data()?.companyName
   }
 
-  const totalViews = restaurants.reduce((sum, r) => sum + r.views, 0)
-  const totalReviews = restaurants.reduce((sum, r) => sum + r.reviews, 0)
-  const avgRating = (restaurants.reduce((sum, r) => sum + r.rating, 0) / restaurants.length).toFixed(1)
+  const handleEditRestaurant = (restaurant: any) => {
+    setSelectedRestaurant(restaurant)
+    setShowEditModal(true)
+  }
+
+  const handleCloseModal = () => {
+    setShowEditModal(false)
+    setSelectedRestaurant(null)
+  }
+
+  useEffect(() => {
+    if (!user) {
+      router.push("/owner/login")
+      return
+    }
+    fetchRestaurants()
+  }, [user])
+
+
 
   return (
     <main className="min-h-screen bg-muted/30">
-      {/* Mobile Header */}
-      <div className="md:hidden border-b bg-card sticky top-0 z-40">
-        <div className="flex justify-between items-center p-4">
-          <h1 className="text-lg font-bold">Dashboard</h1>
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2">
-            <Menu className="w-5 h-5" />
-          </button>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="border-t p-4 space-y-2">
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/dashboard">Dashboard</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/subscription">Subscription</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/help-center">Help Center</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start text-destructive" onClick={handleLogout}>
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
-          </div>
-        )}
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
-        {/* Desktop Header with Navigation */}
-        <div className="hidden md:block mb-8">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">Welcome, {user?.name}</h1>
-              <p className="text-muted-foreground">Manage your restaurants and track performance</p>
-            </div>
-            <Button variant="outline" onClick={handleLogout} className="bg-transparent h-11">
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
-          </div>
-
-          <div className="flex gap-2">
-            <Button variant="ghost" asChild className="bg-transparent">
-              <Link href="/owner/dashboard">Dashboard</Link>
-            </Button>
-            <Button variant="ghost" asChild className="bg-transparent">
-              <Link href="/owner/subscription">Subscription</Link>
-            </Button>
-            <Button variant="ghost" asChild className="bg-transparent">
-              <Link href="/owner/help-center">Help Center</Link>
-            </Button>
-          </div>
+        {/* Header */}
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{t("owner_dashboard_page_h1")}</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">{t("owner_dashboard_page_h2")}</p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <DashboardStats title="Total Views" value={totalViews.toLocaleString()} icon={Eye} trend={12} />
-          <DashboardStats title="Reviews" value={totalReviews.toString()} icon={MessageSquare} trend={8} />
-          <DashboardStats title="Average Rating" value={avgRating.toString()} icon={TrendingUp} trend={2} />
-          <DashboardStats title="Active Listings" value={restaurants.length.toString()} icon={BarChart3} trend={0} />
+          <DashboardStats
+            title="Total Views"
+            value={OWNER_STATS.totalViews}
+            icon={Eye}
+            trend={OWNER_STATS.monthlyTrend}
+          />
+          <DashboardStats title="Reviews" value={OWNER_STATS.totalReviews} icon={MessageSquare} trend={8} />
+          <DashboardStats
+            title="Average Rating"
+            value={OWNER_STATS.averageRating}
+            icon={TrendingUp}
+            trend={2}
+          />
+          <DashboardStats title="Active Listings" value={2} icon={BarChart3} trend={0} />
         </div>
 
-        {/* Restaurants List */}
-        <Card className="p-4 sm:p-6">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground">Your Restaurants</h2>
-            <Button className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11">
-              <Plus className="w-4 h-4 mr-2" />
-              Add Restaurant
-            </Button>
-          </div>
-
-          {/* Restaurants Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {restaurants.map((restaurant) => (
-              <div key={restaurant.id} className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                {/* Image */}
-                <div className="aspect-video bg-muted overflow-hidden">
-                  <img
-                    src={restaurant.image || "/placeholder.svg"}
-                    alt={restaurant.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-4">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-bold text-foreground flex-1">{restaurant.name}</h3>
-                    <span
-                      className={`text-xs font-medium px-2 py-1 rounded ${
-                        restaurant.status === "active" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
-                      }`}
-                    >
-                      {restaurant.status}
-                    </span>
-                  </div>
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-3 gap-2 mb-4 text-sm">
-                    <div className="text-center">
-                      <p className="text-muted-foreground text-xs">Views</p>
-                      <p className="font-bold text-foreground">{restaurant.views}</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-muted-foreground text-xs">Reviews</p>
-                      <p className="font-bold text-foreground">{restaurant.reviews}</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-muted-foreground text-xs">Rating</p>
-                      <p className="font-bold text-foreground">{restaurant.rating}</p>
-                    </div>
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1 bg-transparent text-sm h-9" asChild>
-                      <Link href={`/owner/restaurant/${restaurant.id}`}>
-                        <Settings className="w-4 h-4 mr-1" />
-                        Edit
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex-1 bg-transparent text-sm h-9" asChild>
-                      <Link href={`/restaurant/${restaurant.id}`}>
-                        <Eye className="w-4 h-4 mr-1" />
-                        View
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex-1 bg-transparent text-sm h-9" asChild>
-                      <Link href={`/owner/restaurant/${restaurant.id}/menu`}>Menu</Link>
-                    </Button>
-                  </div>
-                </div>
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Restaurants List */}
+          <div className="lg:col-span-2">
+            <Card className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">{t("restaurants_list_header")}</h2>
+                <Button onClick={() => router.push("/owner/dashboard/restaurants")} className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11">{t("restaurants_list_add_restaurant_btn")}</Button>
               </div>
-            ))}
+              <RestaurantsList restaurants={restaurants} />
+            </Card>
           </div>
-        </Card>
+
+          {/* Quick Actions */}
+
+          <div className="space-y-4 sm:space-y-6">
+            <Button variant="ghost" className="w-full justify-start text-destructive" onClick={logout}>
+              <LogOut className="w-4 h-4 mr-2" />
+              Wyloguj
+            </Button>
+            {/* Upgrade Plan */}
+            <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">{t("owner_dashboard_premium_plan_heder")}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-4">
+                {t("owner_dashboard_premium_plan_about")}
+              </p>
+              <Button className="w-full text-sm sm:text-base h-10 sm:h-11">{t("owner_dashboard_premium_plan_button_unlock")}</Button>
+            </Card>
+
+            {/* Support Card */}
+            <Card className="p-4 sm:p-6">
+              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">{t("owner_dashboard_need_help")}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-4">
+                {t("owner_dashboard_need_help_about")}
+              </p>
+              <Button variant="outline" className="w-full bg-transparent text-sm sm:text-base h-10 sm:h-11">
+                {t("owner_dashboard_need_help_button")}
+              </Button>
+            </Card>
+
+            {/* Subscription Info */}
+            <Card className="p-4 sm:p-6">
+              <h3 className="font-bold text-base sm:text-lg text-foreground mb-4">{t("owner_dashboard_subscription_header")}</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan")}</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_starter")}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan_period")}</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_period_monthly")}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan_amount")}</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_price")}</span>
+                </div>
+                <Button variant="outline" className="w-full mt-4 bg-transparent text-sm h-10 sm:h-11">
+                  {t("owner_dashboard_manage_subscription")}
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
       </div>
+
+      {/* Edit Modal */}
+      {showEditModal && <EditRestaurantModal restaurant={selectedRestaurant} onClose={handleCloseModal} />}
     </main>
   )
 }

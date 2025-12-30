@@ -1,9 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { I18nProvider } from "@/lib/i18n/i18nProvider"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Navigation } from "@/components/navigation"
 import "./globals.css"
+import { AuthProvider } from "@/providers/AuthContext"
+import { Footer } from "@/components/footer"
+
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -39,8 +43,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <Navigation />
-        {children}
+        <AuthProvider>
+          <Navigation />
+          <I18nProvider> {children}</I18nProvider>
+          <Footer />
+        </AuthProvider>
+
         <Analytics />
       </body>
     </html>

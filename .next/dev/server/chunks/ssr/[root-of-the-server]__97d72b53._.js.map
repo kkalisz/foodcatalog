@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/page.tsx"],"sourcesContent":["const OwnerPage = () => {\n    return <div>Owner Page</div>;      \n}\nexport default OwnerPage;"],"names":[],"mappings":";;;;;;AAAA,MAAM,YAAY;IACd,qBAAO,8OAAC;kBAAI;;;;;;AAChB;uCACe"}}]
+}

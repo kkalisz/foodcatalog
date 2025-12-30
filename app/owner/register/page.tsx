@@ -11,6 +11,11 @@ import { Card } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { MapPin, AlertCircle } from "lucide-react"
 
+import { useTranslation } from "react-i18next"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth, db } from "@/lib/firebase/client"
+import { doc, serverTimestamp, setDoc } from "firebase/firestore"
+
 export default function OwnerRegister() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
@@ -20,17 +25,12 @@ export default function OwnerRegister() {
     password: "",
     confirmPassword: "",
     name: "",
-    restaurantName: "",
+    companyName: "",
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  const { t } = useTranslation("common");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
@@ -47,43 +47,21 @@ export default function OwnerRegister() {
     setLoading(true)
 
     try {
-      const response = await fetch("/api/auth?action=register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-          name: formData.name,
-          type: "owner",
-        }),
+      const cred = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      await setDoc(doc(db, "users", cred.user.uid), {
+        email: formData.email,
+        name: formData.name,
+        companyName: formData.companyName,
+        role: "owner",
+        createdAt: serverTimestamp(),
+        firmId: cred.user.uid
+
       })
-
-      if (!response.ok) {
-        const data = await response.json()
-        setError(data.error || "Registration failed")
-        setLoading(false)
-        return
-      }
-
-      // Auto-login after registration
-      const loginResponse = await fetch("/api/auth?action=login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
-      })
-
-      if (loginResponse.ok) {
-        const { user, token } = await loginResponse.json()
-        localStorage.setItem("ownerToken", token)
-        localStorage.setItem("ownerUser", JSON.stringify(user))
-        router.push("/owner/dashboard")
-      }
-    } catch (err) {
-      setError("An error occurred. Please try again.")
-      setLoading(false)
+      router.push("/owner/dashboard")
+    }
+    catch (err: any) {
+      console.error("Firebase register error:", err)
+      setError(err.code || err.message)
     }
   }
 
@@ -98,8 +76,8 @@ export default function OwnerRegister() {
             </div>
             <span className="text-2xl font-bold text-foreground">LokalGastro</span>
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Become an Owner</h1>
-          <p className="text-muted-foreground">List your restaurant and start managing it today</p>
+          <h1 className="text-3xl font-bold text-foreground mb-2">{t("register_page_header")}</h1>
+          <p className="text-muted-foreground">{t("register_page_subheader")}</p>
         </div>
 
         {/* Form Card */}
@@ -111,75 +89,75 @@ export default function OwnerRegister() {
             </Alert>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleRegister} className="space-y-4">
             {/* Name */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Full Name</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_label")}</label>
               <Input
                 type="text"
                 name="name"
-                placeholder="John Doe"
+                placeholder={t("register_page_name_placeholder")}
                 value={formData.name}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
               />
             </div>
 
             {/* Restaurant Name */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Restaurant Name</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_company_label")}</label>
               <Input
                 type="text"
                 name="restaurantName"
-                placeholder="My Restaurant"
-                value={formData.restaurantName}
-                onChange={handleChange}
+                placeholder={t("register_page_company_placeholder")}
+                value={formData.companyName}
+                onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                 required
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Email Address</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_email_label")}</label>
               <Input
                 type="email"
                 name="email"
-                placeholder="you@example.com"
+                placeholder={t("register_page_email_placeholder")}
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>
 
             {/* Password */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Password</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_password_label")}</label>
               <Input
                 type="password"
                 name="password"
                 placeholder="••••••••"
                 value={formData.password}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
               />
             </div>
 
             {/* Confirm Password */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Confirm Password</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_confirm_password_label")}</label>
               <Input
                 type="password"
                 name="confirmPassword"
                 placeholder="••••••••"
                 value={formData.confirmPassword}
-                onChange={handleChange}
+                onChange={(error) => setFormData({ ...formData, confirmPassword: error.target.value })}
                 required
               />
             </div>
 
             {/* Submit */}
             <Button type="submit" className="w-full h-11 text-base mt-6" disabled={loading}>
-              {loading ? "Creating Account..." : "Create Account"}
+              {loading ? `${t("register_page_creating_accounty")}` : `${t("register_page_create_account_button")}`}
             </Button>
           </form>
 
@@ -189,13 +167,13 @@ export default function OwnerRegister() {
               <div className="w-full border-t border-muted" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-card text-muted-foreground">Already have an account?</span>
+              <span className="px-2 bg-card text-muted-foreground">{t("register_allready_have_account")}</span>
             </div>
           </div>
 
           {/* Login Link */}
           <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
-            <Link href="/owner/login">Sign In Instead</Link>
+            <Link href="/owner/login">{t("register_login_here")}</Link>
           </Button>
         </Card>
 

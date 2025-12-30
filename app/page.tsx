@@ -7,7 +7,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center py-12 sm:py-20">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-            Discover Local Gastronomy
+            Discover Local Gastronomy now
           </h1>
           <p className="text-lg text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">
             Find the best restaurants, bars, and cafes in your town. Support local gastronomy and discover hidden gems
@@ -15,10 +15,10 @@ export default function Home() {
           </p>
           <div className="flex gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="/discover">Explore Restaurants</Link>
+              <Link href="/discover">Przeglądaj restauracje</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/owner-dashboard">List Your Business</Link>
+              <Link href="owner/dashboard">Dodaj restauracje</Link>
             </Button>
           </div>
         </div>

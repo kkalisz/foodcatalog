@@ -10,6 +10,9 @@ import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { MapPin, AlertCircle } from "lucide-react"
+import { useAuth } from "@/providers/AuthContext"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from "@/lib/firebase/client"
 
 export default function OwnerLogin() {
   const router = useRouter()
@@ -19,7 +22,7 @@ export default function OwnerLogin() {
     email: "",
     password: "",
   })
-
+  const { user } = useAuth()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -30,7 +33,8 @@ export default function OwnerLogin() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setError("")
+    await signInWithEmailAndPassword(auth, formData.email, formData.password)
+    router.push("/owner/dashboard")
 
     try {
       const response = await fetch("/api/auth?action=login", {
