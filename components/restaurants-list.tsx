@@ -75,7 +75,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 <Edit2 className="w-4 h-4 mr-2" />
                 Edytuj
               </Button>
-              <Button>Dodaje / Edytuj menu</Button>
+              <Button onClick={() => router.push('/owner/dashboard/menu')} >Dodaje / Edytuj menu</Button>
               <Button
                 size="sm"
                 variant="destructive"

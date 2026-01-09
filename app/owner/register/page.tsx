@@ -48,14 +48,16 @@ export default function OwnerRegister() {
 
     try {
       const cred = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      await setDoc(doc(db, "firms", cred.user.uid), {
+        name: formData.companyName,
+        createdAt: serverTimestamp(),
+      })
       await setDoc(doc(db, "users", cred.user.uid), {
         email: formData.email,
         name: formData.name,
         companyName: formData.companyName,
         role: "owner",
         createdAt: serverTimestamp(),
-        firmId: cred.user.uid
-
       })
       router.push("/owner/dashboard")
     }

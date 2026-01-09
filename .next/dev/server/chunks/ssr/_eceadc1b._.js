@@ -152,26 +152,45 @@ function RestaurantCard({ restaurant }) {
                     className: "relative h-48 bg-muted overflow-hidden",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+<<<<<<< Updated upstream
                             src: restaurant.coverImage || "/placeholder.svg",
+=======
+                            src: restaurant.image || "/placeholder.svg",
+>>>>>>> Stashed changes
                             alt: restaurant.name,
                             className: "w-full h-full object-cover hover:scale-105 transition-transform"
                         }, void 0, false, {
                             fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                             lineNumber: 34,
+=======
+                            lineNumber: 27,
+>>>>>>> Stashed changes
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold",
+<<<<<<< Updated upstream
                             children: "price range"
                         }, void 0, false, {
                             fileName: "[project]/components/restaurant-card.tsx",
                             lineNumber: 39,
+=======
+                            children: restaurant.priceRange
+                        }, void 0, false, {
+                            fileName: "[project]/components/restaurant-card.tsx",
+                            lineNumber: 32,
+>>>>>>> Stashed changes
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                     lineNumber: 33,
+=======
+                    lineNumber: 26,
+>>>>>>> Stashed changes
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -185,7 +204,11 @@ function RestaurantCard({ restaurant }) {
                                     children: restaurant.name
                                 }, void 0, false, {
                                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                     lineNumber: 48,
+=======
+                                    lineNumber: 41,
+>>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -198,7 +221,11 @@ function RestaurantCard({ restaurant }) {
                                                     className: "w-4 h-4 fill-primary text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 51,
+=======
+                                                    lineNumber: 44,
+>>>>>>> Stashed changes
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -206,45 +233,83 @@ function RestaurantCard({ restaurant }) {
                                                     children: restaurant.rating
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 52,
+=======
+                                                    lineNumber: 45,
+>>>>>>> Stashed changes
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                             lineNumber: 50,
+=======
+                                            lineNumber: 43,
+>>>>>>> Stashed changes
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-sm text-muted-foreground",
                                             children: [
                                                 "(",
+<<<<<<< Updated upstream
                                                 restaurant.reviewsCount,
+=======
+                                                restaurant.reviewCount,
+>>>>>>> Stashed changes
                                                 ")"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                             lineNumber: 54,
+=======
+                                            lineNumber: 47,
+>>>>>>> Stashed changes
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                     lineNumber: 49,
+=======
+                                    lineNumber: 42,
+>>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                             lineNumber: 47,
+=======
+                            lineNumber: 40,
+>>>>>>> Stashed changes
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex flex-wrap gap-1 mb-3",
+<<<<<<< Updated upstream
                             children: restaurant.category
                         }, void 0, false, {
                             fileName: "[project]/components/restaurant-card.tsx",
                             lineNumber: 59,
+=======
+                            children: restaurant.cuisine.slice(0, 2).map((cuisine)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-xs bg-muted text-muted-foreground px-2 py-1 rounded",
+                                    children: cuisine
+                                }, cuisine, false, {
+                                    fileName: "[project]/components/restaurant-card.tsx",
+                                    lineNumber: 54,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/components/restaurant-card.tsx",
+                            lineNumber: 52,
+>>>>>>> Stashed changes
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,38 +319,65 @@ function RestaurantCard({ restaurant }) {
                                     className: "w-4 h-4 flex-shrink-0 mt-0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                                     lineNumber: 65,
+=======
+                                    lineNumber: 62,
+>>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "line-clamp-2",
+<<<<<<< Updated upstream
                                     children: restaurant.city
                                 }, void 0, false, {
                                     fileName: "[project]/components/restaurant-card.tsx",
                                     lineNumber: 66,
+=======
+                                    children: restaurant.address
+                                }, void 0, false, {
+                                    fileName: "[project]/components/restaurant-card.tsx",
+                                    lineNumber: 63,
+>>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                             lineNumber: 64,
+=======
+                            lineNumber: 61,
+>>>>>>> Stashed changes
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
                     lineNumber: 45,
+=======
+                    lineNumber: 38,
+>>>>>>> Stashed changes
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
             lineNumber: 31,
+=======
+            lineNumber: 24,
+>>>>>>> Stashed changes
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/restaurant-card.tsx",
+<<<<<<< Updated upstream
         lineNumber: 30,
+=======
+        lineNumber: 23,
+>>>>>>> Stashed changes
         columnNumber: 5
     }, this);
 }
@@ -299,15 +391,22 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+<<<<<<< Updated upstream
+=======
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-ssr] (ecmascript)");
+>>>>>>> Stashed changes
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/input.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/search.js [app-ssr] (ecmascript) <export default as Search>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$restaurant$2d$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/restaurant-card.tsx [app-ssr] (ecmascript)");
+<<<<<<< Updated upstream
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$firestore$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/firestore/dist/index.mjs [app-ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/firestore/dist/index.node.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/react-i18next/dist/es/index.js [app-ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-i18next/dist/es/useTranslation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/firebase/client.ts [app-ssr] (ecmascript)");
+=======
+>>>>>>> Stashed changes
 "use client";
 ;
 ;
@@ -316,6 +415,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2f$client$2e
 ;
 ;
 ;
+<<<<<<< Updated upstream
 ;
 ;
 function DiscoverPage() {
@@ -388,10 +488,184 @@ function DiscoverPage() {
                                 fileName: "[project]/app/discover/page.tsx",
                                 lineNumber: 72,
                                 columnNumber: 11
+=======
+// Mock data for MVP
+const MOCK_RESTAURANTS = [
+    {
+        id: 1,
+        name: "La Familia Trattoria",
+        category: "Italian",
+        rating: 4.8,
+        reviewCount: 245,
+        image: "/italian-restaurant-interior.jpg",
+        address: "ul. Główna 12, Kraków",
+        cuisine: [
+            "Italian",
+            "Pasta",
+            "Pizza"
+        ],
+        priceRange: "$$"
+    },
+    {
+        id: 2,
+        name: "Sushi & More",
+        category: "Japanese",
+        rating: 4.6,
+        reviewCount: 189,
+        image: "/japanese-sushi-restaurant.png",
+        address: "Rynek 5, Kraków",
+        cuisine: [
+            "Japanese",
+            "Sushi",
+            "Asian"
+        ],
+        priceRange: "$$$"
+    },
+    {
+        id: 3,
+        name: "Grill House",
+        category: "Steakhouse",
+        rating: 4.7,
+        reviewCount: 312,
+        image: "/steakhouse-interior.jpg",
+        address: "ul. Szeroka 8, Kraków",
+        cuisine: [
+            "Grill",
+            "Steak",
+            "Meat"
+        ],
+        priceRange: "$$$"
+    },
+    {
+        id: 4,
+        name: "Cafe Botanica",
+        category: "Cafe",
+        rating: 4.5,
+        reviewCount: 428,
+        image: "/cozy-cafe-with-plants.jpg",
+        address: "ul. Krakowska 3, Kraków",
+        cuisine: [
+            "Cafe",
+            "Brunch",
+            "Coffee"
+        ],
+        priceRange: "$"
+    },
+    {
+        id: 5,
+        name: "El Mariachi",
+        category: "Mexican",
+        rating: 4.4,
+        reviewCount: 156,
+        image: "/mexican-restaurant-colorful.jpg",
+        address: "Plac Nowy 15, Kraków",
+        cuisine: [
+            "Mexican",
+            "Tacos",
+            "Latin"
+        ],
+        priceRange: "$$"
+    },
+    {
+        id: 6,
+        name: "The Greek Tavern",
+        category: "Greek",
+        rating: 4.7,
+        reviewCount: 203,
+        image: "/greek-mediterranean-tavern.jpg",
+        address: "ul. Grecka 20, Kraków",
+        cuisine: [
+            "Greek",
+            "Mediterranean",
+            "Seafood"
+        ],
+        priceRange: "$$"
+    }
+];
+const CATEGORIES = [
+    "All",
+    "Italian",
+    "Japanese",
+    "Steakhouse",
+    "Cafe",
+    "Mexican",
+    "Greek"
+];
+const PRICE_RANGES = [
+    "All",
+    "$",
+    "$$",
+    "$$$"
+];
+function DiscoverPage() {
+    const [searchQuery, setSearchQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("All");
+    const [selectedPrice, setSelectedPrice] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("All");
+    const [showFilters, setShowFilters] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Filter restaurants based on search and filters
+    const filteredRestaurants = MOCK_RESTAURANTS.filter((restaurant)=>{
+        const matchesSearch = restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) || restaurant.address.toLowerCase().includes(searchQuery.toLowerCase()) || restaurant.cuisine.some((c)=>c.toLowerCase().includes(searchQuery.toLowerCase()));
+        const matchesCategory = selectedCategory === "All" || restaurant.category === selectedCategory;
+        const matchesPrice = selectedPrice === "All" || restaurant.priceRange === selectedPrice;
+        return matchesSearch && matchesCategory && matchesPrice;
+    });
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+        className: "min-h-screen bg-background",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-6 sm:mb-8",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                            className: "text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2",
+                            children: "Discover Restaurants"
+                        }, void 0, false, {
+                            fileName: "[project]/app/discover/page.tsx",
+                            lineNumber: 107,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-sm sm:text-base text-muted-foreground",
+                            children: "Find and explore amazing dining experiences near you"
+                        }, void 0, false, {
+                            fileName: "[project]/app/discover/page.tsx",
+                            lineNumber: 108,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/discover/page.tsx",
+                    lineNumber: 106,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-6 sm:mb-8",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                className: "absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
+                            }, void 0, false, {
+                                fileName: "[project]/app/discover/page.tsx",
+                                lineNumber: 116,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                placeholder: "Search restaurants, cuisine...",
+                                className: "pl-10 h-12 text-base",
+                                value: searchQuery,
+                                onChange: (e)=>setSearchQuery(e.target.value)
+                            }, void 0, false, {
+                                fileName: "[project]/app/discover/page.tsx",
+                                lineNumber: 117,
+                                columnNumber: 13
+>>>>>>> Stashed changes
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/discover/page.tsx",
+<<<<<<< Updated upstream
                         lineNumber: 70,
                         columnNumber: 9
                     }, this),
@@ -415,11 +689,42 @@ function DiscoverPage() {
                                 }, void 0, false, {
                                     fileName: "[project]/app/discover/page.tsx",
                                     lineNumber: 81,
+=======
+                        lineNumber: 115,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/discover/page.tsx",
+                    lineNumber: 114,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setShowFilters(!showFilters),
+                            className: "md:hidden w-full mb-4 px-4 py-3 bg-muted text-foreground font-medium rounded-lg flex items-center justify-between",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "Filters"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/discover/page.tsx",
+                                    lineNumber: 132,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: `transition-transform ${showFilters ? "rotate-180" : ""}`,
+                                    children: "▼"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/discover/page.tsx",
+                                    lineNumber: 133,
+>>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/discover/page.tsx",
+<<<<<<< Updated upstream
                             lineNumber: 79,
                             columnNumber: 11
                         }, this)
@@ -501,6 +806,167 @@ function DiscoverPage() {
     }, void 0, true, {
         fileName: "[project]/app/discover/page.tsx",
         lineNumber: 67,
+=======
+                            lineNumber: 128,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: `grid gap-4 mb-6 ${showFilters ? "block" : "hidden"} md:block`,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-sm font-semibold text-foreground mb-3",
+                                            children: "Category"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/discover/page.tsx",
+                                            lineNumber: 139,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex flex-wrap gap-2",
+                                            children: CATEGORIES.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                    variant: selectedCategory === category ? "default" : "outline",
+                                                    size: "sm",
+                                                    onClick: ()=>{
+                                                        setSelectedCategory(category);
+                                                        setShowFilters(false);
+                                                    },
+                                                    className: "text-xs sm:text-sm",
+                                                    children: category
+                                                }, category, false, {
+                                                    fileName: "[project]/app/discover/page.tsx",
+                                                    lineNumber: 142,
+                                                    columnNumber: 19
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/discover/page.tsx",
+                                            lineNumber: 140,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/discover/page.tsx",
+                                    lineNumber: 138,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-sm font-semibold text-foreground mb-3",
+                                            children: "Price Range"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/discover/page.tsx",
+                                            lineNumber: 160,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex flex-wrap gap-2",
+                                            children: PRICE_RANGES.map((price)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                    variant: selectedPrice === price ? "default" : "outline",
+                                                    size: "sm",
+                                                    onClick: ()=>{
+                                                        setSelectedPrice(price);
+                                                        setShowFilters(false);
+                                                    },
+                                                    className: "text-xs sm:text-sm",
+                                                    children: price === "All" ? "All" : price
+                                                }, price, false, {
+                                                    fileName: "[project]/app/discover/page.tsx",
+                                                    lineNumber: 163,
+                                                    columnNumber: 19
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/discover/page.tsx",
+                                            lineNumber: 161,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/discover/page.tsx",
+                                    lineNumber: 159,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/discover/page.tsx",
+                            lineNumber: 136,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/discover/page.tsx",
+                    lineNumber: 127,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-6",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-xs sm:text-sm text-muted-foreground",
+                        children: [
+                            "Showing ",
+                            filteredRestaurants.length,
+                            " restaurant",
+                            filteredRestaurants.length !== 1 ? "s" : ""
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/discover/page.tsx",
+                        lineNumber: 183,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/discover/page.tsx",
+                    lineNumber: 182,
+                    columnNumber: 9
+                }, this),
+                filteredRestaurants.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6",
+                    children: filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$restaurant$2d$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RestaurantCard"], {
+                            restaurant: restaurant
+                        }, restaurant.id, false, {
+                            fileName: "[project]/app/discover/page.tsx",
+                            lineNumber: 192,
+                            columnNumber: 15
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/app/discover/page.tsx",
+                    lineNumber: 190,
+                    columnNumber: 11
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
+                    className: "p-8 sm:p-12 text-center",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-sm sm:text-base text-muted-foreground mb-2",
+                            children: "No restaurants found"
+                        }, void 0, false, {
+                            fileName: "[project]/app/discover/page.tsx",
+                            lineNumber: 197,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-xs sm:text-sm text-muted-foreground",
+                            children: "Try adjusting your search or filters"
+                        }, void 0, false, {
+                            fileName: "[project]/app/discover/page.tsx",
+                            lineNumber: 198,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/discover/page.tsx",
+                    lineNumber: 196,
+                    columnNumber: 11
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/discover/page.tsx",
+            lineNumber: 104,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/discover/page.tsx",
+        lineNumber: 103,
+>>>>>>> Stashed changes
         columnNumber: 5
     }, this);
 }

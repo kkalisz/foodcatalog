@@ -1,783 +1,110 @@
-[00:00:02.216] Server  LOG      ✓ Ready in 1360ms
-[00:00:05.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.448] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:05.448] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:05.448] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084836308}
-[00:00:08.565] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084839422}
-[00:00:11.821] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084842680}
-[00:00:27.511] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084858369}
-[00:00:31.676] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084862534}
-[00:00:37.185] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084868042}
-[00:00:43.291] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084874147}
-[00:01:45.192] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084934785}
-[00:02:04.210] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084955062}
-[00:02:06.057] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084956917}
-[00:02:07.132] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084957971}
-[00:02:09.689] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:02:09.689] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:02:09.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084960550}
-[00:02:15.077] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767084965938}
-[00:03:36.125] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:36.125] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:36.125] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085046986}
-[00:03:42.992] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085053854}
-[00:03:44.555] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:44.555] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:44.555] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085055416}
-[00:03:46.139] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085057000}
-[00:03:46.974] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:46.974] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:46.974] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085057835}
-[00:03:50.568] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085061428}
-[00:04:04.611] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:04:04.611] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:04:04.611] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085075472}
-[00:05:42.318] Server  LOG      ✓ Compiled in 50ms
-[00:05:42.359] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:05:42.359] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:05:47.429] Server  LOG      ✓ Compiled in 30ms
-[00:05:47.483] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:05:47.483] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:07.378] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085198237}
-[00:06:13.407] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:13.407] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:13.407] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085204268}
-[00:06:59.215] Server  LOG      ✓ Compiled in 30ms
-[00:06:59.270] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:59.271] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:07:01.915] Server  LOG      ✓ Compiled in 25ms
-[00:07:01.970] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:07:01.970] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:09:03.676] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085374538}
-[00:09:05.605] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:09:05.605] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:09:05.605] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085376468}
-[00:10:31.982] Server  LOG      ✓ Compiled in 34ms
-[00:10:32.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:10:32.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:00.832] Server  LOG      ✓ Compiled in 28ms
-[00:11:01.347] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:01.347] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:04.998] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:05.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:05.264] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:05.264] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:05.264] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:11:05.264] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:11:05.264] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085496127}
-[00:11:11.922] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085502786}
-[00:11:12.713] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085503572}
-[00:11:13.921] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:13.921] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:11:13.921] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085504785}
-[00:12:05.698] Server  LOG      ✓ Compiled in 23ms
-[00:12:05.780] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:12:05.780] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:12:13.780] Server  LOG      ✓ Compiled in 26ms
-[00:12:13.831] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:12:13.831] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:40.009] Server  LOG      ✓ Compiled in 30ms
-[00:15:40.348] Browser ERROR   uncaughtError: ReferenceError: doc is not defined
-[00:15:47.483] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:15:47.550] Server  LOG      ✓ Compiled in 30ms
-[00:15:47.676] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:47.781] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:15:47.882] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:48.351] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:48.351] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:48.351] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:15:51.792] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:51.877] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:15:51.962] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:52.104] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:52.104] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:15:52.104] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:35.015] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:18:35.082] Server  LOG      ✓ Compiled in 28ms
-[00:18:35.205] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:35.304] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:35.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:36.348] Browser ERROR   %s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server. <RestaurantPage>
-[00:18:36.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:36.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:36.348] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:36.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:36.348] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:18:36.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:36.348] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:36.348] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:36.348] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
-[00:18:36.348] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:18:36.348] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:18:36.348] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085946386}
-[00:18:38.726] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'removeChild')
-[00:18:41.097] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'removeChild')
-[00:18:41.097] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'removeChild')
-[00:18:44.140] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:44.226] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:44.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:44.785] Browser ERROR   %s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server. <RestaurantPage>
-[00:18:44.785] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:44.785] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:44.785] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:44.785] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:44.785] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:18:44.785] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:44.785] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:18:44.785] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'indexOf')
-[00:18:44.785] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
-[00:18:44.785] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:18:44.785] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:18:44.785] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085955289}
-[00:19:03.135] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:19:03.203] Server  LOG      ✓ Compiled in 30ms
-[00:19:03.326] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:19:03.341] Browser ERROR   React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://react.dev/link/rules-of-hooks
-
-   Previous render            Next render
-   ------------------------------------------------------
-%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- RestaurantPage 1. useState                   useState
-2. useState                   useState
-3. undefined                  useContext
-
-[00:19:03.341] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:19:03.341] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:19:03.341] Browser WARN    Warning: Failed to re-render. We will retry on the next Fast Refresh event.
-TypeError: Cannot use 'in' operator to search for 'params' in null
-[00:19:03.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:03.571] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:19:03.571] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:19:03.571] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:19:03.571] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:19:03.571] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767085974390}
-[00:25:14.924] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:25:15.054] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:15.207] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:25:15.207] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:25:15.207] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:25:15.207] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:25:15.207] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767086346023}
-[00:27:40.881] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:40.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:41.112] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:41.112] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:41.112] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:27:41.112] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:27:41.112] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767086491928}
-[00:27:50.531] Server  WARN    Error: Route "/restaurant/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:50.635] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:50.792] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:50.792] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:27:50.792] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:27:50.792] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:27:50.792] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767086501608}
-[00:28:04.352] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767086515166}
-[00:28:05.795] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:28:05.795] Browser ERROR   A param property was accessed directly with `params.id`. `params` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:28:05.795] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id_2 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id_2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767086516610}
-[00:33:26.091] Server  LOG      ✓ Compiled in 37ms
-[00:33:26.189] Browser ERROR   uncaughtError: ReferenceError: restaurant is not defined
-[00:33:34.520] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:33:34.588] Server  LOG      ✓ Compiled in 49ms
-[00:33:34.735] Server  ERROR    ⨯ ReferenceError: restaurant is not defined
-[00:33:34.741] Browser ERROR   uncaughtError: ReferenceError: restaurant is not defined
-[00:33:34.828] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:34.975] Browser ERROR   uncaughtError: ReferenceError: restaurant is not defined
-[00:33:54.399] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:33:54.461] Server  LOG      ✓ Compiled in 34ms
-[00:33:54.574] Server  ERROR    ⨯ ReferenceError: restaurant is not defined
-[00:33:54.659] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:54.805] Browser ERROR   uncaughtError: ReferenceError: restaurant is not defined
-[00:38:44.393] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:38:44.523] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:38:44.529] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:38:44.529] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/restaurant/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:38:44.529] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:38:44.746] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:38:44.912] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:38:45.287] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:39:39.349] Browser ERROR   ./app/restaurant/[id]/page.tsx:26:8
-Parsing ecmascript source code failed
-  24 |     // Fetch restaurant data based on the id
-  25 |     const fetchRestaurant = async () => {
-> 26 |     }, [])
-     |        ^^
-  27 |   const handleSubmitReview = () => {
-  28 |     setReviewText("")
-  29 |     setUserRating(0)
-
-'const' declarations must be initialized
-
-Import traces:
-  Client Component Browser:
-    ./app/restaurant/[id]/page.tsx [Client Component Browser]
-    ./app/restaurant/[id]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/restaurant/[id]/page.tsx [Client Component SSR]
-    ./app/restaurant/[id]/page.tsx [Server Component]
-[00:39:39.349] Browser ERROR   ./app/restaurant/[id]/page.tsx:26:10
-Parsing ecmascript source code failed
-  24 |     // Fetch restaurant data based on the id
-  25 |     const fetchRestaurant = async () => {
-> 26 |     }, [])
-     |          ^
-  27 |   const handleSubmitReview = () => {
-  28 |     setReviewText("")
-  29 |     setUserRating(0)
-
-Expected a semicolon
-
-Import traces:
-  Client Component Browser:
-    ./app/restaurant/[id]/page.tsx [Client Component Browser]
-    ./app/restaurant/[id]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/restaurant/[id]/page.tsx [Client Component SSR]
-    ./app/restaurant/[id]/page.tsx [Server Component]
-[00:40:13.754] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:40:13.872] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:40:13.963] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:48:48.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:48:48.331] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:48:48.331] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/discover","route":"/discover"}
-[00:48:48.331] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767087759118}
-[00:48:49.784] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:48:49.898] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:48:50.060] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:48:50.174] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:48:50.251] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:49:17.131] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:49:17.254] Server  ERROR    ⨯ Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:49:17.324] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/restaurant/[id]/page"
-[00:49:25.100] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:49:25.197] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:49:25.349] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:49:49.637] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:49:49.712] Server  LOG      ✓ Compiled in 53ms
-[00:49:49.842] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'name')
-[00:49:49.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:49:50.068] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'name')
-[00:49:55.416] Server  LOG      ✓ Compiled in 31ms
-[00:49:55.520] Browser ERROR   ./app/restaurant/[id]/page.tsx:53:3
-Parsing ecmascript source code failed
-  51 |         <img
-  52 |           src={restaurant?.imageUrl}
-> 53 |   ]         alt={restaurant?.name}
-     |   ^
-  54 |         className="w-full h-full object-cover"
-  55 |         />
-  56 |         <Link
-
-Expected '</', got ']'
-
-Import traces:
-  Client Component Browser:
-    ./app/restaurant/[id]/page.tsx [Client Component Browser]
-    ./app/restaurant/[id]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/restaurant/[id]/page.tsx [Client Component SSR]
-    ./app/restaurant/[id]/page.tsx [Server Component]
-[00:50:01.595] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:50:01.779] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'name')
-[00:50:01.859] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:02.003] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'name')
-[00:50:07.147] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:50:07.212] Server  LOG      ✓ Compiled in 34ms
-[00:50:07.324] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'name')
-[00:50:07.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:07.586] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'name')
-[00:50:37.554] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:50:37.614] Server  LOG      ✓ Compiled in 39ms
-[00:50:37.739] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'rating')
-[00:50:37.819] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:38.009] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'rating')
-[00:50:42.922] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:50:42.993] Server  LOG      ✓ Compiled in 36ms
-[00:50:43.106] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'name')
-[00:50:43.197] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:43.360] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'name')
-[00:51:08.196] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:51:08.259] Server  LOG      ✓ Compiled in 23ms
-[00:51:08.384] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'name')
-[00:51:08.473] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:51:08.664] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'name')
-[00:51:18.051] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:51:18.118] Server  LOG      ✓ Compiled in 22ms
-[00:51:18.268] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'rating')
-[00:51:18.346] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:51:18.515] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'rating')
-[00:51:40.956] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:51:41.031] Server  LOG      ✓ Compiled in 28ms
-[00:51:41.146] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'category')
-[00:51:41.231] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:51:41.384] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'category')
-[00:51:48.092] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:51:48.145] Server  LOG      ✓ Compiled in 24ms
-[00:51:48.260] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'description')
-[00:51:48.356] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:51:48.513] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'description')
-[00:51:55.616] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:51:55.672] Server  LOG      ✓ Compiled in 19ms
-[00:51:55.780] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'cuisine')
-[00:51:55.858] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:51:56.038] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'cuisine')
-[00:52:07.948] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:52:08.019] Server  LOG      ✓ Compiled in 24ms
-[00:52:08.156] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'address')
-[00:52:08.242] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:52:08.422] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'address')
-[00:52:29.055] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:52:29.120] Server  LOG      ✓ Compiled in 28ms
-[00:52:29.233] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:52:29.320] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:52:29.497] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:53:24.073] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:53:24.135] Server  LOG      ✓ Compiled in 21ms
-[00:53:24.286] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:53:24.415] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:53:25.347] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:54:14.773] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:54:14.860] Server  LOG      ✓ Compiled in 31ms
-[00:54:15.004] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:54:15.134] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:54:15.347] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:54:35.306] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:54:35.386] Server  LOG      ✓ Compiled in 29ms
-[00:54:35.532] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:54:35.630] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:54:36.348] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:55:04.635] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:55:04.712] Server  LOG      ✓ Compiled in 26ms
-[00:55:04.873] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:55:04.941] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:05.349] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:55:07.591] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:55:07.671] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:07.830] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:55:14.685] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:55:14.743] Server  LOG      ✓ Compiled in 22ms
-[00:55:14.888] Server  ERROR    ⨯ ReferenceError: ID is not defined
-[00:55:14.960] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:15.349] Browser ERROR   uncaughtError: ReferenceError: ID is not defined
-[00:55:17.299] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:55:17.367] Server  LOG      ✓ Compiled in 27ms
-[00:55:17.514] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'image')
-[00:55:17.599] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:18.348] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'image')
-[00:55:57.224] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:55:57.315] Server  LOG      ✓ Compiled in 29ms
-[00:55:57.471] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'imageUrl')
-[00:55:57.546] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:57.694] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'imageUrl')
-[00:57:05.924] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:57:06.015] Server  LOG      ✓ Compiled in 28ms
-[00:57:06.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:07.348] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:57:07.348] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/Auto_Id_2","route":"/restaurant/[id]"}
-[00:57:07.348] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id_2 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id_2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088257217}
-[00:57:07.348] Browser ERROR   Error fetching restaurant: {"code":"permission-denied","name":"FirebaseError"}
-[00:57:10.131] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:10.347] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:57:10.347] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/Auto_Id_2","route":"/restaurant/[id]"}
-[00:57:10.347] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id_2 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id_2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088261053}
-[00:57:10.347] Browser ERROR   Error fetching restaurant: {"code":"permission-denied","name":"FirebaseError"}
-[00:57:12.010] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088262791}
-[00:57:12.968] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088263742}
-[00:57:14.048] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088264777}
-[00:57:14.048] Browser ERROR   Error fetching restaurant: {"code":"permission-denied","name":"FirebaseError"}
-[00:57:14.048] Browser ERROR   Error fetching restaurant: {"code":"permission-denied","name":"FirebaseError"}
-[00:57:55.989] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:56.189] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:57:56.189] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:57:56.189] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088306910}
-[00:57:56.189] Browser ERROR   Error fetching restaurant: {"code":"permission-denied","name":"FirebaseError"}
-[00:57:57.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:57.211] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:57:57.211] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[00:57:57.211] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088307928}
-[00:57:57.211] Browser ERROR   Error fetching restaurant: {"code":"permission-denied","name":"FirebaseError"}
-[01:01:00.557] Server  LOG      ✓ Compiled in 29ms
-[01:01:11.750] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:01:11.882] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:01:11.882] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[01:01:11.882] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088502661}
-[01:01:12.250] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
-[01:01:56.643] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:01:56.750] Server  LOG      ✓ Compiled in 29ms
-[01:01:57.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:01:57.223] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:01:57.223] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[01:01:57.223] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088547925}
-[01:01:57.223] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
-[01:03:08.577] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:03:08.654] Server  LOG      ✓ Compiled in 30ms
-[01:03:08.894] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:03:09.088] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:03:09.088] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[01:03:09.088] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088619823}
-[01:03:09.088] Browser ERROR   uncaughtError: ReferenceError: RestaurantMenu is not defined
-[01:03:16.787] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:03:16.851] Server  LOG      ✓ Compiled in 19ms
-[01:03:17.110] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:03:17.249] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:03:17.249] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/gG08lZXHpsEKJFRW8ib6","route":"/restaurant/[id]"}
-[01:03:17.249] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088628043}
-[01:03:22.815] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088633610}
-[01:03:24.015] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/gG08lZXHpsEKJFRW8ib6","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088634812}
-[01:03:58.393] Server  LOG      ✓ Compiled in 24ms
-[01:04:02.377] Server  LOG      ✓ Compiled in 25ms
-[01:04:32.513] Server  LOG      ✓ Compiled in 26ms
-[01:07:50.961] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088901761}
-[01:07:53.613] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767088904413}
-[01:08:15.402] Server  LOG      ✓ Compiled in 37ms
-[01:09:05.342] Server  LOG      ✓ Compiled in 30ms
-[01:11:50.038] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:11:50.189] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:11:50.189] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/kuaZAbCcUjQaWtJNptyc","route":"/restaurant/[id]"}
-[01:11:50.189] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089140990}
-[01:12:14.651] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:12:14.780] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:12:14.780] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/kuaZAbCcUjQaWtJNptyc","route":"/restaurant/[id]"}
-[01:12:14.780] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089165581}
-[01:13:15.416] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089226216}
-[01:13:16.559] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id_2 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id_2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089227359}
-[01:13:27.126] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089237923}
-[01:13:36.073] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089246869}
-[01:13:38.056] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089248854}
-[01:13:44.285] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089253677}
-[01:13:47.321] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:13:47.917] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:13:47.917] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:13:47.917] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089258259}
-[01:13:49.012] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089259811}
-[01:13:49.891] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/kuaZAbCcUjQaWtJNptyc","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089260690}
-[01:15:36.165] Server  LOG      ✓ Compiled in 30ms
-[01:16:29.622] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089420417}
-[01:16:41.403] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089432197}
-[01:16:43.329] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089434125}
-[01:16:51.110] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089440559}
-[01:19:23.942] Server  LOG      ✓ Compiled in 28ms
-[01:19:33.261] Server  LOG      ✓ Compiled in 26ms
-[01:19:57.255] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089628051}
-[01:20:04.675] Browser ERROR   unhandledRejection: FirebaseError: Function updateDoc() called with invalid data. Unsupported field value: undefined (found in field phone in document public_restaurants/kuaZAbCcUjQaWtJNptyc)
-[01:20:04.675] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089635470}
-[01:21:17.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089708218}
-[01:21:18.618] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089709414}
-[01:22:13.730] Browser ERROR   unhandledRejection: FirebaseError: Function addDoc() called with invalid data. Unsupported field value: undefined (found in field phone in document public_restaurants/fqRxYQ05jrjHAeMz7YeD)
-[01:22:13.730] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089764525}
-[01:22:17.572] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:22:17.756] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:22:17.756] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:22:17.756] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089768547}
-[01:22:17.756] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089768553}
-[01:22:19.945] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089770742}
-[01:22:21.058] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089771852}
-[01:22:57.659] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089808451}
-[01:22:59.124] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089809918}
-[01:23:17.123] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089827915}
-[01:23:45.026] Server  LOG      ✓ Compiled in 32ms
-[01:23:50.478] Server  LOG      ✓ Compiled in 52ms
-[01:23:55.121] Server  LOG      ✓ Compiled in 27ms
-[01:24:11.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:24:11.492] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:24:11.492] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:24:11.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089882281}
-[01:24:11.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089882289}
-[01:24:23.255] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089894048}
-[01:24:24.154] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089894949}
-[01:24:40.175] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089910969}
-[01:25:08.410] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089939208}
-[01:25:09.769] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089940565}
-[01:25:11.003] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/Auto_Id_2 color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/Auto_Id_2","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089941801}
-[01:25:17.355] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089948152}
-[01:25:19.282] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089950068}
-[01:25:22.190] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089952986}
-[01:25:31.907] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767089962700}
-[01:26:33.457] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/kuaZAbCcUjQaWtJNptyc/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090024253}
-[01:26:37.655] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090026953}
-[01:33:21.899] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090432691}
-[01:33:29.331] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090440122}
-[01:35:06.273] Server  LOG      ✓ Compiled in 34ms
-[01:35:09.802] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:35:09.975] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:35:09.975] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:35:09.975] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090540760}
-[01:35:09.975] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090540769}
-[01:35:12.324] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090543114}
-[01:35:13.385] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090544177}
-[01:35:26.439] Browser LOG     Nowa restauracja utworzona: cTgo7j0XUt3ffLYmEhrb
-[01:35:27.363] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090558156}
-[01:35:28.655] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090559448}
-[01:35:32.131] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090562921}
-[01:36:36.231] Server  LOG      ✓ Compiled in 27ms
-[01:37:00.168] Server  LOG      ✓ Compiled in 22ms
-[01:37:11.773] Server  LOG      ✓ Compiled in 26ms
-[01:38:00.323] Server  LOG      ✓ Compiled in 28ms
-[01:38:34.915] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090745701}
-[01:38:41.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:41.339] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:38:41.339] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard/restaurants","route":"/owner/dashboard/restaurants"}
-[01:38:41.339] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090752129}
-[01:39:30.485] Server  LOG      ✓ Compiled in 23ms
-[01:39:42.238] Server  LOG      ✓ Compiled in 28ms
-[01:40:18.871] Browser LOG     Nowa restauracja utworzona: JNL0qixo1DTGAFeDWbrY
-[01:40:21.200] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090851987}
-[01:40:52.354] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090883142}
-[01:40:53.253] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090884041}
-[01:41:11.814] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/restaurants/JNL0qixo1DTGAFeDWbrY/edit color: rgb(120, 120, 120) color: inherit {"dp":"/owner/restaurants/[id]/edit","o":"http://localhost:3000/owner/restaurants/JNL0qixo1DTGAFeDWbrY/edit","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090902602}
-[01:41:24.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:41:24.182] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:41:24.182] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/discover","route":"/discover"}
-[01:41:24.182] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090914971}
-[01:41:27.628] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767090918417}
-[01:43:43.144] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091053933}
-[01:47:57.916] Server  LOG      ✓ Compiled in 36ms
-[01:50:31.423] Server  LOG      ✓ Compiled in 28ms
-[01:50:32.349] Browser ERROR   ./lib/firebase/restaurants.ts:59:5
-Parsing ecmascript source code failed
-  57 |     await deleteDoc(ref)
-  58 |     /** READ – pobranie restauracji do edycji */
-> 59 |     export const getRestaurantById = async (
-     |     ^^^^^^
-  60 |         restaurantId: string
-  61 |     ): Promise<PublicRestaurant | null> => {
-  62 |         const ref = doc(db, "public_restaurants", restaurantId)
-
-'import', and 'export' cannot be used outside of module code
-
-Import traces:
-  Client Component Browser:
-    ./lib/firebase/restaurants.ts [Client Component Browser]
-    ./components/restaurants/RestaurantForm.tsx [Client Component Browser]
-    ./components/restaurants/RestaurantForm.tsx [Server Component]
-    ./app/owner/restaurants/[id]/edit/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./lib/firebase/restaurants.ts [Client Component SSR]
-    ./components/restaurants/RestaurantForm.tsx [Client Component SSR]
-    ./components/restaurants/RestaurantForm.tsx [Server Component]
-    ./app/owner/restaurants/[id]/edit/page.tsx [Server Component]
-[01:50:32.349] Browser ERROR   ./lib/firebase/restaurants.ts:59:5
-Parsing ecmascript source code failed
-  57 |     await deleteDoc(ref)
-  58 |     /** READ – pobranie restauracji do edycji */
-> 59 |     export const getRestaurantById = async (
-     |     ^^^^^^
-  60 |         restaurantId: string
-  61 |     ): Promise<PublicRestaurant | null> => {
-  62 |         const ref = doc(db, "public_restaurants", restaurantId)
-
-'import', and 'export' cannot be used outside of module code
-
-Import traces:
-  Client Component Browser:
-    ./lib/firebase/restaurants.ts [Client Component Browser]
-    ./components/restaurants/RestaurantForm.tsx [Client Component Browser]
-    ./components/restaurants/RestaurantForm.tsx [Server Component]
-    ./app/owner/restaurants/[id]/edit/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./lib/firebase/restaurants.ts [Client Component SSR]
-    ./components/restaurants/RestaurantForm.tsx [Client Component SSR]
-    ./components/restaurants/RestaurantForm.tsx [Server Component]
-    ./app/owner/restaurants/[id]/edit/page.tsx [Server Component]
-[01:54:44.379] Server  LOG      ✓ Compiled in 26ms
-[01:55:10.318] Server  LOG      ✓ Compiled in 30ms
-[01:55:18.987] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:55:19.154] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:55:19.154] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:55:19.154] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/login","route":"/owner/login"}
-[01:55:19.154] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091749939}
-[01:55:19.154] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091749939}
-[01:55:21.468] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091752246}
-[01:56:03.236] Server  LOG      ✓ Compiled in 26ms
-[01:56:13.802] Server  LOG      ✓ Compiled in 21ms
-[01:56:21.495] Server  LOG      ✓ Compiled in 21ms
-[01:56:31.781] Server  LOG      ✓ Compiled in 22ms
-[01:56:47.515] Server  LOG      ✓ Compiled in 23ms
-[01:56:48.349] Browser ERROR   uncaughtError: ReferenceError: Trash is not defined
-[01:56:50.743] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:56:50.825] Server  LOG      ✓ Compiled in 30ms
-[01:56:51.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:56:51.347] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:56:51.347] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:56:51.347] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091842030}
-[01:56:51.347] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091842030}
-[01:56:55.509] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091846289}
-[01:57:09.292] Server  LOG      ✓ Compiled in 31ms
-[01:57:17.560] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:57:17.713] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:57:17.713] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:57:17.713] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091868494}
-[01:57:17.713] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091868498}
-[01:57:19.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091870200}
-[01:57:28.129] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:57:28.361] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:57:28.361] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[01:57:28.361] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091879140}
-[01:57:28.361] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091879146}
-[01:57:30.510] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091881293}
-[01:58:43.590] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091954390}
-[01:58:45.432] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767091956232}
-[02:04:33.460] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092304265}
-[02:04:34.949] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092305750}
-[02:04:38.227] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092309026}
-[02:11:09.220] Server  LOG      ✓ Compiled in 31ms
-[02:11:24.101] Server  LOG      ✓ Compiled in 53ms
-[02:11:26.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:11:26.778] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:11:26.778] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[02:11:26.778] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/login","route":"/owner/login"}
-[02:11:26.778] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092717585}
-[02:11:26.778] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092717585}
-[02:11:28.916] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092719717}
-[02:11:58.671] Server  LOG      ✓ Compiled in 25ms
-[02:12:12.129] Server  LOG      ✓ Compiled in 29ms
-[02:12:14.585] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:12:14.802] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:12:14.802] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[02:12:14.802] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092765607}
-[02:12:14.802] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092765608}
-[02:12:16.836] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092767637}
-[02:12:51.478] Server  LOG      ✓ Compiled in 28ms
-[02:13:06.392] Server  LOG      ✓ Compiled in 31ms
-[02:13:13.123] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092823928}
-[02:13:15.184] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092825988}
-[02:13:32.812] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:13:33.031] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:13:33.031] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[02:13:33.031] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092843837}
-[02:13:33.031] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092843837}
-[02:13:34.456] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092845256}
-[02:14:08.240] Server  LOG      ✓ Compiled in 29ms
-[02:14:21.167] Server  LOG      ✓ Compiled in 25ms
-[02:14:23.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:14:23.369] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:14:23.369] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[02:14:23.369] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092894174}
-[02:14:23.369] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092894174}
-[02:14:24.942] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767092895743}
-[02:24:41.265] Server  LOG      ✓ Compiled in 30ms
-[02:24:49.191] Server  LOG      ✓ Compiled in 79ms
-[02:24:56.405] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:24:56.641] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:24:56.641] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[02:24:56.641] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/login","route":"/owner/login"}
-[02:24:56.641] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093527421}
-[02:24:56.641] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093527421}
-[02:24:58.323] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093529098}
-[02:25:42.350] Server  LOG      ✓ Compiled in 28ms
-[02:25:53.329] Server  LOG      ✓ Compiled in 29ms
-[02:25:55.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:25:55.854] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:25:55.854] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[02:25:55.854] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093586634}
-[02:25:55.854] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093586634}
-[02:25:57.231] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093588006}
-[02:26:46.249] Server  LOG      ✓ Compiled in 31ms
-[02:26:51.837] Server  LOG      ✓ Compiled in 25ms
-[02:27:02.982] Server  LOG      ✓ Compiled in 27ms
-[02:27:19.034] Server  LOG      ✓ Compiled in 27ms
-[02:27:23.448] Server  LOG      ✓ Compiled in 25ms
-[02:27:28.537] Server  LOG      ✓ Compiled in 22ms
-[02:28:21.134] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093731911}
-[02:28:23.582] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093734360}
-[02:28:31.331] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093742110}
-[02:29:27.385] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:29:27.562] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:29:27.562] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/JNL0qixo1DTGAFeDWbrY","route":"/restaurant/[id]"}
-[02:29:27.562] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767093798340}
-[02:31:57.807] Server  LOG      ✓ Compiled in 35ms
-[03:24:33.509] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:24:33.657] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:24:33.657] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/restaurant/JNL0qixo1DTGAFeDWbrY","route":"/restaurant/[id]"}
-[03:24:33.657] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097104512}
-[03:26:05.663] Server  LOG      ✓ Compiled in 36ms
-[03:26:16.828] Server  LOG      ✓ Compiled in 20ms
-[03:28:13.658] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097324515}
-[03:28:14.936] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097325786}
-[03:28:36.275] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097347128}
-[03:29:31.230] Server  LOG      ✓ Compiled in 37ms
-[03:29:42.591] Server  LOG      ✓ Compiled in 39ms
-[03:29:44.682] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:29:44.909] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:29:44.909] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:29:44.909] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/login","route":"/owner/login"}
-[03:29:44.909] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097415767}
-[03:29:44.909] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097415767}
-[03:29:46.248] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097417094}
-[03:30:17.219] Server  LOG      ✓ Compiled in 30ms
-[03:30:27.466] Server  LOG      ✓ Compiled in 30ms
-[03:30:40.599] Server  LOG      ✓ Compiled in 30ms
-[03:30:43.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:30:44.080] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:30:44.081] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:30:44.081] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097474930}
-[03:30:44.081] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097474940}
-[03:30:46.083] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097476936}
-[03:31:18.556] Server  LOG      ✓ Compiled in 50ms
-[03:31:33.226] Server  LOG      ✓ Compiled in 25ms
-[03:31:36.081] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:31:36.305] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:31:36.305] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:31:36.305] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097527163}
-[03:31:36.305] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097527164}
-[03:31:38.402] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097529255}
-[03:35:19.168] Server  LOG      ✓ Compiled in 28ms
-[03:35:35.002] Server  LOG      ✓ Compiled in 29ms
-[03:35:37.505] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:35:37.727] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:35:37.727] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:35:37.727] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097768582}
-[03:35:37.727] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097768588}
-[03:35:40.077] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097770932}
-[03:36:18.960] Server  LOG      ✓ Compiled in 30ms
-[03:36:37.001] Server  LOG      ✓ Compiled in 27ms
-[03:36:53.057] Server  LOG      ✓ Compiled in 28ms
-[03:36:55.491] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:36:55.720] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:36:55.720] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:36:55.720] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097846538}
-[03:36:55.720] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097846539}
-[03:36:58.029] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097848836}
-[03:37:24.404] Server  LOG      ✓ Compiled in 31ms
-[03:37:33.190] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:37:33.420] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:37:33.420] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:37:33.420] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/login","route":"/owner/login"}
-[03:37:33.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097884239}
-[03:37:33.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097884239}
-[03:37:41.986] Server  LOG      ✓ Compiled in 28ms
-[03:37:49.880] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:37:50.070] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:37:50.070] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:37:50.070] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097900884}
-[03:37:50.070] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097900889}
-[03:37:53.155] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767097903968}
-[03:38:38.299] Server  LOG      ✓ Compiled in 29ms
-[03:38:43.184] Server  LOG      ✓ Compiled in 28ms
-[03:38:54.553] Server  LOG      ✓ Compiled in 26ms
-[03:52:16.433] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098767275}
-[03:52:27.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:52:27.547] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:52:27.547] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:52:27.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098778389}
-[03:52:27.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098778391}
-[03:52:29.293] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098780132}
-[03:52:59.229] Server  LOG      ✓ Compiled in 30ms
-[03:53:16.218] Server  LOG      ✓ Compiled in 26ms
-[03:53:18.265] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:53:18.487] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:53:18.487] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard","route":"/owner/dashboard"}
-[03:53:18.487] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098829330}
-[03:53:18.487] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098829332}
-[03:53:20.213] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767098831055}
-[04:02:10.421] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767099361268}
-[04:02:11.404] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767099362250}
-[04:02:14.195] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY color: rgb(120, 120, 120) color: inherit {"dp":"/restaurant/[id]","o":"http://localhost:3000/restaurant/JNL0qixo1DTGAFeDWbrY","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767099365042}
-[04:02:58.162] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767099409007}
-[04:02:59.286] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767099410132}
+[00:00:00.758] Server  LOG      ✓ Ready in 515ms
+[00:00:03.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.047] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:04.047] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:04.047] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946846139}
+[00:00:10.304] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946852396}
+[00:00:11.629] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946853719}
+[00:00:13.428] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946855519}
+[00:00:37.938] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946880028}
+[00:00:39.441] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946881530}
+[00:00:41.970] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946884061}
+[00:00:43.788] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767946885879}
+[00:01:30.906] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:05:13.180] Server  LOG      ✓ Compiled in 31ms
+[00:19:26.850] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:19:30.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:30.450] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:19:30.451] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard/menu","route":"/owner/dashboard/menu"}
+[00:19:30.451] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948012569}
+[00:19:50.385] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:20:11.877] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948053994}
+[00:20:36.537] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948078653}
+[00:20:51.409] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:21:47.546] Server  LOG      ✓ Compiled in 31ms
+[00:21:55.104] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:21:57.639] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:57.777] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:21:57.777] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard/menu","route":"/owner/dashboard/menu"}
+[00:21:57.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948159895}
+[00:22:00.237] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948162350}
+[00:22:01.919] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948164034}
+[00:22:14.142] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:23:33.479] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:25:10.165] Server  LOG      ✓ Compiled in 25ms
+[00:25:13.961] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:25:13.961] Browser LOG     MENU PATH: firms/DOKŁADNE_ID_FIRMY_Z_FIREBASE/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:25:14.189] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:25:39.676] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:39.884] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:25:39.884] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard/menu","route":"/owner/dashboard/menu"}
+[00:25:39.884] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948382001}
+[00:25:58.108] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:25:58.108] Browser LOG     MENU PATH: firms/DOKŁADNE_ID_FIRMY_Z_FIREBASE/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:25:58.302] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:33:50.599] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:33:50.599] Browser LOG     MENU PATH: firms/DOKŁADNE_ID_FIRMY_Z_FIREBASE/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:33:50.788] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:33:52.075] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:33:52.075] Browser LOG     MENU PATH: firms/DOKŁADNE_ID_FIRMY_Z_FIREBASE/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:33:52.075] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:33:56.683] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:56.880] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:33:56.880] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard/menu","route":"/owner/dashboard/menu"}
+[00:33:56.880] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767948878994}
+[00:34:07.632] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:34:07.632] Browser LOG     MENU PATH: firms/DOKŁADNE_ID_FIRMY_Z_FIREBASE/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:34:07.848] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:35:46.286] Server  LOG      ✓ Compiled in 30ms
+[00:35:56.766] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:35:56.766] Browser LOG     MENU PATH: firms/7A9kPzXQwLr3eM2D/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:35:56.957] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:39:15.082] Server  LOG      ✓ Compiled in 31ms
+[00:43:40.725] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:43:44.859] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:45.069] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:43:45.069] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/dashboard/menu","route":"/owner/dashboard/menu"}
+[00:43:45.069] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767949467135}
+[00:43:46.518] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767949468599}
+[00:43:48.175] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/menu color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/menu","o":"http://localhost:3000/owner/dashboard/menu","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767949470256}
+[00:44:00.827] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:48:42.832] Server  LOG      ✓ Compiled in 53ms
+[00:48:47.639] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:48:47.639] Browser LOG     MENU PATH: firms/7A9kPzXQwLr3eM2D/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:48:47.828] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:48:48.750] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:48:48.750] Browser LOG     MENU PATH: firms/7A9kPzXQwLr3eM2D/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:48:48.750] Browser ERROR   unhandledRejection: FirebaseError: Missing or insufficient permissions.
+[00:52:10.468] Server  LOG      ✓ Compiled in 76ms
+[00:53:16.219] Browser LOG     AUTH: {"apiKey":"AIzaSyCgG4W9JhlJvykMCT_kAg1XYpo1rXOiRlI","appName":"[DEFAULT]","createdAt":"1766401732498","email":"czarnymwkp@gmail.com","emailVerified":false,"isAnonymous":false,"lastLoginAt":"1767089893497","providerData":[{"displayName":null,"email":"czarnymwkp@gmail.com","phoneNumber":null,"photoURL":null,"providerId":"password","uid":"czarnymwkp@gmail.com"}],"stsTokenManager":{"accessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4Mjg5MmZhMzJlY2QxM2E0ZTBhZWZlNjI4ZGQ5YWFlM2FiYThlMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZm9vZGNhdGFsb2ctMTRjZWYiLCJhdWQiOiJmb29kY2F0YWxvZy0xNGNlZiIsImF1dGhfdGltZSI6MTc2NzA4OTg5MywidXNlcl9pZCI6IjloaW0wVTU2YnFlV0Zqc1M2WXRIUTFKOGM3cDEiLCJzdWIiOiI5aGltMFU1NmJxZVdGanNTNll0SFExSjhjN3AxIiwiaWF0IjoxNzY3OTQ2ODQ2LCJleHAiOjE3Njc5NTA0NDYsImVtYWlsIjoiY3phcm55bXdrcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY3phcm55bXdrcEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.W14Qw4G72EIF0jOWP42s6FTC0NMSbQXYXqenkzM1FoaBZ6MAkGjoO85qRXPK4-bqoFwinQvPFkQSCLUGeIEDYoEPR6R85VY1pH2JfN9btgiLAbp6Z9Ki3KfBm40KJGhDbkY0AF0iz1Gi6R5iCVK2h3ixa36K1NJXJn1DnM6lu0Io5jJhfvLuaqqr_iVB_GAmS1n1f9_f4uXHV24b03Jy_C0uZ_g5pd-lxlAurGBzffltlpty5Y12OFEcTiLU7IJlMTGAH4jqCr2twkC42_zSuumd4XTJZ_dYSAncxAoCQM_AoOREujvXAtEMD0Y6AzKbLVDe38GQOABI0IDDbIkjTQ","expirationTime":1767950446540,"refreshToken":"AMf-vBxGdk0k2W6xkAG-PwuLX3b-z5Gl5p9VOfjYWf2J50ELH8Luj46TPXVRoyawl3MQdUBPeTviuEYQz3x9T6OJxqiC_WGWIs1bHkLYk57MQGMZUCiHBTguGzXi499NTJSnta_CQVrFwQRZuNRsFkxfCdeT_cepZISVuW_SNtkkzgHUYn7geX0v5DM7oJ9gWduXZhmZFVhoF4AHF5DLYzYzfSu7H4Bgtg"},"uid":"9him0U56bqeWFjsS6YtHQ1J8c7p1"}
+[00:53:16.219] Browser LOG     MENU PATH: firms/firmId/restaurants/kuzaAbCjUqAwlJntJpyc/menu/main
+[00:53:16.414] Browser LOG     MENU SAVED
+[00:58:49.766] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767950371835}
+[01:00:47.811] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767950489883}
+[01:00:50.065] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/register color: rgb(120, 120, 120) color: inherit {"dp":"/owner/register","o":"http://localhost:3000/owner/register","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767950492138}
+[01:01:23.900] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767950525968}
+[01:03:40.160] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767950662225}
+[01:03:41.744] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/register color: rgb(120, 120, 120) color: inherit {"dp":"/owner/register","o":"http://localhost:3000/owner/register","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767950663807}
+[01:11:20.925] Server  LOG      ✓ Compiled in 43ms
+[01:11:29.456] Server  LOG      ✓ Compiled in 28ms
+[01:12:10.597] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951172704}
+[01:19:03.317] Server  LOG      ✓ Compiled in 28ms
+[01:19:07.581] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951589694}
+[01:19:09.203] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/register color: rgb(120, 120, 120) color: inherit {"dp":"/owner/register","o":"http://localhost:3000/owner/register","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951591309}
+[01:19:32.405] Browser ERROR   Firebase register error: {"code":"permission-denied","name":"FirebaseError"}
+[01:21:38.046] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:38.183] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:21:38.183] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/owner/register","route":"/owner/register"}
+[01:21:38.183] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/register color: rgb(120, 120, 120) color: inherit {"dp":"/owner/register","o":"http://localhost:3000/owner/register","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951740296}
+[01:21:54.422] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951756531}
+[01:23:25.728] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951847834}
+[01:23:28.296] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/register color: rgb(120, 120, 120) color: inherit {"dp":"/owner/register","o":"http://localhost:3000/owner/register","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951850404}
+[01:25:03.667] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951945778}
+[01:25:04.756] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951946824}
+[01:25:04.756] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/login color: rgb(120, 120, 120) color: inherit {"dp":"/owner/login","o":"http://localhost:3000/owner/login","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951946868}
+[01:25:07.227] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951949336}
+[01:25:09.464] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard/restaurants color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard/restaurants","o":"http://localhost:3000/owner/dashboard/restaurants","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767951951575}
+[01:28:29.536] Browser LOG     Nowa restauracja utworzona: o72YRYvcISLX6inP0rm2
+[01:28:32.430] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767952154526}
+[01:28:33.710] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/discover color: rgb(120, 120, 120) color: inherit {"dp":"/discover","o":"http://localhost:3000/discover","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767952155789}
+[01:29:16.714] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/owner/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/owner/dashboard","o":"http://localhost:3000/owner/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1767952198806}
