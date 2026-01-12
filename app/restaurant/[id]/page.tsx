@@ -18,6 +18,7 @@ const RestaurantPage = () => {
   const [loading, setLoading] = useState(true)
   const [reviewText, setReviewText] = useState("")
   const [userRating, setUserRating] = useState(0)
+  const [menu, setMenu] = useState<any[]>([])
 
   const { id } = useParams<{ id: string }>()
   useEffect(() => {

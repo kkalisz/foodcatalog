@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Star, MapPin } from "lucide-react"
 import { Timestamp } from "firebase/firestore"
-import { Key } from "readline"
+
 
 interface Restaurant {
   id?: string

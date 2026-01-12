@@ -1,11 +1,16 @@
 {
-  "/about/page": "app/about/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/route": "app/api/auth/route.js",
   "/discover/page": "app/discover/page.js",
   "/owner/dashboard/menu/page": "app/owner/dashboard/menu/page.js",
   "/owner/dashboard/page": "app/owner/dashboard/page.js",
+  "/owner/dashboard/restaurants/[restaurantId]/menu/page": "app/owner/dashboard/restaurants/[restaurantId]/menu/page.js",
+  "/owner/dashboard/restaurants/menu/page": "app/owner/dashboard/restaurants/menu/page.js",
   "/owner/dashboard/restaurants/page": "app/owner/dashboard/restaurants/page.js",
   "/owner/login/page": "app/owner/login/page.js",
   "/owner/register/page": "app/owner/register/page.js",
-  "/page": "app/page.js"
+  "/owner/restaurants/[id]/edit/page": "app/owner/restaurants/[id]/edit/page.js",
+  "/owner/restaurants/[id]/menu/page": "app/owner/restaurants/[id]/menu/page.js",
+  "/page": "app/page.js",
+  "/restaurant/[id]/page": "app/restaurant/[id]/page.js"
 }

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Eye, MessageSquare, Star, Edit2, Trash } from "lucide-react"
+import { Star, Edit2, Trash } from "lucide-react"
 import { PublicRestaurant } from "@/data/types/publicRestaurant"
 import { deletePublicRestaurant } from "@/lib/firebase/restaurants"
 
@@ -75,7 +75,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 <Edit2 className="w-4 h-4 mr-2" />
                 Edytuj
               </Button>
-              <Button onClick={() => router.push('/owner/dashboard/menu')} >Dodaje / Edytuj menu</Button>
+              <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)} >Dodaje / Edytuj menu</Button>
               <Button
                 size="sm"
                 variant="destructive"

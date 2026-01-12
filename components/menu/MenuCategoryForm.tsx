@@ -5,10 +5,10 @@ import { Category, Dish } from "@/data/types/dishMenu";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import MenuDishForm from "./MenuDishForm";
-import { set } from "zod";
-import { doc, serverTimestamp, setDoc, updateDoc } from "@firebase/firestore";
+import { doc, serverTimestamp, setDoc, } from "@firebase/firestore";
 import { db } from "@/lib/firebase/client";
 import { getAuth } from "firebase/auth";
+import { useParams } from "next/navigation";
 type CategoryFormData = {
     categoryName: string;
 };
@@ -17,6 +17,12 @@ export const MenuCategoryForm = () => {
     const [categories, setCategories] = useState<Category[]>([]);
     const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
     const { register, handleSubmit, reset } = useForm<CategoryFormData>();
+    const params = useParams<{ id: string }>()
+    const restaurantId = params.id
+    const auth = getAuth();
+
+    console.log("PARAMS:", params)
+    console.log("RESTAURANT ID:", restaurantId)
 
     const onSubmit = (data: CategoryFormData) => {
         const newCategoryId = Date.now().toString();
@@ -49,16 +55,18 @@ export const MenuCategoryForm = () => {
     }
 
     const saveMenuToFirestore = async () => {
-        const auth = getAuth();
 
+        if (!restaurantId) {
+            throw new Error("NO RESTAURANT ID IN URL");
+        }
         console.log("AUTH:", auth.currentUser);
 
         if (!auth.currentUser) {
             throw new Error("AUTH IS NULL – USER NOT LOGGED IN");
         }
 
-        const firmId = "firmId";
-        const restaurantId = "kuzaAbCjUqAwlJntJpyc";
+        const firmId = auth.currentUser.uid;
+
 
         const menuRef = doc(
             db,

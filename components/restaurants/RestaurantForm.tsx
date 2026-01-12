@@ -13,6 +13,7 @@ import {
 
 import { createPublickRestaurantSchema } from "@/lib/validators/createPublickRestaurantSchema"
 import { CreatePublicRestaurantForm } from "@/data/types/createPublicRestaurantForm"
+import { createRestaurant } from "@/lib/firebase/restaurants"
 import { CUISINES } from "@/data/constans/cusines"
 import { useRouter } from "next/navigation"
 
@@ -63,26 +64,26 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     }, [restaurantId, user, reset])
 
     const onSubmit = async (data: CreatePublicRestaurantForm) => {
-        if (!user) {
-            alert("Użytkownik nie zalogowany")
-            return
-        }
+        if (!user) return
 
         try {
             if (restaurantId) {
                 await updatePublicRestaurant(restaurantId, data)
                 alert("Zapisano zmiany")
             } else {
-                const docRef = await createPublicRestaurant(data, user.uid)
-                console.log("Nowa restauracja utworzona:", docRef.id)
-                reset()
-                alert("Dodano restaurację")
+                const newRestaurantId = await createRestaurant(data, user.uid)
+
+                router.push(
+                    `/owner/restaurants/${newRestaurantId}/menu`
+                )
             }
         } catch (error: any) {
-            console.error("Błąd zapisu restauracji:", error)
-            alert(`Nie udało się dodać restauracji: ${error.message}`)
+            console.error(error)
+            alert(error.message)
         }
     }
+
+
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xl space-y-4">
