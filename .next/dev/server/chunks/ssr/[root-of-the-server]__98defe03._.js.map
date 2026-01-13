@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/dashboard/subscription/page.tsx"],"sourcesContent":["const SubscriptionPage = () => {\n    return (\n        <div className=\"p-10 h-[80vh] max-w-4xl mx-auto\">\n            <h1 className=\"text-3xl font-bold mb-4\">Subskrypcja</h1>\n            <p>Witamy na stronie zarządzania subskrypcją! Tutaj możesz przeglądać i aktualizować swoje plany subskrypcji, zarządzać płatnościami oraz przeglądać historię faktur.</p>\n        </div>\n    );\n}\nexport default SubscriptionPage;"],"names":[],"mappings":";;;;;;AAAA,MAAM,mBAAmB;IACrB,qBACI,8OAAC;QAAI,WAAU;;0BACX,8OAAC;gBAAG,WAAU;0BAA0B;;;;;;0BACxC,8OAAC;0BAAE;;;;;;;;;;;;AAGf;uCACe"}}]
+}

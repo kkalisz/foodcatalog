@@ -11,7 +11,7 @@ interface Restaurant {
   city: string,
   category?: string,
   shortDescription?: string,
-  coverImage?: string
+  coverImage?: string | null,
   rating?: string
   reviewsCount?: string
   status?: string

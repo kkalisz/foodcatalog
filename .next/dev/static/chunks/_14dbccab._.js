@@ -1162,6 +1162,7 @@ function OwnerDashboard() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                 variant: "outline",
                                                 className: "w-full bg-transparent text-sm sm:text-base h-10 sm:h-11",
+                                                onClick: ()=>router.push('/help'),
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_need_help_button")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
@@ -1182,7 +1183,7 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_header")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 179,
+                                                lineNumber: 182,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1196,7 +1197,7 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 182,
+                                                                lineNumber: 185,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1204,13 +1205,13 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_starter")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 183,
+                                                                lineNumber: 186,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 181,
+                                                        lineNumber: 184,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1221,7 +1222,7 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_period")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 186,
+                                                                lineNumber: 189,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1229,13 +1230,13 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_period_monthly")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 187,
+                                                                lineNumber: 190,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 185,
+                                                        lineNumber: 188,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1246,7 +1247,7 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_amount")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 190,
+                                                                lineNumber: 193,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1254,13 +1255,13 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_price")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 191,
+                                                                lineNumber: 194,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 192,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1269,19 +1270,19 @@ function OwnerDashboard() {
                                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_manage_subscription")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 193,
+                                                        lineNumber: 196,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 183,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 181,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -1307,7 +1308,7 @@ function OwnerDashboard() {
                 onClose: handleCloseModal
             }, void 0, false, {
                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                lineNumber: 203,
+                lineNumber: 206,
                 columnNumber: 25
             }, this)
         ]

@@ -9,16 +9,29 @@ import { Star, MapPin, Phone, Clock, Globe, ChevronLeft } from "lucide-react"
 import Link from "next/link"
 import { RestaurantMap } from "@/components/restaurant-map"
 
-import { doc, getDoc } from "firebase/firestore"
+import { doc, getDoc, } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
+import { Wrapper } from "@/components/ui/wrapper"
 
+type Dish = {
+  id: string
+  name: string
+  price: number
+  description?: string
+}
+
+type Category = {
+  id: string
+  name: string
+  dishes: Dish[]
+}
 
 const RestaurantPage = () => {
   const [restaurant, setRestaurant] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [reviewText, setReviewText] = useState("")
   const [userRating, setUserRating] = useState(0)
-  const [menu, setMenu] = useState<any[]>([])
+  const [menu, setMenu] = useState<Category[]>([])
 
   const { id } = useParams<{ id: string }>()
   useEffect(() => {
@@ -31,6 +44,7 @@ const RestaurantPage = () => {
         if (snapshot.exists()) {
           setRestaurant({ id: snapshot.id, ...snapshot.data() })
         }
+
       } catch (error) {
         console.error("Error fetching restaurant:", error)
       } finally {
@@ -38,6 +52,29 @@ const RestaurantPage = () => {
       }
     }
     fetchRestaurant()
+
+    const fetchMenu = async () => {
+      try {
+        const menuRef = doc(
+          db,
+          "public_restaurants",
+          id,
+          "menu",
+          "main"
+        )
+
+        const menuSnap = await getDoc(menuRef)
+
+        if (menuSnap.exists()) {
+          setMenu(menuSnap.data().categories || [])
+        } else {
+          setMenu([])
+        }
+      } catch (error) {
+        console.error("Error fetching menu:", error)
+      }
+    }
+    fetchMenu()
   }, [id])
   const handleSubmitReview = () => {
     setReviewText("")
@@ -52,12 +89,16 @@ const RestaurantPage = () => {
     return <p className="p-6">Nie znaleziono lokalu</p>
   }
 
+  if (!id) return
+
+
+
   return (
     <main className="min-h-screen bg-background">
       {/* Header Image - Mobile optimized */}
       <div className="relative h-64 sm:h-80 md:h-96 bg-muted overflow-hidden">
         <img
-          src={restaurant.coverImage}
+          src={restaurant.coverImage || null}
           alt={restaurant.name}
           className="w-full h-full object-cover"
         />
@@ -71,7 +112,7 @@ const RestaurantPage = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
         {/* Restaurant Info - Mobile: stacked, Tablet+: grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
           {/* Main Info */}
           <div className="md:col-span-2">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -91,7 +132,8 @@ const RestaurantPage = () => {
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-muted-foreground mb-6">{restaurant.shortDescription}</p>
+
+
 
             {/* Cuisine Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
@@ -108,13 +150,13 @@ const RestaurantPage = () => {
 
           {/* Contact Card - Mobile: full width at top, Tablet+: sidebar */}
           <Card className="p-4 sm:p-6 h-fit md:col-span-1 order-first md:order-last">
-            <h3 className="font-bold text-base sm:text-lg mb-4">Contact</h3>
+            <h3 className="font-bold text-base sm:text-lg mb-4">Dane kontaktowe</h3>
             <div className="space-y-4">
               {/* Address */}
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Address</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Adres</p>
                   <p className="text-sm sm:text-base font-medium text-foreground">{restaurant.city}</p>
                 </div>
               </div>
@@ -123,7 +165,7 @@ const RestaurantPage = () => {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Telefon</p>
                   <a
                     href={`tel:${restaurant.phone}`}
                     className="text-sm sm:text-base font-medium text-primary hover:underline"
@@ -137,7 +179,7 @@ const RestaurantPage = () => {
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Hours</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Godziny otwarcia</p>
                   <p className="text-sm sm:text-base font-medium text-foreground">{restaurant.hours}</p>
                 </div>
               </div>
@@ -160,15 +202,39 @@ const RestaurantPage = () => {
                 </div>
               )}
 
-              <Button className="w-full mt-6 text-sm sm:text-base h-10 sm:h-11">Reserve a Table</Button>
+              <Button className="w-full mt-6 text-sm sm:text-base h-10 sm:h-11">Zarezerwuj stolik</Button>
             </div>
           </Card>
+          <Card><p className="p-2 ">{restaurant.shortDescription}</p></Card>
         </div>
 
         {/* Menu Section */}
-        <div className="mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Menu</h2>
-
+        <div className="mb-8 sm:mb-10 border p-5  pb-8 sm:pb-10 rounded-lg bg-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Nasze Menu</h2>
+          {menu.length === 0 ? (
+            <p className="text-sm sm:text-base text-muted-foreground">Menu is not available at the moment.</p>
+          ) : (
+            menu.map((category) => (
+              <div key={category.id} className="mb-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">{category.name}</h3>
+                <div className="space-y-6">
+                  {category.dishes.map((dish) => (
+                    <div key={dish.id} className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-medium text-foreground">{dish.name}</h4>
+                        {dish.description && (
+                          <p className="text-sm sm:text-base text-muted-foreground mt-1">{dish.description}</p>
+                        )}
+                      </div>
+                      <span className="text-sm sm:text-base font-medium text-foreground">
+                        {dish.price.toFixed(2)} zł
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         {/* Map and Reviews - Mobile: stacked, Desktop: grid */}
@@ -187,7 +253,7 @@ const RestaurantPage = () => {
 
               {/* Rating */}
               <div className="mb-4">
-                <label className="text-xs sm:text-sm font-medium text-foreground block mb-3">Rating</label>
+                <label className="text-xs sm:text-sm font-medium text-foreground block mb-3">Ocena</label>
                 <div className="flex gap-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button
@@ -206,9 +272,9 @@ const RestaurantPage = () => {
 
               {/* Review Text */}
               <div className="mb-4">
-                <label className="text-xs sm:text-sm font-medium text-foreground block mb-2">Your Review</label>
+                <label className="text-xs sm:text-sm font-medium text-foreground block mb-2">Twoje oceny</label>
                 <Textarea
-                  placeholder="Share your dining experience..."
+                  placeholder="Opisz swoje doświadczenia..."
                   value={reviewText}
                   onChange={(e) => setReviewText(e.target.value)}
                   className="min-h-20 sm:min-h-24 text-sm"
@@ -220,13 +286,13 @@ const RestaurantPage = () => {
                 disabled={!reviewText || userRating === 0}
                 className="w-full text-sm sm:text-base h-10 sm:h-11"
               >
-                Post Review
+                Dodaj recenzję
               </Button>
             </Card>
 
             {/* Reviews List */}
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-base sm:text-lg mb-6">Recent Reviews</h3>
+              <h3 className="font-bold text-base sm:text-lg mb-6">Ostatnie oceny</h3>
 
             </Card>
           </div>

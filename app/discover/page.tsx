@@ -10,6 +10,7 @@ import { Timestamp } from "firebase/firestore"
 
 //Types
 import { usePublickRestaurants } from "@/data/hooks/usePublickRestaurants"
+import { Wrapper } from "@/components/ui/wrapper"
 
 
 export default function DiscoverPage() {
@@ -23,7 +24,7 @@ export default function DiscoverPage() {
   }
   return (
     <main className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
+      <Wrapper>
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{t("discover_page_header")}</h1>
@@ -63,7 +64,7 @@ export default function DiscoverPage() {
             <RestaurantCard key={restaurant.createdAt} restaurant={{ ...restaurant, createdAt: Timestamp.fromMillis(restaurant.createdAt) }} />
           ))}
         </div>
-      </div>
+      </Wrapper>
       {resteurants.length === 0 ? <Card className="p-8 sm:p-12 text-center">
         <p className="text-sm sm:text-base text-muted-foreground mb-2">No restaurants found</p>
         <p className="text-xs sm:text-sm text-muted-foreground">Try adjusting your search or filters</p>

@@ -86,7 +86,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xl space-y-4">
+
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full p-20 space-y-4">
             {/* NAZWA */}
             <div>
                 <input
@@ -112,16 +113,26 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             {/* KUCHNIE */}
             <div>
                 <p className="font-medium mb-2">Rodzaj kuchni</p>
-                <div className="space-y-2">
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     {CUISINES.map((cuisine) => (
-                        <label key={cuisine} className="flex items-center gap-2 border p-2 rounded">
-                            <input type="checkbox" value={cuisine} {...register("category")} />
+                        <label
+                            key={cuisine}
+                            className="flex items-center gap-2 border p-2 rounded"
+                        >
+                            <input
+                                type="checkbox"
+                                value={cuisine}
+                                {...register("category")}
+                            />
                             <span>{cuisine}</span>
                         </label>
                     ))}
                 </div>
+
                 <p className="text-red-600">{errors.category?.message}</p>
             </div>
+
 
             {/* OPIS */}
             <div>
@@ -169,5 +180,6 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                 {isSubmitting ? "Zapisywanie..." : restaurantId ? "Zapisz zmiany" : "Dodaj restaurację"}
             </button>
         </form>
+
     )
 }

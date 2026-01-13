@@ -248,7 +248,7 @@ const RestaurantForm = ({ restaurantId })=>{
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
         onSubmit: handleSubmit(onSubmit),
-        className: "w-full max-w-xl space-y-4",
+        className: "w-full p-20 space-y-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
@@ -259,7 +259,7 @@ const RestaurantForm = ({ restaurantId })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 92,
+                        lineNumber: 93,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -267,13 +267,13 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: errors.name?.message
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 98,
+                        lineNumber: 99,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 91,
+                lineNumber: 92,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -285,7 +285,7 @@ const RestaurantForm = ({ restaurantId })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 103,
+                        lineNumber: 104,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -293,13 +293,13 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: errors.city?.message
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 109,
+                        lineNumber: 110,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 102,
+                lineNumber: 103,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -309,11 +309,11 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: "Rodzaj kuchni"
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 114,
+                        lineNumber: 115,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "space-y-2",
+                        className: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-8",
                         children: __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$constans$2f$cusines$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CUISINES"].map((cuisine)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 className: "flex items-center gap-2 border p-2 rounded",
                                 children: [
@@ -323,25 +323,25 @@ const RestaurantForm = ({ restaurantId })=>{
                                         ...register("category")
                                     }, void 0, false, {
                                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 123,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: cuisine
                                     }, void 0, false, {
                                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 128,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, cuisine, true, {
                                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                                lineNumber: 117,
+                                lineNumber: 119,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 115,
+                        lineNumber: 117,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -349,13 +349,13 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: errors.category?.message
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 123,
+                        lineNumber: 133,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 113,
+                lineNumber: 114,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -367,7 +367,7 @@ const RestaurantForm = ({ restaurantId })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 128,
+                        lineNumber: 139,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -375,13 +375,13 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: errors.shortDescription?.message
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 134,
+                        lineNumber: 145,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 127,
+                lineNumber: 138,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -393,7 +393,7 @@ const RestaurantForm = ({ restaurantId })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 138,
+                        lineNumber: 149,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -401,13 +401,13 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: errors.shortDescription?.message
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 144,
+                        lineNumber: 155,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 137,
+                lineNumber: 148,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -418,7 +418,7 @@ const RestaurantForm = ({ restaurantId })=>{
                         className: "w-full p-4 border rounded"
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 149,
+                        lineNumber: 160,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -426,13 +426,13 @@ const RestaurantForm = ({ restaurantId })=>{
                         children: errors.coverImage?.message
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 154,
+                        lineNumber: 165,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 148,
+                lineNumber: 159,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -443,20 +443,20 @@ const RestaurantForm = ({ restaurantId })=>{
                         ...register("delivery")
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 159,
+                        lineNumber: 170,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         children: "Dostawa"
                     }, void 0, false, {
                         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                        lineNumber: 160,
+                        lineNumber: 171,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 158,
+                lineNumber: 169,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -466,13 +466,13 @@ const RestaurantForm = ({ restaurantId })=>{
                 children: isSubmitting ? "Zapisywanie..." : restaurantId ? "Zapisz zmiany" : "Dodaj restaurację"
             }, void 0, false, {
                 fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-                lineNumber: 164,
+                lineNumber: 175,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/restaurants/RestaurantForm.tsx",
-        lineNumber: 89,
+        lineNumber: 90,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

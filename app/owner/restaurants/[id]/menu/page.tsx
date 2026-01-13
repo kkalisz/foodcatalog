@@ -1,9 +1,10 @@
 import MenuForm from "@/components/menu/MenuCategoryForm";
+import { Wrapper } from "@/components/ui/wrapper";
 
 const Menu = () => {
-    return <div className="flex flex-col items-center justify-center h-full w-full h-full pt-20">
+    return <Wrapper>
         <MenuForm></MenuForm>
-    </div>;
+    </Wrapper>;
 };
 
 export default Menu;

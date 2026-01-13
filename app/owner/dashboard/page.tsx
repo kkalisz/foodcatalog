@@ -15,7 +15,7 @@ import { PublicRestaurant } from "../../../data/types/publicRestaurant"
 import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
 import { t } from "i18next"
-import { error } from "console"
+
 // Mock owner data
 const OWNER_STATS = {
   totalViews: 2451,
@@ -169,7 +169,10 @@ export default function OwnerDashboard() {
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                 {t("owner_dashboard_need_help_about")}
               </p>
-              <Button variant="outline" className="w-full bg-transparent text-sm sm:text-base h-10 sm:h-11">
+              <Button
+                variant="outline"
+                className="w-full bg-transparent text-sm sm:text-base h-10 sm:h-11"
+                onClick={() => router.push('/help')}>
                 {t("owner_dashboard_need_help_button")}
               </Button>
             </Card>
@@ -190,7 +193,10 @@ export default function OwnerDashboard() {
                   <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan_amount")}</span>
                   <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_price")}</span>
                 </div>
-                <Button variant="outline" className="w-full mt-4 bg-transparent text-sm h-10 sm:h-11">
+                <Button
+                  variant="outline"
+                  className="w-full mt-4 bg-transparent text-sm h-10 sm:h-11"
+                  onClick={() => router.push('dashboard/subscription')}>
                   {t("owner_dashboard_manage_subscription")}
                 </Button>
               </div>

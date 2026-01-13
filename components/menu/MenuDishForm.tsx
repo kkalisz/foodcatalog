@@ -44,7 +44,7 @@ const MenuDishForm = ({ onAddDish }: MenuDishFormProps) => {
             <textarea
                 {...register("description")}
                 placeholder="Opis"
-                className="w-100 h-50 p-2 border rounded"
+                className="w-full h-50 p-2 border rounded"
             />
 
             <input

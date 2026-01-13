@@ -1,4 +1,5 @@
 import { RestaurantForm } from "@/components/restaurants/RestaurantForm"
+import { Wrapper } from "@/components/ui/wrapper"
 
 export default async function EditRestaurantPage({
     params,
@@ -7,8 +8,8 @@ export default async function EditRestaurantPage({
 }) {
     const { id } = await params
 
-    return (<div className="flex flex-col items-center justify-center h-full w-full pt-20">
+    return (<Wrapper >
         <RestaurantForm restaurantId={id} />
-    </div>
+    </Wrapper>
     )
 }
