@@ -7,8 +7,14 @@ export type Dish = {
     imageUrl?: string;
 }
 
+
+
 export type Category = {
-    id: string;
     name: string;
-    dishes: Dish[];
+    id: string;
+    dishes: Dish[]
 }
+export type MenuForm = {
+    categories: Category[];
+}
+

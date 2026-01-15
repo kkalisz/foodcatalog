@@ -11,6 +11,7 @@ import { getAuth } from "firebase/auth";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import * as Select from "@radix-ui/react-select"
+import { PageSizeWrapper } from "../ui/wrapper";
 type CategoryFormData = {
     categoryName: string;
 };
@@ -129,7 +130,8 @@ export const MenuCategoryForm = () => {
         fetchMenu()
     }, [restaurantId])
     return (
-        <div className="h-80vh overflow-y-auto p-4">
+
+        <div className="h-[80vh] overflow-y-auto p-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-2 gap-2 mb-3">
                 <input
                     {...register("categoryName")}
@@ -242,6 +244,7 @@ export const MenuCategoryForm = () => {
                     Powrót do restauracji
                 </Button></div>
         </div>
+
     );
 };
 export default MenuCategoryForm;

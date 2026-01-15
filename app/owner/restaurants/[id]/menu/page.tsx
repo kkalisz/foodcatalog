@@ -1,10 +1,10 @@
 import MenuForm from "@/components/menu/MenuCategoryForm";
-import { Wrapper } from "@/components/ui/wrapper";
+import { PageSizeWrapper } from "@/components/ui/wrapper";
 
 const Menu = () => {
-    return <Wrapper>
+    return <PageSizeWrapper>
         <MenuForm></MenuForm>
-    </Wrapper>;
+    </PageSizeWrapper>;
 };
 
 export default Menu;

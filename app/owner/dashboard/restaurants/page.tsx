@@ -2,15 +2,16 @@
 import { useAuth } from "@/providers/AuthContext"
 
 import { RestaurantForm } from "@/components/restaurants/RestaurantForm";
-import { Wrapper } from "@/components/ui/wrapper";
+import { PageSizeWrapper } from "@/components/ui/wrapper";
+
 
 export const NewResteurant = () => {
 
     const { user, logout } = useAuth();
 
-    return <Wrapper>
+    return <PageSizeWrapper>
         <RestaurantForm />
-    </Wrapper>
+    </PageSizeWrapper>
 
 }
 export default NewResteurant
