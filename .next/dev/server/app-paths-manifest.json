@@ -1,4 +1,5 @@
 {
+  "/api/auth/route": "app/api/auth/route.js",
   "/owner/dashboard/menuTest/page": "app/owner/dashboard/menuTest/page.js",
   "/owner/dashboard/page": "app/owner/dashboard/page.js",
   "/owner/login/page": "app/owner/login/page.js",

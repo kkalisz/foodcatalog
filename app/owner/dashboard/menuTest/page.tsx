@@ -4,11 +4,21 @@ import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { Flex, Button } from "@radix-ui/themes";
 
 import "./style.css";
-import CategoryForm from "@/components/ui/categoryForm";
+import CategoryForm from "@/components/ui/form/categoryForm";
 import { MenuForm } from "@/data/types/dishMenu";
 
 const MenuTest = () => {
-    const form = useForm<MenuForm>({ defaultValues: { categories: [{ name: "", id: "", dishes: [] }] }, mode: "onSubmit", reValidateMode: "onSubmit" });
+    const form = useForm<MenuForm>({
+        defaultValues: {
+            categories: [{
+                name: "",
+                id: "",
+                dishes: []
+            }]
+        },
+        mode: "onSubmit",
+        reValidateMode: "onSubmit"
+    });
     const { handleSubmit, formState: { errors }, control } = form
     const { append, remove, fields: categories } = useFieldArray({
         name: "categories", control
@@ -25,12 +35,12 @@ const MenuTest = () => {
 
     }
 
-    const onSubmit = (data: any) => {
+    const onMenuSubmit = (data: any) => {
         console.log("czesc");
     }
     return (<PageSizeWrapper>
         <div className="p-10 text-center">Menu Testowe</div>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-10">
+        <form onSubmit={handleSubmit(onMenuSubmit)} className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3">
                 {categories.map((category, index) =>
                     <CategoryForm
@@ -44,13 +54,13 @@ const MenuTest = () => {
                 )}
             </div>
             <Flex gap="3">
-                <Button type="submit" onClick={onAddNewCategory} color="cyan" variant="soft">
+                <Button type="button" onClick={onAddNewCategory} color="cyan" variant="soft">
                     Dodaj nową kategorie
                 </Button>
             </Flex>
 
             <Flex gap="3">
-                <Button onClick={onSubmit} color="blue" variant="surface">
+                <Button onSubmit={onMenuSubmit} color="blue" variant="surface">
                     Zapisz menu
                 </Button>
             </Flex>

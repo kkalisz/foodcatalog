@@ -249,9 +249,8 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                 }, ("TURBOPACK compile-time value", void 0))),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                 color: "gold",
-                type: "submit",
+                type: "button",
                 onClick: onAddNewDish,
-                onSubmit: ()=>handleSubmit,
                 children: "Dodaj danie"
             }, void 0, false, {
                 fileName: "[project]/components/ui/categoryForm.tsx",
@@ -328,7 +327,7 @@ const MenuTest = ()=>{
         };
         append(newCategory);
     };
-    const onSubmit = (data)=>{
+    const onMenuSubmit = (data)=>{
         console.log("czesc");
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$wrapper$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PageSizeWrapper"], {
@@ -338,11 +337,11 @@ const MenuTest = ()=>{
                 children: "Menu Testowe"
             }, void 0, false, {
                 fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                lineNumber: 32,
+                lineNumber: 42,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                onSubmit: handleSubmit(onSubmit),
+                onSubmit: handleSubmit(onMenuSubmit),
                 className: "flex flex-col gap-10",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -354,59 +353,59 @@ const MenuTest = ()=>{
                                 onRemoveCategory: ()=>remove(index)
                             }, category.id, false, {
                                 fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                                lineNumber: 36,
+                                lineNumber: 46,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                        lineNumber: 34,
+                        lineNumber: 44,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$flex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Flex"], {
                         gap: "3",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                            type: "submit",
+                            type: "button",
                             onClick: onAddNewCategory,
                             color: "cyan",
                             variant: "soft",
                             children: "Dodaj nową kategorie"
                         }, void 0, false, {
                             fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                            lineNumber: 47,
+                            lineNumber: 57,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                        lineNumber: 46,
+                        lineNumber: 56,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$flex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Flex"], {
                         gap: "3",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                            onClick: onSubmit,
+                            onSubmit: onMenuSubmit,
                             color: "blue",
                             variant: "surface",
                             children: "Zapisz menu"
                         }, void 0, false, {
                             fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                            lineNumber: 53,
+                            lineNumber: 63,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 62,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                lineNumber: 33,
+                lineNumber: 43,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-        lineNumber: 31,
+        lineNumber: 41,
         columnNumber: 13
     }, ("TURBOPACK compile-time value", void 0));
 };

@@ -63,6 +63,7 @@
 
 @layer theme {
   :root, :host {
+    --color-red-500: #fb2c36;
     --color-red-600: #e40014;
     --color-yellow-100: #fef9c2;
     --color-yellow-700: #a36100;
@@ -122,6 +123,7 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
+      --color-red-500: lab(55.4814% 75.0732 48.8528);
       --color-red-600: lab(48.4493% 77.4328 61.5452);
       --color-yellow-100: lab(97.3564% -4.51407 27.344);
       --color-yellow-700: lab(47.8202% 25.2426 66.5015);
@@ -822,6 +824,10 @@
     animation: var(--animate-spin);
   }
 
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
   .cursor-pointer {
     cursor: pointer;
   }
@@ -852,6 +858,10 @@
 
   .flex-col {
     flex-direction: column;
+  }
+
+  .flex-row {
+    flex-direction: row;
   }
 
   .flex-wrap {
@@ -988,10 +998,6 @@
     border-radius: var(--radius);
   }
 
-  .rounded-sm {
-    border-radius: calc(var(--radius)  - 2px);
-  }
-
   .rounded-xl {
     border-radius: calc(var(--radius)  + 4px);
   }
@@ -1054,6 +1060,10 @@
     .border-primary\/20 {
       border-color: color-mix(in oklab, var(--primary) 20%, transparent);
     }
+  }
+
+  .border-red-500 {
+    border-color: var(--color-red-500);
   }
 
   .border-t-transparent {
@@ -1503,6 +1513,10 @@
     color: var(--primary-foreground);
   }
 
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+
   .text-red-600 {
     color: var(--color-red-600);
   }
@@ -1526,6 +1540,10 @@
   .antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .opacity-50 {
+    opacity: .5;
   }
 
   .shadow-lg {
@@ -2319,18 +2337,6 @@
   @media (min-width: 80rem) {
     .xl\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .xl\:grid-cols-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .xl\:grid-cols-5 {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
 
