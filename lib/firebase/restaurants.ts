@@ -13,6 +13,8 @@ import { db } from "./client"
 import { generateSlug } from "@/lib/utils/slug"
 import { CreatePublicRestaurantForm } from "@/data/types/createPublicRestaurantForm"
 import { PublicRestaurant } from "@/data/types/publicRestaurant"
+import { useEffect, useState } from "react"
+import { useAuth } from "@/providers/AuthContext"
 
 export const createRestaurant = async (
     data: CreatePublicRestaurantForm,
@@ -89,6 +91,31 @@ export const updatePublicRestaurant = async (
 export const deletePublicRestaurant = async (restaurantId: string) => {
     const ref = doc(db, "public_restaurants", restaurantId)
     await deleteDoc(ref)
+}
+
+export const useFirmId = () => {
+    const { user } = useAuth()
+    const [firmId, setFirmId] = useState<string | null>(null)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const loadFirmId = async () => {
+            if (!user) return
+
+            const userRef = doc(db, "users", user.uid)
+            const snap = await getDoc(userRef)
+
+            if (snap.exists()) {
+                setFirmId(snap.data().firmId)
+            }
+
+            setLoading(false)
+        }
+
+        loadFirmId()
+    }, [user])
+
+    return { firmId, loading }
 }
 /** READ – pobranie restauracji do edycji */
 export const getRestaurantById = async (

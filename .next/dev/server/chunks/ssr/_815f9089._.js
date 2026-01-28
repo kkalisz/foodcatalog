@@ -220,7 +220,7 @@ const MenuCategoryForm = ()=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 136,
+                        lineNumber: 139,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -228,13 +228,13 @@ const MenuCategoryForm = ()=>{
                         children: "Dodaj kategorię"
                     }, void 0, false, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 142,
+                        lineNumber: 145,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                lineNumber: 135,
+                lineNumber: 138,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             categories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -243,7 +243,7 @@ const MenuCategoryForm = ()=>{
                     children: category.name
                 }, category.id, false, {
                     fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                    lineNumber: 145,
+                    lineNumber: 148,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))),
             activeCategoryId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -258,20 +258,20 @@ const MenuCategoryForm = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 158,
+                        lineNumber: 161,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$menu$2f$MenuDishForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         onAddDish: addDishToActiveCategory
                     }, void 0, false, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 162,
+                        lineNumber: 165,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                lineNumber: 157,
+                lineNumber: 160,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -284,7 +284,7 @@ const MenuCategoryForm = ()=>{
                                 children: category.name
                             }, void 0, false, {
                                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                lineNumber: 168,
+                                lineNumber: 171,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             category.dishes.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -292,7 +292,7 @@ const MenuCategoryForm = ()=>{
                                 children: "Brak dań"
                             }, void 0, false, {
                                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                lineNumber: 171,
+                                lineNumber: 174,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0)),
                             category.dishes.map((dish)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -312,7 +312,7 @@ const MenuCategoryForm = ()=>{
                                                         placeholder: "Nazwa dania"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 181,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -325,7 +325,7 @@ const MenuCategoryForm = ()=>{
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 189,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -338,13 +338,13 @@ const MenuCategoryForm = ()=>{
                                                         rows: 2
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                        lineNumber: 192,
+                                                        lineNumber: 195,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 180,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -358,7 +358,7 @@ const MenuCategoryForm = ()=>{
                                                                 children: "Cena"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                                lineNumber: 205,
+                                                                lineNumber: 208,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -370,13 +370,13 @@ const MenuCategoryForm = ()=>{
                                                                 className: "w-24 rounded border px-2 py-1 text-right font-semibold"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                                lineNumber: 206,
+                                                                lineNumber: 209,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 207,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -385,35 +385,35 @@ const MenuCategoryForm = ()=>{
                                                         children: "Usuń"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                        lineNumber: 218,
+                                                        lineNumber: 221,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 206,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 178,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, dish.id, false, {
                                     fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                                    lineNumber: 174,
+                                    lineNumber: 177,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)))
                         ]
                     }, category.id, true, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 167,
+                        lineNumber: 170,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                lineNumber: 165,
+                lineNumber: 168,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -425,28 +425,28 @@ const MenuCategoryForm = ()=>{
                         children: "Zapisz menu"
                     }, void 0, false, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 234,
+                        lineNumber: 237,
                         columnNumber: 46
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                         onClick: ()=>router.push(`/restaurant/${restaurantId}`),
                         className: "mt-6 bg-green-600 text-white",
-                        children: "Powrót do restauracji"
+                        children: "Powrót do restauracjii"
                     }, void 0, false, {
                         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                        lineNumber: 240,
+                        lineNumber: 243,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-                lineNumber: 234,
+                lineNumber: 237,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/menu/MenuCategoryForm.tsx",
-        lineNumber: 134,
+        lineNumber: 136,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

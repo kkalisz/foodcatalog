@@ -7,7 +7,6 @@ import { Star, Edit2, Trash } from "lucide-react"
 import { PublicRestaurant } from "@/data/types/publicRestaurant"
 import { deletePublicRestaurant } from "@/lib/firebase/restaurants"
 
-
 type RestaurantsListProps = {
   restaurants: PublicRestaurant[]
 }
@@ -75,8 +74,9 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 <Edit2 className="w-4 h-4 mr-2" />
                 Edytuj
               </Button>
-              <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)} >Dodaje / Edytuj menu</Button>
-              <Button onClick={() => router.push(`/owner/dashboard/menuTest`)} >menu testowe</Button>
+              <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)} >
+                Dodaje / Edytuj menu
+              </Button>
               <Button
                 size="sm"
                 variant="destructive"

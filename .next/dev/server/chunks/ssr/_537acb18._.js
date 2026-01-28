@@ -99,6 +99,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$u
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-hook-form/dist/index.esm.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$form$2f$label$2f$InputLabel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/form/label/InputLabel.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$form$2f$label$2f$ErrorLabel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/form/label/ErrorLabel.tsx [app-ssr] (ecmascript)");
+"use client";
 ;
 ;
 ;
@@ -106,7 +107,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$form$2f$
 ;
 const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
     const { control, register, formState: { errors }, handleSubmit } = form;
-    const { append, remove, fields: dishes } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useFieldArray"])({
+    const { append, remove: removeDish, fields: dishes } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useFieldArray"])({
         name: `categories.${index}.dishes`,
         control
     });
@@ -118,9 +119,6 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
             description: ""
         };
         append(newDish);
-    };
-    const removeDish = ()=>{
-        remove(index);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$flex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Flex"], {
         direction: "column",
@@ -137,12 +135,12 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                     color: "green"
                 }, category.id, false, {
                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                    lineNumber: 38,
+                    lineNumber: 40,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/ui/form/categoryForm.tsx",
-                lineNumber: 37,
+                lineNumber: 39,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             dishes.map((dish, indexDish)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -156,7 +154,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                     children: "Nazwa dania"
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 52,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Box"], {
@@ -175,7 +173,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                            lineNumber: 52,
+                                            lineNumber: 54,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         errors.categories?.[index]?.dishes?.[indexDish]?.name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -187,19 +185,19 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                             children: errors.categories?.[index]?.dishes?.[indexDish]?.name?.message
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 58,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 53,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                            lineNumber: 49,
+                            lineNumber: 51,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -210,7 +208,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                     children: "Krótki opis"
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 66,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$text$2d$area$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TextArea"], {
@@ -226,7 +224,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 67,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$form$2f$label$2f$ErrorLabel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -234,13 +232,13 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                     id: "minLength"
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 70,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                            lineNumber: 63,
+                            lineNumber: 65,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -249,7 +247,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                     children: "Cena:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 74,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Box"], {
@@ -267,7 +265,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 76,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -279,40 +277,40 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                                             children: errors.categories?.[index]?.dishes?.[indexDish]?.price?.message
                                         }, void 0, false, {
                                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                            lineNumber: 77,
+                                            lineNumber: 79,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 75,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                            lineNumber: 71,
+                            lineNumber: 73,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Box"], {
                             maxWidth: "200px",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                onClick: ()=>remove(indexDish),
+                                onClick: ()=>removeDish(indexDish),
                                 children: "Usuń danie"
                             }, void 0, false, {
                                 fileName: "[project]/components/ui/form/categoryForm.tsx",
-                                lineNumber: 83,
+                                lineNumber: 85,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/ui/form/categoryForm.tsx",
-                            lineNumber: 82,
+                            lineNumber: 84,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, dish.id, true, {
                     fileName: "[project]/components/ui/form/categoryForm.tsx",
-                    lineNumber: 48,
+                    lineNumber: 50,
                     columnNumber: 43
                 }, ("TURBOPACK compile-time value", void 0))),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -322,7 +320,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                 children: "Dodaj danie"
             }, void 0, false, {
                 fileName: "[project]/components/ui/form/categoryForm.tsx",
-                lineNumber: 86,
+                lineNumber: 88,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -332,13 +330,13 @@ const CategoryForm = ({ form, index, category, onRemoveCategory })=>{
                 children: "Usuń kategorię"
             }, void 0, false, {
                 fileName: "[project]/components/ui/form/categoryForm.tsx",
-                lineNumber: 87,
+                lineNumber: 90,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, category.id, true, {
         fileName: "[project]/components/ui/form/categoryForm.tsx",
-        lineNumber: 35,
+        lineNumber: 37,
         columnNumber: 12
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -405,7 +403,7 @@ const MenuTest = ()=>{
                 children: "Menu Testowe"
             }, void 0, false, {
                 fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                lineNumber: 42,
+                lineNumber: 44,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -421,12 +419,12 @@ const MenuTest = ()=>{
                                 onRemoveCategory: ()=>remove(index)
                             }, category.id, false, {
                                 fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                                lineNumber: 46,
+                                lineNumber: 48,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                        lineNumber: 44,
+                        lineNumber: 46,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$flex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Flex"], {
@@ -439,12 +437,12 @@ const MenuTest = ()=>{
                             children: "Dodaj nową kategorie"
                         }, void 0, false, {
                             fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                            lineNumber: 57,
+                            lineNumber: 58,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                        lineNumber: 56,
+                        lineNumber: 57,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$themes$2f$dist$2f$esm$2f$components$2f$flex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Flex"], {
@@ -456,24 +454,24 @@ const MenuTest = ()=>{
                             children: "Zapisz menu"
                         }, void 0, false, {
                             fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                            lineNumber: 63,
+                            lineNumber: 64,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                        lineNumber: 62,
+                        lineNumber: 63,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-                lineNumber: 43,
+                lineNumber: 45,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/owner/dashboard/menuTest/page.tsx",
-        lineNumber: 41,
+        lineNumber: 43,
         columnNumber: 13
     }, ("TURBOPACK compile-time value", void 0));
 };

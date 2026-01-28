@@ -11,7 +11,7 @@ import { RestaurantMap } from "@/components/restaurant-map"
 
 import { doc, getDoc, } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
-import { Wrapper } from "@/components/ui/wrapper"
+
 
 type Dish = {
   id: string
@@ -227,7 +227,7 @@ const RestaurantPage = () => {
                         )}
                       </div>
                       <span className="text-sm sm:text-base font-medium text-foreground">
-                        {dish.price.toFixed(2)} zł
+                        {Number(dish.price).toFixed(2)} zł
                       </span>
                     </div>
                   ))}

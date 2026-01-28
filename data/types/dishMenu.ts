@@ -1,7 +1,7 @@
 export type Dish = {
     id: string;
     name: string;
-    price: number;
+    price: number | null;
     description?: string;
     ingriediens?: string;
     imageUrl?: string;

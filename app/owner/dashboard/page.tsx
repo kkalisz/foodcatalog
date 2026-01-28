@@ -44,7 +44,7 @@ export default function OwnerDashboard() {
   const { user, logout } = useAuth();
   const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([])
   const [loading, setLodaing] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
 
   const router = useRouter()
 
@@ -124,14 +124,21 @@ export default function OwnerDashboard() {
             icon={Eye}
             trend={OWNER_STATS.monthlyTrend}
           />
-          <DashboardStats title="Reviews" value={OWNER_STATS.totalReviews} icon={MessageSquare} trend={8} />
+          <DashboardStats title="Reviews"
+            value={OWNER_STATS.totalReviews}
+            icon={MessageSquare}
+            trend={8} />
           <DashboardStats
             title="Average Rating"
             value={OWNER_STATS.averageRating}
             icon={TrendingUp}
             trend={2}
           />
-          <DashboardStats title="Active Listings" value={2} icon={BarChart3} trend={0} />
+          <DashboardStats
+            title="Active Listings"
+            value={2}
+            icon={BarChart3}
+            trend={0} />
         </div>
 
         {/* Main Content */}
@@ -141,9 +148,14 @@ export default function OwnerDashboard() {
             <Card className="p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground">{t("restaurants_list_header")}</h2>
-                <Button onClick={() => router.push("/owner/dashboard/restaurants")} className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11">{t("restaurants_list_add_restaurant_btn")}</Button>
+                <Button
+                  onClick={() => router.push("/owner/dashboard/restaurants")}
+                  className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11">{t("restaurants_list_add_restaurant_btn")}
+
+                </Button>
               </div>
-              <RestaurantsList restaurants={restaurants} />
+              <RestaurantsList
+                restaurants={restaurants} />
             </Card>
           </div>
 

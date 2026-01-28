@@ -10,9 +10,6 @@ export const usePublickRestaurants = () => {
 
     const { t } = useTranslation()
     const [searchQuery, setSearchQuery] = useState("")
-    //const [selectedCategory, setSelectedCategory] = useState("All")
-    //const [selectedPrice, setSelectedPrice] = useState("All")
-    //const [showFilters, setShowFilters] = useState(false)
 
     const fetchRestaurants = async () => {
         try {
@@ -41,8 +38,5 @@ export const usePublickRestaurants = () => {
         fetchRestaurants()
         setLoading(true)
     }, [])
-    // Close filters on window resize if desktop
-
-    // Filter restaurants based on search and filters
     return { loading, resteurants, searchQuery, setSearchQuery, t }
 }

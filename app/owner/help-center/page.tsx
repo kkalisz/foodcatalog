@@ -96,7 +96,6 @@ export default function HelpCenterPage() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Contact form submitted:", formData)
     setFormSubmitted(true)
     setFormData({ name: "", email: "", subject: "", message: "" })
     setTimeout(() => setFormSubmitted(false), 5000)
@@ -191,9 +190,8 @@ export default function HelpCenterPage() {
                       >
                         <span className="font-semibold text-foreground text-left">{item.question}</span>
                         <ChevronDown
-                          className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${
-                            expandedFAQ === item.id ? "rotate-180" : ""
-                          }`}
+                          className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${expandedFAQ === item.id ? "rotate-180" : ""
+                            }`}
                         />
                       </button>
 

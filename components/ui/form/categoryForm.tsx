@@ -1,94 +1,188 @@
+"use client";
 
 import { Category, Dish, MenuForm, } from "@/data/types/dishMenu";
 import { Box, Button, Flex, TextArea, TextField } from "@radix-ui/themes";
-import { useFieldArray, useForm, UseFormReturn, useWatch } from "react-hook-form";
-import InputLabel from "./label/InputLabel";
+import { useFieldArray, UseFormReturn } from "react-hook-form";
 import ErrorLabel from "./label/ErrorLabel";
+import { MoveUpIcon, PlusIcon, TrashIcon, } from "lucide-react";
+import DushLenghtInfo from "./menuEditor/DishLenghtInfo";
+import { useMenuForm } from "@/data/hooks/useMenuForm";
+import FormDishContainer from "./formDishContainer/FormDishContainer";
 
-type FormCategoryProps = {
-    form: UseFormReturn<MenuForm, any, MenuForm>,
-    index: number,
+type CategoryFormProps = {
+    form: UseFormReturn<MenuForm>
+    index: number
     category: Category
     onRemoveCategory: () => void
-
 }
 
-const CategoryForm = ({ form, index, category, onRemoveCategory }: FormCategoryProps) => {
-    const { control, register, formState: { errors }, handleSubmit } = form
-    const { append, remove, fields: dishes } = useFieldArray({
-        name: `categories.${index}.dishes`,
-        control
-    })
 
-    const onAddNewDish = () => {
-        const newDish: Dish = {
-            id: crypto.randomUUID(),
-            name: "",
-            price: 0,
-            description: ""
-        }
-        append(newDish)
-    }
-    const removeDish = () => {
-        remove(index)
-    }
-    return <Flex key={category.id} direction="column" gap="2">
+const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormProps) => {
+    const {
+        register,
+        errors,
+        dishes,
+        onAddNewDish,
+        removeDish, }
+        = useMenuForm({ form, index, category, onRemoveCategory })
 
-        <Box maxWidth="300px" className="p-2">
-            <TextField.Root
-                key={category.id}
-                {...register(`categories.${index}.name`)}
+    return <div className="border rounded-md pt-2">
+        <Flex
+            key={category.id}
+            direction="column"
+            gap="4"
+            className="p-2 mt-4 border rounded-md " >
+            <Flex className="flex items-center gap-2" height="100px" >
+                <Button
+                    type="button"
+                    variant="ghost"
+                    size="2"
+                    radius="medium"
+                    color="gray"
+                ><MoveUpIcon />
+                </Button>
+                <Box width="80vw" >
+                    <TextField.Root
+                        key={category.id}
+                        {...register(`categories.${index}.name`)}
+                        size="3"
+                        placeholder="Nazwa kategori..."
+                        variant="soft"
+                        className="shadow-[var(--shadow-3)]"
+                        color="gray"
+                    />
+                </Box>
+                <DushLenghtInfo>
+                    {dishes.length}
+                </DushLenghtInfo>
+                <Box className="flex">
+                    <Button
+                        type="button"
+                        color="gray"
+                        variant="ghost"
+                        size="2"
+                        radius="medium"
+                        onClick={onRemoveCategory}
+                    >
+                        <TrashIcon />
+                    </Button>
+                </Box>
+            </Flex>
+
+            <Flex direction="column" gap="6">
+
+                {dishes.map((dish, indexDish,) => (
+                    <Box
+                        key={dish.id}
+                        className=" pl-10 pr-10 pb-5 bg-white"
+                    >
+                        <Flex align="center" gap="4">
+                            <Box className="flex-1">
+                                <TextField.Root
+                                    placeholder="Wpisz nazwę dania..."
+                                    {...register(
+                                        `categories.${index}.dishes.${indexDish}.name`,
+                                        {
+                                            required: true,
+                                            minLength: {
+                                                value: 3,
+                                                message: "Nazwa dania musi mieć minimum 3 litery",
+                                            },
+                                        }
+                                    )}
+                                />
+                                <ErrorLabel
+                                    error={
+                                        errors.categories?.[index]?.dishes?.[indexDish]?.name
+                                            ?.message
+                                    }
+                                    id="minLength"
+                                />
+                            </Box>
+                            <Box className="w-[140px]">
+                                <TextField.Root
+                                    placeholder="Cena"
+                                    {...register(
+                                        `categories.${index}.dishes.${indexDish}.price`,
+                                        {
+                                            required: true,
+                                            min: {
+                                                value: 1,
+                                                message: "Cena musi być większa od 0",
+                                            },
+                                        }
+                                    )}
+                                />
+                                <ErrorLabel
+                                    error={
+                                        errors.categories?.[index]?.dishes?.[indexDish]?.price
+                                            ?.message
+                                    }
+                                    id="min"
+                                />
+                            </Box>
+
+                            <Box>zł</Box>
+
+                            <Button
+                                type="button"
+                                color="red"
+                                variant="ghost"
+                                size="2"
+                                onClick={() => removeDish(indexDish)}
+                            >
+                                <TrashIcon />
+                            </Button>
+                        </Flex>
+                        <Box className="mt-4">
+                            <TextArea
+                                placeholder="Krótko opisz potrawę..."
+                                {...register(
+                                    `categories.${index}.dishes.${indexDish}.description`,
+                                    {
+                                        required: true,
+                                        minLength: {
+                                            value: 10,
+                                            message: "Minimum 10 znaków",
+                                        },
+                                    }
+                                )}
+                            />
+                            <ErrorLabel
+                                error={
+                                    errors.categories?.[index]?.dishes?.[indexDish]
+                                        ?.description?.message
+                                }
+                                id="minLength"
+                            />
+                        </Box>
+                    </Box>
+                ))}
+            </Flex>
+        </Flex >
+        <div className="flex justify-center  m-0 border p-10 border-solid rounded-md">
+            <Button
+                onClick={onAddNewDish}
+                type="button"
+                color="gray"
+                variant="ghost"
                 size="3"
-                placeholder="Nazwa kategorii w menu"
-                variant="soft"
-                color="green"
-            />
-
-        </Box>
-        {dishes.map((dish, indexDish) => (<div key={dish.id} className="flex flex-col gap-3 border-2 p-5 rounded-lg ">
-            <div>
-                <InputLabel htmlFor={`categories.${index}.dishes.${indexDish}.name`} required={true} children={"Nazwa dania"}></InputLabel>
-                <Box maxWidth="300px">
-                    <TextField.Root color="jade" variant="classic" placeholder="Wpisz nazwe dania.."
-                        {...register(`categories.${index}.dishes.${indexDish}.name`, { required: true, minLength: { value: 3, message: "Nazwa dania musi mieć minimum 3 litery" } })}
-                    />
-                    {errors.categories?.[index]?.dishes?.[indexDish]?.name && (
-                        <p style={{ color: "green", fontSize: "12px", marginTop: "4px" }}>
-                            {errors.categories?.[index]?.dishes?.[indexDish]?.name?.message}
-                        </p>
-                    )}
-                </Box>
-
-            </div>
-            <div>
-                <InputLabel htmlFor={`categories.${index}.dishes.${indexDish}.description`} required={false} children={"Krótki opis"}></InputLabel>
-                <TextArea color="green" variant="soft" placeholder="Krótko opis potrawy..."
-                    {...register(`categories.${index}.dishes.${indexDish}.description`, { required: true, minLength: { value: 10, message: "Minimum 20 znaków" } })}
-                />
-                <ErrorLabel error={errors.categories?.[index]?.dishes?.[indexDish]?.description?.message} id={"minLength"}></ErrorLabel>
-
-            </div>
-            <div>
-                <h1>Cena:</h1>
-                <Box maxWidth="300px">
-                    <TextField.Root size="1" placeholder="Cena"
-                        {...register(`categories.${index}.dishes.${indexDish}.price`, { required: true, min: { value: 1, message: "Minimalna cena musi być większa od 0" } })}
-                    />
-                    <p style={{ color: "green", fontSize: "12px", marginTop: "4px" }}>
-                        {errors.categories?.[index]?.dishes?.[indexDish]?.price?.message}
-                    </p>
-                </Box>
-            </div>
-            <Box maxWidth="200px">
-                <Button onClick={() => remove(indexDish)}>Usuń danie</Button>
-            </Box>
-        </div>))}
-        <Button color="gold" type="button" onClick={onAddNewDish}>Dodaj danie</Button>
-        <Button type="button" color="red" onClick={onRemoveCategory}>
-            Usuń kategorię
-        </Button>
-
-    </Flex>
+                className="
+                    -full
+                    py-6
+                    bg-transparent
+                    hover:bg-transparent
+                    focus:bg-transparent
+                    active:bg-transparent
+                    focus:outline-none
+                    focus:ring-0
+                    shadow-none
+                    "
+            ><PlusIcon />
+                Add first dish
+            </Button>
+        </div>
+    </div>
 }
 
 export default CategoryForm

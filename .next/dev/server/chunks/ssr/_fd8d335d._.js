@@ -330,12 +330,12 @@ const RestaurantsList = ({ restaurants })=>{
                                 className: "w-full h-full object-cover"
                             }, void 0, false, {
                                 fileName: "[project]/components/restaurants-list.tsx",
-                                lineNumber: 38,
+                                lineNumber: 37,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/restaurants-list.tsx",
-                            lineNumber: 37,
+                            lineNumber: 36,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -346,7 +346,7 @@ const RestaurantsList = ({ restaurants })=>{
                                     children: restaurant.name
                                 }, void 0, false, {
                                     fileName: "[project]/components/restaurants-list.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 46,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -357,7 +357,7 @@ const RestaurantsList = ({ restaurants })=>{
                                             children: restaurant.status
                                         }, void 0, false, {
                                             fileName: "[project]/components/restaurants-list.tsx",
-                                            lineNumber: 50,
+                                            lineNumber: 49,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -367,7 +367,7 @@ const RestaurantsList = ({ restaurants })=>{
                                                     className: "w-4 h-4 fill-primary text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/restaurants-list.tsx",
-                                                    lineNumber: 60,
+                                                    lineNumber: 59,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -375,25 +375,25 @@ const RestaurantsList = ({ restaurants })=>{
                                                     children: restaurant.rating
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/restaurants-list.tsx",
-                                                    lineNumber: 61,
+                                                    lineNumber: 60,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/restaurants-list.tsx",
-                                            lineNumber: 59,
+                                            lineNumber: 58,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/restaurants-list.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 48,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/restaurants-list.tsx",
-                            lineNumber: 46,
+                            lineNumber: 45,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -408,14 +408,14 @@ const RestaurantsList = ({ restaurants })=>{
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/components/restaurants-list.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 74,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Edytuj"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/restaurants-list.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 67,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -423,15 +423,7 @@ const RestaurantsList = ({ restaurants })=>{
                                     children: "Dodaje / Edytuj menu"
                                 }, void 0, false, {
                                     fileName: "[project]/components/restaurants-list.tsx",
-                                    lineNumber: 78,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                    onClick: ()=>router.push(`/owner/dashboard/menuTest`),
-                                    children: "menu testowe"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/restaurants-list.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 77,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -456,23 +448,23 @@ const RestaurantsList = ({ restaurants })=>{
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/restaurants-list.tsx",
-                            lineNumber: 67,
+                            lineNumber: 66,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/restaurants-list.tsx",
-                    lineNumber: 35,
+                    lineNumber: 34,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, restaurant.id, false, {
                 fileName: "[project]/components/restaurants-list.tsx",
-                lineNumber: 31,
+                lineNumber: 30,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)))
     }, void 0, false, {
         fileName: "[project]/components/restaurants-list.tsx",
-        lineNumber: 29,
+        lineNumber: 28,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -849,7 +841,6 @@ function OwnerDashboard() {
     const { user, logout } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$providers$2f$AuthContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAuth"])();
     const [restaurants, setRestaurants] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLodaing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const fetchRestaurants = async ()=>{
         if (!user) return;
@@ -954,7 +945,7 @@ function OwnerDashboard() {
                                 trend: 2
                             }, void 0, false, {
                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                lineNumber: 128,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$dashboard$2d$stats$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DashboardStats"], {
@@ -964,7 +955,7 @@ function OwnerDashboard() {
                                 trend: 0
                             }, void 0, false, {
                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                lineNumber: 134,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -989,7 +980,7 @@ function OwnerDashboard() {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("restaurants_list_header")
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                    lineNumber: 143,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -998,31 +989,31 @@ function OwnerDashboard() {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("restaurants_list_add_restaurant_btn")
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                    lineNumber: 144,
+                                                    lineNumber: 151,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/owner/dashboard/page.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 149,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$restaurants$2d$list$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RestaurantsList"], {
                                             restaurants: restaurants
                                         }, void 0, false, {
                                             fileName: "[project]/app/owner/dashboard/page.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 157,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/owner/dashboard/page.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 148,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                lineNumber: 140,
+                                lineNumber: 147,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1037,14 +1028,14 @@ function OwnerDashboard() {
                                                 className: "w-4 h-4 mr-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 154,
+                                                lineNumber: 166,
                                                 columnNumber: 15
                                             }, this),
                                             "Wyloguj"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 165,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1055,7 +1046,7 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_premium_plan_heder")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 159,
+                                                lineNumber: 171,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1063,7 +1054,7 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_premium_plan_about")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 160,
+                                                lineNumber: 172,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1071,13 +1062,13 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_premium_plan_button_unlock")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 163,
+                                                lineNumber: 175,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 170,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1088,7 +1079,7 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_need_help")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 168,
+                                                lineNumber: 180,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1096,7 +1087,7 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_need_help_about")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 181,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1106,13 +1097,13 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_need_help_button")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 172,
+                                                lineNumber: 184,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 179,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1123,7 +1114,7 @@ function OwnerDashboard() {
                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_header")
                                             }, void 0, false, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 182,
+                                                lineNumber: 194,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1137,7 +1128,7 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 185,
+                                                                lineNumber: 197,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1145,13 +1136,13 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_starter")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 186,
+                                                                lineNumber: 198,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 184,
+                                                        lineNumber: 196,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1162,7 +1153,7 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_period")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 189,
+                                                                lineNumber: 201,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1170,13 +1161,13 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_period_monthly")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 190,
+                                                                lineNumber: 202,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 188,
+                                                        lineNumber: 200,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1187,7 +1178,7 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_amount")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 193,
+                                                                lineNumber: 205,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1195,13 +1186,13 @@ function OwnerDashboard() {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_subscription_plan_price")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                                lineNumber: 194,
+                                                                lineNumber: 206,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 192,
+                                                        lineNumber: 204,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1211,31 +1202,31 @@ function OwnerDashboard() {
                                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"])("owner_dashboard_manage_subscription")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                        lineNumber: 196,
+                                                        lineNumber: 208,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 195,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 193,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                                lineNumber: 152,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/owner/dashboard/page.tsx",
-                        lineNumber: 138,
+                        lineNumber: 145,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1249,7 +1240,7 @@ function OwnerDashboard() {
                 onClose: handleCloseModal
             }, void 0, false, {
                 fileName: "[project]/app/owner/dashboard/page.tsx",
-                lineNumber: 209,
+                lineNumber: 221,
                 columnNumber: 25
             }, this)
         ]

@@ -58,11 +58,7 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
     setSaving(true)
     setSuccess(false)
 
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 500))
-
-    // TODO: Send to API endpoint
-    console.log("Saving restaurant:", formData)
 
     setSaving(false)
     setSuccess(true)

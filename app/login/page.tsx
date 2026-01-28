@@ -31,7 +31,6 @@ export default function OwnerLogin() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    console.log("Form submitted:", formData)
   }
   return (
     <main className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
