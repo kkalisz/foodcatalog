@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/components/ui/wrapper.tsx"],"sourcesContent":["type WrapperProps = {\n    children: React.ReactNode\n    className?: string\n}\n\nexport const Wrapper = ({ children\n}: WrapperProps) => {\n    return (\n        <div className={`mx-auto w-full max-w-7xl px-4 bg-white m-2 rounded-lg sm:px-6 lg:px-8 sm:py-8`}>\n            {children}\n        </div>\n    )\n}\n"],"names":[],"mappings":";;;;;;AAKO,MAAM,UAAU,CAAC,EAAE,QAAQ,EACnB;IACX,qBACI,8OAAC;QAAI,WAAW,CAAC,6EAA6E,CAAC;kBAC1F;;;;;;AAGb"}},
-    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/dashboard/menuTest/page.tsx"],"sourcesContent":["import { Wrapper } from \"@/components/ui/wrapper\";\n\nconst menuTest = () => {\n    return (\n        <Wrapper><div className=\"text-center\">menuTest</div></Wrapper>\n\n    );\n};\n\nexport default menuTest;"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,WAAW;IACb,qBACI,8OAAC,uIAAO;kBAAC,cAAA,8OAAC;YAAI,WAAU;sBAAc;;;;;;;;;;;AAG9C;uCAEe"}}]
-}

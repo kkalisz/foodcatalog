@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/dashboard/menu/page.tsx"],"sourcesContent":["import MenuForm from \"@/components/menu/MenuForm\";\n\nconst Menu = () => {\n    return <div className=\"flex flex-col items-center justify-center h-full w-full h-full pt-20\">\n        <MenuForm></MenuForm>\n    </div>;\n};\n\nexport default Menu;"],"names":[],"mappings":";;;;;;;;;;;;AAEA,MAAM,OAAO;IACT,qBAAO,8OAAC;QAAI,WAAU;kBAClB,cAAA,8OAAC;;;;;;;;;;AAET;uCAEe"}}]
-}

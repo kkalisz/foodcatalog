@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/components/ui/wrapper.tsx"],"sourcesContent":["type WrapperProps = {\n    children: React.ReactNode\n    className?: string\n}\n\nexport const PageSizeWrapper = ({ children\n}: WrapperProps) => {\n    return (\n        <div className={`mx-auto w-full max-w-7xl px-4 bg-white m-4 border rounded-lg sm:px-6 lg:px-8 sm:py-8`}>\n            {children}\n        </div>\n    )\n}\n"],"names":[],"mappings":";;;;;;AAKO,MAAM,kBAAkB,CAAC,EAAE,QAAQ,EAC3B;IACX,qBACI,8OAAC;QAAI,WAAW,CAAC,oFAAoF,CAAC;kBACjG;;;;;;AAGb"}},
-    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/restaurants/%5Bid%5D/menu/page.tsx"],"sourcesContent":["import MenuForm from \"@/components/menu/MenuCategoryForm\";\nimport { PageSizeWrapper } from \"@/components/ui/wrapper\";\n\nconst Menu = () => {\n    return <PageSizeWrapper>\n\n    </PageSizeWrapper>;\n};\n\nexport default Menu;"],"names":[],"mappings":";;;;;AACA;;;AAEA,MAAM,OAAO;IACT,qBAAO,8OAAC,+IAAe;;;;;AAG3B;uCAEe"}}]
-}

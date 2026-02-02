@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/login/page.tsx"],"sourcesContent":["export const Test = () => {\n  return (<div><p>test</p>\n    <p>test</p>\n    <p>test</p>\n    <p>test</p>\n    <p>test</p></div>)\n\n}\n\nexport default Test;"],"names":[],"mappings":";;;;;;;;AAAO,MAAM,OAAO;IAClB,qBAAQ,8OAAC;;0BAAI,8OAAC;0BAAE;;;;;;0BACd,8OAAC;0BAAE;;;;;;0BACH,8OAAC;0BAAE;;;;;;0BACH,8OAAC;0BAAE;;;;;;0BACH,8OAAC;0BAAE;;;;;;;;;;;;AAEP;uCAEe"}}]
-}

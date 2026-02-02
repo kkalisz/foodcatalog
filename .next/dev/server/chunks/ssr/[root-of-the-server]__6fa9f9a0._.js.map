@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/components/menu/MenuForm.tsx"],"sourcesContent":["const MenuForm = () => {\n    return <div>Menu Form Component</div>;\n};\nexport default MenuForm;"],"names":[],"mappings":";;;;;;AAAA,MAAM,WAAW;IACb,qBAAO,8OAAC;kBAAI;;;;;;AAChB;uCACe"}},
-    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/dashboard/menu/page.tsx"],"sourcesContent":["import MenuForm from \"@/components/menu/MenuForm\";\n\nconst Menu = () => {\n    return <div><MenuForm></MenuForm></div>;\n};\n\nexport default Menu;"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,OAAO;IACT,qBAAO,8OAAC;kBAAI,cAAA,8OAAC,0IAAQ;;;;;;;;;;AACzB;uCAEe"}}]
-}

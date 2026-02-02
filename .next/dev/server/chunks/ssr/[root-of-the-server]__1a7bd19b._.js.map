@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/dashboard/menuTest/page.tsx"],"sourcesContent":["const menuTest = () => {\n    return (\n        <Wrapper><div>menuTest</div></Wrapper>\n\n    );\n};\n\nexport default menuTest;"],"names":[],"mappings":";;;;;;AAAA,MAAM,WAAW;IACb,qBACI,8OAAC;kBAAQ,cAAA,8OAAC;sBAAI;;;;;;;;;;;AAGtB;uCAEe"}}]
-}

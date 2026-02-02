@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/components/restaurants/addRestaurant.tsx"],"sourcesContent":["export const AddResteurant = () => {\n    return (\n        <div className=\"border-dashed rounded-lg p-6 flex flex-col items-center justify-center\">\n            <h2 className=\"text-lg font-medium mb-4\">Dodaj nową restaurację</h2>\n        </div>\n    );\n}  "],"names":[],"mappings":";;;;;;AAAO,MAAM,gBAAgB;IACzB,qBACI,6LAAC;QAAI,WAAU;kBACX,cAAA,6LAAC;YAAG,WAAU;sBAA2B;;;;;;;;;;;AAGrD;KANa"}},
-    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/dashboard/restaurants/page.tsx"],"sourcesContent":["\"use client\"\nimport { useAuth } from \"@/providers/AuthContext\"\n\nimport { AddResteurant } from \"@/components/restaurants/addRestaurant\";\n\nexport const NewResteurant = () => {\n\n    const { user, logout } = useAuth();\n\n    return <div className=\"flex flex-col items-center justify-center h-full w-full pt-20\">\n        <AddResteurant />\n    </div>\n\n}\nexport default NewResteurant"],"names":[],"mappings":";;;;;;;AACA;AAEA;;;AAHA;;;AAKO,MAAM,gBAAgB;;IAEzB,MAAM,EAAE,IAAI,EAAE,MAAM,EAAE,GAAG,IAAA,uIAAO;IAEhC,qBAAO,6LAAC;QAAI,WAAU;kBAClB,cAAA,6LAAC,+JAAa;;;;;;;;;;AAGtB;GARa;;QAEgB,uIAAO;;;KAFvB;uCASE"}}]
-}
