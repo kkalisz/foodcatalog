@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/guest1/Desktop/React/foodcatalog/app/owner/layout.tsx"],"sourcesContent":["\"use client\"\nimport { useAuth } from \"@/providers/AuthContext\"\nimport { createContext, useContext } from \"react\"\nimport type React from \"react\"\nimport { useFirmId } from \"@/lib/firebase/restaurants\"\nimport { User } from \"@/data/types/user\"\n\ntype UserContextType = {\n  firmId: string,\n  user: User | null,\n}\n\nexport default function OwnerLayout({ children }: { children: React.ReactNode }) {\n\n  return <>\n    {children}</>\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAYe,SAAS,YAAY,EAAE,QAAQ,EAAiC;IAE7E,qBAAO;kBACJ;;AACL;KAJwB"}}]
-}
