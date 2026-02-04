@@ -1,46 +1,26 @@
+import "@radix-ui/themes/styles.css"
 import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { Navigation } from "@/components/navigation"
+import { Theme } from "@radix-ui/themes"
 import "./globals.css"
+import { AuthProvider } from "@/providers/AuthContext"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
+import { I18nProvider } from "@/lib/i18n/i18nProvider"
+import { Analytics } from "@vercel/analytics/next"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-  title: "LokalGastro - Discover Local Gastronomy",
-  description: "Discover the best restaurants, bars, and cafes in your town",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
-        <Navigation />
-        {children}
+      <body className="min-h-screen bg-gray-100 font-sans antialiased">
+        <Theme appearance="light" accentColor="ruby" radius="large">
+          <AuthProvider>
+            <I18nProvider>
+              <Navigation />
+              {children}
+              <Footer />
+            </I18nProvider>
+          </AuthProvider>
+        </Theme>
         <Analytics />
       </body>
     </html>

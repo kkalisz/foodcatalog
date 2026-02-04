@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { ArrowLeft, Save, AlertCircle } from "lucide-react"
+import { restaurantImage } from "@/data/constans/icons"
 
 // Mock restaurant data
 const RESTAURANTS: Record<string, any> = {
@@ -58,11 +59,7 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
     setSaving(true)
     setSuccess(false)
 
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 500))
-
-    // TODO: Send to API endpoint
-    console.log("Saving restaurant:", formData)
 
     setSaving(false)
     setSuccess(true)
@@ -239,7 +236,7 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
           <h2 className="text-lg font-bold text-foreground mb-4">Preview</h2>
           <div className="border rounded-lg overflow-hidden">
             <img
-              src={formData.image || "/placeholder.svg"}
+              src={formData.image || restaurantImage}
               alt={formData.name}
               className="w-full h-48 sm:h-64 object-cover"
             />
