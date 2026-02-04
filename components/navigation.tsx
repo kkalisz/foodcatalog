@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button"
 import { MapPin, Menu } from "lucide-react"
 import { useState } from "react"
 import { useAuth } from "@/providers/AuthContext"
+import { useTranslation } from "react-i18next"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const { user } = useAuth();
+  const { t } = useTranslation();
 
   return (
     <nav className="border-b bg-card sticky top-0 z-50">
@@ -19,16 +21,16 @@ export function Navigation() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <MapPin className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-bold text-lg hidden sm:inline">LokalGastro</span>
+            <span className="font-bold text-lg hidden sm:inline">{t("app_name")}</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-foreground hover:text-primary transition">
-              Przeglądaj
+              {t("nav.browse")}
             </Link>
             <Link href="/about" className="text-foreground hover:text-primary transition">
-              O nas
+              {t("nav.about")}
             </Link>
           </div>
 
@@ -46,13 +48,13 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden border-t py-4 space-y-2">
             <Link href="/" className="block px-4 py-2 hover:bg-muted rounded">
-              Discover
+              {t("nav.discover")}
             </Link>
             <Link href="/about" className="block px-4 py-2 hover:bg-muted rounded">
-              About
+              {t("nav.about")}
             </Link>
             <Link href="/login" className="block px-4 py-2 hover:bg-muted rounded">
-              Sign In
+              {t("nav.sign_in")}
             </Link>
           </div>
         )}

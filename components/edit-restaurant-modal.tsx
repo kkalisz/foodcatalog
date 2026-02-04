@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { X } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 interface Restaurant {
   id: number
@@ -25,6 +26,7 @@ interface EditRestaurantModalProps {
 }
 
 export function EditRestaurantModal({ restaurant, onClose }: EditRestaurantModalProps) {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: restaurant?.name || "",
     description: "",
@@ -52,7 +54,7 @@ export function EditRestaurantModal({ restaurant, onClose }: EditRestaurantModal
       <Card className="w-full max-w-md">
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b">
-          <h2 className="text-xl font-bold text-foreground">Edit Restaurant</h2>
+          <h2 className="text-xl font-bold text-foreground">{t("edit_restaurant_modal.title")}</h2>
           <button onClick={onClose} className="p-1 hover:bg-muted rounded">
             <X className="w-5 h-5" />
           </button>
@@ -61,43 +63,43 @@ export function EditRestaurantModal({ restaurant, onClose }: EditRestaurantModal
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className="text-sm font-medium text-foreground block mb-2">Restaurant Name</label>
+            <label className="text-sm font-medium text-foreground block mb-2">{t("edit_restaurant_modal.name_label")}</label>
             <Input name="name" value={formData.name} onChange={handleChange} />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-foreground block mb-2">Description</label>
+            <label className="text-sm font-medium text-foreground block mb-2">{t("edit_restaurant_modal.description_label")}</label>
             <Textarea
               name="description"
               value={formData.description}
               onChange={handleChange}
-              placeholder="Tell customers about your restaurant"
+              placeholder={t("edit_restaurant_modal.description_placeholder")}
               className="min-h-24"
             />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-foreground block mb-2">Phone</label>
+            <label className="text-sm font-medium text-foreground block mb-2">{t("edit_restaurant_modal.phone_label")}</label>
             <Input name="phone" type="tel" value={formData.phone} onChange={handleChange} />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-foreground block mb-2">Address</label>
+            <label className="text-sm font-medium text-foreground block mb-2">{t("edit_restaurant_modal.address_label")}</label>
             <Input name="address" value={formData.address} onChange={handleChange} />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-foreground block mb-2">Website</label>
+            <label className="text-sm font-medium text-foreground block mb-2">{t("edit_restaurant_modal.website_label")}</label>
             <Input name="website" type="url" value={formData.website} onChange={handleChange} />
           </div>
 
           {/* Actions */}
           <div className="flex gap-2 pt-4">
             <Button type="submit" className="flex-1">
-              Save Changes
+              {t("edit_restaurant_modal.save_changes")}
             </Button>
             <Button type="button" variant="outline" className="flex-1 bg-transparent" onClick={onClose}>
-              Cancel
+              {t("edit_restaurant_modal.cancel")}
             </Button>
           </div>
         </form>

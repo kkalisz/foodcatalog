@@ -25,7 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const logout = async () => {
         await signOut(auth);
-        router.push("/owner/login");
+        router.push("/login");
     }
 
     useEffect(() => {

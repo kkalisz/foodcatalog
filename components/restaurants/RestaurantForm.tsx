@@ -16,6 +16,7 @@ import { CreatePublicRestaurantForm } from "@/data/types/createPublicRestaurantF
 import { createRestaurant } from "@/lib/firebase/restaurants"
 import { CUISINES } from "@/data/constans/cusines"
 import { useRouter } from "next/navigation"
+import { useTranslation } from "react-i18next"
 
 type Props = {
     restaurantId?: string
@@ -24,6 +25,7 @@ type Props = {
 export const RestaurantForm = ({ restaurantId }: Props) => {
     const { user } = useAuth()
     const router = useRouter()
+    const { t } = useTranslation()
     const {
         register,
         handleSubmit,
@@ -69,7 +71,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         try {
             if (restaurantId) {
                 await updatePublicRestaurant(restaurantId, data)
-                alert("Zapisano zmiany")
+                alert(t("restaurant_form.saved_success"))
             } else {
                 const newRestaurantId = await createRestaurant(data, user.uid)
 
@@ -88,31 +90,26 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     return (
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full p-20 space-y-4">
-            {/* NAZWA */}
             <div>
                 <input
                     {...register("name")}
-                    placeholder="Nazwa restauracji"
+                    placeholder={t("restaurant_form.name_placeholder")}
                     className="w-full p-4 border rounded"
                     required
                 />
                 <p className="text-red-600">{errors.name?.message}</p>
             </div>
-
-            {/* MIASTO */}
             <div>
                 <input
                     {...register("city")}
-                    placeholder="Miasto"
+                    placeholder={t("restaurant_form.city_placeholder")}
                     className="w-full p-4 border rounded"
                     required
                 />
                 <p className="text-red-600">{errors.city?.message}</p>
             </div>
-
-            {/* KUCHNIE */}
             <div>
-                <p className="font-medium mb-2">Rodzaj kuchni</p>
+                <p className="font-medium mb-2">{t("restaurant_form.cuisine_type")}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     {CUISINES.map((cuisine) => (
@@ -132,52 +129,43 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
                 <p className="text-red-600">{errors.category?.message}</p>
             </div>
-
-
-            {/* OPIS */}
             <div>
                 <textarea
                     {...register("shortDescription")}
-                    placeholder="Krótki opis restauracji"
+                    placeholder={t("restaurant_form.description_placeholder")}
                     className="w-full p-4 border rounded"
                     required
                 />
                 <p className="text-red-600">{errors.shortDescription?.message}</p>
             </div>
-            {/* TELEFON */}
             <div>
                 <input
                     {...register("phone")}
-                    placeholder="Numer telefonu"
+                    placeholder={t("restaurant_form.phone_placeholder")}
                     className="w-full p-4 border rounded"
                     required
                 />
                 <p className="text-red-600">{errors.shortDescription?.message}</p>
             </div>
-
-            {/* ZDJĘCIE */}
             <div>
                 <input
                     {...register("coverImage")}
-                    placeholder="URL zdjęcia"
+                    placeholder={t("restaurant_form.image_url_placeholder")}
                     className="w-full p-4 border rounded"
                 />
                 <p className="text-red-600">{errors.coverImage?.message}</p>
             </div>
-
-            {/* DOSTAWA */}
             <label className="flex items-center gap-2">
                 <input type="checkbox" {...register("delivery")} />
-                <span>Dostawa</span>
+                <span>{t("restaurant_form.delivery")}</span>
             </label>
 
-            {/* SUBMIT */}
             <button
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full p-4 border rounded transition hover:bg-blue-600 hover:text-white"
             >
-                {isSubmitting ? "Zapisywanie..." : restaurantId ? "Zapisz zmiany" : "Dodaj restaurację"}
+                {isSubmitting ? t("restaurant_form.saving") : restaurantId ? t("restaurant_form.save_changes") : t("restaurant_form.add_restaurant")}
             </button>
         </form>
 

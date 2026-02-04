@@ -10,6 +10,7 @@ import Link from "next/link"
 import { ReviewList } from "@/components/review-list"
 import { RestaurantMap } from "@/components/restaurant-map"
 import { RestaurantMenu } from "@/components/restaurant-menu"
+import { restaurantImage } from "@/data/constans/icons"
 
 
 
@@ -351,7 +352,7 @@ export default function RestaurantPage({ params }: { params: { id: string } }) {
             {/* Header Image - Mobile optimized */}
             <div className="relative h-64 sm:h-80 md:h-96 bg-muted overflow-hidden">
                 <img
-                    src={restaurant.image || "/placeholder.svg"}
+                    src={restaurant.image || restaurantImage}
                     alt={restaurant.name}
                     className="w-full h-full object-cover"
                 />

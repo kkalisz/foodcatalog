@@ -10,57 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { getOwnerSession, clearOwnerSession } from "@/lib/auth"
 import { ChevronDown, LogOut, Menu, Send, Mail, Phone, HelpCircle } from "lucide-react"
-
-const FAQ_ITEMS = [
-  {
-    id: 1,
-    question: "How do I add my restaurant?",
-    answer:
-      "Sign up as an owner, and you'll be able to add your restaurant details including name, description, address, and cuisine type. You can add photos and a menu after creating your restaurant profile.",
-  },
-  {
-    id: 2,
-    question: "How can I manage my menu?",
-    answer:
-      "Go to your restaurant's menu editor from the dashboard. You can create categories (Appetizers, Main Courses, etc.), add items with descriptions and prices, and edit or delete items anytime.",
-  },
-  {
-    id: 3,
-    question: "What are the differences between plans?",
-    answer:
-      "The Free plan includes 1 restaurant with basic features. Basic plan (29 PLN/month) allows up to 3 restaurants and advanced analytics. Premium plan (99 PLN/month) offers unlimited restaurants with full features and priority support.",
-  },
-  {
-    id: 4,
-    question: "How do I respond to reviews?",
-    answer:
-      "You can respond to customer reviews directly from your dashboard. Engage with feedback to build trust with your customers and improve your service.",
-  },
-  {
-    id: 5,
-    question: "Can I have multiple restaurants?",
-    answer:
-      "On the Free plan, you can manage 1 restaurant. Upgrade to Basic (3 restaurants) or Premium (unlimited restaurants) to expand your portfolio.",
-  },
-  {
-    id: 6,
-    question: "How do I process payments?",
-    answer:
-      "Subscription payments are processed securely through Stripe. You can add or update your payment method in the Subscription & Billing page anytime.",
-  },
-  {
-    id: 7,
-    question: "What happens if I cancel my subscription?",
-    answer:
-      "You can cancel anytime. Your restaurant profile will move to view-only mode if you downgrade from paid to free plan. Your data is always safe.",
-  },
-  {
-    id: 8,
-    question: "How are restaurants ranked?",
-    answer:
-      "Restaurants are ranked based on customer reviews, ratings, and engagement. Quality reviews and timely responses help improve your visibility.",
-  },
-]
+import { useTranslation } from "react-i18next"
 
 export default function HelpCenterPage() {
   const router = useRouter()
@@ -71,6 +21,50 @@ export default function HelpCenterPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const { t } = useTranslation()
+
+  const FAQ_ITEMS = [
+    {
+      id: 1,
+      question: t("help_center_page.faq.q1"),
+      answer: t("help_center_page.faq.a1"),
+    },
+    {
+      id: 2,
+      question: t("help_center_page.faq.q2"),
+      answer: t("help_center_page.faq.a2"),
+    },
+    {
+      id: 3,
+      question: t("help_center_page.faq.q3"),
+      answer: t("help_center_page.faq.a3"),
+    },
+    {
+      id: 4,
+      question: t("help_center_page.faq.q4"),
+      answer: t("help_center_page.faq.a4"),
+    },
+    {
+      id: 5,
+      question: t("help_center_page.faq.q5"),
+      answer: t("help_center_page.faq.a5"),
+    },
+    {
+      id: 6,
+      question: t("help_center_page.faq.q6"),
+      answer: t("help_center_page.faq.a6"),
+    },
+    {
+      id: 7,
+      question: t("help_center_page.faq.q7"),
+      answer: t("help_center_page.faq.a7"),
+    },
+    {
+      id: 8,
+      question: t("help_center_page.faq.q8"),
+      answer: t("help_center_page.faq.a8"),
+    },
+  ]
 
   useEffect(() => {
     const session = getOwnerSession()
@@ -112,7 +106,7 @@ export default function HelpCenterPage() {
       <div className="min-h-screen flex items-center justify-center bg-muted/30">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-muted-foreground">Loading...</p>
+          <p className="text-muted-foreground">{t("help_center_page.loading")}</p>
         </div>
       </div>
     )
@@ -123,7 +117,7 @@ export default function HelpCenterPage() {
       {/* Mobile Header */}
       <div className="md:hidden border-b bg-card sticky top-0 z-40">
         <div className="flex justify-between items-center p-4">
-          <h1 className="text-lg font-bold">Help Center</h1>
+          <h1 className="text-lg font-bold">{t("help_center_page.title")}</h1>
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2">
             <Menu className="w-5 h-5" />
           </button>
@@ -132,17 +126,17 @@ export default function HelpCenterPage() {
         {mobileMenuOpen && (
           <div className="border-t p-4 space-y-2">
             <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/dashboard">Dashboard</Link>
+              <Link href="/owner/dashboard">{t("help_center_page.dashboard")}</Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/subscription">Subscription</Link>
+              <Link href="/owner/subscription">{t("help_center_page.subscription")}</Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/help-center">Help Center</Link>
+              <Link href="/owner/help-center">{t("help_center_page.help_center")}</Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start text-destructive" onClick={handleLogout}>
               <LogOut className="w-4 h-4 mr-2" />
-              Logout
+              {t("help_center_page.logout")}
             </Button>
           </div>
         )}
@@ -152,12 +146,12 @@ export default function HelpCenterPage() {
         {/* Desktop Header */}
         <div className="hidden md:flex justify-between items-start mb-8">
           <div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">Help Center</h1>
-            <p className="text-muted-foreground">Find answers and get in touch with our support team</p>
+            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">{t("help_center_page.title")}</h1>
+            <p className="text-muted-foreground">{t("help_center_page.subtitle")}</p>
           </div>
           <Button variant="outline" onClick={handleLogout} className="bg-transparent h-11">
             <LogOut className="w-4 h-4 mr-2" />
-            Logout
+            {t("help_center_page.logout")}
           </Button>
         </div>
 
@@ -165,14 +159,14 @@ export default function HelpCenterPage() {
           {/* FAQ Section */}
           <div className="lg:col-span-2">
             <Card className="p-4 sm:p-6 mb-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">{t("help_center_page.faq_title")}</h2>
 
               {/* Search */}
               <div className="relative mb-6">
                 <HelpCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder="Search FAQ..."
+                  placeholder={t("help_center_page.search_faq")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 h-11"
@@ -204,7 +198,7 @@ export default function HelpCenterPage() {
                   ))
                 ) : (
                   <div className="text-center py-8">
-                    <p className="text-muted-foreground">No results found for "{searchQuery}"</p>
+                    <p className="text-muted-foreground">{t("help_center_page.no_results")} "{searchQuery}"</p>
                   </div>
                 )}
               </div>
@@ -214,7 +208,7 @@ export default function HelpCenterPage() {
           {/* Support Card */}
           <div className="space-y-4 sm:space-y-6">
             <Card className="p-4 sm:p-6 bg-primary/5 border-primary/20">
-              <h3 className="font-bold text-foreground mb-4 text-lg">Quick Support</h3>
+              <h3 className="font-bold text-foreground mb-4 text-lg">{t("help_center_page.quick_support")}</h3>
 
               <div className="space-y-4">
                 <a
@@ -223,7 +217,7 @@ export default function HelpCenterPage() {
                 >
                   <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground text-sm">Email Support</p>
+                    <p className="font-semibold text-foreground text-sm">{t("help_center_page.email_support")}</p>
                     <p className="text-xs text-muted-foreground">support@lokalgastro.com</p>
                   </div>
                 </a>
@@ -234,7 +228,7 @@ export default function HelpCenterPage() {
                 >
                   <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground text-sm">Phone Support</p>
+                    <p className="font-semibold text-foreground text-sm">{t("help_center_page.phone_support")}</p>
                     <p className="text-xs text-muted-foreground">+48 123 456 789</p>
                   </div>
                 </a>
@@ -242,26 +236,26 @@ export default function HelpCenterPage() {
             </Card>
 
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-foreground mb-4">Resources</h3>
+              <h3 className="font-bold text-foreground mb-4">{t("help_center_page.resources")}</h3>
               <ul className="space-y-2">
                 <li>
                   <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">Getting Started Guide</Link>
+                    <Link href="#">{t("help_center_page.getting_started")}</Link>
                   </Button>
                 </li>
                 <li>
                   <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">Video Tutorials</Link>
+                    <Link href="#">{t("help_center_page.video_tutorials")}</Link>
                   </Button>
                 </li>
                 <li>
                   <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">API Documentation</Link>
+                    <Link href="#">{t("help_center_page.api_documentation")}</Link>
                   </Button>
                 </li>
                 <li>
                   <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">Community Forum</Link>
+                    <Link href="#">{t("help_center_page.community_forum")}</Link>
                   </Button>
                 </li>
               </ul>
@@ -271,22 +265,22 @@ export default function HelpCenterPage() {
 
         {/* Contact Form */}
         <Card className="p-4 sm:p-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Still need help?</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">{t("help_center_page.still_need_help")}</h2>
 
           {formSubmitted && (
             <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg text-sm">
-              Thank you for your message! Our support team will get back to you within 24 hours.
+              {t("help_center_page.form_success")}
             </div>
           )}
 
           <form onSubmit={handleFormSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">Full Name</label>
+                <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.full_name")}</label>
                 <Input
                   type="text"
                   name="name"
-                  placeholder="Your name"
+                  placeholder={t("help_center_page.your_name")}
                   value={formData.name}
                   onChange={handleFormChange}
                   required
@@ -294,11 +288,11 @@ export default function HelpCenterPage() {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">Email</label>
+                <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.email")}</label>
                 <Input
                   type="email"
                   name="email"
-                  placeholder="your@email.com"
+                  placeholder={t("help_center_page.your_email")}
                   value={formData.email}
                   onChange={handleFormChange}
                   required
@@ -308,11 +302,11 @@ export default function HelpCenterPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Subject</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.subject")}</label>
               <Input
                 type="text"
                 name="subject"
-                placeholder="What is this about?"
+                placeholder={t("help_center_page.what_about")}
                 value={formData.subject}
                 onChange={handleFormChange}
                 required
@@ -321,10 +315,10 @@ export default function HelpCenterPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Message</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.message")}</label>
               <textarea
                 name="message"
-                placeholder="Describe your issue or question..."
+                placeholder={t("help_center_page.describe_issue")}
                 value={formData.message}
                 onChange={handleFormChange}
                 required
@@ -335,7 +329,7 @@ export default function HelpCenterPage() {
 
             <Button type="submit" className="w-full sm:w-auto h-11">
               <Send className="w-4 h-4 mr-2" />
-              Send Message
+              {t("help_center_page.send_message")}
             </Button>
           </form>
         </Card>

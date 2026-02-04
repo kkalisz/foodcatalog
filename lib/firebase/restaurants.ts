@@ -15,6 +15,7 @@ import { CreatePublicRestaurantForm } from "@/data/types/createPublicRestaurantF
 import { PublicRestaurant } from "@/data/types/publicRestaurant"
 import { useEffect, useState } from "react"
 import { useAuth } from "@/providers/AuthContext"
+import { Firm } from "@/data/types/firm"
 
 export const createRestaurant = async (
     data: CreatePublicRestaurantForm,
@@ -92,8 +93,23 @@ export const deletePublicRestaurant = async (restaurantId: string) => {
     const ref = doc(db, "public_restaurants", restaurantId)
     await deleteDoc(ref)
 }
-
-export const useFirmId = () => {
+export const useFirm = () => {
+    const { firmId } = useFirmId()
+    const [firm, setFirm] = useState<Firm | null>(null)
+    useEffect(() => {
+        const loadFirm = async () => {
+            if (!firmId) return
+            const firmRef = doc(db, "firms", firmId)
+            const snap = await getDoc(firmRef)
+            if (snap.exists()) {
+                setFirm(snap.data() as Firm)
+            }
+        }
+        loadFirm()
+    }, [firmId])
+    return { firm }
+}
+export const useFirmId = (uid?: string | undefined) => {
     const { user } = useAuth()
     const [firmId, setFirmId] = useState<string | null>(null)
     const [loading, setLoading] = useState(true)
@@ -102,6 +118,7 @@ export const useFirmId = () => {
         const loadFirmId = async () => {
             if (!user) return
 
+            if (!user?.uid) return
             const userRef = doc(db, "users", user.uid)
             const snap = await getDoc(userRef)
 
@@ -117,7 +134,7 @@ export const useFirmId = () => {
 
     return { firmId, loading }
 }
-/** READ – pobranie restauracji do edycji */
+
 export const getRestaurantById = async (
     restaurantId: string
 ): Promise<PublicRestaurant | null> => {

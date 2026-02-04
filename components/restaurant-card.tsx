@@ -1,7 +1,11 @@
+"use client"
+
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Star, MapPin } from "lucide-react"
 import { Timestamp } from "firebase/firestore"
+import { useTranslation } from "react-i18next"
+import { restaurantImage } from "@/data/constans/icons"
 
 
 interface Restaurant {
@@ -26,18 +30,20 @@ interface RestaurantCardProps {
 }
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
+  const { t } = useTranslation()
+
   return (
     <Link href={`/restaurant/${restaurant.id}`}>
       <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
         {/* Image */}
         <div className="relative h-48 bg-muted overflow-hidden">
           <img
-            src={restaurant.coverImage || "/placeholder.svg"}
+            src={restaurant.coverImage || restaurantImage}
             alt={restaurant.name}
             className="w-full h-full object-cover hover:scale-105 transition-transform"
           />
           <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-            price range
+            {t("restaurant_card.price_range")}
           </div>
         </div>
 

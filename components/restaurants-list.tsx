@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Star, Edit2, Trash } from "lucide-react"
 import { PublicRestaurant } from "@/data/types/publicRestaurant"
 import { deletePublicRestaurant } from "@/lib/firebase/restaurants"
+import { useTranslation } from "react-i18next"
+import { restaurantImage } from "@/data/constans/icons"
 
 type RestaurantsListProps = {
   restaurants: PublicRestaurant[]
@@ -13,11 +15,13 @@ type RestaurantsListProps = {
 
 export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
   const router = useRouter()
+  const { t } = useTranslation()
+
   const handleDelete = async (restaurantId: string) => {
-    if (!confirm("Are you sure you want to delete this restaurant?")) return
+    if (!confirm(t("restaurants_list.confirm_delete"))) return
     try {
       await deletePublicRestaurant(restaurantId)
-      alert("Restaurant deleted successfully")
+      alert(t("restaurants_list.deleted_success"))
       router.refresh()
     }
     catch (error) {
@@ -35,7 +39,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
             {/* Image */}
             <div className="w-full sm:w-32 h-32 bg-muted rounded-lg overflow-hidden">
               <img
-                src={restaurant.coverImage || "/placeholder.svg"}
+                src={restaurant.coverImage || restaurantImage}
                 alt={restaurant.name}
                 className="w-full h-full object-cover"
               />
@@ -52,7 +56,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                     : "bg-yellow-100 text-yellow-700"
                     }`}
                 >
-                  {restaurant.status}
+                  {restaurant.status === "active" ? t("restaurants_list.active") : t("restaurants_list.inactive")}
                 </span>
 
                 <div className="flex items-center gap-1">
@@ -72,16 +76,16 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 }
               >
                 <Edit2 className="w-4 h-4 mr-2" />
-                Edytuj
+                {t("restaurants_list.edit")}
               </Button>
               <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)} >
-                Dodaje / Edytuj menu
+                {t("restaurants_list.add_edit_menu")}
               </Button>
               <Button
                 size="sm"
                 variant="destructive"
                 onClick={() => handleDelete(restaurant.id)}
-              ><Trash className="w-4 h-4 mr-2" />Usuń</Button>
+              ><Trash className="w-4 h-4 mr-2" />{t("restaurants_list.delete")}</Button>
             </div>
           </div>
         </Card>

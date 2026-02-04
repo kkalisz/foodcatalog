@@ -14,9 +14,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-gray-100 font-sans antialiased">
         <Theme appearance="light" accentColor="ruby" radius="large">
           <AuthProvider>
-            <Navigation />
-            <I18nProvider>{children}</I18nProvider>
-            <Footer />
+            <I18nProvider>
+              <Navigation />
+              {children}
+              <Footer />
+            </I18nProvider>
           </AuthProvider>
         </Theme>
         <Analytics />

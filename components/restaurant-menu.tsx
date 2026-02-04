@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import { ChevronDown, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
+import { useTranslation } from "react-i18next"
 
 interface MenuItem {
   id: string
@@ -25,6 +26,7 @@ interface RestaurantMenuProps {
 export function RestaurantMenu({ categories }: RestaurantMenuProps) {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set(categories.map((cat) => cat.name)))
   const [searchQuery, setSearchQuery] = useState("")
+  const { t } = useTranslation()
 
   const filteredCategories = useMemo(() => {
     if (!searchQuery.trim()) return categories
@@ -58,7 +60,7 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
         <Input
           type="text"
-          placeholder="Search menu items..."
+          placeholder={t("menu.search_placeholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-10 h-10 sm:h-11 text-sm sm:text-base"
@@ -77,9 +79,8 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
               >
                 <h3 className="text-base sm:text-lg font-semibold text-foreground text-left">{category.name}</h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-muted-foreground transition-transform flex-shrink-0 ${
-                    expandedCategories.has(category.name) ? "rotate-180" : ""
-                  }`}
+                  className={`w-5 h-5 text-muted-foreground transition-transform flex-shrink-0 ${expandedCategories.has(category.name) ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -108,7 +109,7 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
           ))
         ) : (
           <Card className="p-6 sm:p-8 text-center">
-            <p className="text-muted-foreground text-sm sm:text-base">No menu items found matching "{searchQuery}"</p>
+            <p className="text-muted-foreground text-sm sm:text-base">{t("menu.no_items_found")} "{searchQuery}"</p>
           </Card>
         )}
       </div>

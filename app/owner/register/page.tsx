@@ -28,19 +28,19 @@ export default function OwnerRegister() {
     companyName: "",
   })
 
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match")
+      setError(t("register_page.passwords_not_match"))
       return
     }
 
     if (formData.password.length < 6) {
-      setError("Password must be at least 6 characters")
+      setError(t("register_page.password_min_length"))
       return
     }
 
@@ -76,10 +76,10 @@ export default function OwnerRegister() {
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <MapPin className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="text-2xl font-bold text-foreground">LokalGastro</span>
+            <span className="text-2xl font-bold text-foreground">{t("app_name")}</span>
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">{t("register_page_header")}</h1>
-          <p className="text-muted-foreground">{t("register_page_subheader")}</p>
+          <h1 className="text-3xl font-bold text-foreground mb-2">{t("register_page.header")}</h1>
+          <p className="text-muted-foreground">{t("register_page.subheader")}</p>
         </div>
 
         {/* Form Card */}
@@ -94,11 +94,11 @@ export default function OwnerRegister() {
           <form onSubmit={handleRegister} className="space-y-4">
             {/* Name */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_label")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.name_label")}</label>
               <Input
                 type="text"
                 name="name"
-                placeholder={t("register_page_name_placeholder")}
+                placeholder={t("register_page.name_placeholder")}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -107,11 +107,11 @@ export default function OwnerRegister() {
 
             {/* Restaurant Name */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_company_label")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.company_label")}</label>
               <Input
                 type="text"
                 name="restaurantName"
-                placeholder={t("register_page_company_placeholder")}
+                placeholder={t("register_page.company_placeholder")}
                 value={formData.companyName}
                 onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                 required
@@ -120,11 +120,11 @@ export default function OwnerRegister() {
 
             {/* Email */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_email_label")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.email_label")}</label>
               <Input
                 type="email"
                 name="email"
-                placeholder={t("register_page_email_placeholder")}
+                placeholder={t("register_page.email_placeholder")}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -133,7 +133,7 @@ export default function OwnerRegister() {
 
             {/* Password */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_password_label")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.password_label")}</label>
               <Input
                 type="password"
                 name="password"
@@ -146,7 +146,7 @@ export default function OwnerRegister() {
 
             {/* Confirm Password */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page_confirm_password_label")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.confirm_password_label")}</label>
               <Input
                 type="password"
                 name="confirmPassword"
@@ -159,7 +159,7 @@ export default function OwnerRegister() {
 
             {/* Submit */}
             <Button type="submit" className="w-full h-11 text-base mt-6" disabled={loading}>
-              {loading ? `${t("register_page_creating_accounty")}` : `${t("register_page_create_account_button")}`}
+              {loading ? t("register_page.creating_account") : t("register_page.create_account_button")}
             </Button>
           </form>
 
@@ -169,21 +169,21 @@ export default function OwnerRegister() {
               <div className="w-full border-t border-muted" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-card text-muted-foreground">{t("register_allready_have_account")}</span>
+              <span className="px-2 bg-card text-muted-foreground">{t("register_page.already_have_account")}</span>
             </div>
           </div>
 
           {/* Login Link */}
           <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
-            <Link href="/owner/login">{t("register_login_here")}</Link>
+            <Link href="/owner/login">{t("register_page.login_here")}</Link>
           </Button>
         </Card>
 
         {/* Footer */}
         <p className="text-center text-sm text-muted-foreground mt-6">
-          Looking for dining options?{" "}
+          {t("register_page.looking_for_dining")}{" "}
           <Link href="/" className="text-primary hover:underline font-medium">
-            Browse restaurants
+            {t("register_page.browse_restaurants")}
           </Link>
         </p>
       </div>

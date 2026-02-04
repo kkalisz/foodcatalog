@@ -1,11 +1,14 @@
 "use client"
-import MenuForm from "@/components/menu/MenuCategoryForm";
+
+import MenuForm from "@/components/MenuForm/MenuForm";
 import { PageSizeWrapper } from "@/components/ui/wrapper";
+import { useParams } from "next/navigation";
 
 const Menu = () => {
-    console.log("MENU PAGE RENDER")
+    const params = useParams<{ id: string }>();
+    const restaurantId = params?.id;
     return <PageSizeWrapper>
-        <MenuForm></MenuForm>
+        <MenuForm restaurantId={restaurantId} />
     </PageSizeWrapper>;
 };
 

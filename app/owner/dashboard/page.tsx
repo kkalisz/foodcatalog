@@ -9,12 +9,11 @@ import { RestaurantsList } from "@/components/restaurants-list"
 import { EditRestaurantModal } from "@/components/edit-restaurant-modal"
 import { useAuth } from "@/providers/AuthContext"
 import { useRouter } from "next/navigation"
+import { useTranslation } from "react-i18next"
 
-//types
 import { PublicRestaurant } from "../../../data/types/publicRestaurant"
 import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
-import { t } from "i18next"
 
 // Mock owner data
 const OWNER_STATS = {
@@ -44,7 +43,7 @@ export default function OwnerDashboard() {
   const { user, logout } = useAuth();
   const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([])
   const [loading, setLodaing] = useState(false)
-
+  const { t } = useTranslation()
 
   const router = useRouter()
 
@@ -99,7 +98,7 @@ export default function OwnerDashboard() {
 
   useEffect(() => {
     if (!user) {
-      router.push("/owner/login")
+      router.push("/login")
       return
     }
     fetchRestaurants()
@@ -112,30 +111,30 @@ export default function OwnerDashboard() {
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
         {/* Header */}
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{t("owner_dashboard_page_h1")}</h1>
-          <p className="text-sm sm:text-base text-muted-foreground">{t("owner_dashboard_page_h2")}</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">{t("owner_dashboard.header")}</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">{t("owner_dashboard.subheader")}</p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           <DashboardStats
-            title="Total Views"
+            title={t("owner_dashboard.total_views")}
             value={OWNER_STATS.totalViews}
             icon={Eye}
             trend={OWNER_STATS.monthlyTrend}
           />
-          <DashboardStats title="Reviews"
+          <DashboardStats title={t("owner_dashboard.reviews")}
             value={OWNER_STATS.totalReviews}
             icon={MessageSquare}
             trend={8} />
           <DashboardStats
-            title="Average Rating"
+            title={t("owner_dashboard.average_rating")}
             value={OWNER_STATS.averageRating}
             icon={TrendingUp}
             trend={2}
           />
           <DashboardStats
-            title="Active Listings"
+            title={t("owner_dashboard.active_listings")}
             value={2}
             icon={BarChart3}
             trend={0} />
@@ -147,10 +146,10 @@ export default function OwnerDashboard() {
           <div className="lg:col-span-2">
             <Card className="p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-foreground">{t("restaurants_list_header")}</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">{t("owner_dashboard.restaurants_header")}</h2>
                 <Button
                   onClick={() => router.push("/owner/dashboard/restaurants")}
-                  className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11">{t("restaurants_list_add_restaurant_btn")}
+                  className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11">{t("owner_dashboard.add_restaurant_btn")}
 
                 </Button>
               </div>
@@ -164,52 +163,52 @@ export default function OwnerDashboard() {
           <div className="space-y-4 sm:space-y-6">
             <Button variant="ghost" className="w-full justify-start text-destructive" onClick={logout}>
               <LogOut className="w-4 h-4 mr-2" />
-              Wyloguj
+              {t("owner_dashboard.logout")}
             </Button>
             {/* Upgrade Plan */}
             <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">{t("owner_dashboard_premium_plan_heder")}</h3>
+              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">{t("owner_dashboard.premium_plan_header")}</h3>
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-                {t("owner_dashboard_premium_plan_about")}
+                {t("owner_dashboard.premium_plan_about")}
               </p>
-              <Button className="w-full text-sm sm:text-base h-10 sm:h-11">{t("owner_dashboard_premium_plan_button_unlock")}</Button>
+              <Button className="w-full text-sm sm:text-base h-10 sm:h-11">{t("owner_dashboard.premium_plan_unlock")}</Button>
             </Card>
 
             {/* Support Card */}
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">{t("owner_dashboard_need_help")}</h3>
+              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">{t("owner_dashboard.need_help")}</h3>
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-                {t("owner_dashboard_need_help_about")}
+                {t("owner_dashboard.need_help_about")}
               </p>
               <Button
                 variant="outline"
                 className="w-full bg-transparent text-sm sm:text-base h-10 sm:h-11"
                 onClick={() => router.push('/help')}>
-                {t("owner_dashboard_need_help_button")}
+                {t("owner_dashboard.need_help_button")}
               </Button>
             </Card>
 
             {/* Subscription Info */}
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-base sm:text-lg text-foreground mb-4">{t("owner_dashboard_subscription_header")}</h3>
+              <h3 className="font-bold text-base sm:text-lg text-foreground mb-4">{t("owner_dashboard.subscription_header")}</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan")}</span>
-                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_starter")}</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard.subscription_plan")}</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard.subscription_plan_starter")}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan_period")}</span>
-                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_period_monthly")}</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard.subscription_plan_period")}</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard.subscription_plan_period_monthly")}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard_subscription_plan_amount")}</span>
-                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard_subscription_plan_price")}</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">{t("owner_dashboard.subscription_plan_amount")}</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground">{t("owner_dashboard.subscription_plan_price")}</span>
                 </div>
                 <Button
                   variant="outline"
                   className="w-full mt-4 bg-transparent text-sm h-10 sm:h-11"
                   onClick={() => router.push('dashboard/subscription')}>
-                  {t("owner_dashboard_manage_subscription")}
+                  {t("owner_dashboard.manage_subscription")}
                 </Button>
               </div>
             </Card>
