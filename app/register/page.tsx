@@ -122,66 +122,6 @@ export default function OwnerRegister() {
             </Alert>
           )}
         </form>
-        {/* <form onSubmit={handleSubmit(handleRegister)} className="space-y-4">
-          <div>
-            <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.name_label")}</label>
-            <Input
-              type="text"
-              name="name"
-              placeholder={t("register_page.name_placeholder")}
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.company_label")}</label>
-            <Input
-              type="text"
-              name="restaurantName"
-              placeholder={t("register_page.company_placeholder")}
-              value={formData.companyName}
-              onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.email_label")}</label>
-            <Input
-              type="email"
-              name="email"
-              placeholder={t("register_page.email_placeholder")}
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.password_label")}</label>
-            <Input
-              type="password"
-              name="password"
-              placeholder="••••••••"
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <label className="text-sm font-medium text-foreground block mb-2">{t("register_page.confirm_password_label")}</label>
-            <Input
-              type="password"
-              name="confirmPassword"
-              placeholder="••••••••"
-              value={formData.confirmPassword}
-              onChange={(error) => setFormData({ ...formData, confirmPassword: error.target.value })}
-              required
-            />
-          </div>
-          <Button type="submit" className="w-full h-11 text-base mt-6" disabled={loading}>
-            {loading ? t("register_page.creating_account") : t("register_page.create_account_button")}
-          </Button>
-        </form> */}
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-muted" />
