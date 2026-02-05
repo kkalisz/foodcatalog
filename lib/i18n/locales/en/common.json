@@ -107,12 +107,16 @@
     "inactive": "inactive"
   },
   "restaurant_form": {
+    "basic_info": "Basic Information",
     "name_placeholder": "Restaurant name",
     "city_placeholder": "City",
+    "street_placeholder": "Street",
+    "postalCode_placeholder": "Postal Code",
     "cuisine_type": "Cuisine type",
     "description_placeholder": "Short restaurant description",
     "phone_placeholder": "Phone number",
     "image_url_placeholder": "Image URL",
+    "upload": "Upload",
     "delivery": "Delivery",
     "saving": "Saving...",
     "save_changes": "Save changes",

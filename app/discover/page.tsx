@@ -11,6 +11,7 @@ import { PageSizeWrapper } from "@/components/ui/wrapper"
 import PageLoader from "@/components/ui/loader/PageLoader"
 import { useTranslation } from "react-i18next"
 import EmptySearchContainer from "@/components/ui/containers/EmptySearchContainer"
+import { Flex } from "@radix-ui/themes"
 
 export default function DiscoverPage() {
   const { loading, resteurants, setSearchQuery, searchQuery } = usePublickRestaurants()
@@ -18,9 +19,9 @@ export default function DiscoverPage() {
 
   if (loading && resteurants.length === 0) {
     return (
-      <PageLoader>
-        <p>{t("discover_page.loading")}</p>
-      </PageLoader>
+      <Flex align="center" justify="center">
+        <PageLoader loadingText={t("discover_page.loading")} />
+      </Flex>
     )
   }
   return (

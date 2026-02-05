@@ -12,6 +12,8 @@ import { useTranslation } from "react-i18next"
 
 import { doc, getDoc, } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
+import { Flex } from "@radix-ui/themes"
+import PageLoader from "@/components/ui/loader/PageLoader"
 
 
 type Dish = {
@@ -84,7 +86,11 @@ const RestaurantPage = () => {
   }
 
   if (loading) {
-    return <p className="p-6">{t("restaurant_detail.loading")}</p>
+    return (
+      <Flex align="center" justify="center">
+        <PageLoader loadingText={t("restaurant_detail.loading")} />
+      </Flex>
+    )
   }
 
   if (!restaurant) {
