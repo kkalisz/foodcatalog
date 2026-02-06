@@ -19,9 +19,11 @@ export default function RootLayout({
         <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <I18nProvider>
-              <Navigation />
-              {children}
-              <Footer />
+              <div className="flex flex-col min-h-screen">
+                <Navigation />
+                {children}
+                <Footer />
+              </div>
             </I18nProvider>
           </AuthProvider>
         </Theme>
