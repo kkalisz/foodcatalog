@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form"
 import useRegister from "@/data/hooks/useRegister"
 import { RegisterWrapper } from "@/components/ui/form/wrapper/LoginFormWrapper"
 import { Box, Flex, TextField } from "@radix-ui/themes"
+import LoginFormHaveAcc from "@/components/MenuForm/LoginForm/LoginFormHaveAcc"
 
 type RegisterFormValues = {
   name: string,
@@ -40,7 +41,6 @@ export default function OwnerRegister() {
       <h1 className=" text-center text-3xl font-bold text-foreground mb-2">{t("register_page.header")}</h1>
       <p className="text-center p-2 text-muted-foreground">{t("register_page.subheader")}</p>
       <Card className="p-6 sm:p-8">
-
         <form onSubmit={handleSubmit(handleRegister)} >
           <Flex direction="column" gap="2" >
             <Box>
@@ -102,14 +102,7 @@ export default function OwnerRegister() {
             </Alert>
           )}
         </form>
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-muted" />
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-card text-muted-foreground">{t("register_page.already_have_account")}</span>
-          </div>
-        </div>
+        <LoginFormHaveAcc />
         <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
           <Link href="/login">{t("register_page.login_here")}</Link>
         </Button>
@@ -120,6 +113,6 @@ export default function OwnerRegister() {
           {t("register_page.browse_restaurants")}
         </Link>
       </p>
-    </RegisterWrapper>
+    </RegisterWrapper >
   )
 }

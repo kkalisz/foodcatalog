@@ -1,6 +1,5 @@
 import { Flex, Spinner } from "@radix-ui/themes"
 
-
 type PageLoaderProps = {
     loadingText: string
 }
