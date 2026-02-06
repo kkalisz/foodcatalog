@@ -1,5 +1,5 @@
 "use client"
-import { Link } from "lucide-react"
+
 import { Button } from "./ui/button"
 import { useAuth } from "@/providers/AuthContext"
 import { useRouter } from "next/navigation"
@@ -9,7 +9,6 @@ export const Footer = () => {
     const { user } = useAuth();
     const router = useRouter();
     const { t } = useTranslation();
-
     return (
         <footer className="border-t bg-card mt-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center">
@@ -23,7 +22,6 @@ export const Footer = () => {
                         </Button>
                     )}
                 </div>
-
             </div>
         </footer>
     )

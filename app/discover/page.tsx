@@ -1,7 +1,6 @@
 "use client"
 
 import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
 import { Search } from "lucide-react"
 import { RestaurantCard } from "@/components/restaurant-card"
 import { Timestamp } from "firebase/firestore"
@@ -12,15 +11,14 @@ import PageLoader from "@/components/ui/loader/PageLoader"
 import { useTranslation } from "react-i18next"
 import EmptySearchContainer from "@/components/ui/containers/EmptySearchContainer"
 
+
 export default function DiscoverPage() {
   const { loading, resteurants, setSearchQuery, searchQuery } = usePublickRestaurants()
   const { t } = useTranslation()
 
   if (loading && resteurants.length === 0) {
     return (
-      <PageLoader>
-        <p>{t("discover_page.loading")}</p>
-      </PageLoader>
+      <PageLoader loadingText={t("discover_page.loading")} />
     )
   }
   return (

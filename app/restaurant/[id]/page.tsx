@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next"
 
 import { doc, getDoc, } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
+import PageLoader from "@/components/ui/loader/PageLoader"
 
 
 type Dish = {
@@ -64,9 +65,7 @@ const RestaurantPage = () => {
           "menu",
           "main"
         )
-
         const menuSnap = await getDoc(menuRef)
-
         if (menuSnap.exists()) {
           setMenu(menuSnap.data().categories || [])
         } else {
@@ -84,7 +83,9 @@ const RestaurantPage = () => {
   }
 
   if (loading) {
-    return <p className="p-6">{t("restaurant_detail.loading")}</p>
+    return (
+      <PageLoader loadingText={t("restaurant_detail.loading")} />
+    )
   }
 
   if (!restaurant) {
@@ -92,8 +93,6 @@ const RestaurantPage = () => {
   }
 
   if (!id) return
-
-
 
   return (
     <main className="min-h-screen bg-background">
@@ -111,7 +110,6 @@ const RestaurantPage = () => {
           <ChevronLeft className="w-6 h-6" />
         </Link>
       </div>
-
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
         {/* Restaurant Info - Mobile: stacked, Tablet+: grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
@@ -132,12 +130,6 @@ const RestaurantPage = () => {
                 {restaurant.category}
               </span>
             </div>
-
-            {/* Description */}
-
-
-
-            {/* Cuisine Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
               {restaurant.cuisine?.map((c: string) => (
                 <span
