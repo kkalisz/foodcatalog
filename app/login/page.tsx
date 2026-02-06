@@ -15,6 +15,8 @@ import { useTranslation } from "react-i18next"
 import { Box, Flex, TextField } from "@radix-ui/themes"
 import ErrorLabel from "@/components/ui/form/label/ErrorLabel"
 import LoginFormWrapper from "@/components/ui/form/wrapper/LoginFormWrapper"
+import LoginFormHeader from "@/components/MenuForm/LoginForm/LoginFormHeader"
+import LoginFormFooter from "@/components/MenuForm/LoginForm/LoginFormFooter"
 
 const OwnerLogin = () => {
   const { t } = useTranslation()
@@ -40,7 +42,6 @@ const OwnerLogin = () => {
       await signInWithEmailAndPassword(auth, email, password)
       router.push("/owner/dashboard")
     } catch (error: any) {
-      console.error("Error during login:", error)
       setGlobalError(error.code || error.message || "An error occurred during login")
     } finally {
       setLoading(false)
@@ -49,17 +50,7 @@ const OwnerLogin = () => {
 
   return (
     <LoginFormWrapper>
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <MapPin className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <span className="text-2xl font-bold text-foreground">{t("app_name")}</span>
-        </div>
-        <h1 className="text-3xl font-bold text-foreground mb-2">{t("login_page.header")}</h1>
-        <p className="text-muted-foreground">{t("login_page.sign_in_to_manage")}</p>
-      </div>
-
+      <LoginFormHeader />
       <Card className="p-6 sm:p-8">
         {globalError && (
           <Alert variant="destructive" className="mb-6">
@@ -67,7 +58,6 @@ const OwnerLogin = () => {
             <AlertDescription>{globalError}</AlertDescription>
           </Alert>
         )}
-
         <form onSubmit={handleSubmit(onHandleSubmit)}>
           <Flex direction="column" gap="4">
             <Box>
@@ -110,20 +100,11 @@ const OwnerLogin = () => {
             </Button>
           </Flex>
         </form>
-
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-muted" />
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-card text-muted-foreground">{t("login_page.new_to_app")}</span>
-          </div>
-        </div>
+        <LoginFormFooter />
         <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
           <Link href="/register">{t("login_page.create_account")}</Link>
         </Button>
       </Card>
-
       <p className="text-center text-sm text-muted-foreground mt-6">
         {t("login_page.looking_for_dining")}{" "}
         <Link href="/" className="text-primary hover:underline font-medium">

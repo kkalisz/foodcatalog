@@ -1,7 +1,6 @@
 "use client"
 
 import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
 import { Search } from "lucide-react"
 import { RestaurantCard } from "@/components/restaurant-card"
 import { Timestamp } from "firebase/firestore"
@@ -11,7 +10,7 @@ import { PageSizeWrapper } from "@/components/ui/wrapper"
 import PageLoader from "@/components/ui/loader/PageLoader"
 import { useTranslation } from "react-i18next"
 import EmptySearchContainer from "@/components/ui/containers/EmptySearchContainer"
-import { Flex } from "@radix-ui/themes"
+
 
 export default function DiscoverPage() {
   const { loading, resteurants, setSearchQuery, searchQuery } = usePublickRestaurants()

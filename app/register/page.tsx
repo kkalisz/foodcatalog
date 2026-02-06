@@ -2,10 +2,9 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { MapPin, AlertCircle } from "lucide-react"
+import { AlertCircle } from "lucide-react"
 
 import { useTranslation } from "react-i18next"
 import { useForm } from "react-hook-form"
@@ -38,25 +37,14 @@ export default function OwnerRegister() {
 
   return (
     <RegisterWrapper>
-
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <MapPin className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <span className="text-2xl font-bold text-foreground">{t("app_name")}</span>
-        </div>
-        <h1 className="text-3xl font-bold text-foreground mb-2">{t("register_page.header")}</h1>
-        <p className="text-muted-foreground">{t("register_page.subheader")}</p>
-      </div>
+      <h1 className=" text-center text-3xl font-bold text-foreground mb-2">{t("register_page.header")}</h1>
+      <p className="text-center p-2 text-muted-foreground">{t("register_page.subheader")}</p>
       <Card className="p-6 sm:p-8">
 
         <form onSubmit={handleSubmit(handleRegister)} >
           <Flex direction="column" gap="2" >
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">{t("login_page.email_label")}</label>
-              </div>
+              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.name_label")}</label>
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -66,9 +54,7 @@ export default function OwnerRegister() {
               />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">{"Nazwa Firmy"}</label>
-              </div>
+              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.company_label")}</label>
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -78,9 +64,7 @@ export default function OwnerRegister() {
               />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">{"Email"}</label>
-              </div>
+              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.email_label")}</label>
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -90,9 +74,7 @@ export default function OwnerRegister() {
               />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">{"Hasło"}</label>
-              </div>
+              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.password_label")}</label>
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -101,10 +83,8 @@ export default function OwnerRegister() {
                 {...register("password")}
               />
             </Box>
-            <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">{"Powtórz hasło"}</label>
-              </div>
+            <Box className="pb-5">
+              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.confirm_password_label")}</label>
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -113,7 +93,7 @@ export default function OwnerRegister() {
                 {...register("confirmPassword")}
               />
             </Box>
-            <Button type="submit">Register</Button>
+            <Button type="submit">{t("register_page.create_account_button")}</Button>
           </Flex>
           {error && (
             <Alert variant="destructive" className="mb-6">
