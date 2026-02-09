@@ -57,6 +57,8 @@ export const createPublicRestaurant = async (
     return await addDoc(collection(db, "public_restaurants"), {
         name: data.name,
         city: data.city,
+        street: data.street,
+        postalCode: data.postalCode,
         phone: data.phone,
         category: data.category,
         shortDescription: data.shortDescription,

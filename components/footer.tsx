@@ -1,5 +1,5 @@
 "use client"
-import { Link } from "lucide-react"
+
 import { Button } from "./ui/button"
 import { useAuth } from "@/providers/AuthContext"
 import { useRouter } from "next/navigation"
@@ -13,7 +13,6 @@ export const Footer = () => {
     const { user } = useAuth();
     const router = useRouter();
     const { t } = useTranslation();
-
     return (
         <footer className="border-t bg-background mt-12">
             <Flex direction="row" justify="center" gap="4" pt="5" pb="5" >
