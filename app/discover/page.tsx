@@ -18,9 +18,8 @@ export default function DiscoverPage() {
 
   if (loading && resteurants.length === 0) {
     return (
-      <PageLoader>
-        <p>{t("discover_page.loading")}</p>
-      </PageLoader>
+      <PageLoader loadingText={t("discover_page.loading")} />
+
     )
   }
   return (
