@@ -44,55 +44,73 @@ export default function OwnerRegister() {
         <form onSubmit={handleSubmit(handleRegister)} >
           <Flex direction="column" gap="2" >
             <Box>
-              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.name_label")}</label>
+              <div className="mb-2">
+                <label className="text-sm font-medium text-foreground block">{t("register_page.name_label")}</label>
+              </div>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="text"
                 placeholder={t("register_page.name_placeholder")}
-                {...register("name")}
+                {...register("name", { required: t("register_page.name_required"), minLength: { value: 10, message: t("register_page.name_too_short") } })}
               />
             </Box>
             <Box>
-              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.company_label")}</label>
+              <div className="mb-2">
+                <label className="text-sm font-medium text-foreground block">{t("register_page.company_label")}</label>
+              </div>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="text"
                 placeholder={t("register_page.company_placeholder")}
-                {...register("companyName")}
+                {...register("companyName", { required: t("register_page.company_required"), minLength: { value: 2, message: t("register_page.company_too_short") } })}
               />
             </Box>
             <Box>
-              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.email_label")}</label>
+              <div className="mb-2">
+                <label className="text-sm font-medium text-foreground block">{t("register_page.email_label")}</label>
+              </div>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="email"
                 placeholder={t("register_page.email_placeholder")}
-                {...register("email")}
+                {...register("email", { required: t("register_page.email_required"), minLength: { value: 5, message: t("register_page.email_too_short") } })}
               />
             </Box>
             <Box>
-              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.password_label")}</label>
+              <div className="mb-2">
+                <label className="text-sm font-medium text-foreground block">{t("register_page.password_label")}</label>
+              </div>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="password"
                 placeholder={t("register_page.password_placeholder")}
-                {...register("password")}
+                {...register("password", { required: t("register_page.password_required"), minLength: { value: 6, message: t("register_page.password_too_short") } })}
               />
             </Box>
-            <Box className="pb-5">
-              <label className="p-2 text-sm font-medium text-foreground block">{t("register_page.confirm_password_label")}</label>
+            <Box>
+              <div className="mb-2">
+                <label className="text-sm font-medium text-foreground block">{t("register_page.confirm_password_label")}</label>
+              </div>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="password"
                 placeholder={t("register_page.confirm_password_placeholder")}
-                {...register("confirmPassword")}
+                {...register("confirmPassword", {
+                  required: t("register_page.confirm_password_required"),
+                  validate: (val: string) => {
+                    if (watch('password') != val) {
+                      return t("register_page.passwords_must_match");
+                    }
+                  }
+                })}
               />
             </Box>
+            <Button type="submit">{t("register_page.create_account_button")}</Button>
             <Button type="submit">{t("register_page.create_account_button")}</Button>
           </Flex>
           {error && (
@@ -102,7 +120,14 @@ export default function OwnerRegister() {
             </Alert>
           )}
         </form>
-        <LoginFormHaveAcc />
+        <div className="relative my-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-muted" />
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-card text-muted-foreground">{t("register_page.already_have_account")}</span>
+          </div>
+        </div>
         <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
           <Link href="/login">{t("register_page.login_here")}</Link>
         </Button>
