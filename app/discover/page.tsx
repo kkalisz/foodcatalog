@@ -20,6 +20,7 @@ export default function DiscoverPage() {
   if (loading && resteurants.length === 0) {
     return <PageLoader loadingText={t('discover_page.loading')} />
   }
+  
   return (
     <main className="min-h-screen bg-background">
       {loading && resteurants.length === 0 ? (

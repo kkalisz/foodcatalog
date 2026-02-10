@@ -131,12 +131,16 @@
     "inactive": "nieaktywny"
   },
   "restaurant_form": {
+    "basic_info": "Podstawowe informacje",
     "name_placeholder": "Nazwa restauracji",
     "city_placeholder": "Miasto",
+    "street_placeholder": "Ulica",
+    "postalCode_placeholder": "Kod pocztowy",
     "cuisine_type": "Rodzaj kuchni",
     "description_placeholder": "Krótki opis restauracji",
     "phone_placeholder": "Numer telefonu",
     "image_url_placeholder": "URL zdjęcia",
+    "upload": "Wgraj",
     "delivery": "Dostawa",
     "saving": "Zapisywanie...",
     "save_changes": "Zapisz zmiany",

@@ -13,10 +13,12 @@ const LoginFormWrapper = ({ children }: LoginFormWrapperProps) => {
 }
 export default LoginFormWrapper
 
-const RegisterWrapper = ({ children }: RegisterFormWrapperProps) => {
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">{children}</div>
-    </main>
-  )
+export const RegisterWrapper = ({ children }: RegisterFormWrapperProps) => {
+    return (
+        <main className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
+            <div className="w-full max-w-md">
+                {children}
+            </div>
+        </main>
+    )
 }

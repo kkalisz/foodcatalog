@@ -58,7 +58,6 @@ const RestaurantPage = () => {
         const menuRef = doc(db, 'public_restaurants', id, 'menu', 'main')
 
         const menuSnap = await getDoc(menuRef)
-
         if (menuSnap.exists()) {
           setMenu(menuSnap.data().categories || [])
         } else {
@@ -101,7 +100,6 @@ const RestaurantPage = () => {
           <ChevronLeft className="w-6 h-6" />
         </Link>
       </div>
-
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
         {/* Restaurant Info - Mobile: stacked, Tablet+: grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">

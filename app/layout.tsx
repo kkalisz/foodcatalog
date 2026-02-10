@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-gray-100 font-sans antialiased">
-        <Theme appearance="light" accentColor="ruby" radius="large">
+        <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <I18nProvider>
               <Navigation />
