@@ -17,8 +17,8 @@ import { CUISINES } from "@/data/constans/cusines"
 import { useRouter } from "next/navigation"
 import { useTranslation } from "react-i18next"
 import { Box, Text, Checkbox, CheckboxCards, Flex, Heading, TextArea, TextField, Button } from "@radix-ui/themes"
-import { PageSizeWrapper } from "../ui/wrapper"
 import { Input } from "../ui/input"
+import { PageSizeWrapper } from '../ui/wrapper'
 
 type Props = {
   restaurantId?: string
@@ -91,10 +91,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         }
     }
     return (
-        <PageSizeWrapper>
-            <div className="border border-gray-200 rounded-lg p-4">
-                <form onSubmit={handleSubmit(onSubmit)} className="w-full p-20 space-y-4">
-                    <Flex direction="column" gap="4">
+                <form onSubmit={handleSubmit(onSubmit)} >
+                    <Flex direction="column" gap="2">
                         <Box>
                             <Heading>{t("restaurant_form.basic_info")}</Heading>
                         </Box>
@@ -201,9 +199,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                         >
                             {isSubmitting ? t("restaurant_form.saving") : restaurantId ? t("restaurant_form.save_changes") : t("restaurant_form.add_restaurant")}
                         </Button>
-                    </Flex>
+                    </Flex>                 
                 </form>
-            </div>
-        </PageSizeWrapper>
     )
 }

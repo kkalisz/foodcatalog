@@ -30,7 +30,7 @@ const CategoryForm = ({
   })
 
   return (
-    <div className="border rounded-md pt-2">
+    <div className="pt-2">
       <Flex
         key={category.id}
         direction="column"

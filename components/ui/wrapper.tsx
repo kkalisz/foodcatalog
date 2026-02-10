@@ -1,8 +1,8 @@
 type WrapperProps = {
   children: React.ReactNode
-  className?: string
+  
 }
 
-export const PageSizeWrapper = ({ children, className }: WrapperProps) => {
-  return <div className={className}>{children}</div>
+export const PageSizeWrapper = ({ children }: WrapperProps) => {
+  return <div className={'w-full max-w-7xl mx-auto'}>{children}</div>
 }

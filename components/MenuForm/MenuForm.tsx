@@ -2,7 +2,7 @@
 
 import { useFieldArray, useForm, useWatch } from 'react-hook-form'
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu'
-import { Button } from '@radix-ui/themes'
+import { Button, Flex } from '@radix-ui/themes'
 import { saveMenuToFirestore } from '@/lib/firebase/restantMenu'
 import { useFirmId } from '@/lib/firebase/restaurants'
 import { doc, getDoc } from 'firebase/firestore'
@@ -11,6 +11,7 @@ import { useEffect } from 'react'
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react'
 import CategoryForm from '../ui/form/categoryForm'
 import { EmptyMenu } from './EmptyMenu/EmptyMenu'
+import { PageSizeWrapper } from '../ui/wrapper'
 
 const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
   const { firmId, loading } = useFirmId()
@@ -87,8 +88,9 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
     loadMenu()
   }, [firmId, restaurantId])
   return (
-    <div>
-      <div className="flex p-2 items-center w-full justify-between">
+    <PageSizeWrapper> 
+    <Flex direction="column" gap="1">
+      <div className="flex p-2 items-center justify-between">
         <div>
           {' '}
           <h1 className="text-3xl">Menu Editor</h1>
@@ -126,7 +128,7 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
           )}
         </div>
         {fields.length > 0 ? (
-          <div className="flex justify-center m-0 border p-10 border-solid rounded-md">
+          <div className="flex justify-center mt-5 border p-10 border-solid rounded-md">
             <Button
               type="button"
               color="gray"
@@ -151,7 +153,8 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
           </div>
         ) : null}
       </form>
-    </div>
+    </Flex>
+    </PageSizeWrapper>
   )
 }
 

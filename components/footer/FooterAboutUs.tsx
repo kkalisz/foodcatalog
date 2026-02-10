@@ -8,9 +8,8 @@ const FooterAboutUs = () => {
   const { t } = useTranslation()
 
   return (
-    <Flex direction="column" gap="2">
-      <Card style={{ height: '20vh', width: '10vw', paddingLeft: '30px' }}>
-        <Heading size="5">{t('footer.about_us.heading')}</Heading>
+   
+      <div style={{ minHeight: '20vh', minWidth: "400px", paddingLeft: '30px' }}>
         <Box>
           <Flex gap="2" align="center">
             <DotIcon size={30} className="text-primary" />
@@ -43,8 +42,8 @@ const FooterAboutUs = () => {
             </Link>
           </Flex>
         </Box>
-      </Card>
-    </Flex>
+      </div>
+
   )
 }
 

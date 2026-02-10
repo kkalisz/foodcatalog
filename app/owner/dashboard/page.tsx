@@ -110,7 +110,6 @@ export default function OwnerDashboard() {
   return (
     <main className="min-h-screen bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
-        {/* Header */}
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             {t('owner_dashboard.header')}
@@ -119,8 +118,6 @@ export default function OwnerDashboard() {
             {t('owner_dashboard.subheader')}
           </p>
         </div>
-
-        {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           <DashboardStats
             title={t('owner_dashboard.total_views')}
@@ -147,10 +144,7 @@ export default function OwnerDashboard() {
             trend={0}
           />
         </div>
-
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Restaurants List */}
           <div className="lg:col-span-2">
             <Card className="p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
@@ -167,9 +161,6 @@ export default function OwnerDashboard() {
               <RestaurantsList restaurants={restaurants} />
             </Card>
           </div>
-
-          {/* Quick Actions */}
-
           <div className="space-y-4 sm:space-y-6">
             <Button
               variant="ghost"
@@ -179,7 +170,6 @@ export default function OwnerDashboard() {
               <LogOut className="w-4 h-4 mr-2" />
               {t('owner_dashboard.logout')}
             </Button>
-            {/* Upgrade Plan */}
             <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
               <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">
                 {t('owner_dashboard.premium_plan_header')}
@@ -191,8 +181,6 @@ export default function OwnerDashboard() {
                 {t('owner_dashboard.premium_plan_unlock')}
               </Button>
             </Card>
-
-            {/* Support Card */}
             <Card className="p-4 sm:p-6">
               <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">
                 {t('owner_dashboard.need_help')}
@@ -208,8 +196,6 @@ export default function OwnerDashboard() {
                 {t('owner_dashboard.need_help_button')}
               </Button>
             </Card>
-
-            {/* Subscription Info */}
             <Card className="p-4 sm:p-6">
               <h3 className="font-bold text-base sm:text-lg text-foreground mb-4">
                 {t('owner_dashboard.subscription_header')}
