@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useRouter } from "next/navigation"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Star, Edit2, Trash } from "lucide-react"
-import { PublicRestaurant } from "@/data/types/publicRestaurant"
-import { deletePublicRestaurant } from "@/lib/firebase/restaurants"
-import { useTranslation } from "react-i18next"
-import { restaurantImage } from "@/data/constans/icons"
+import { useRouter } from 'next/navigation'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Star, Edit2, Trash } from 'lucide-react'
+import { PublicRestaurant } from '@/data/types/publicRestaurant'
+import { deletePublicRestaurant } from '@/lib/firebase/restaurants'
+import { useTranslation } from 'react-i18next'
+import { restaurantImage } from '@/data/constans/icons'
 
 type RestaurantsListProps = {
   restaurants: PublicRestaurant[]
@@ -18,14 +18,13 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
   const { t } = useTranslation()
 
   const handleDelete = async (restaurantId: string) => {
-    if (!confirm(t("restaurants_list.confirm_delete"))) return
+    if (!confirm(t('restaurants_list.confirm_delete'))) return
     try {
       await deletePublicRestaurant(restaurantId)
-      alert(t("restaurants_list.deleted_success"))
+      alert(t('restaurants_list.deleted_success'))
       router.refresh()
-    }
-    catch (error) {
-      console.error("Error deleting restaurant:", error)
+    } catch (error) {
+      console.error('Error deleting restaurant:', error)
     }
   }
   return (
@@ -51,12 +50,15 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
 
               <div className="flex items-center gap-4 text-sm mt-2">
                 <span
-                  className={`px-2 py-1 rounded-full ${restaurant.status === "active"
-                    ? "bg-green-100 text-green-700"
-                    : "bg-yellow-100 text-yellow-700"
-                    }`}
+                  className={`px-2 py-1 rounded-full ${
+                    restaurant.status === 'active'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-yellow-100 text-yellow-700'
+                  }`}
                 >
-                  {restaurant.status === "active" ? t("restaurants_list.active") : t("restaurants_list.inactive")}
+                  {restaurant.status === 'active'
+                    ? t('restaurants_list.active')
+                    : t('restaurants_list.inactive')}
                 </span>
 
                 <div className="flex items-center gap-1">
@@ -76,16 +78,23 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 }
               >
                 <Edit2 className="w-4 h-4 mr-2" />
-                {t("restaurants_list.edit")}
+                {t('restaurants_list.edit')}
               </Button>
-              <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)} >
-                {t("restaurants_list.add_edit_menu")}
+              <Button
+                onClick={() =>
+                  router.push(`/owner/restaurants/${restaurant.id}/menu`)
+                }
+              >
+                {t('restaurants_list.add_edit_menu')}
               </Button>
               <Button
                 size="sm"
                 variant="destructive"
                 onClick={() => handleDelete(restaurant.id)}
-              ><Trash className="w-4 h-4 mr-2" />{t("restaurants_list.delete")}</Button>
+              >
+                <Trash className="w-4 h-4 mr-2" />
+                {t('restaurants_list.delete')}
+              </Button>
             </div>
           </div>
         </Card>

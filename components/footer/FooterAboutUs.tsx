@@ -1,41 +1,51 @@
-import { Box, Card, Flex, Heading, Link, Text } from "@radix-ui/themes";
-import { Info, HelpCircle, MessageCircleQuestion, Newspaper, DotIcon } from "lucide-react";
+import { Box, Card, Flex, Heading, Link, Text } from '@radix-ui/themes'
+import {
+  DotIcon,
+} from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const FooterAboutUs = () => {
-    return (
-        <Flex direction="column" gap="2"  >
-            <Card style={{ height: "20vh", width: "10vw", paddingLeft: "30px" }} >
-                <Heading size="5">
-                    O nas
-                </Heading>
-                <Box>
-                    <Flex gap="2" align="center">
-                        <DotIcon size={30} className="text-primary" />
-                        <Link href="#" color="gray">O nas</Link>
-                    </Flex>
-                </Box>
-                <Box>
-                    <Flex gap="2" align="center">
-                        <DotIcon size={30} className="text-primary" />
-                        <Link href="#" color="gray">Jak działa LocalGastro</Link>
-                    </Flex>
-                </Box>
-                <Box>
-                    <Flex gap="2" align="center">
-                        <DotIcon size={30} className="text-primary" />
-                        <Link href="#" color="gray">FAQ</Link>
-                    </Flex>
-                </Box>
-                <Box>
-                    <Flex gap="2" align="center">
-                        <DotIcon size={30} className="text-primary" />
-                        <Link href="#" color="gray">Blog</Link>
-                    </Flex>
-                </Box>
-            </Card>
+  const { t } = useTranslation()
 
-        </Flex>
-    );
-};
+  return (
+    <Flex direction="column" gap="2">
+      <Card style={{ height: '20vh', width: '10vw', paddingLeft: '30px' }}>
+        <Heading size="5">{t('footer.about_us.heading')}</Heading>
+        <Box>
+          <Flex gap="2" align="center">
+            <DotIcon size={30} className="text-primary" />
+            <Link href="#" color="gray">
+              {t('footer.about_us.about')}
+            </Link>
+          </Flex>
+        </Box>
+        <Box>
+          <Flex gap="2" align="center">
+            <DotIcon size={30} className="text-primary" />
+            <Link href="#" color="gray">
+              {t('footer.about_us.how_it_works')}
+            </Link>
+          </Flex>
+        </Box>
+        <Box>
+          <Flex gap="2" align="center">
+            <DotIcon size={30} className="text-primary" />
+            <Link href="#" color="gray">
+              {t('footer.about_us.faq')}
+            </Link>
+          </Flex>
+        </Box>
+        <Box>
+          <Flex gap="2" align="center">
+            <DotIcon size={30} className="text-primary" />
+            <Link href="#" color="gray">
+              {t('footer.about_us.blog')}
+            </Link>
+          </Flex>
+        </Box>
+      </Card>
+    </Flex>
+  )
+}
 
-export default FooterAboutUs;
+export default FooterAboutUs

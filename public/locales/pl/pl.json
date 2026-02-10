@@ -1,5 +1,34 @@
 {
   "hello": "Witaj świecie",
   "login": "Zaloguj",
-  "logout": "Wyloguj"
+  "logout": "Wyloguj",
+  "app_name": "Food Catalog",
+  "all_rights_reserved": "Wszelkie prawa zastrzeżone",
+  "footer": {
+    "login_as_owner": "Zaloguj się jako właściciel",
+    "about_us": {
+      "heading": "O nas",
+      "about": "O nas",
+      "how_it_works": "Jak działa LocalGastro",
+      "faq": "FAQ",
+      "blog": "Blog"
+    },
+    "law_info": {
+      "heading": "Informacje prawne",
+      "terms": "Regulamin",
+      "privacy_policy": "Polityka Prywatności",
+      "cookies_policy": "Polityka Cookies",
+      "gdpr": "RODO",
+      "contact": "Kontakt"
+    },
+    "for_restaurators": {
+      "heading": "Dla restauratorów",
+      "add_restaurant": "Dodaj restaurację",
+      "panel": "Panel restauratora",
+      "login": "Zaloguj się",
+      "pricing": "Cennik/Pakiety",
+      "benefits": "Korzyści współpracy",
+      "business_contact": "Kontakt biznesowy"
+    }
+  }
 }

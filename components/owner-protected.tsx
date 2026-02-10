@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import type React from "react"
+import type React from 'react'
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import { getOwnerSession } from "@/lib/auth"
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { getOwnerSession } from '@/lib/auth'
 
 export function OwnerProtected({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -13,7 +13,7 @@ export function OwnerProtected({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const session = getOwnerSession()
     if (!session) {
-      router.push("/owner/login")
+      router.push('/owner/login')
     } else {
       setIsLoading(false)
     }

@@ -10,7 +10,31 @@
     "sign_in": "Sign In"
   },
   "footer": {
-    "login_as_owner": "Login as owner"
+    "login_as_owner": "Login as owner",
+    "about_us": {
+      "heading": "About us",
+      "about": "About us",
+      "how_it_works": "How LocalGastro works",
+      "faq": "FAQ",
+      "blog": "Blog"
+    },
+    "law_info": {
+      "heading": "Legal information",
+      "terms": "Terms and Conditions",
+      "privacy_policy": "Privacy Policy",
+      "cookies_policy": "Cookies Policy",
+      "gdpr": "GDPR",
+      "contact": "Contact"
+    },
+    "for_restaurators": {
+      "heading": "For restaurateurs",
+      "add_restaurant": "Add restaurant",
+      "panel": "Restaurateur panel",
+      "login": "Login",
+      "pricing": "Pricing/Packages",
+      "benefits": "Cooperation benefits",
+      "business_contact": "Business contact"
+    }
   },
   "main_page": {
     "header": "Local Gastronomy Catalog",

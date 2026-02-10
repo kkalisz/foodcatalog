@@ -1,4 +1,4 @@
 const OwnerPage = () => {
-    return <div>Owner Page</div>;
+  return <div>Owner Page</div>
 }
-export default OwnerPage;
+export default OwnerPage
