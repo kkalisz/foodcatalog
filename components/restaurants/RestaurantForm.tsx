@@ -4,12 +4,10 @@ import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useAuth } from '@/providers/AuthContext'
-
 import {
     updatePublicRestaurant,
     getRestaurantById,
 } from "@/lib/firebase/restaurants"
-
 import { createPublickRestaurantSchema } from "@/lib/validators/createPublickRestaurantSchema"
 import { CreatePublicRestaurantForm } from "@/data/types/createPublicRestaurantForm"
 import { createRestaurant } from "@/lib/firebase/restaurants"
@@ -105,7 +103,6 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                                 variant="surface"
                                 placeholder={t("restaurant_form.name_placeholder")}
                                 required>
-
                             </TextField.Root>
                         </Box>
                         <Box>

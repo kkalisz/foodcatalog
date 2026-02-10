@@ -2,6 +2,8 @@
 
 import { Box, Card, Flex } from '@radix-ui/themes'
 import { PageSizeWrapper } from '@/components/ui/wrapper'
+import SubscriptionCard from '@/components/ui/subscription/SubscriptionCard'
+import SubscriptionPlanPro from '@/components/subscription/SubscriptionPlanPro'
 
 export default function TestPage() {
   return (
@@ -11,9 +13,7 @@ export default function TestPage() {
         <Flex>BASIC</Flex>
         <Flex>Wybierz nowy plan</Flex>
         <Flex direction="row" gap="5">
-          <Card className="border">
-            <div style={{ height: '400px', width: '400px' }}>PRO</div>
-          </Card>
+          <SubscriptionCard header={'Plan Pro'} children={<SubscriptionPlanPro/>}/>
           <Card className="border">
             <div style={{ height: '400px', width: '400px' }}>PREMIUM</div>
           </Card>
