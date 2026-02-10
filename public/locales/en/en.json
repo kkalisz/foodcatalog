@@ -2,33 +2,36 @@
   "hello": "Hello world",
   "login": "Log in",
   "logout": "Log out",
-  "app_name": "Food Catalog",
-  "all_rights_reserved": "All rights reserved",
-  "footer": {
-    "login_as_owner": "Login as owner",
-    "about_us": {
-      "heading": "About us",
-      "about": "About us",
-      "how_it_works": "How LocalGastro works",
-      "faq": "FAQ",
-      "blog": "Blog"
-    },
-    "law_info": {
-      "heading": "Legal information",
-      "terms": "Terms and Conditions",
-      "privacy_policy": "Privacy Policy",
-      "cookies_policy": "Cookies Policy",
-      "gdpr": "GDPR",
-      "contact": "Contact"
-    },
-    "for_restaurators": {
-      "heading": "For restaurateurs",
-      "add_restaurant": "Add restaurant",
-      "panel": "Restaurateur panel",
-      "login": "Login",
-      "pricing": "Pricing/Packages",
-      "benefits": "Cooperation benefits",
-      "business_contact": "Business contact"
-    }
+  "register_page": {
+    "header": "Become an owner",
+    "subheader": "Register your restaurant and start managing it today",
+    "name_label": "Full name",
+    "name_placeholder": "Enter your full name",
+    "company_label": "Company name",
+    "company_placeholder": "Enter your company name",
+    "email_label": "Email address",
+    "email_placeholder": "Enter your email address",
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
+    "confirm_password_label": "Confirm password",
+    "confirm_password_placeholder": "Re-enter your password",
+    "create_account_button": "Register as owner",
+    "creating_account": "Creating account...",
+    "already_have_account": "Already have an account?",
+    "login_here": "Login here",
+    "looking_for_dining": "Looking for dining options?",
+    "browse_restaurants": "Browse restaurants",
+    "passwords_not_match": "Passwords do not match",
+    "password_min_length": "Password must be at least 6 characters",
+    "name_required": "Full Name is required",
+    "name_too_short": "Full Name is too short",
+    "company_required": "Company Name is required",
+    "company_too_short": "Company Name is too short",
+    "email_required": "Email is required",
+    "email_too_short": "Email is too short",
+    "password_required": "Password is required",
+    "password_too_short": "Password is too short",
+    "confirm_password_required": "Confirm Password is required",
+    "passwords_must_match": "Passwords must match"
   }
 }
