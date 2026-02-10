@@ -1,4 +1,4 @@
-import { Star } from "lucide-react"
+import { Star } from 'lucide-react'
 
 interface Review {
   id: number
@@ -27,12 +27,14 @@ export function ReviewList({ reviews }: ReviewListProps) {
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-4 h-4 ${i < review.rating ? "fill-primary text-primary" : "text-muted-foreground"}`}
+                  className={`w-4 h-4 ${i < review.rating ? 'fill-primary text-primary' : 'text-muted-foreground'}`}
                 />
               ))}
             </div>
           </div>
-          <p className="text-foreground text-sm leading-relaxed">{review.text}</p>
+          <p className="text-foreground text-sm leading-relaxed">
+            {review.text}
+          </p>
         </div>
       ))}
     </div>

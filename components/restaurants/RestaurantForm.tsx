@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useAuth } from "@/providers/AuthContext"
+import { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '@/providers/AuthContext'
 
 import {
     updatePublicRestaurant,
@@ -21,7 +21,7 @@ import { PageSizeWrapper } from "../ui/wrapper"
 import { Input } from "../ui/input"
 
 type Props = {
-    restaurantId?: string
+  restaurantId?: string
 }
 
 export const RestaurantForm = ({ restaurantId }: Props) => {
@@ -48,36 +48,38 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         },
     })
 
-    useEffect(() => {
-        if (!restaurantId || !user) return
+  useEffect(() => {
+    if (!restaurantId || !user) return
 
-        const loadRestaurant = async () => {
-            const restaurant = await getRestaurantById(restaurantId)
-            if (!restaurant) return
-            if (restaurant.firmId !== user.uid) return
+    const loadRestaurant = async () => {
+      const restaurant = await getRestaurantById(restaurantId)
+      if (!restaurant) return
+      if (restaurant.firmId !== user.uid) return
 
-            reset({
-                name: restaurant.name,
-                city: restaurant.city,
-                category: Array.isArray(restaurant.category) ? restaurant.category : [restaurant.category],
-                shortDescription: restaurant.shortDescription,
-                coverImage: restaurant.coverImage,
-                delivery: restaurant.delivery,
-            })
-        }
+      reset({
+        name: restaurant.name,
+        city: restaurant.city,
+        category: Array.isArray(restaurant.category)
+          ? restaurant.category
+          : [restaurant.category],
+        shortDescription: restaurant.shortDescription,
+        coverImage: restaurant.coverImage,
+        delivery: restaurant.delivery,
+      })
+    }
 
-        loadRestaurant()
-    }, [restaurantId, user, reset])
+    loadRestaurant()
+  }, [restaurantId, user, reset])
 
-    const onSubmit = async (data: CreatePublicRestaurantForm) => {
-        if (!user) return
+  const onSubmit = async (data: CreatePublicRestaurantForm) => {
+    if (!user) return
 
-        try {
-            if (restaurantId) {
-                await updatePublicRestaurant(restaurantId, data)
-                alert(t("restaurant_form.saved_success"))
-            } else {
-                const newRestaurantId = await createRestaurant(data, user.uid)
+    try {
+      if (restaurantId) {
+        await updatePublicRestaurant(restaurantId, data)
+        alert(t('restaurant_form.saved_success'))
+      } else {
+        const newRestaurantId = await createRestaurant(data, user.uid)
 
                 router.push(
                     `/owner/restaurants/${newRestaurantId}/menu`

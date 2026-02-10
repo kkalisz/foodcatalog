@@ -1,16 +1,24 @@
-"use client"
+'use client'
 
-import type React from "react"
+import type React from 'react'
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { getOwnerSession, clearOwnerSession } from "@/lib/auth"
-import { ChevronDown, LogOut, Menu, Send, Mail, Phone, HelpCircle } from "lucide-react"
-import { useTranslation } from "react-i18next"
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { getOwnerSession, clearOwnerSession } from '@/lib/auth'
+import {
+  ChevronDown,
+  LogOut,
+  Menu,
+  Send,
+  Mail,
+  Phone,
+  HelpCircle,
+} from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function HelpCenterPage() {
   const router = useRouter()
@@ -18,58 +26,63 @@ export default function HelpCenterPage() {
   const [user, setUser] = useState<any>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
-  const [searchQuery, setSearchQuery] = useState("")
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
+  const [searchQuery, setSearchQuery] = useState('')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
   const [formSubmitted, setFormSubmitted] = useState(false)
   const { t } = useTranslation()
 
   const FAQ_ITEMS = [
     {
       id: 1,
-      question: t("help_center_page.faq.q1"),
-      answer: t("help_center_page.faq.a1"),
+      question: t('help_center_page.faq.q1'),
+      answer: t('help_center_page.faq.a1'),
     },
     {
       id: 2,
-      question: t("help_center_page.faq.q2"),
-      answer: t("help_center_page.faq.a2"),
+      question: t('help_center_page.faq.q2'),
+      answer: t('help_center_page.faq.a2'),
     },
     {
       id: 3,
-      question: t("help_center_page.faq.q3"),
-      answer: t("help_center_page.faq.a3"),
+      question: t('help_center_page.faq.q3'),
+      answer: t('help_center_page.faq.a3'),
     },
     {
       id: 4,
-      question: t("help_center_page.faq.q4"),
-      answer: t("help_center_page.faq.a4"),
+      question: t('help_center_page.faq.q4'),
+      answer: t('help_center_page.faq.a4'),
     },
     {
       id: 5,
-      question: t("help_center_page.faq.q5"),
-      answer: t("help_center_page.faq.a5"),
+      question: t('help_center_page.faq.q5'),
+      answer: t('help_center_page.faq.a5'),
     },
     {
       id: 6,
-      question: t("help_center_page.faq.q6"),
-      answer: t("help_center_page.faq.a6"),
+      question: t('help_center_page.faq.q6'),
+      answer: t('help_center_page.faq.a6'),
     },
     {
       id: 7,
-      question: t("help_center_page.faq.q7"),
-      answer: t("help_center_page.faq.a7"),
+      question: t('help_center_page.faq.q7'),
+      answer: t('help_center_page.faq.a7'),
     },
     {
       id: 8,
-      question: t("help_center_page.faq.q8"),
-      answer: t("help_center_page.faq.a8"),
+      question: t('help_center_page.faq.q8'),
+      answer: t('help_center_page.faq.a8'),
     },
   ]
 
   useEffect(() => {
     const session = getOwnerSession()
     if (!session) {
-      router.push("/owner/login")
+      router.push('/owner/login')
     } else {
       setUser(session.user)
       setIsLoading(false)
@@ -78,10 +91,12 @@ export default function HelpCenterPage() {
 
   const handleLogout = () => {
     clearOwnerSession()
-    router.push("/owner/login")
+    router.push('/owner/login')
   }
 
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleFormChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -91,14 +106,14 @@ export default function HelpCenterPage() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setFormSubmitted(true)
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    setFormData({ name: '', email: '', subject: '', message: '' })
     setTimeout(() => setFormSubmitted(false), 5000)
   }
 
   const filteredFAQ = FAQ_ITEMS.filter(
     (item) =>
       item.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.answer.toLowerCase().includes(searchQuery.toLowerCase()),
+      item.answer.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   if (isLoading) {
@@ -106,7 +121,9 @@ export default function HelpCenterPage() {
       <div className="min-h-screen flex items-center justify-center bg-muted/30">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-muted-foreground">{t("help_center_page.loading")}</p>
+          <p className="text-muted-foreground">
+            {t('help_center_page.loading')}
+          </p>
         </div>
       </div>
     )
@@ -117,8 +134,11 @@ export default function HelpCenterPage() {
       {/* Mobile Header */}
       <div className="md:hidden border-b bg-card sticky top-0 z-40">
         <div className="flex justify-between items-center p-4">
-          <h1 className="text-lg font-bold">{t("help_center_page.title")}</h1>
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2">
+          <h1 className="text-lg font-bold">{t('help_center_page.title')}</h1>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2"
+          >
             <Menu className="w-5 h-5" />
           </button>
         </div>
@@ -126,17 +146,27 @@ export default function HelpCenterPage() {
         {mobileMenuOpen && (
           <div className="border-t p-4 space-y-2">
             <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/dashboard">{t("help_center_page.dashboard")}</Link>
+              <Link href="/owner/dashboard">
+                {t('help_center_page.dashboard')}
+              </Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/subscription">{t("help_center_page.subscription")}</Link>
+              <Link href="/owner/subscription">
+                {t('help_center_page.subscription')}
+              </Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link href="/owner/help-center">{t("help_center_page.help_center")}</Link>
+              <Link href="/owner/help-center">
+                {t('help_center_page.help_center')}
+              </Link>
             </Button>
-            <Button variant="ghost" className="w-full justify-start text-destructive" onClick={handleLogout}>
+            <Button
+              variant="ghost"
+              className="w-full justify-start text-destructive"
+              onClick={handleLogout}
+            >
               <LogOut className="w-4 h-4 mr-2" />
-              {t("help_center_page.logout")}
+              {t('help_center_page.logout')}
             </Button>
           </div>
         )}
@@ -146,12 +176,20 @@ export default function HelpCenterPage() {
         {/* Desktop Header */}
         <div className="hidden md:flex justify-between items-start mb-8">
           <div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">{t("help_center_page.title")}</h1>
-            <p className="text-muted-foreground">{t("help_center_page.subtitle")}</p>
+            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+              {t('help_center_page.title')}
+            </h1>
+            <p className="text-muted-foreground">
+              {t('help_center_page.subtitle')}
+            </p>
           </div>
-          <Button variant="outline" onClick={handleLogout} className="bg-transparent h-11">
+          <Button
+            variant="outline"
+            onClick={handleLogout}
+            className="bg-transparent h-11"
+          >
             <LogOut className="w-4 h-4 mr-2" />
-            {t("help_center_page.logout")}
+            {t('help_center_page.logout')}
           </Button>
         </div>
 
@@ -159,14 +197,16 @@ export default function HelpCenterPage() {
           {/* FAQ Section */}
           <div className="lg:col-span-2">
             <Card className="p-4 sm:p-6 mb-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">{t("help_center_page.faq_title")}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
+                {t('help_center_page.faq_title')}
+              </h2>
 
               {/* Search */}
               <div className="relative mb-6">
                 <HelpCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder={t("help_center_page.search_faq")}
+                  placeholder={t('help_center_page.search_faq')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 h-11"
@@ -179,26 +219,37 @@ export default function HelpCenterPage() {
                   filteredFAQ.map((item) => (
                     <div key={item.id} className="border rounded-lg">
                       <button
-                        onClick={() => setExpandedFAQ(expandedFAQ === item.id ? null : item.id)}
+                        onClick={() =>
+                          setExpandedFAQ(
+                            expandedFAQ === item.id ? null : item.id
+                          )
+                        }
                         className="w-full flex items-center justify-between p-4 hover:bg-muted/50 transition-colors"
                       >
-                        <span className="font-semibold text-foreground text-left">{item.question}</span>
+                        <span className="font-semibold text-foreground text-left">
+                          {item.question}
+                        </span>
                         <ChevronDown
-                          className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${expandedFAQ === item.id ? "rotate-180" : ""
-                            }`}
+                          className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${
+                            expandedFAQ === item.id ? 'rotate-180' : ''
+                          }`}
                         />
                       </button>
 
                       {expandedFAQ === item.id && (
                         <div className="border-t px-4 py-3 bg-muted/30">
-                          <p className="text-muted-foreground text-sm leading-relaxed">{item.answer}</p>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {item.answer}
+                          </p>
                         </div>
                       )}
                     </div>
                   ))
                 ) : (
                   <div className="text-center py-8">
-                    <p className="text-muted-foreground">{t("help_center_page.no_results")} "{searchQuery}"</p>
+                    <p className="text-muted-foreground">
+                      {t('help_center_page.no_results')} "{searchQuery}"
+                    </p>
                   </div>
                 )}
               </div>
@@ -208,7 +259,9 @@ export default function HelpCenterPage() {
           {/* Support Card */}
           <div className="space-y-4 sm:space-y-6">
             <Card className="p-4 sm:p-6 bg-primary/5 border-primary/20">
-              <h3 className="font-bold text-foreground mb-4 text-lg">{t("help_center_page.quick_support")}</h3>
+              <h3 className="font-bold text-foreground mb-4 text-lg">
+                {t('help_center_page.quick_support')}
+              </h3>
 
               <div className="space-y-4">
                 <a
@@ -217,8 +270,12 @@ export default function HelpCenterPage() {
                 >
                   <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground text-sm">{t("help_center_page.email_support")}</p>
-                    <p className="text-xs text-muted-foreground">support@lokalgastro.com</p>
+                    <p className="font-semibold text-foreground text-sm">
+                      {t('help_center_page.email_support')}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      support@lokalgastro.com
+                    </p>
                   </div>
                 </a>
 
@@ -228,34 +285,64 @@ export default function HelpCenterPage() {
                 >
                   <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground text-sm">{t("help_center_page.phone_support")}</p>
-                    <p className="text-xs text-muted-foreground">+48 123 456 789</p>
+                    <p className="font-semibold text-foreground text-sm">
+                      {t('help_center_page.phone_support')}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      +48 123 456 789
+                    </p>
                   </div>
                 </a>
               </div>
             </Card>
 
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-foreground mb-4">{t("help_center_page.resources")}</h3>
+              <h3 className="font-bold text-foreground mb-4">
+                {t('help_center_page.resources')}
+              </h3>
               <ul className="space-y-2">
                 <li>
-                  <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">{t("help_center_page.getting_started")}</Link>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-primary h-auto p-0"
+                    asChild
+                  >
+                    <Link href="#">
+                      {t('help_center_page.getting_started')}
+                    </Link>
                   </Button>
                 </li>
                 <li>
-                  <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">{t("help_center_page.video_tutorials")}</Link>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-primary h-auto p-0"
+                    asChild
+                  >
+                    <Link href="#">
+                      {t('help_center_page.video_tutorials')}
+                    </Link>
                   </Button>
                 </li>
                 <li>
-                  <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">{t("help_center_page.api_documentation")}</Link>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-primary h-auto p-0"
+                    asChild
+                  >
+                    <Link href="#">
+                      {t('help_center_page.api_documentation')}
+                    </Link>
                   </Button>
                 </li>
                 <li>
-                  <Button variant="ghost" className="w-full justify-start text-primary h-auto p-0" asChild>
-                    <Link href="#">{t("help_center_page.community_forum")}</Link>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-primary h-auto p-0"
+                    asChild
+                  >
+                    <Link href="#">
+                      {t('help_center_page.community_forum')}
+                    </Link>
                   </Button>
                 </li>
               </ul>
@@ -265,22 +352,26 @@ export default function HelpCenterPage() {
 
         {/* Contact Form */}
         <Card className="p-4 sm:p-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">{t("help_center_page.still_need_help")}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">
+            {t('help_center_page.still_need_help')}
+          </h2>
 
           {formSubmitted && (
             <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg text-sm">
-              {t("help_center_page.form_success")}
+              {t('help_center_page.form_success')}
             </div>
           )}
 
           <form onSubmit={handleFormSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.full_name")}</label>
+                <label className="text-sm font-medium text-foreground block mb-2">
+                  {t('help_center_page.full_name')}
+                </label>
                 <Input
                   type="text"
                   name="name"
-                  placeholder={t("help_center_page.your_name")}
+                  placeholder={t('help_center_page.your_name')}
                   value={formData.name}
                   onChange={handleFormChange}
                   required
@@ -288,11 +379,13 @@ export default function HelpCenterPage() {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.email")}</label>
+                <label className="text-sm font-medium text-foreground block mb-2">
+                  {t('help_center_page.email')}
+                </label>
                 <Input
                   type="email"
                   name="email"
-                  placeholder={t("help_center_page.your_email")}
+                  placeholder={t('help_center_page.your_email')}
                   value={formData.email}
                   onChange={handleFormChange}
                   required
@@ -302,11 +395,13 @@ export default function HelpCenterPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.subject")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">
+                {t('help_center_page.subject')}
+              </label>
               <Input
                 type="text"
                 name="subject"
-                placeholder={t("help_center_page.what_about")}
+                placeholder={t('help_center_page.what_about')}
                 value={formData.subject}
                 onChange={handleFormChange}
                 required
@@ -315,10 +410,12 @@ export default function HelpCenterPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">{t("help_center_page.message")}</label>
+              <label className="text-sm font-medium text-foreground block mb-2">
+                {t('help_center_page.message')}
+              </label>
               <textarea
                 name="message"
-                placeholder={t("help_center_page.describe_issue")}
+                placeholder={t('help_center_page.describe_issue')}
                 value={formData.message}
                 onChange={handleFormChange}
                 required
@@ -329,7 +426,7 @@ export default function HelpCenterPage() {
 
             <Button type="submit" className="w-full sm:w-auto h-11">
               <Send className="w-4 h-4 mr-2" />
-              {t("help_center_page.send_message")}
+              {t('help_center_page.send_message')}
             </Button>
           </form>
         </Card>

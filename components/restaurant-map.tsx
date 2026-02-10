@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 interface RestaurantMapProps {
   lat: number

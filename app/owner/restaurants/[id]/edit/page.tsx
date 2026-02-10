@@ -1,16 +1,16 @@
-import { RestaurantForm } from "@/components/restaurants/RestaurantForm"
-import { PageSizeWrapper } from "@/components/ui/wrapper"
-
+import { RestaurantForm } from '@/components/restaurants/RestaurantForm'
+import { PageSizeWrapper } from '@/components/ui/wrapper'
 
 export default async function EditRestaurantPage({
-    params,
+  params,
 }: {
-    params: Promise<{ id: string }>
+  params: Promise<{ id: string }>
 }) {
-    const { id } = await params
+  const { id } = await params
 
-    return (<PageSizeWrapper >
-        <RestaurantForm restaurantId={id} />
+  return (
+    <PageSizeWrapper>
+      <RestaurantForm restaurantId={id} />
     </PageSizeWrapper>
-    )
+  )
 }

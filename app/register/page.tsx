@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -14,22 +14,22 @@ import { Box, Flex, TextField } from "@radix-ui/themes"
 import LoginFormHaveAcc from "@/components/MenuForm/LoginForm/LoginFormHaveAcc"
 
 type RegisterFormValues = {
-  name: string,
-  companyName: string,
-  email: string,
-  password: string,
-  confirmPassword: string,
+  name: string
+  companyName: string
+  email: string
+  password: string
+  confirmPassword: string
 }
 
 export default function OwnerRegister() {
   const { t } = useTranslation();
   const form = useForm<RegisterFormValues>({
     defaultValues: {
-      name: "",
-      companyName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+      name: '',
+      companyName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
     },
   })
   const { register, handleSubmit } = form

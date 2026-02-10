@@ -1,6 +1,5 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl'
 const LoginForm = () => {
-    
-    return <div>Login Form Component</div>;
+  return <div>Login Form Component</div>
 }
-export default LoginForm;
+export default LoginForm

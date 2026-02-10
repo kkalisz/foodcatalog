@@ -6,7 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "lint": "node ./node_modules/next/dist/bin/next lint --dir app --dir components --dir lib"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -40,6 +40,7 @@
     "@radix-ui/themes": "^3.2.1",
     "@vercel/analytics": "latest",
     "autoprefixer": "^10.4.20",
+    "braces": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
@@ -72,8 +73,9 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.10",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
+    "eslint-config-prettier": "^10.1.8",
     "postcss": "^8.5",
     "prettier": "^3.7.4",
     "tailwindcss": "^4.1.9",

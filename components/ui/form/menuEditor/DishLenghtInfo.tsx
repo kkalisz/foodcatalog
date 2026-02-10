@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react'
 type DishLenghtInfoProps = {
-    children: number
+  children: number
 }
 const DushLenghtInfo = ({ children }: DishLenghtInfoProps) => {
-    return <div className=" 
+  return (
+    <div
+      className=" 
                 flex
                 items-center
                 justify-center
@@ -15,9 +17,11 @@ const DushLenghtInfo = ({ children }: DishLenghtInfoProps) => {
                 text-sm
                 font-medium
                 self-center
-                shrink-0">
-        {children}
-    </div>;
+                shrink-0"
+    >
+      {children}
+    </div>
+  )
 }
 
-export default DushLenghtInfo;
+export default DushLenghtInfo

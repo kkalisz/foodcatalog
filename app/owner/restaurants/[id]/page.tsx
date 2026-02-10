@@ -1,52 +1,58 @@
-"use client"
+'use client'
 
-import type React from "react"
+import type React from 'react'
 
-import { useState } from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { ArrowLeft, Save, AlertCircle } from "lucide-react"
-import { restaurantImage } from "@/data/constans/icons"
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { ArrowLeft, Save, AlertCircle } from 'lucide-react'
+import { restaurantImage } from '@/data/constans/icons'
 
 // Mock restaurant data
 const RESTAURANTS: Record<string, any> = {
-  "1": {
-    id: "1",
-    name: "La Familia Trattoria",
-    description: "Authentic Italian cuisine",
-    address: "123 Main St",
-    phone: "+48123456789",
-    website: "www.lafamilia.pl",
-    cuisine: "Italian",
-    priceRange: "$$",
-    image: "/italian-restaurant-interior.jpg",
+  '1': {
+    id: '1',
+    name: 'La Familia Trattoria',
+    description: 'Authentic Italian cuisine',
+    address: '123 Main St',
+    phone: '+48123456789',
+    website: 'www.lafamilia.pl',
+    cuisine: 'Italian',
+    priceRange: '$$',
+    image: '/italian-restaurant-interior.jpg',
   },
-  "2": {
-    id: "2",
+  '2': {
+    id: '2',
     name: "Mama's Kitchen",
-    description: "Homestyle cooking",
-    address: "456 Oak Ave",
-    phone: "+48987654321",
-    website: "www.mamaskitchen.pl",
-    cuisine: "Polish",
-    priceRange: "$",
-    image: "/cozy-kitchen.jpg",
+    description: 'Homestyle cooking',
+    address: '456 Oak Ave',
+    phone: '+48987654321',
+    website: 'www.mamaskitchen.pl',
+    cuisine: 'Polish',
+    priceRange: '$',
+    image: '/cozy-kitchen.jpg',
   },
 }
 
-export default function RestaurantEditor({ params }: { params: { id: string } }) {
+export default function RestaurantEditor({
+  params,
+}: {
+  params: { id: string }
+}) {
   const router = useRouter()
   const restaurant = RESTAURANTS[params.id]
   const [saving, setSaving] = useState(false)
   const [success, setSuccess] = useState(false)
   const [formData, setFormData] = useState(restaurant || {})
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setFormData((prev: any) => ({
       ...prev,
@@ -90,14 +96,18 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
               Back
             </Link>
           </Button>
-          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Edit Restaurant</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+            Edit Restaurant
+          </h1>
         </div>
 
         {/* Success Alert */}
         {success && (
           <Alert className="mb-6 bg-green-50 border-green-200 text-green-800">
             <AlertCircle className="h-4 w-4" />
-            <AlertDescription>Restaurant details saved successfully!</AlertDescription>
+            <AlertDescription>
+              Restaurant details saved successfully!
+            </AlertDescription>
           </Alert>
         )}
 
@@ -106,7 +116,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Restaurant Name */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Restaurant Name *</label>
+              <label className="text-sm font-medium text-foreground block mb-2">
+                Restaurant Name *
+              </label>
               <Input
                 type="text"
                 name="name"
@@ -119,7 +131,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
 
             {/* Description */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Description *</label>
+              <label className="text-sm font-medium text-foreground block mb-2">
+                Description *
+              </label>
               <Textarea
                 name="description"
                 value={formData.description}
@@ -134,7 +148,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Address */}
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">Address *</label>
+                <label className="text-sm font-medium text-foreground block mb-2">
+                  Address *
+                </label>
                 <Input
                   type="text"
                   name="address"
@@ -147,7 +163,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
 
               {/* Phone */}
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">Phone Number *</label>
+                <label className="text-sm font-medium text-foreground block mb-2">
+                  Phone Number *
+                </label>
                 <Input
                   type="tel"
                   name="phone"
@@ -161,7 +179,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
 
             {/* Website */}
             <div>
-              <label className="text-sm font-medium text-foreground block mb-2">Website</label>
+              <label className="text-sm font-medium text-foreground block mb-2">
+                Website
+              </label>
               <Input
                 type="url"
                 name="website"
@@ -175,7 +195,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Cuisine */}
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">Cuisine Type *</label>
+                <label className="text-sm font-medium text-foreground block mb-2">
+                  Cuisine Type *
+                </label>
                 <Input
                   type="text"
                   name="cuisine"
@@ -188,11 +210,18 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
 
               {/* Price Range */}
               <div>
-                <label className="text-sm font-medium text-foreground block mb-2">Price Range *</label>
+                <label className="text-sm font-medium text-foreground block mb-2">
+                  Price Range *
+                </label>
                 <select
                   name="priceRange"
                   value={formData.priceRange}
-                  onChange={(e) => setFormData((prev: any) => ({ ...prev, priceRange: e.target.value }))}
+                  onChange={(e) =>
+                    setFormData((prev: any) => ({
+                      ...prev,
+                      priceRange: e.target.value,
+                    }))
+                  }
                   className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                   required
                 >
@@ -207,9 +236,13 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-4 border-t">
-              <Button type="submit" className="w-full sm:w-auto h-11 text-base" disabled={saving}>
+              <Button
+                type="submit"
+                className="w-full sm:w-auto h-11 text-base"
+                disabled={saving}
+              >
                 <Save className="w-4 h-4 mr-2" />
-                {saving ? "Saving..." : "Save Changes"}
+                {saving ? 'Saving...' : 'Save Changes'}
               </Button>
               <Button
                 type="button"
@@ -217,7 +250,9 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
                 className="w-full sm:w-auto h-11 text-base bg-transparent"
                 asChild
               >
-                <Link href={`/owner/restaurant/${params.id}/menu`}>Manage Menu</Link>
+                <Link href={`/owner/restaurant/${params.id}/menu`}>
+                  Manage Menu
+                </Link>
               </Button>
               <Button
                 type="button"
@@ -241,20 +276,30 @@ export default function RestaurantEditor({ params }: { params: { id: string } })
               className="w-full h-48 sm:h-64 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-lg font-bold text-foreground mb-2">{formData.name}</h3>
-              <p className="text-sm text-muted-foreground mb-3">{formData.description}</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">
+                {formData.name}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                {formData.description}
+              </p>
               <div className="space-y-2 text-sm">
                 <p>
-                  <span className="font-medium text-foreground">Address:</span> {formData.address}
+                  <span className="font-medium text-foreground">Address:</span>{' '}
+                  {formData.address}
                 </p>
                 <p>
-                  <span className="font-medium text-foreground">Phone:</span> {formData.phone}
+                  <span className="font-medium text-foreground">Phone:</span>{' '}
+                  {formData.phone}
                 </p>
                 <p>
-                  <span className="font-medium text-foreground">Cuisine:</span> {formData.cuisine}
+                  <span className="font-medium text-foreground">Cuisine:</span>{' '}
+                  {formData.cuisine}
                 </p>
                 <p>
-                  <span className="font-medium text-foreground">Price Range:</span> {formData.priceRange}
+                  <span className="font-medium text-foreground">
+                    Price Range:
+                  </span>{' '}
+                  {formData.priceRange}
                 </p>
               </div>
             </div>

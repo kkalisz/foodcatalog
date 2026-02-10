@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server"
-import { doc, getDoc } from "firebase/firestore"
-import { db } from "@/lib/firebase/client"
+import { NextRequest, NextResponse } from 'next/server'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '@/lib/firebase/client'
 
 export async function GET(
   _request: NextRequest,
@@ -9,14 +9,11 @@ export async function GET(
   // ⬇️ KLUCZOWE: await params
   const { id } = await context.params
 
-  const ref = doc(db, "public_restaurants", id)
+  const ref = doc(db, 'public_restaurants', id)
   const snap = await getDoc(ref)
 
   if (!snap.exists()) {
-    return NextResponse.json(
-      { error: "Restaurant not found" },
-      { status: 404 }
-    )
+    return NextResponse.json({ error: 'Restaurant not found' }, { status: 404 })
   }
 
   return NextResponse.json({

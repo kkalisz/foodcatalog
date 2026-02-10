@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -25,10 +25,10 @@ const OwnerLogin = () => {
 
   const form = useForm<UserLogin>({
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
-    mode: "onChange"
+    mode: 'onChange',
   })
   const { register, handleSubmit, reset, formState: { errors } } = form
   const router = useRouter()
@@ -73,7 +73,7 @@ const OwnerLogin = () => {
                   required: t("login_page.email_required"),
                   minLength: {
                     value: 6,
-                    message: t("login_page.email_min_length"),
+                    message: t('login_page.email_min_length'),
                   },
                 })}
               />
