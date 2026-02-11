@@ -9,7 +9,7 @@ const FooterAboutUs = () => {
 
   return (
     <Flex direction="column" gap="2">
-      <Card style={{ height: '20vh', width: '10vw', paddingLeft: '30px' }}>
+      <Card style={{ minHeight: '20vh', minWidth: '10vw', paddingLeft: '30px' }}>
         <Heading size="5">{t('footer.about_us.heading')}</Heading>
         <Box>
           <Flex gap="2" align="center">

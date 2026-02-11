@@ -16,7 +16,11 @@ export const Footer = () => {
 
   return (
     <footer className="border-t bg-background mt-12">
-      <Flex direction="row" justify="center" gap="4" pt="5" pb="5">
+      <Flex direction={{ initial: "column", md: "row" }} 
+  justify="center" 
+  gap="4" 
+  pt="5" 
+  pb="5">
         <FooterAboutUs />
         <FooterLawInfo />
         <FooterForRestauratorsInfo />
