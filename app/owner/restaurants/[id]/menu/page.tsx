@@ -8,9 +8,7 @@ const Menu = () => {
   const params = useParams<{ id: string }>()
   const restaurantId = params?.id
   return (
-    <PageSizeWrapper>
       <MenuForm restaurantId={restaurantId} />
-    </PageSizeWrapper>
   )
 }
 

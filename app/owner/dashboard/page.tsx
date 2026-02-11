@@ -21,6 +21,8 @@ import {
   where,
 } from 'firebase/firestore'
 import { db } from '@/lib/firebase/client'
+import DashboardHeader from '@/components/ui/headers/DashboardHeader'
+import { Flex, Text } from '@radix-ui/themes'
 
 // Mock owner data
 const OWNER_STATS = {
@@ -109,18 +111,9 @@ export default function OwnerDashboard() {
 
   return (
     <main className="min-h-screen bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
-        {/* Header */}
-        <div className="mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
-            {t('owner_dashboard.header')}
-          </h1>
-          <p className="text-sm sm:text-base text-muted-foreground">
-            {t('owner_dashboard.subheader')}
-          </p>
-        </div>
-
-        {/* Stats */}
+      <div className="max-w-7xl mx-auto py-6">
+          <DashboardHeader title={t('owner_dashboard.header')} />
+          <p className="p-2">{t('owner_dashboard.subheader')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           <DashboardStats
             title={t('owner_dashboard.total_views')}
@@ -147,16 +140,11 @@ export default function OwnerDashboard() {
             trend={0}
           />
         </div>
-
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Restaurants List */}
           <div className="lg:col-span-2">
             <Card className="p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-                  {t('owner_dashboard.restaurants_header')}
-                </h2>
+                <DashboardHeader title={t('owner_dashboard.restaurants_header')} />
                 <Button
                   onClick={() => router.push('/owner/dashboard/restaurants')}
                   className="w-full sm:w-auto text-sm sm:text-base h-10 sm:h-11"
@@ -167,9 +155,6 @@ export default function OwnerDashboard() {
               <RestaurantsList restaurants={restaurants} />
             </Card>
           </div>
-
-          {/* Quick Actions */}
-
           <div className="space-y-4 sm:space-y-6">
             <Button
               variant="ghost"
@@ -179,11 +164,8 @@ export default function OwnerDashboard() {
               <LogOut className="w-4 h-4 mr-2" />
               {t('owner_dashboard.logout')}
             </Button>
-            {/* Upgrade Plan */}
             <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">
-                {t('owner_dashboard.premium_plan_header')}
-              </h3>
+              <DashboardHeader title={t('owner_dashboard.premium_plan_header')} />
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                 {t('owner_dashboard.premium_plan_about')}
               </p>
@@ -191,12 +173,8 @@ export default function OwnerDashboard() {
                 {t('owner_dashboard.premium_plan_unlock')}
               </Button>
             </Card>
-
-            {/* Support Card */}
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-base sm:text-lg text-foreground mb-2">
-                {t('owner_dashboard.need_help')}
-              </h3>
+              <DashboardHeader title={t('owner_dashboard.need_help')}/>
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                 {t('owner_dashboard.need_help_about')}
               </p>
@@ -208,12 +186,8 @@ export default function OwnerDashboard() {
                 {t('owner_dashboard.need_help_button')}
               </Button>
             </Card>
-
-            {/* Subscription Info */}
             <Card className="p-4 sm:p-6">
-              <h3 className="font-bold text-base sm:text-lg text-foreground mb-4">
-                {t('owner_dashboard.subscription_header')}
-              </h3>
+              <DashboardHeader title={t('owner_dashboard.subscription_header')}/>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-xs sm:text-sm text-muted-foreground">

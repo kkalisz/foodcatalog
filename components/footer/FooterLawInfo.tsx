@@ -1,14 +1,12 @@
 import { Box, Card, Flex, Heading, Link } from '@radix-ui/themes'
-import { Scale, Lock, Cookie, ShieldCheck, Mail, DotIcon } from 'lucide-react'
+import { DotIcon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const FooterLawInfo = () => {
   const { t } = useTranslation()
 
   return (
-    <Flex direction="column" gap="2">
-      <Card style={{ height: '20vh', width: '10vw', paddingLeft: '30px' }}>
-        <Heading size="5">{t('footer.law_info.heading')}</Heading>
+      <div>
         <Box>
           <Flex gap="2" align="center">
             <DotIcon size={30} className="text-primary" />
@@ -49,8 +47,7 @@ const FooterLawInfo = () => {
             </Link>
           </Flex>
         </Box>
-      </Card>
-    </Flex>
+      </div>
   )
 }
 

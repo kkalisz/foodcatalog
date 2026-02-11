@@ -2,7 +2,7 @@
 
 import { useFieldArray, useForm, useWatch } from 'react-hook-form'
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu'
-import { Button } from '@radix-ui/themes'
+import { Button, Flex } from '@radix-ui/themes'
 import { saveMenuToFirestore } from '@/lib/firebase/restantMenu'
 import { useFirmId } from '@/lib/firebase/restaurants'
 import { doc, getDoc } from 'firebase/firestore'
@@ -11,8 +11,11 @@ import { useEffect } from 'react'
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react'
 import CategoryForm from '../ui/form/categoryForm'
 import { EmptyMenu } from './EmptyMenu/EmptyMenu'
+import { PageSizeWrapper } from '../ui/wrapper'
+import { useTranslation } from 'react-i18next'
 
 const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
+  const { t } = useTranslation()
   const { firmId, loading } = useFirmId()
   const form = useForm<MenuFormType>({
     mode: 'onSubmit',
@@ -87,26 +90,25 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
     loadMenu()
   }, [firmId, restaurantId])
   return (
-    <div>
-      <div className="flex p-2 items-center w-full justify-between">
+    <PageSizeWrapper>
+    <Flex direction="column" gap="1">
+      <div className="flex p-2 items-center justify-between">
         <div>
-          {' '}
-          <h1 className="text-3xl">Menu Editor</h1>
-          <p>{`${fields.length} category, ${dishesCount} dish`}</p>
+          <h1 className="text-3xl">{t('menu_form.title')}</h1>
+          <p>{`${fields.length} ${t('menu_form.category')}, ${dishesCount} ${t('menu_form.dish')}`}</p>
           {isDirty ? (
             <div className="flex gap-2 text-amber-700 pt-3">
-              <MessageSquareWarningIcon /> You have unsaved changes
+              <MessageSquareWarningIcon /> {t('menu_form.unsaved_changes')}
             </div>
           ) : null}
         </div>
-
         <Button
           color="brown"
           type="submit"
           size="3"
           onClick={handleSubmit(onHandleSubmit)}
         >
-          <SaveIcon /> Zapisz menu
+          <SaveIcon /> {t('menu_form.save_menu')}
         </Button>
       </div>
       <form onSubmit={handleSubmit(onHandleSubmit)}>
@@ -126,7 +128,7 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
           )}
         </div>
         {fields.length > 0 ? (
-          <div className="flex justify-center m-0 border p-10 border-solid rounded-md">
+          <div className="flex justify-center mt-5 border p-10 border-solid rounded-md">
             <Button
               type="button"
               color="gray"
@@ -146,12 +148,13 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
                                 "
             >
               <PlusIcon />
-              Add category
+              {t('menu_form.add_category')}
             </Button>
           </div>
         ) : null}
       </form>
-    </div>
+    </Flex>
+    </PageSizeWrapper>
   )
 }
 

@@ -10,7 +10,7 @@ export default async function EditRestaurantPage({
 
   return (
     <PageSizeWrapper>
-      <RestaurantForm restaurantId={id} />
+    <RestaurantForm restaurantId={id} />
     </PageSizeWrapper>
   )
 }

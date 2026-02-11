@@ -13,9 +13,7 @@ const FooterForRestauratorsInfo = () => {
   const { t } = useTranslation()
 
   return (
-    <Flex direction="column" gap="2">
-      <Card style={{ height: '20vh', width: '10vw', paddingLeft: '30px' }}>
-        <Heading size="5">{t('footer.for_restaurators.heading')}</Heading>
+      <div >
         <Box>
           <Flex gap="2" align="center">
             <PlusCircle size={16} className="text-primary" />
@@ -64,8 +62,7 @@ const FooterForRestauratorsInfo = () => {
             </Link>
           </Flex>
         </Box>
-      </Card>
-    </Flex>
+      </div>
   )
 }
 

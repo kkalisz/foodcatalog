@@ -19,11 +19,6 @@ export default function Home() {
             <Button size="lg" asChild>
               <Link href="/discover">{t('main_page.browse_restaurants')}</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="owner/dashboard">
-                {t('main_page.add_restaurant')}
-              </Link>
-            </Button>
           </div>
         </div>
       </div>
