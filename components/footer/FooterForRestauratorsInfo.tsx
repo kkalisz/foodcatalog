@@ -13,9 +13,7 @@ const FooterForRestauratorsInfo = () => {
   const { t } = useTranslation()
 
   return (
-
-      <div style={{ minHeight: '20vh', minWidth: "300px", paddingLeft: '30px' }}>
-        
+      <div >
         <Box>
           <Flex gap="2" align="center">
             <PlusCircle size={16} className="text-primary" />

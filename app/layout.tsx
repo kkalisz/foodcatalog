@@ -19,7 +19,7 @@ export default function RootLayout({
         <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <I18nProvider>
-              <div className="flex flex-col min-h-screen">
+              <div className="flex flex-col min-h-screen bg-background">
                 <Navigation />
                 {children}
                 <Footer />

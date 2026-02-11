@@ -30,5 +30,15 @@
       "benefits": "Korzyści współpracy",
       "business_contact": "Kontakt biznesowy"
     }
+  },
+  "menu_form": {
+    "title": "Edytor Menu",
+    "unsaved_changes": "Masz niezapisane zmiany",
+    "save_menu": "Zapisz menu",
+    "add_category": "Dodaj kategorię",
+    "category": "kategoria",
+    "dish": "danie",
+    "category_plural": "kategorie",
+    "dish_plural": "dania"
   }
 }

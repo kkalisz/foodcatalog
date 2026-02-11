@@ -14,19 +14,20 @@ export const Footer = () => {
   const { user } = useAuth()
   const router = useRouter()
   const { t } = useTranslation()
-
   return (
    <div>
       <PageSizeWrapper>
       <div>
-        <Flex py="5" direction="row" width="100%" justify="between" gap="4">
-          <FooterElement heading={t('footer.about_us.heading')} children={<FooterAboutUs />}></FooterElement>
-          <FooterElement heading={t('footer.law_info.heading')}>
-          <FooterLawInfo />
-          </FooterElement>
-          <FooterElement heading={t('footer.for_restaurators.heading')}>
-          <FooterForRestauratorsInfo />
-          </FooterElement>
+        <Flex 
+              py="5" 
+              direction={{ initial: "column", md: "row" }} 
+              width="100%" 
+              justify="between" 
+              gap="4"
+              align="stretch">
+              <FooterElement heading={t('footer.about_us.heading')} children={<FooterAboutUs />}/>
+              <FooterElement heading={t('footer.law_info.heading')} children={<FooterLawInfo />}/>
+              <FooterElement heading={t('footer.for_restaurators.heading')} children={<FooterForRestauratorsInfo />}/>
         </Flex>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center">
@@ -46,7 +47,7 @@ export const Footer = () => {
           )}
         </div>
       </div>
-      </PageSizeWrapper>
+        </PageSizeWrapper>
       </div>
   )
 }

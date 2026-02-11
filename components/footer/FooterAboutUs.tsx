@@ -7,9 +7,8 @@ import { useTranslation } from 'react-i18next'
 const FooterAboutUs = () => {
   const { t } = useTranslation()
 
-  return (
-   
-      <div style={{ minHeight: '20vh', minWidth: "400px", paddingLeft: '30px' }}>
+  return (   
+      <div>
         <Box>
           <Flex gap="2" align="center">
             <DotIcon size={30} className="text-primary" />
