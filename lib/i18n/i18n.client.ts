@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 
-import plCommon from "./locales/pl/common.json";
-import enCommon from "./locales/en/common.json";
+import enCommon from './locales/en/common.json';
+import plCommon from './locales/pl/common.json';
 
 const resources = {
   pl: { common: plCommon },
-  en: { common: enCommon }
+  en: { common: enCommon },
 } as const;
 
 if (!i18n.isInitialized) {
@@ -18,14 +18,14 @@ if (!i18n.isInitialized) {
     .use(initReactI18next)
     .init({
       resources,
-      fallbackLng: "pl",
-      defaultNS: "common",
-      ns: ["common"],
+      fallbackLng: 'pl',
+      defaultNS: 'common',
+      ns: ['common'],
       interpolation: { escapeValue: false },
       detection: {
-        order: ["localStorage", "navigator"],
-        caches: ["localStorage"]
-      }
+        order: ['localStorage', 'navigator'],
+        caches: ['localStorage'],
+      },
     });
 }
 

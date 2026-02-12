@@ -1,3 +1,3 @@
-const restaurantImage = "/placeholder.svg"
+const restaurantImage = '/placeholder.svg';
 
-export { restaurantImage }
+export { restaurantImage };

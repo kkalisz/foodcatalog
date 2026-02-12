@@ -1,37 +1,17 @@
-import { doc, setDoc, serverTimestamp } from "firebase/firestore"
-import { db } from "@/lib/firebase/client"
-import type { MenuForm } from "@/data/types/dishMenu"
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
-export const saveMenuToFirestore = async (
-    firmId: string,
-    restaurantId: string,
-    data: MenuForm
-) => {
-    const ownerMenuRef = doc(
-        db,
-        "firms",
-        firmId,
-        "restaurants",
-        restaurantId,
-        "menu",
-        "main"
-    )
+import type { MenuForm } from '@/data/types/dishMenu';
+import { db } from '@/lib/firebase/client';
 
-    const publicMenuRef = doc(
-        db,
-        "public_restaurants",
-        restaurantId,
-        "menu",
-        "main"
-    )
+export const saveMenuToFirestore = async (firmId: string, restaurantId: string, data: MenuForm) => {
+  const ownerMenuRef = doc(db, 'firms', firmId, 'restaurants', restaurantId, 'menu', 'main');
 
-    const payload = {
-        categories: data.categories,
-        updatedAt: serverTimestamp(),
-    }
+  const publicMenuRef = doc(db, 'public_restaurants', restaurantId, 'menu', 'main');
 
-    await Promise.all([
-        setDoc(ownerMenuRef, payload),
-        setDoc(publicMenuRef, payload),
-    ])
-}
+  const payload = {
+    categories: data.categories,
+    updatedAt: serverTimestamp(),
+  };
+
+  await Promise.all([setDoc(ownerMenuRef, payload), setDoc(publicMenuRef, payload)]);
+};
