@@ -1,7 +1,8 @@
-'use client'
+'use client';
 
-import { Box, Card, Flex } from '@radix-ui/themes'
-import { PageSizeWrapper } from '@/components/ui/wrapper'
+import { Card, Flex } from '@radix-ui/themes';
+
+import { PageSizeWrapper } from '@/components/ui/wrapper';
 
 export default function TestPage() {
   return (
@@ -23,5 +24,5 @@ export default function TestPage() {
         </Flex>
       </Flex>
     </PageSizeWrapper>
-  )
+  );
 }

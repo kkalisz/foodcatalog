@@ -1,10 +1,11 @@
-'use client'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
+'use client';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <main className="flex-1 flex items-center border justify-center bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -23,5 +24,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }

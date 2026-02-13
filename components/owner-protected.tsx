@@ -1,23 +1,24 @@
-'use client'
+'use client';
 
-import type React from 'react'
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { getOwnerSession } from '@/lib/auth'
+import { useRouter } from 'next/navigation';
+
+import { getOwnerSession } from '@/lib/auth';
 
 export function OwnerProtected({ children }: { children: React.ReactNode }) {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const session = getOwnerSession()
+    const session = getOwnerSession();
     if (!session) {
-      router.push('/owner/login')
+      router.push('/owner/login');
     } else {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }, [router])
+  }, [router]);
 
   if (isLoading) {
     return (
@@ -27,8 +28,8 @@ export function OwnerProtected({ children }: { children: React.ReactNode }) {
           <p className="text-muted-foreground">Loading...</p>
         </div>
       </div>
-    )
+    );
   }
 
-  return <>{children}</>
+  return <>{children}</>;
 }

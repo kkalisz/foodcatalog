@@ -1,50 +1,35 @@
-'use client'
+'use client';
 
-import { Category, Dish, MenuForm } from '@/data/types/dishMenu'
-import { Box, Button, Flex, TextArea, TextField } from '@radix-ui/themes'
-import { useFieldArray, UseFormReturn } from 'react-hook-form'
+import { Box, Button, Flex, TextArea, TextField } from '@radix-ui/themes';
+import { MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
+import { UseFormReturn } from 'react-hook-form';
 
-import { MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react'
-import DushLenghtInfo from './menuEditor/DishLenghtInfo'
-import { useMenuForm } from '@/data/hooks/useMenuForm'
-import ErrorLabel from './label/ErrorLabel'
+import { useMenuForm } from '@/data/hooks/useMenuForm';
+import { Category, MenuForm } from '@/data/types/dishMenu';
+
+import ErrorLabel from './label/ErrorLabel';
+import DushLenghtInfo from './menuEditor/DishLenghtInfo';
 
 type CategoryFormProps = {
-  form: UseFormReturn<MenuForm>
-  index: number
-  category: Category
-  onRemoveCategory: () => void
-}
+  form: UseFormReturn<MenuForm>;
+  index: number;
+  category: Category;
+  onRemoveCategory: () => void;
+};
 
-const CategoryForm = ({
-  form,
-  index,
-  category,
-  onRemoveCategory,
-}: CategoryFormProps) => {
+const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormProps) => {
   const { register, errors, dishes, onAddNewDish, removeDish } = useMenuForm({
     form,
     index,
     category,
     onRemoveCategory,
-  })
+  });
 
   return (
     <div className="pt-2">
-      <Flex
-        key={category.id}
-        direction="column"
-        gap="4"
-        className="p-2 mt-4 border rounded-md "
-      >
+      <Flex key={category.id} direction="column" gap="4" className="p-2 mt-4 border rounded-md ">
         <Flex className="flex items-center gap-2" height="100px">
-          <Button
-            type="button"
-            variant="ghost"
-            size="2"
-            radius="medium"
-            color="gray"
-          >
+          <Button type="button" variant="ghost" size="2" radius="medium" color="gray">
             <MoveUpIcon />
           </Button>
           <Box width="80vw">
@@ -80,44 +65,32 @@ const CategoryForm = ({
                 <Box className="flex-1">
                   <TextField.Root
                     placeholder="Wpisz nazwę dania..."
-                    {...register(
-                      `categories.${index}.dishes.${indexDish}.name`,
-                      {
-                        required: true,
-                        minLength: {
-                          value: 3,
-                          message: 'Nazwa dania musi mieć minimum 3 litery',
-                        },
-                      }
-                    )}
+                    {...register(`categories.${index}.dishes.${indexDish}.name`, {
+                      required: true,
+                      minLength: {
+                        value: 3,
+                        message: 'Nazwa dania musi mieć minimum 3 litery',
+                      },
+                    })}
                   />
                   <ErrorLabel
-                    error={
-                      errors.categories?.[index]?.dishes?.[indexDish]?.name
-                        ?.message
-                    }
+                    error={errors.categories?.[index]?.dishes?.[indexDish]?.name?.message}
                     id="minLength"
                   />
                 </Box>
                 <Box className="w-[140px]">
                   <TextField.Root
                     placeholder="Cena"
-                    {...register(
-                      `categories.${index}.dishes.${indexDish}.price`,
-                      {
-                        required: true,
-                        min: {
-                          value: 1,
-                          message: 'Cena musi być większa od 0',
-                        },
-                      }
-                    )}
+                    {...register(`categories.${index}.dishes.${indexDish}.price`, {
+                      required: true,
+                      min: {
+                        value: 1,
+                        message: 'Cena musi być większa od 0',
+                      },
+                    })}
                   />
                   <ErrorLabel
-                    error={
-                      errors.categories?.[index]?.dishes?.[indexDish]?.price
-                        ?.message
-                    }
+                    error={errors.categories?.[index]?.dishes?.[indexDish]?.price?.message}
                     id="min"
                   />
                 </Box>
@@ -137,22 +110,16 @@ const CategoryForm = ({
               <Box className="mt-4">
                 <TextArea
                   placeholder="Krótko opisz potrawę..."
-                  {...register(
-                    `categories.${index}.dishes.${indexDish}.description`,
-                    {
-                      required: true,
-                      minLength: {
-                        value: 10,
-                        message: 'Minimum 10 znaków',
-                      },
-                    }
-                  )}
+                  {...register(`categories.${index}.dishes.${indexDish}.description`, {
+                    required: true,
+                    minLength: {
+                      value: 10,
+                      message: 'Minimum 10 znaków',
+                    },
+                  })}
                 />
                 <ErrorLabel
-                  error={
-                    errors.categories?.[index]?.dishes?.[indexDish]?.description
-                      ?.message
-                  }
+                  error={errors.categories?.[index]?.dishes?.[indexDish]?.description?.message}
                   id="minLength"
                 />
               </Box>
@@ -184,7 +151,7 @@ const CategoryForm = ({
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CategoryForm
+export default CategoryForm;

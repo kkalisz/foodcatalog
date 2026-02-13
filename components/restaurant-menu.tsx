@@ -1,59 +1,63 @@
-'use client'
+'use client';
 
-import { useState, useMemo } from 'react'
-import { ChevronDown, Search } from 'lucide-react'
-import { Input } from '@/components/ui/input'
-import { Card } from '@/components/ui/card'
-import { useTranslation } from 'react-i18next'
+import { useState, useMemo } from 'react';
+
+import { ChevronDown, Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 
 interface MenuItem {
-  id: string
-  name: string
-  description: string
-  price: number
-  category: string
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
 }
 
 interface MenuCategory {
-  name: string
-  items: MenuItem[]
+  name: string;
+  items: MenuItem[];
 }
 
 interface RestaurantMenuProps {
-  categories: MenuCategory[]
+  categories: MenuCategory[];
 }
 
 export function RestaurantMenu({ categories }: RestaurantMenuProps) {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set(categories.map((cat) => cat.name))
-  )
-  const [searchQuery, setSearchQuery] = useState('')
-  const { t } = useTranslation()
+    new Set(categories.map(cat => cat.name))
+  );
+  const [searchQuery, setSearchQuery] = useState('');
+  const { t } = useTranslation();
 
   const filteredCategories = useMemo(() => {
-    if (!searchQuery.trim()) return categories
+    if (!searchQuery.trim()) {
+      return categories;
+    }
 
     return categories
-      .map((category) => ({
+      .map(category => ({
         ...category,
         items: category.items.filter(
-          (item) =>
+          item =>
             item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             item.description.toLowerCase().includes(searchQuery.toLowerCase())
         ),
       }))
-      .filter((category) => category.items.length > 0)
-  }, [categories, searchQuery])
+      .filter(category => category.items.length > 0);
+  }, [categories, searchQuery]);
 
   const toggleCategory = (categoryName: string) => {
-    const newExpanded = new Set(expandedCategories)
+    const newExpanded = new Set(expandedCategories);
     if (newExpanded.has(categoryName)) {
-      newExpanded.delete(categoryName)
+      newExpanded.delete(categoryName);
     } else {
-      newExpanded.add(categoryName)
+      newExpanded.add(categoryName);
     }
-    setExpandedCategories(newExpanded)
-  }
+    setExpandedCategories(newExpanded);
+  };
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -64,7 +68,7 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
           type="text"
           placeholder={t('menu.search_placeholder')}
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={e => setSearchQuery(e.target.value)}
           className="pl-10 h-10 sm:h-11 text-sm sm:text-base"
         />
       </div>
@@ -72,7 +76,7 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
       {/* Menu Categories */}
       <div className="space-y-3 sm:space-y-4">
         {filteredCategories.length > 0 ? (
-          filteredCategories.map((category) => (
+          filteredCategories.map(category => (
             <Card key={category.name} className="overflow-hidden">
               {/* Category Header - Expandable */}
               <button
@@ -92,11 +96,8 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
               {/* Category Items */}
               {expandedCategories.has(category.name) && (
                 <div className="border-t px-4 sm:px-6 py-3 sm:py-4 space-y-4 sm:space-y-5 bg-muted/30">
-                  {category.items.map((item) => (
-                    <div
-                      key={item.id}
-                      className="pb-4 sm:pb-5 last:pb-0 border-b last:border-b-0"
-                    >
+                  {category.items.map(item => (
+                    <div key={item.id} className="pb-4 sm:pb-5 last:pb-0 border-b last:border-b-0">
                       {/* Item Header */}
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div className="flex-1 min-w-0">
@@ -128,5 +129,5 @@ export function RestaurantMenu({ categories }: RestaurantMenuProps) {
         )}
       </div>
     </div>
-  )
+  );
 }

@@ -1,19 +1,15 @@
-import { Card } from '@/components/ui/card'
-import type { LucideIcon } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react';
+
+import { Card } from '@/components/ui/card';
 
 interface DashboardStatsProps {
-  title: string
-  value: number
-  icon: LucideIcon
-  trend?: number
+  title: string;
+  value: number;
+  icon: LucideIcon;
+  trend?: number;
 }
 
-export function DashboardStats({
-  title,
-  value,
-  icon: Icon,
-  trend = 0,
-}: DashboardStatsProps) {
+export function DashboardStats({ title, value, icon: Icon, trend = 0 }: DashboardStatsProps) {
   return (
     <Card className="p-4 sm:p-6">
       <div className="flex items-center justify-between">
@@ -35,5 +31,5 @@ export function DashboardStats({
         <Icon className="w-6 h-6 text-muted-foreground" />
       </div>
     </Card>
-  )
+  );
 }

@@ -1,28 +1,22 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from 'lucide-react'
-import { DashboardStats } from '@/components/dashboard-stats'
-import { RestaurantsList } from '@/components/restaurants-list'
-import { EditRestaurantModal } from '@/components/edit-restaurant-modal'
-import { useAuth } from '@/providers/AuthContext'
-import { useRouter } from 'next/navigation'
-import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react';
 
-import { PublicRestaurant } from '../../../data/types/publicRestaurant'
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  where,
-} from 'firebase/firestore'
-import { db } from '@/lib/firebase/client'
-import DashboardHeader from '@/components/ui/headers/DashboardHeader'
-import { Flex, Text } from '@radix-ui/themes'
+import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
+
+import { DashboardStats } from '@/components/dashboard-stats';
+import { EditRestaurantModal } from '@/components/edit-restaurant-modal';
+import { RestaurantsList } from '@/components/restaurants-list';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import DashboardHeader from '@/components/ui/headers/DashboardHeader';
+import { db } from '@/lib/firebase/client';
+import { useAuth } from '@/providers/AuthContext';
+
+import { PublicRestaurant } from '../../../data/types/publicRestaurant';
 
 // Mock owner data
 const OWNER_STATS = {
@@ -30,7 +24,7 @@ const OWNER_STATS = {
   totalReviews: 145,
   averageRating: 4.7,
   monthlyTrend: 12,
-}
+};
 
 const OWNER_RESTAURANTS = [
   {
@@ -42,78 +36,77 @@ const OWNER_RESTAURANTS = [
     rating: 4.8,
     image: '/italian-restaurant-interior.jpg',
   },
-]
+];
 
 export default function OwnerDashboard() {
-  const [showEditModal, setShowEditModal] = useState(false)
-  const [selectedRestaurant, setSelectedRestaurant] = useState<any>(null)
-  const { user, logout } = useAuth()
-  const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([])
-  const [loading, setLodaing] = useState(false)
-  const { t } = useTranslation()
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedRestaurant, setSelectedRestaurant] = useState<any>(null);
+  const { user, logout } = useAuth();
+  const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([]);
+  const [loading, setLodaing] = useState(false);
+  const { t } = useTranslation();
 
-  const router = useRouter()
+  const router = useRouter();
 
   const fetchRestaurants = async () => {
-    if (!user) return
+    if (!user) {
+      return;
+    }
 
-    setLodaing(true)
+    setLodaing(true);
 
     try {
-      const q = query(
-        collection(db, 'public_restaurants'),
-        where('firmId', '==', user.uid)
-      )
+      const q = query(collection(db, 'public_restaurants'), where('firmId', '==', user.uid));
 
-      const snapshot = await getDocs(q)
+      const snapshot = await getDocs(q);
 
-      const data = snapshot.docs.map((doc) => ({
+      const data = snapshot.docs.map(doc => ({
         id: doc.id,
         ...(doc.data() as Omit<PublicRestaurant, 'id'>),
-      }))
+      }));
 
-      setRestaurants(data)
+      setRestaurants(data);
     } catch (error) {
-      console.error('Error fetching restaurants:', error)
+      console.error('Error fetching restaurants:', error);
     } finally {
-      setLodaing(false)
+      setLodaing(false);
     }
-  }
+  };
 
   const fetchUser = async (uid: string) => {
-    const ref = doc(collection(db, 'users', uid))
-    const snap = await getDoc(ref)
+    const ref = doc(collection(db, 'users', uid));
+    const snap = await getDoc(ref);
 
     if (!snap.exists()) {
-      throw new Error('Dane uzytkownika nie istenieja')
+      throw new Error('Dane uzytkownika nie istenieja');
     }
 
-    return snap.data()?.companyName
-  }
+    return snap.data()?.companyName;
+  };
 
   const handleEditRestaurant = (restaurant: any) => {
-    setSelectedRestaurant(restaurant)
-    setShowEditModal(true)
-  }
+    setSelectedRestaurant(restaurant);
+    setShowEditModal(true);
+  };
 
   const handleCloseModal = () => {
-    setShowEditModal(false)
-    setSelectedRestaurant(null)
-  }
+    setShowEditModal(false);
+    setSelectedRestaurant(null);
+  };
 
   useEffect(() => {
     if (!user) {
-      router.push('/login')
-      return
+      router.push('/login');
+      return;
     }
-    fetchRestaurants()
-  }, [user])
+    fetchRestaurants();
+  }, [user]);
 
   return (
     <main className="min-h-screen bg-muted/30">
       <div className="max-w-7xl mx-auto py-6">
-          <DashboardHeader title={t('owner_dashboard.header')} />
-          <p className="p-2">{t('owner_dashboard.subheader')}</p>
+        <DashboardHeader title={t('owner_dashboard.header')} />
+        <p className="p-2">{t('owner_dashboard.subheader')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           <DashboardStats
             title={t('owner_dashboard.total_views')}
@@ -174,7 +167,7 @@ export default function OwnerDashboard() {
               </Button>
             </Card>
             <Card className="p-4 sm:p-6">
-              <DashboardHeader title={t('owner_dashboard.need_help')}/>
+              <DashboardHeader title={t('owner_dashboard.need_help')} />
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                 {t('owner_dashboard.need_help_about')}
               </p>
@@ -187,7 +180,7 @@ export default function OwnerDashboard() {
               </Button>
             </Card>
             <Card className="p-4 sm:p-6">
-              <DashboardHeader title={t('owner_dashboard.subscription_header')}/>
+              <DashboardHeader title={t('owner_dashboard.subscription_header')} />
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-xs sm:text-sm text-muted-foreground">
@@ -228,11 +221,8 @@ export default function OwnerDashboard() {
 
       {/* Edit Modal */}
       {showEditModal && (
-        <EditRestaurantModal
-          restaurant={selectedRestaurant}
-          onClose={handleCloseModal}
-        />
+        <EditRestaurantModal restaurant={selectedRestaurant} onClose={handleCloseModal} />
       )}
     </main>
-  )
+  );
 }

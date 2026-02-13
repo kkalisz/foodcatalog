@@ -1,11 +1,9 @@
-import { Heading } from "@radix-ui/themes";
+import { Heading } from '@radix-ui/themes';
 
 type DashboardHeaderProps = {
-    title: string;
+  title: string;
 };
 const DashboardHeader = ({ title }: DashboardHeaderProps) => {
-    return (
-          <Heading size="7">{title}</Heading>
-    );
+  return <Heading size="7">{title}</Heading>;
 };
 export default DashboardHeader;

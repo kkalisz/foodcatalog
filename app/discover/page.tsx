@@ -1,23 +1,21 @@
-'use client'
+'use client';
 
-import { Input } from "@/components/ui/input"
-import { Search } from "lucide-react"
-import { RestaurantCard } from "@/components/restaurant-card"
-import { Timestamp } from "firebase/firestore"
-import { usePublickRestaurants } from "@/data/hooks/usePublickRestaurants"
-import { PageSizeWrapper } from "@/components/ui/wrapper"
-import PageLoader from "@/components/ui/loader/PageLoader"
-import { useTranslation } from "react-i18next"
-import EmptySearchContainer from "@/components/ui/containers/EmptySearchContainer"
+import { Timestamp } from 'firebase/firestore';
+import { Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+import { RestaurantCard } from '@/components/restaurant-card';
+import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
+import { Input } from '@/components/ui/input';
+import PageLoader from '@/components/ui/loader/PageLoader';
+import { PageSizeWrapper } from '@/components/ui/wrapper';
+import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
 
 export default function DiscoverPage() {
-  const { loading, resteurants, setSearchQuery, searchQuery } =
-    usePublickRestaurants()
-  const { t } = useTranslation()
+  const { loading, resteurants, setSearchQuery, searchQuery } = usePublickRestaurants();
+  const { t } = useTranslation();
   if (loading && resteurants.length === 0) {
-    return (
-      <PageLoader loadingText={t("discover_page.loading")} />
-    )
+    return <PageLoader loadingText={t('discover_page.loading')} />;
   }
 
   return (
@@ -36,18 +34,18 @@ export default function DiscoverPage() {
             <p className="text-sm sm:text-base text-muted-foreground">
               {t('discover_page.subheader')}
             </p>
-          </div>     
-            <div className="mb-6 sm:mb-8 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <Input
-                placeholder={t('discover_page.search_placeholder')}
-                className="pl-10 h-12 text-base"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
+          </div>
+          <div className="mb-6 sm:mb-8 relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Input
+              placeholder={t('discover_page.search_placeholder')}
+              className="pl-10 h-12 text-base"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+            />
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {resteurants.map((restaurant) => (
+            {resteurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.createdAt}
                 restaurant={{
@@ -60,5 +58,5 @@ export default function DiscoverPage() {
         </PageSizeWrapper>
       )}
     </main>
-  )
+  );
 }
