@@ -1,35 +1,36 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { Card } from '@/components/ui/card'
-import { Star, MapPin } from 'lucide-react'
-import { Timestamp } from 'firebase/firestore'
-import { useTranslation } from 'react-i18next'
-import { restaurantImage } from '@/data/constans/icons'
+import { Timestamp } from 'firebase/firestore';
+import { Star, MapPin } from 'lucide-react';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+
+import { Card } from '@/components/ui/card';
+import { restaurantImage } from '@/data/constans/icons';
 
 interface Restaurant {
-  id?: string
-  name: string
-  slug?: string
-  city: string
-  category?: string
-  shortDescription?: string
-  coverImage?: string | null
-  rating?: string
-  reviewsCount?: string
-  status?: string
-  firmId?: string
-  restaurantId?: string
-  delivery?: boolean
-  createdAt?: Timestamp
+  id?: string;
+  name: string;
+  slug?: string;
+  city: string;
+  category?: string;
+  shortDescription?: string;
+  coverImage?: string | null;
+  rating?: string;
+  reviewsCount?: string;
+  status?: string;
+  firmId?: string;
+  restaurantId?: string;
+  delivery?: boolean;
+  createdAt?: Timestamp;
 }
 
 interface RestaurantCardProps {
-  restaurant: Restaurant
+  restaurant: Restaurant;
 }
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <Link href={`/restaurant/${restaurant.id}`}>
@@ -56,13 +57,9 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             <div className="flex items-center gap-2 mb-2">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 fill-primary text-primary" />
-                <span className="font-semibold text-foreground">
-                  {restaurant.rating}
-                </span>
+                <span className="font-semibold text-foreground">{restaurant.rating}</span>
               </div>
-              <span className="text-sm text-muted-foreground">
-                ({restaurant.reviewsCount})
-              </span>
+              <span className="text-sm text-muted-foreground">({restaurant.reviewsCount})</span>
             </div>
           </div>
 
@@ -77,5 +74,5 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         </div>
       </Card>
     </Link>
-  )
+  );
 }

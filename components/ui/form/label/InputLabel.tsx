@@ -1,8 +1,8 @@
 type InputLabelProps = {
-  htmlFor: string
-  children: React.ReactNode
-  required?: boolean
-}
+  htmlFor: string;
+  children: React.ReactNode;
+  required?: boolean;
+};
 const InputLabel = ({ htmlFor, children, required }: InputLabelProps) => {
   return (
     <div>
@@ -11,7 +11,7 @@ const InputLabel = ({ htmlFor, children, required }: InputLabelProps) => {
         {required ? <span aria-hidden="true">*</span> : null}
       </label>
     </div>
-  )
-}
+  );
+};
 
-export default InputLabel
+export default InputLabel;

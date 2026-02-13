@@ -1,39 +1,39 @@
-'use client'
+'use client';
 
-import { useRouter } from 'next/navigation'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Star, Edit2, Trash } from 'lucide-react'
-import { PublicRestaurant } from '@/data/types/publicRestaurant'
-import { deletePublicRestaurant } from '@/lib/firebase/restaurants'
-import { useTranslation } from 'react-i18next'
-import { restaurantImage } from '@/data/constans/icons'
+import { Star, Edit2, Trash } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
+
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { restaurantImage } from '@/data/constans/icons';
+import { PublicRestaurant } from '@/data/types/publicRestaurant';
+import { deletePublicRestaurant } from '@/lib/firebase/restaurants';
 
 type RestaurantsListProps = {
-  restaurants: PublicRestaurant[]
-}
+  restaurants: PublicRestaurant[];
+};
 
 export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
-  const router = useRouter()
-  const { t } = useTranslation()
+  const router = useRouter();
+  const { t } = useTranslation();
 
   const handleDelete = async (restaurantId: string) => {
-    if (!confirm(t('restaurants_list.confirm_delete'))) return
-    try {
-      await deletePublicRestaurant(restaurantId)
-      alert(t('restaurants_list.deleted_success'))
-      router.refresh()
-    } catch (error) {
-      console.error('Error deleting restaurant:', error)
+    if (!confirm(t('restaurants_list.confirm_delete'))) {
+      return;
     }
-  }
+    try {
+      await deletePublicRestaurant(restaurantId);
+      alert(t('restaurants_list.deleted_success'));
+      router.refresh();
+    } catch (error) {
+      console.error('Error deleting restaurant:', error);
+    }
+  };
   return (
     <div className="space-y-4">
-      {restaurants.map((restaurant) => (
-        <Card
-          key={restaurant.id}
-          className="p-4 hover:shadow-md transition-shadow"
-        >
+      {restaurants.map(restaurant => (
+        <Card key={restaurant.id} className="p-4 hover:shadow-md transition-shadow">
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Image */}
             <div className="w-full sm:w-32 h-32 bg-muted rounded-lg overflow-hidden">
@@ -73,25 +73,15 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
               <Button
                 size="sm"
                 variant="outline"
-                onClick={() =>
-                  router.push(`/owner/restaurants/${restaurant.id}/edit`)
-                }
+                onClick={() => router.push(`/owner/restaurants/${restaurant.id}/edit`)}
               >
                 <Edit2 className="w-4 h-4 mr-2" />
                 {t('restaurants_list.edit')}
               </Button>
-              <Button
-                onClick={() =>
-                  router.push(`/owner/restaurants/${restaurant.id}/menu`)
-                }
-              >
+              <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)}>
                 {t('restaurants_list.add_edit_menu')}
               </Button>
-              <Button
-                size="sm"
-                variant="destructive"
-                onClick={() => handleDelete(restaurant.id)}
-              >
+              <Button size="sm" variant="destructive" onClick={() => handleDelete(restaurant.id)}>
                 <Trash className="w-4 h-4 mr-2" />
                 {t('restaurants_list.delete')}
               </Button>
@@ -100,5 +90,5 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
         </Card>
       ))}
     </div>
-  )
-}
+  );
+};

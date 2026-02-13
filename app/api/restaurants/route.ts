@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server';
 
 // Mock data - replace with actual database queries
 const RESTAURANTS_DB = [
@@ -30,57 +30,51 @@ const RESTAURANTS_DB = [
     lat: 50.0649,
     lng: 19.9354,
   },
-]
+];
 
 export async function GET(request: NextRequest) {
   try {
-    const searchParams = request.nextUrl.searchParams
-    const query = searchParams.get('q')
-    const category = searchParams.get('category')
-    const priceRange = searchParams.get('priceRange')
+    const searchParams = request.nextUrl.searchParams;
+    const query = searchParams.get('q');
+    const category = searchParams.get('category');
+    const priceRange = searchParams.get('priceRange');
 
-    let results = RESTAURANTS_DB
+    let results = RESTAURANTS_DB;
 
     // Filter by search query
     if (query) {
-      const lowerQuery = query.toLowerCase()
+      const lowerQuery = query.toLowerCase();
       results = results.filter(
-        (r) =>
+        r =>
           r.name.toLowerCase().includes(lowerQuery) ||
           r.address.toLowerCase().includes(lowerQuery) ||
-          r.cuisine.some((c) => c.toLowerCase().includes(lowerQuery))
-      )
+          r.cuisine.some(c => c.toLowerCase().includes(lowerQuery))
+      );
     }
 
     // Filter by category
     if (category && category !== 'All') {
-      results = results.filter((r) => r.category === category)
+      results = results.filter(r => r.category === category);
     }
 
     // Filter by price range
     if (priceRange && priceRange !== 'All') {
-      results = results.filter((r) => r.priceRange === priceRange)
+      results = results.filter(r => r.priceRange === priceRange);
     }
 
-    return NextResponse.json(results)
+    return NextResponse.json(results);
   } catch (error) {
-    return NextResponse.json(
-      { error: 'Failed to fetch restaurants' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Failed to fetch restaurants' }, { status: 500 });
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
+    const body = await request.json();
 
     // Validate required fields
     if (!body.name || !body.address) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     // TODO: Save to database
@@ -92,11 +86,8 @@ export async function POST(request: NextRequest) {
         ...body,
       },
       { status: 201 }
-    )
+    );
   } catch (error) {
-    return NextResponse.json(
-      { error: 'Failed to create restaurant' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Failed to create restaurant' }, { status: 500 });
   }
 }

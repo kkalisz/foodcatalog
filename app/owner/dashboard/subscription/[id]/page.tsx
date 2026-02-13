@@ -1,13 +1,9 @@
-export default async function SubscriptionPage({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) {
-  const { id } = await params
+export default async function SubscriptionPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const planInfo = {
     basic: { name: 'Plan Podstawowy', price: '29 zł' },
     pro: { name: 'Plan Pro', price: '59 zł' },
-  }[id]
+  }[id];
 
   return (
     <div>
@@ -20,5 +16,5 @@ export default async function SubscriptionPage({
         <p>Nie znaleziono takiego planu.</p>
       )}
     </div>
-  )
+  );
 }
