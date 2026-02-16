@@ -17,9 +17,8 @@ export const Footer = () => {
   const router = useRouter();
   const { t } = useTranslation();
   return (
-    <div>
+    <div>    
       <PageSizeWrapper>
-        <div>
           <Flex
             py="5"
             direction={{ initial: 'column', md: 'row' }}
@@ -35,20 +34,23 @@ export const Footer = () => {
               children={<FooterForRestauratorsInfo />}
             />
           </Flex>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center">
+      </PageSizeWrapper>
+        <div className="bg-white">
+          <PageSizeWrapper>
+            <Flex justify="between" align="center" gap="4" py="5" >
           <span className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} {t('app_name')}. {t('all_rights_reserved')}
           </span>
-          <div className="flex gap-4 mt-4 sm:mt-0">
+          <Flex className="flex gap-4 mt-4 sm:mt-0">
             {user ? (
               <Button onClick={() => router.push('/owner/dashboard')}>{user.email}</Button>
             ) : (
               <Button onClick={() => router.push('/login')}>{t('footer.login_as_owner')}</Button>
             )}
-          </div>
+          </Flex>
+          </Flex>
+          </PageSizeWrapper>
         </div>
-      </PageSizeWrapper>
     </div>
   );
 };

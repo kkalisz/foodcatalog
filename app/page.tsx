@@ -3,13 +3,15 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/button';
+import { PageSizeWrapper } from '@/components/ui/wrapper';
+import { Flex } from '@radix-ui/themes';
 
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <main className="flex-1 flex items-center border justify-center bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center py-12 sm:py-20">
+      <PageSizeWrapper>   
+        <Flex align="center" justify="center">
+          <Flex direction="column" align="center" justify="center" gap="4">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
             {t('main_page.header')}
           </h1>
@@ -21,8 +23,8 @@ export default function Home() {
               <Link href="/discover">{t('main_page.browse_restaurants')}</Link>
             </Button>
           </div>
-        </div>
-      </div>
-    </main>
+          </Flex>
+        </Flex>
+    </PageSizeWrapper>
   );
 }

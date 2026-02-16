@@ -19,7 +19,7 @@ export default function DiscoverPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <PageSizeWrapper>
       {loading && resteurants.length === 0 ? (
         <EmptySearchContainer
           tittle={t('discover_page.no_results')}
@@ -57,6 +57,6 @@ export default function DiscoverPage() {
           </div>
         </PageSizeWrapper>
       )}
-    </main>
+    </PageSizeWrapper>
   );
 }
