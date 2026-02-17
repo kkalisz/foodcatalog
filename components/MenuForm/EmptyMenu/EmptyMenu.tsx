@@ -1,7 +1,7 @@
-import { Button } from '@radix-ui/themes'
+import { Button } from '@radix-ui/themes';
 type MenuEditorProps = {
-  addNewCategory?: () => void
-}
+  addNewCategory?: () => void;
+};
 
 export const EmptyMenu = ({ addNewCategory, ...props }: MenuEditorProps) => {
   return (
@@ -18,12 +18,10 @@ export const EmptyMenu = ({ addNewCategory, ...props }: MenuEditorProps) => {
     >
       <h1 className="text-3xl">Twoje menu jest puste</h1>
       <br />
-      <p>
-        Rozpocznij dodawanie nowej kategori (np. Danie główne, przystawka, zupa)
-      </p>
+      <p>Rozpocznij dodawanie nowej kategori (np. Danie główne, przystawka, zupa)</p>
       <Button type="button" color="brown" onClick={addNewCategory}>
         <span>+</span> Dodaj kategorię
       </Button>
     </div>
-  )
-}
+  );
+};

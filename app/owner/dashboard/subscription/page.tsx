@@ -1,11 +1,8 @@
-'use client'
+'use client';
 
-import {Flex } from '@radix-ui/themes'
-import { PageSizeWrapper } from '@/components/ui/wrapper'
-import SubscriptionCard from '@/components/ui/subscription/SubscriptionCard'
-import SubscriptionPlanPro from '@/components/subscription/SubscriptionPlanPro'
-import SubscriptionPlanPremium from '@/components/subscription/SubscriptionPlanPremium'
-import SubscriptionPlanUltra from '@/components/subscription/SubscriptionPlanUltra'
+import { Card, Flex } from '@radix-ui/themes';
+
+import { PageSizeWrapper } from '@/components/ui/wrapper';
 
 export default function TestPage() {
   return (
@@ -24,5 +21,5 @@ export default function TestPage() {
         </Flex>
       </Flex>
     </PageSizeWrapper>
-  )
+  );
 }

@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
-import { useState, useEffect, type ReactNode } from "react";
-import { I18nextProvider } from "react-i18next";
-import i18n from "./i18n.client";
+import { useState, useEffect, type ReactNode } from 'react';
+
+import { I18nextProvider } from 'react-i18next';
+
+import i18n from './i18n.client';
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
   const [isClient, setIsClient] = useState(false);

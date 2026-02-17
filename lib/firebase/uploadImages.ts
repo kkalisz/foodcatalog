@@ -1,8 +1,6 @@
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
-import { app } from "../firebase/client"
-const storage = getStorage(app)
+import { getStorage } from 'firebase/storage';
 
-export const uploadRestaurantImage = (file: File,
-    firmId: string) => {
+import { app } from '../firebase/client';
+const storage = getStorage(app);
 
-}
+export const uploadRestaurantImage = (file: File, firmId: string) => {};

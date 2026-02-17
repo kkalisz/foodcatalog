@@ -1,21 +1,21 @@
-import { Star } from 'lucide-react'
+import { Star } from 'lucide-react';
 
 interface Review {
-  id: number
-  author: string
-  rating: number
-  date: string
-  text: string
+  id: number;
+  author: string;
+  rating: number;
+  date: string;
+  text: string;
 }
 
 interface ReviewListProps {
-  reviews: Review[]
+  reviews: Review[];
 }
 
 export function ReviewList({ reviews }: ReviewListProps) {
   return (
     <div className="space-y-4">
-      {reviews.map((review) => (
+      {reviews.map(review => (
         <div key={review.id} className="pb-4 border-b last:border-b-0">
           {/* Header */}
           <div className="flex items-start justify-between mb-2">
@@ -32,11 +32,9 @@ export function ReviewList({ reviews }: ReviewListProps) {
               ))}
             </div>
           </div>
-          <p className="text-foreground text-sm leading-relaxed">
-            {review.text}
-          </p>
+          <p className="text-foreground text-sm leading-relaxed">{review.text}</p>
         </div>
       ))}
     </div>
-  )
+  );
 }

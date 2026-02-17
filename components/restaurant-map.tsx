@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 interface RestaurantMapProps {
-  lat: number
-  lng: number
-  name: string
+  lat: number;
+  lng: number;
+  name: string;
 }
 
 export function RestaurantMap({ lat, lng, name }: RestaurantMapProps) {
@@ -22,5 +22,5 @@ export function RestaurantMap({ lat, lng, name }: RestaurantMapProps) {
         <p className="sr-only">Map showing location of {name}</p>
       </div>
     </div>
-  )
+  );
 }

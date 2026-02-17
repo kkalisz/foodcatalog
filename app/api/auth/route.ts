@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server';
 
 // Mock owner database - replace with actual database
 const OWNERS_DB: Record<string, any> = {
@@ -9,7 +9,7 @@ const OWNERS_DB: Record<string, any> = {
     role: 'owner',
     restaurants: ['1', '2'],
   },
-}
+};
 
 // Mock restaurants database
 const RESTAURANTS_DB: Record<string, any> = {
@@ -89,22 +89,19 @@ const RESTAURANTS_DB: Record<string, any> = {
       },
     ],
   },
-}
+};
 
 export async function POST(request: NextRequest) {
   try {
-    const action = request.nextUrl.searchParams.get('action')
+    const action = request.nextUrl.searchParams.get('action');
 
     if (action === 'login') {
-      const { email, password } = await request.json()
+      const { email, password } = await request.json();
 
-      const owner = OWNERS_DB[email]
+      const owner = OWNERS_DB[email];
 
       if (!owner) {
-        return NextResponse.json(
-          { error: 'Invalid email or password' },
-          { status: 401 }
-        )
+        return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
       }
 
       // TODO: In production, use bcrypt to verify password hash
@@ -114,15 +111,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         user: owner,
         token: `jwt-token-${owner.id}`,
-      })
+      });
     } else if (action === 'register') {
-      const { email, password, name, type } = await request.json()
+      const { email, password, name, type } = await request.json();
 
       if (OWNERS_DB[email]) {
-        return NextResponse.json(
-          { error: 'Email already registered' },
-          { status: 400 }
-        )
+        return NextResponse.json({ error: 'Email already registered' }, { status: 400 });
       }
 
       const newOwner = {
@@ -131,38 +125,31 @@ export async function POST(request: NextRequest) {
         name,
         role: type || 'user',
         restaurants: [],
-      }
+      };
 
       // TODO: In production, hash password with bcrypt before storing
       // const passwordHash = await bcrypt.hash(password, 10)
-      OWNERS_DB[email] = newOwner
+      OWNERS_DB[email] = newOwner;
 
-      return NextResponse.json(newOwner, { status: 201 })
+      return NextResponse.json(newOwner, { status: 201 });
     } else if (action === 'get-restaurants') {
-      const authHeader = request.headers.get('authorization')
-      const token = authHeader?.split(' ')[1]
+      const authHeader = request.headers.get('authorization');
+      const token = authHeader?.split(' ')[1];
 
       // TODO: Verify JWT token in production
-      const owner = Object.values(OWNERS_DB).find(
-        (o) => `jwt-token-${o.id}` === token
-      )
+      const owner = Object.values(OWNERS_DB).find(o => `jwt-token-${o.id}` === token);
 
       if (!owner) {
-        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
       }
 
-      const restaurants = owner.restaurants
-        .map((id: string) => RESTAURANTS_DB[id])
-        .filter(Boolean)
+      const restaurants = owner.restaurants.map((id: string) => RESTAURANTS_DB[id]).filter(Boolean);
 
-      return NextResponse.json({ restaurants })
+      return NextResponse.json({ restaurants });
     }
 
-    return NextResponse.json({ error: 'Invalid action' }, { status: 400 })
+    return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
   } catch (error) {
-    return NextResponse.json(
-      { error: 'Authentication failed' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Authentication failed' }, { status: 500 });
   }
 }

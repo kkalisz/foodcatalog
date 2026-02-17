@@ -1,13 +1,10 @@
 node_modules
 .next
-<<<<<<< Updated upstream
 .env
 .env.local
-=======
 .DS_Store
-.env.local
 .vercel
 build/
 dist/
 out/
->>>>>>> Stashed changes
+.idea

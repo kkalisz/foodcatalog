@@ -1,7 +1,6 @@
-import React from 'react'
 type DishLenghtInfoProps = {
-  children: number
-}
+  children: number;
+};
 const DushLenghtInfo = ({ children }: DishLenghtInfoProps) => {
   return (
     <div
@@ -21,7 +20,7 @@ const DushLenghtInfo = ({ children }: DishLenghtInfoProps) => {
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default DushLenghtInfo
+export default DushLenghtInfo;
