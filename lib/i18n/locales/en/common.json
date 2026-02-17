@@ -188,6 +188,7 @@
   "subscription_page": {
     "title": "Subscription & Billing",
     "manage_plan": "Manage your plan and payment methods",
+    "what_you_get": "What you get:",
     "current_plan": "Current Plan",
     "current_plan_free": "Current Plan: Free",
     "upgrade_message": "You are currently on the Free plan. Upgrade to unlock more features.",
@@ -233,6 +234,37 @@
       "advanced_analytics": "Advanced analytics",
       "priority_support": "Priority support",
       "promotions_deals": "Promotions & deals"
+    },
+    "plans": {
+      "pro": {
+        "name": "Pro Plan",
+        "description": "Perfect for small venues looking to establish an online presence.",
+        "features": {
+          "restaurants": "Up to 3 restaurants",
+          "stats": "Basic statistics",
+          "support": "Email support"
+        }
+      },
+      "premium": {
+        "name": "Premium Plan",
+        "description": "For growing businesses responding to customer needs.",
+        "features": {
+          "restaurants": "Up to 10 restaurants",
+          "menu": "Advanced menu with photos",
+          "support": "Priority support",
+          "reviews": "Reply to reviews"
+        }
+      },
+      "ultra": {
+        "name": "Ultra Plan",
+        "description": "Complete freedom and maximum capabilities for restaurant chains.",
+        "features": {
+          "restaurants": "Unlimited restaurants",
+          "analytics": "Full analytics and reports",
+          "account_manager": "Dedicated account manager",
+          "promotion": "Promoted in search results"
+        }
+      }
     }
   },
   "help_center_page": {

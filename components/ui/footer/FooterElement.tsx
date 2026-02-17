@@ -7,10 +7,7 @@ type FooterElementProps = {
 const FooterElement = ({ heading, children }: FooterElementProps) => {
   return (
     <Flex direction="column" gap="2" style={{ flex: 1 }}>
-      <Card style={{ height: '100%' }}>
-        <Heading size="5">{heading}</Heading>
-        {children}
-      </Card>
+      <Card style={{ height: '100%' }}>{children}</Card>
     </Flex>
   );
 };

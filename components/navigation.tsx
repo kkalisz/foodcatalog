@@ -7,14 +7,12 @@ import { MapPin, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-import { PageSizeWrapper } from './ui/wrapper';
-
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   return (
     <nav className="border-b bg-card sticky top- z-50">
-      <PageSizeWrapper>
+      <div className="w-full max-w-7xl mx-auto">
         <Flex justify="between" py="4">
           <Link href="/" className="flex items-center gap-2">
             <Flex className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -42,7 +40,7 @@ export function Navigation() {
             </Link>
           </div>
         )}
-      </PageSizeWrapper>
+      </div>
     </nav>
   );
 }

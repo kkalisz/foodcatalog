@@ -19,14 +19,14 @@ export default function DiscoverPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <PageSizeWrapper>
       {loading && resteurants.length === 0 ? (
         <EmptySearchContainer
           tittle={t('discover_page.no_results')}
           description={t('discover_page.try_adjusting')}
         />
       ) : (
-        <PageSizeWrapper>
+        <div className="flex flex-col gap-4">
           <div className="mb-6 sm:mb-8 pt-4">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               {t('discover_page.header')}
@@ -55,8 +55,8 @@ export default function DiscoverPage() {
               />
             ))}
           </div>
-        </PageSizeWrapper>
+        </div>
       )}
-    </main>
+    </PageSizeWrapper>
   );
 }

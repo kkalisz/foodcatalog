@@ -188,6 +188,7 @@
   "subscription_page": {
     "title": "Subskrypcja i płatności",
     "manage_plan": "Zarządzaj planem i metodami płatności",
+    "what_you_get": "Co zyskujesz:",
     "current_plan": "Aktualny plan",
     "current_plan_free": "Aktualny plan: Darmowy",
     "upgrade_message": "Aktualnie korzystasz z planu darmowego. Ulepsz, aby odblokować więcej funkcji.",
@@ -233,6 +234,37 @@
       "advanced_analytics": "Zaawansowane analizy",
       "priority_support": "Priorytetowe wsparcie",
       "promotions_deals": "Promocje i oferty"
+    },
+    "plans": {
+      "pro": {
+        "name": "Plan Pro",
+        "description": "Idealny dla małych lokali, które chcą zaistnieć w sieci.",
+        "features": {
+          "restaurants": "Do 3 restauracji",
+          "stats": "Podstawowe statystyki",
+          "support": "Wsparcie mailowe"
+        }
+      },
+      "premium": {
+        "name": "Plan Premium",
+        "description": "Dla rozwijających się biznesów potrzebujących więcej narzędzi.",
+        "features": {
+          "restaurants": "Do 10 restauracji",
+          "menu": "Zaawansowane menu ze zdjęciami",
+          "support": "Priorytetowe wsparcie",
+          "reviews": "Odpowiadanie na recenzje"
+        }
+      },
+      "ultra": {
+        "name": "Plan Ultra",
+        "description": "Pełna swoboda i maksymalne możliwości dla sieci gastronomicznych.",
+        "features": {
+          "restaurants": "Nielimitowana liczba restauracji",
+          "analytics": "Pełna analityka i raporty",
+          "account_manager": "Dedykowany opiekun klienta",
+          "promotion": "Promowanie w wynikach wyszukiwania"
+        }
+      }
     }
   },
   "help_center_page": {

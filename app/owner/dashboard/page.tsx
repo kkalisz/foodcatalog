@@ -103,7 +103,7 @@ export default function OwnerDashboard() {
   }, [user]);
 
   return (
-    <main className="min-h-screen bg-muted/30">
+    <main className="min-h-screen ">
       <div className="max-w-7xl mx-auto py-6">
         <DashboardHeader title={t('owner_dashboard.header')} />
         <p className="p-2">{t('owner_dashboard.subheader')}</p>
