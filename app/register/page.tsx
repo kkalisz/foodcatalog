@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { RegisterWrapper } from '@/components/ui/form/wrapper/LoginFormWrapper';
 import useRegister from '@/data/hooks/useRegister';
+import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 
 type RegisterFormValues = {
   name: string;
@@ -31,8 +32,13 @@ export default function OwnerRegister() {
       password: '',
       confirmPassword: '',
     },
+    mode: 'onSubmit',
   });
-  const { register, handleSubmit } = form;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = form;
   const { error, handleRegister } = useRegister();
 
   return (
@@ -60,6 +66,7 @@ export default function OwnerRegister() {
                   minLength: { value: 10, message: t('register_page.name_too_short') },
                 })}
               />
+              <ErrorLabel error={errors.name?.message} id="name" />
             </Box>
             <Box>
               <div className="mb-2">
@@ -77,6 +84,7 @@ export default function OwnerRegister() {
                   minLength: { value: 2, message: t('register_page.company_too_short') },
                 })}
               />
+              <ErrorLabel error={errors.companyName?.message} id="companyName" />
             </Box>
             <Box>
               <div className="mb-2">
@@ -94,6 +102,7 @@ export default function OwnerRegister() {
                   minLength: { value: 5, message: t('register_page.email_too_short') },
                 })}
               />
+              <ErrorLabel error={errors.email?.message} id="email" />
             </Box>
             <Box>
               <div className="mb-2">
@@ -111,6 +120,7 @@ export default function OwnerRegister() {
                   minLength: { value: 6, message: t('register_page.password_too_short') },
                 })}
               />
+              <ErrorLabel error={errors.password?.message} id="password" />
             </Box>
             <Box>
               <div className="mb-2">
@@ -132,6 +142,7 @@ export default function OwnerRegister() {
                   },
                 })}
               />
+              <ErrorLabel error={errors.confirmPassword?.message} id="confirmPassword" />
             </Box>
             <Button type="submit">{t('register_page.create_account_button')}</Button>
           </Flex>

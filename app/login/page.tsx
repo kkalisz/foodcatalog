@@ -30,12 +30,11 @@ const OwnerLogin = () => {
       email: '',
       password: '',
     },
-    mode: 'onChange',
+    mode: 'onSubmit',
   });
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = form;
   const router = useRouter();
