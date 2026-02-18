@@ -5,12 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 import { useAuth } from '@/providers/AuthContext';
 
-import FooterAboutUs from './footer/FooterAboutUs';
-import FooterForRestauratorsInfo from './footer/FooterForRestauratorsInfo';
-import FooterLawInfo from './footer/FooterLawInfo';
-import { Button } from './ui/button';
-import FooterElement from './ui/footer/FooterElement';
-import { PageSizeWrapper } from './ui/wrapper';
+import FooterAboutUs from '../footer/FooterAboutUs';
+import FooterForRestauratorsInfo from '../footer/FooterForRestauratorsInfo';
+import FooterLawInfo from '../footer/FooterLawInfo';
+import { Button } from '../ui/button';
+import FooterElement from '../ui/footer/FooterElement';
+import { PageSizeWrapper } from '../ui/wrapper';
 
 export const Footer = () => {
   const { user } = useAuth();
