@@ -17,6 +17,7 @@ import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 import LoginFormWrapper from '@/components/ui/form/wrapper/LoginFormWrapper';
 import { UserLogin } from '@/data/types/user';
 import { auth } from '@/lib/firebase/client';
+import FormInputLabel from '@/components/ui/form/label/FormInputLabel';
 
 const OwnerLogin = () => {
   const { t } = useTranslation();
@@ -61,7 +62,7 @@ const OwnerLogin = () => {
       },
     },
     password: {
-      required: t('login_page.password_required'),
+      required: { value: true, message: t('login_page.password_required') },
       minLength: { value: 6, message: t('login_page.password_min_length') },
     },
   };
@@ -79,10 +80,10 @@ const OwnerLogin = () => {
           <Flex direction="column" gap="4">
             <Box>
               <Flex>
-                <label className="text-sm font-medium text-foreground block">
-                  {t('login_page.email_label')}
-                  {validationSchema.email.required ? <span className="text-red-500">*</span> : null}
-                </label>
+                <FormInputLabel
+                  label={t('login_page.email_label')}
+                  required={validationSchema.email.required.value}
+                />
               </Flex>
               <TextField.Root
                 size="3"
@@ -95,12 +96,10 @@ const OwnerLogin = () => {
             </Box>
             <Box>
               <Flex>
-                <label className="text-sm font-medium text-foreground block">
-                  {t('login_page.password_label')}
-                  {validationSchema.password.required ? (
-                    <span className="text-red-500">*</span>
-                  ) : null}
-                </label>
+                <FormInputLabel
+                  label={t('login_page.password_label')}
+                  required={validationSchema.password.required.value}
+                />
               </Flex>
               <TextField.Root
                 size="3"

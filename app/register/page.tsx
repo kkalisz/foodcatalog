@@ -13,6 +13,7 @@ import { Card } from '@/components/ui/card';
 import { RegisterWrapper } from '@/components/ui/form/wrapper/LoginFormWrapper';
 import useRegister from '@/data/hooks/useRegister';
 import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
+import FormInputLabel from '@/components/ui/form/label/FormInputLabel';
 
 type RegisterFormValues = {
   name: string;
@@ -43,23 +44,23 @@ export default function OwnerRegister() {
   const { error, handleRegister } = useRegister();
   const validationSchema = {
     name: {
-      required: t('register_page.name_required'),
+      required: { value: true, message: t('register_page.name_required') },
       minLength: { value: 10, message: t('register_page.name_too_short') },
     },
     companyName: {
-      required: t('register_page.company_required'),
+      required: { value: true, message: t('register_page.company_required') },
       minLength: { value: 2, message: t('register_page.company_too_short') },
     },
     email: {
-      required: t('register_page.email_required'),
+      required: { value: true, message: t('register_page.email_required') },
       minLength: { value: 5, message: t('register_page.email_too_short') },
     },
     password: {
-      required: t('register_page.password_required'),
+      required: { value: true, message: t('register_page.password_required') },
       minLength: { value: 6, message: t('register_page.password_too_short') },
     },
     confirmPassword: {
-      required: t('register_page.confirm_password_required'),
+      required: { value: true, message: t('register_page.confirm_password_required') },
       validate: (val: string) => {
         if (watch('password') != val) {
           return t('register_page.passwords_must_match');
@@ -77,10 +78,7 @@ export default function OwnerRegister() {
         <form onSubmit={handleSubmit(handleRegister)}>
           <Flex direction="column" gap="2">
             <Box>
-              <Text as="label" size="2" weight="medium">
-                {t('register_page.name_label')}
-                {validationSchema.name.required ? <span className="text-red-500">*</span> : null}
-              </Text>
+              <FormInputLabel label={t('register_page.name_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -91,12 +89,7 @@ export default function OwnerRegister() {
               <ErrorLabel error={errors.name?.message} id="name" />
             </Box>
             <Box>
-              <Text as="label" size="2" weight="medium">
-                {t('register_page.company_label')}
-                {validationSchema.companyName.required ? (
-                  <span className="text-red-500">*</span>
-                ) : null}
-              </Text>
+              <FormInputLabel label={t('register_page.company_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -107,10 +100,7 @@ export default function OwnerRegister() {
               <ErrorLabel error={errors.companyName?.message} id="companyName" />
             </Box>
             <Box>
-              <Text as="label" size="2" weight="medium">
-                {t('register_page.email_label')}
-                {validationSchema.email.required ? <span className="text-red-500">*</span> : null}
-              </Text>
+              <FormInputLabel label={t('register_page.email_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -121,12 +111,7 @@ export default function OwnerRegister() {
               <ErrorLabel error={errors.email?.message} id="email" />
             </Box>
             <Box>
-              <Text as="label" size="2" weight="medium">
-                {t('register_page.password_label')}
-                {validationSchema.password.required ? (
-                  <span className="text-red-500">*</span>
-                ) : null}
-              </Text>
+              <FormInputLabel label={t('register_page.password_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
@@ -137,12 +122,7 @@ export default function OwnerRegister() {
               <ErrorLabel error={errors.password?.message} id="password" />
             </Box>
             <Box>
-              <Text as="label" size="2" weight="medium">
-                {t('register_page.confirm_password_label')}
-                {validationSchema.confirmPassword.required ? (
-                  <span className="text-red-500">*</span>
-                ) : null}
-              </Text>
+              <FormInputLabel label={t('register_page.confirm_password_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
