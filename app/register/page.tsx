@@ -32,7 +32,7 @@ export default function OwnerRegister() {
       confirmPassword: '',
     },
   });
-  const { register, handleSubmit } = form;
+  const { register, handleSubmit, watch } = form;
   const { error, handleRegister } = useRegister();
 
   return (
