@@ -72,7 +72,7 @@
     "email_required": "Email jest wymagany",
     "email_min_length": "Email powinien mieć minimum 6 znaków",
     "password_required": "Hasło jest wymagane",
-    "password_min_length": "Hasło powinno mieć minimum 10 znaków"
+    "password_min_length": "Hasło powinno mieć minimum 6 znaków"
   },
   "register_page": {
     "header": "Zostań właścicielem",
@@ -93,8 +93,16 @@
     "login_here": "Zaloguj się tutaj",
     "looking_for_dining": "Szukasz opcji gastronomicznych?",
     "browse_restaurants": "Przeglądaj restauracje",
-    "passwords_not_match": "Hasła nie są zgodne",
-    "password_min_length": "Hasło musi mieć co najmniej 6 znaków"
+    "name_required": "Imię i nazwisko jest wymagane",
+    "name_too_short": "Imię i nazwisko musi mieć co najmniej 10 znaków",
+    "company_required": "Nazwa firmy jest wymagana",
+    "company_too_short": "Nazwa firmy musi mieć co najmniej 2 znaki",
+    "email_required": "Email jest wymagany",
+    "email_too_short": "Email musi mieć co najmniej 5 znaków",
+    "password_required": "Hasło jest wymagane",
+    "password_too_short": "Hasło musi mieć co najmniej 6 znaków",
+    "confirm_password_required": "Potwierdzenie hasła jest wymagane",
+    "passwords_must_match": "Hasła muszą być identyczne"
   },
   "owner_dashboard": {
     "header": "Ustawienia",
