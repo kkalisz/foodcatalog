@@ -27,11 +27,11 @@ export function Navigation() {
             </Link>
           </Flex>
           <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-sm flex justify-center">
-            <HeaderSearchLocalization icon={<LocateIcon />} placeholder={'szukaj po lokalizacji'} />
+            <HeaderSearchLocalization
+              icon={<LocateIcon />}
+              placeholder={t('nav.search_location_placeholder')}
+            />
           </div>
-          <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-            <Menu className="w-6 h-6" />
-          </button>
         </Flex>
         {isOpen && (
           <div className="md:hidden border-t py-4 space-y-2">

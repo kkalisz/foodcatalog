@@ -7,7 +7,9 @@
     "discover": "Discover",
     "about": "About",
     "login": "Login",
-    "sign_in": "Sign In"
+    "sign_in": "Sign In",
+    "search_location_placeholder": "Search by location",
+    "use_current_location": "Use current location"
   },
   "footer": {
     "login_as_owner": "Login as owner",
@@ -49,7 +51,11 @@
     "search_placeholder": "Search restaurants...",
     "loading": "Loading restaurants",
     "no_results": "No restaurants found",
-    "try_adjusting": "Try adjusting your search or filters"
+    "try_adjusting": "Try adjusting your search or filters",
+    "search_term": "Search term:",
+    "location_accepted": "Location accepted",
+    "location_denied": "Location denied",
+    "searching_in": "Searching in:"
   },
   "about_page": {
     "header": "About us"

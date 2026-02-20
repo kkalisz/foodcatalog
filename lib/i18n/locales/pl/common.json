@@ -7,7 +7,9 @@
     "discover": "Odkryj",
     "about": "O nas",
     "login": "Zaloguj się",
-    "sign_in": "Zaloguj się"
+    "sign_in": "Zaloguj się",
+    "search_location_placeholder": "Szukaj po lokalizacji",
+    "use_current_location": "Użyj obecnej lokalizacji"
   },
   "footer": {
     "login_as_owner": "Zaloguj się jako właściciel",
@@ -49,7 +51,11 @@
     "search_placeholder": "Wyszukaj restauracje...",
     "loading": "Wczytywanie restauracji",
     "no_results": "Nie znaleziono restauracji",
-    "try_adjusting": "Spróbuj zmienić wyszukiwanie lub filtry"
+    "try_adjusting": "Spróbuj zmienić wyszukiwanie lub filtry",
+    "search_term": "Wyszukiwana rzecz:",
+    "location_accepted": "Zaakceptowano lokalizację",
+    "location_denied": "Nie zaakceptowano lokalizacji",
+    "searching_in": "Wyszukujesz w:"
   },
   "about_page": {
     "header": "O nas"
