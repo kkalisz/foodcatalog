@@ -40,5 +40,8 @@
     "dish": "danie",
     "category_plural": "kategorie",
     "dish_plural": "dania"
+  },
+  "errors": {
+    "location_fetch": "Wystąpił błąd podczas pobierania lokalizacji"
   }
 }
