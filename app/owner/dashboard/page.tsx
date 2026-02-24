@@ -10,13 +10,14 @@ import { useTranslation } from 'react-i18next';
 import { DashboardStats } from '@/components/dashboard-stats';
 import { EditRestaurantModal } from '@/components/edit-restaurant-modal';
 import { RestaurantsList } from '@/components/restaurants-list';
-import { Button } from '@/components/ui/button';
+
 import { Card } from '@/components/ui/card';
 import DashboardHeader from '@/components/ui/headers/DashboardHeader';
 import { db } from '@/lib/firebase/client';
 import { useAuth } from '@/providers/AuthContext';
 
 import { PublicRestaurant } from '../../../data/types/publicRestaurant';
+import { Button } from '@radix-ui/themes';
 
 // Mock owner data
 const OWNER_STATS = {

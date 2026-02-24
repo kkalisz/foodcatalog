@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Box, Flex, TextField } from '@radix-ui/themes';
+import { Box, Flex, TextField, Button } from '@radix-ui/themes';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { AlertCircle } from 'lucide-react';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import LoginFormFooter from '@/components/MenuForm/LoginForm/LoginFormFooter';
 import LoginFormHeader from '@/components/MenuForm/LoginForm/LoginFormHeader';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Button } from '@/components/ui/button';
+
 import { Card } from '@/components/ui/card';
 import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 import LoginFormWrapper from '@/components/ui/form/wrapper/LoginFormWrapper';
