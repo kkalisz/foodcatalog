@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex, TextField, Button } from '@radix-ui/themes';
+import { Box, Flex, Text, TextField } from '@radix-ui/themes';
 import { AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -12,6 +12,8 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card } from '@/components/ui/card';
 import { RegisterWrapper } from '@/components/ui/form/wrapper/LoginFormWrapper';
 import useRegister from '@/data/hooks/useRegister';
+import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
+import FormInputLabel from '@/components/ui/form/label/FormInputLabel';
 
 type RegisterFormValues = {
   name: string;
@@ -31,10 +33,41 @@ export default function OwnerRegister() {
       password: '',
       confirmPassword: '',
     },
+    mode: 'onSubmit',
   });
-  const { register, handleSubmit, watch } = form;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = form;
   const { error, handleRegister } = useRegister();
-
+  const validationSchema = {
+    name: {
+      required: { value: true, message: t('register_page.name_required') },
+      minLength: { value: 10, message: t('register_page.name_too_short') },
+    },
+    companyName: {
+      required: { value: true, message: t('register_page.company_required') },
+      minLength: { value: 2, message: t('register_page.company_too_short') },
+    },
+    email: {
+      required: { value: true, message: t('register_page.email_required') },
+      minLength: { value: 5, message: t('register_page.email_too_short') },
+    },
+    password: {
+      required: { value: true, message: t('register_page.password_required') },
+      minLength: { value: 6, message: t('register_page.password_too_short') },
+    },
+    confirmPassword: {
+      required: { value: true, message: t('register_page.confirm_password_required') },
+      validate: (val: string) => {
+        if (watch('password') != val) {
+          return t('register_page.passwords_must_match');
+        }
+      },
+    },
+  };
   return (
     <RegisterWrapper>
       <h1 className=" text-center text-3xl font-bold text-foreground mb-2">
@@ -45,86 +78,58 @@ export default function OwnerRegister() {
         <form onSubmit={handleSubmit(handleRegister)}>
           <Flex direction="column" gap="2">
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('register_page.name_label')}
-                </label>
-              </div>
+              <FormInputLabel label={t('register_page.name_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="text"
                 placeholder={t('register_page.name_placeholder')}
-                {...register('name', {
-                  required: t('register_page.name_required'),
-                  minLength: { value: 10, message: t('register_page.name_too_short') },
-                })}
+                {...register('name', validationSchema.name)}
               />
+              <ErrorLabel error={errors.name?.message} id="name" />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('register_page.company_label')}
-                </label>
-              </div>
+              <FormInputLabel label={t('register_page.company_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="text"
                 placeholder={t('register_page.company_placeholder')}
-                {...register('companyName', {
-                  required: t('register_page.company_required'),
-                  minLength: { value: 2, message: t('register_page.company_too_short') },
-                })}
+                {...register('companyName', validationSchema.companyName)}
               />
+              <ErrorLabel error={errors.companyName?.message} id="companyName" />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('register_page.email_label')}
-                </label>
-              </div>
+              <FormInputLabel label={t('register_page.email_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="email"
                 placeholder={t('register_page.email_placeholder')}
-                {...register('email', {
-                  required: t('register_page.email_required'),
-                  minLength: { value: 5, message: t('register_page.email_too_short') },
-                })}
+                {...register('email', validationSchema.email)}
               />
+              <ErrorLabel error={errors.email?.message} id="email" />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('register_page.password_label')}
-                </label>
-              </div>
+              <FormInputLabel label={t('register_page.password_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="password"
                 placeholder={t('register_page.password_placeholder')}
-                {...register('password', {
-                  required: t('register_page.password_required'),
-                  minLength: { value: 6, message: t('register_page.password_too_short') },
-                })}
+                {...register('password', validationSchema.password)}
               />
+              <ErrorLabel error={errors.password?.message} id="password" />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('register_page.confirm_password_label')}
-                </label>
-              </div>
+              <FormInputLabel label={t('register_page.confirm_password_label')} required={true} />
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="password"
                 placeholder={t('register_page.confirm_password_placeholder')}
                 {...register('confirmPassword', {
-                  required: t('register_page.confirm_password_required'),
+                  ...validationSchema.confirmPassword,
                   validate: (val: string) => {
                     if (watch('password') != val) {
                       return t('register_page.passwords_must_match');
@@ -132,6 +137,7 @@ export default function OwnerRegister() {
                   },
                 })}
               />
+              <ErrorLabel error={errors.confirmPassword?.message} id="confirmPassword" />
             </Box>
             <Button type="submit">{t('register_page.create_account_button')}</Button>
           </Flex>

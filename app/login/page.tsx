@@ -1,15 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-
-import { Box, Flex, TextField, Button } from '@radix-ui/themes';
+import { Box, Flex, TextField } from '@radix-ui/themes';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-
 import LoginFormFooter from '@/components/MenuForm/LoginForm/LoginFormFooter';
 import LoginFormHeader from '@/components/MenuForm/LoginForm/LoginFormHeader';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -19,6 +17,7 @@ import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 import LoginFormWrapper from '@/components/ui/form/wrapper/LoginFormWrapper';
 import { UserLogin } from '@/data/types/user';
 import { auth } from '@/lib/firebase/client';
+import FormInputLabel from '@/components/ui/form/label/FormInputLabel';
 
 const OwnerLogin = () => {
   const { t } = useTranslation();
@@ -30,12 +29,11 @@ const OwnerLogin = () => {
       email: '',
       password: '',
     },
-    mode: 'onChange',
+    mode: 'onSubmit',
   });
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = form;
   const router = useRouter();
@@ -55,6 +53,19 @@ const OwnerLogin = () => {
     }
   };
 
+  const validationSchema = {
+    email: {
+      required: { value: true, message: t('login_page.email_required') },
+      minLength: {
+        value: 6,
+        message: t('login_page.email_min_length'),
+      },
+    },
+    password: {
+      required: { value: true, message: t('login_page.password_required') },
+      minLength: { value: 6, message: t('login_page.password_min_length') },
+    },
+  };
   return (
     <LoginFormWrapper>
       <LoginFormHeader />
@@ -68,41 +79,34 @@ const OwnerLogin = () => {
         <form onSubmit={handleSubmit(onHandleSubmit)}>
           <Flex direction="column" gap="4">
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('login_page.email_label')}
-                </label>
-              </div>
+              <Flex>
+                <FormInputLabel
+                  label={t('login_page.email_label')}
+                  required={validationSchema.email.required.value}
+                />
+              </Flex>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="email"
                 placeholder={t('login_page.email_placeholder')}
-                {...register('email', {
-                  required: t('login_page.email_required'),
-                  minLength: {
-                    value: 6,
-                    message: t('login_page.email_min_length'),
-                  },
-                })}
+                {...register('email', validationSchema.email)}
               />
               <ErrorLabel error={errors.email?.message} id="email" />
             </Box>
             <Box>
-              <div className="mb-2">
-                <label className="text-sm font-medium text-foreground block">
-                  {t('login_page.password_label')}
-                </label>
-              </div>
+              <Flex>
+                <FormInputLabel
+                  label={t('login_page.password_label')}
+                  required={validationSchema.password.required.value}
+                />
+              </Flex>
               <TextField.Root
                 size="3"
                 variant="surface"
                 type="password"
                 placeholder={t('login_page.password_placeholder')}
-                {...register('password', {
-                  required: t('login_page.password_required'),
-                  minLength: { value: 6, message: t('login_page.password_min_length') },
-                })}
+                {...register('password', validationSchema.password)}
               />
               <ErrorLabel error={errors.password?.message} id="password" />
             </Box>

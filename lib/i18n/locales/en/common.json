@@ -78,7 +78,7 @@
     "email_required": "Email is required",
     "email_min_length": "Email should have at least 6 characters",
     "password_required": "Password is required",
-    "password_min_length": "Password should have at least 10 characters"
+    "password_min_length": "Password should have at least 6 characters"
   },
   "register_page": {
     "header": "Become an owner",
@@ -99,8 +99,16 @@
     "login_here": "Login here",
     "looking_for_dining": "Looking for dining options?",
     "browse_restaurants": "Browse restaurants",
-    "passwords_not_match": "Passwords do not match",
-    "password_min_length": "Password must be at least 6 characters"
+    "name_required": "Full name is required",
+    "name_too_short": "Full name must be at least 10 characters long",
+    "company_required": "Company name is required",
+    "company_too_short": "Company name must be at least 2 characters long",
+    "email_required": "Email is required",
+    "email_too_short": "Email must be at least 5 characters long",
+    "password_required": "Password is required",
+    "password_too_short": "Password must be at least 6 characters long",
+    "confirm_password_required": "Password confirmation is required",
+    "passwords_must_match": "Passwords must match"
   },
   "owner_dashboard": {
     "header": "Settings",
