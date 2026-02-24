@@ -1,23 +1,27 @@
 'use client';
 
 import { Timestamp } from 'firebase/firestore';
-import { Search } from 'lucide-react';
+import { LocateIcon, Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
 import { RestaurantCard } from '@/components/restaurant-card';
 import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
-import { Input } from '@/components/ui/input';
 import PageLoader from '@/components/ui/loader/PageLoader';
 import { PageSizeWrapper } from '@/components/ui/wrapper';
 import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
+import { useSearchParams } from 'next/navigation';
+import { Flex, Heading } from '@radix-ui/themes';
+import HeaderSearchRestaurant from '@/components/ui/search/HeaderSearchRestaurantParam';
+import useLocalization from '@/data/hooks/useLocalization';
 
 export default function DiscoverPage() {
   const { loading, resteurants, setSearchQuery, searchQuery } = usePublickRestaurants();
   const { t } = useTranslation();
+  const params = useSearchParams();
+  const searchParams = params.get('search');
+  const cityParams = params.get('city');
   if (loading && resteurants.length === 0) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
-
   return (
     <main className="min-h-screen bg-background">
       {loading && resteurants.length === 0 ? (
@@ -27,24 +31,32 @@ export default function DiscoverPage() {
         />
       ) : (
         <PageSizeWrapper>
-          <div className="mb-6 sm:mb-8 pt-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
-              {t('discover_page.header')}
-            </h1>
+          <Flex direction="column" gap="2" pt="4">
+            <Heading size="7">{t('discover_page.header')}</Heading>
             <p className="text-sm sm:text-base text-muted-foreground">
               {t('discover_page.subheader')}
             </p>
-          </div>
-          <div className="mb-6 sm:mb-8 relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input
+            {t('discover_page.search_term')}
+            {searchParams ? <Heading>{searchParams?.toLocaleUpperCase()}</Heading> : null}
+            <Flex gap="2" align="center">
+              <Heading size="3" className="text-muted-foreground">
+                {t('discover_page.searching_in')}
+              </Heading>
+              {cityParams ? (
+                <Flex align="center">
+                  <LocateIcon className="w-5 h-5 pr-2 text-primary" />
+                  <Heading size="3" className="text-primary">
+                    {cityParams?.toLocaleUpperCase()}
+                  </Heading>
+                </Flex>
+              ) : null}
+            </Flex>
+            <HeaderSearchRestaurant
+              icon={<Search />}
               placeholder={t('discover_page.search_placeholder')}
-              className="pl-10 h-12 text-base"
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
             />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          </Flex>
+          <Flex direction="row" gap="2">
             {resteurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.createdAt}
@@ -54,7 +66,7 @@ export default function DiscoverPage() {
                 }}
               />
             ))}
-          </div>
+          </Flex>
         </PageSizeWrapper>
       )}
     </main>

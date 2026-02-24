@@ -1,16 +1,16 @@
 'use client';
-import { Flex } from '@radix-ui/themes';
+import { Button, Flex } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
 import { useAuth } from '@/providers/AuthContext';
 
-import FooterAboutUs from './footer/FooterAboutUs';
-import FooterForRestauratorsInfo from './footer/FooterForRestauratorsInfo';
-import FooterLawInfo from './footer/FooterLawInfo';
-import { Button } from './ui/button';
-import FooterElement from './ui/footer/FooterElement';
-import { PageSizeWrapper } from './ui/wrapper';
+import FooterAboutUs from '../footer/FooterAboutUs';
+import FooterForRestauratorsInfo from '../footer/FooterForRestauratorsInfo';
+import FooterLawInfo from '../footer/FooterLawInfo';
+
+import FooterElement from '../ui/footer/FooterElement';
+import { PageSizeWrapper } from '../ui/wrapper';
 
 export const Footer = () => {
   const { user } = useAuth();
@@ -44,7 +44,9 @@ export const Footer = () => {
             {user ? (
               <Button onClick={() => router.push('/owner/dashboard')}>{user.email}</Button>
             ) : (
-              <Button onClick={() => router.push('/login')}>{t('footer.login_as_owner')}</Button>
+              <Button variant="solid" onClick={() => router.push('/login')}>
+                {t('footer.login_as_owner')}
+              </Button>
             )}
           </div>
         </div>

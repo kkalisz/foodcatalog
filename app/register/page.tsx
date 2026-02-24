@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 import LoginFormHaveAcc from '@/components/MenuForm/LoginForm/LoginFormHaveAcc';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Button } from '@/components/ui/button';
+
 import { Card } from '@/components/ui/card';
 import { RegisterWrapper } from '@/components/ui/form/wrapper/LoginFormWrapper';
 import useRegister from '@/data/hooks/useRegister';

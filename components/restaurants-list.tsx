@@ -4,7 +4,7 @@ import { Star, Edit2, Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@radix-ui/themes';
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constans/icons';
 import { PublicRestaurant } from '@/data/types/publicRestaurant';
@@ -71,7 +71,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
             {/* Actions */}
             <div className="flex gap-2 sm:flex-col">
               <Button
-                size="sm"
+                size="2"
                 variant="outline"
                 onClick={() => router.push(`/owner/restaurants/${restaurant.id}/edit`)}
               >
@@ -81,7 +81,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
               <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)}>
                 {t('restaurants_list.add_edit_menu')}
               </Button>
-              <Button size="sm" variant="destructive" onClick={() => handleDelete(restaurant.id)}>
+              <Button size="2" color="red" onClick={() => handleDelete(restaurant.id)}>
                 <Trash className="w-4 h-4 mr-2" />
                 {t('restaurants_list.delete')}
               </Button>

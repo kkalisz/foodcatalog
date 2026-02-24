@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { Flex, Heading } from '@radix-ui/themes';
+import { Flex, Heading, Button } from '@radix-ui/themes';
 import { Text } from '@radix-ui/themes/components/callout';
 import { doc, getDoc } from 'firebase/firestore';
 import { Star, MapPin, Phone, Clock, Globe, ChevronLeft } from 'lucide-react';
@@ -11,7 +11,7 @@ import { useParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
 import { RestaurantMap } from '@/components/restaurant-map';
-import { Button } from '@/components/ui/button';
+
 import { Card } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { PageSizeWrapper } from '@/components/ui/wrapper';
