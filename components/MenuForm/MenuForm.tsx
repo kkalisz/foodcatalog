@@ -92,7 +92,7 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
         <div className="flex p-2 items-center justify-between">
           <div>
             <h1 className="text-3xl">{t('menu_form.title')}</h1>
-            <p>{`${fields.length} ${t('menu_form.category')}, ${dishesCount} ${t('menu_form.dish')}`}</p>
+            <p>{`${fields.length} ${fields.length === 1 ? t('menu_form.category') : t('menu_form.category_plural')}, ${dishesCount} ${dishesCount === 1 ? t('menu_form.dish') : t('menu_form.dish_plural')}`}</p>
             {isDirty ? (
               <div className="flex gap-2 text-amber-700 pt-3">
                 <MessageSquareWarningIcon /> {t('menu_form.unsaved_changes')}

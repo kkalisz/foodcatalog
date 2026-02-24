@@ -15,7 +15,7 @@ import {
   Button,
 } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { CUISINES } from '@/data/constans/cusines';
@@ -38,12 +38,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
   const { user } = useAuth();
   const router = useRouter();
   const { t } = useTranslation();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<CreatePublicRestaurantForm>({
+  const form = useForm<CreatePublicRestaurantForm>({
     resolver: zodResolver(createPublickRestaurantSchema),
     defaultValues: {
       name: '',
@@ -72,9 +67,12 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         return;
       }
 
-      reset({
+      form.reset({
         name: restaurant.name,
+        phone: restaurant.phone,
         city: restaurant.city,
+        street: restaurant.street,
+        postalCode: restaurant.postalCode,
         category: Array.isArray(restaurant.category) ? restaurant.category : [restaurant.category],
         shortDescription: restaurant.shortDescription,
         coverImage: restaurant.coverImage,
@@ -83,7 +81,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     };
 
     loadRestaurant();
-  }, [restaurantId, user, reset]);
+  }, [restaurantId, user, form.reset]);
 
   const onSubmit = async (data: CreatePublicRestaurantForm) => {
     if (!user) {
@@ -105,14 +103,14 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={form.handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
         <Box>
           <Heading>{t('restaurant_form.basic_info')}</Heading>
         </Box>
         <Box>
           <TextField.Root
-            {...register('name')}
+            {...form.register('name')}
             size="3"
             variant="surface"
             placeholder={t('restaurant_form.name_placeholder')}
@@ -121,7 +119,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         </Box>
         <Box>
           <TextField.Root
-            {...register('city')}
+            {...form.register('city')}
             placeholder={t('restaurant_form.city_placeholder')}
             size="3"
             variant="surface"
@@ -131,7 +129,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         <Flex gap="2">
           <Box>
             <TextField.Root
-              {...register('street')}
+              {...form.register('street')}
               placeholder={t('restaurant_form.street_placeholder')}
               size="3"
               variant="surface"
@@ -140,7 +138,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
           </Box>
           <Box>
             <TextField.Root
-              {...register('postalCode')}
+              {...form.register('postalCode')}
               placeholder={t('restaurant_form.postalCode_placeholder')}
               size="3"
               variant="surface"
@@ -153,19 +151,30 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
           <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
         </Box>
         <Box>
-          <CheckboxCards.Root {...register('category')} size="3" variant="surface">
-            {CUISINES.map(cuisine => (
-              <CheckboxCards.Item key={cuisine} value={cuisine}>
-                <Flex direction="column" width="100%">
-                  <Box>{cuisine}</Box>
-                </Flex>
-              </CheckboxCards.Item>
-            ))}
-          </CheckboxCards.Root>
+          <Controller
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <CheckboxCards.Root
+                size="3"
+                variant="surface"
+                value={field.value}
+                onValueChange={field.onChange}
+              >
+                {CUISINES.map(cuisine => (
+                  <CheckboxCards.Item key={cuisine} value={cuisine}>
+                    <Flex direction="column" width="100%">
+                      <Box>{cuisine}</Box>
+                    </Flex>
+                  </CheckboxCards.Item>
+                ))}
+              </CheckboxCards.Root>
+            )}
+          />
         </Box>
         <Box>
           <TextArea
-            {...register('shortDescription')}
+            {...form.register('shortDescription')}
             placeholder={t('restaurant_form.description_placeholder')}
             size="3"
             variant="surface"
@@ -173,7 +182,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         </Box>
         <Box>
           <TextField.Root
-            {...register('phone')}
+            {...form.register('phone')}
             placeholder={t('restaurant_form.phone_placeholder')}
             size="3"
             variant="surface"
@@ -181,7 +190,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         </Box>
         <Box>
           <TextField.Root
-            {...register('coverImage')}
+            {...form.register('coverImage')}
             placeholder={t('restaurant_form.image_url_placeholder')}
             size="3"
             variant="surface"
@@ -201,8 +210,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             {t('restaurant_form.delivery')}
           </Flex>
         </Text>
-        <Button type="submit" disabled={isSubmitting} size="3" variant="surface">
-          {isSubmitting
+        <Button type="submit" disabled={form.formState.isSubmitting} size="3" variant="surface">
+          {form.formState.isSubmitting
             ? t('restaurant_form.saving')
             : restaurantId
               ? t('restaurant_form.save_changes')

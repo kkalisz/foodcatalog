@@ -15,7 +15,6 @@ import { Card } from '@/components/ui/card';
 import DashboardHeader from '@/components/ui/headers/DashboardHeader';
 import { db } from '@/lib/firebase/client';
 import { useAuth } from '@/providers/AuthContext';
-
 import { PublicRestaurant } from '../../../data/types/publicRestaurant';
 import { Button } from '@radix-ui/themes';
 
