@@ -10,6 +10,7 @@ import { I18nProvider } from '@/lib/i18n/i18nProvider';
 import { AuthProvider } from '@/providers/AuthContext';
 import { Footer } from '@/components/footer/footer';
 import { Navigation } from '@/components/header/navigation';
+import { Toast } from 'radix-ui';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,11 +19,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <I18nProvider>
-              <div className="flex flex-col min-h-screen bg-background">
-                <Navigation />
-                {children}
-                <Footer />
-              </div>
+              <Toast.Provider>
+                <div className="flex flex-col min-h-screen bg-background">
+                  <Navigation />
+                  {children}
+                  <Toast.Viewport className="fixed top-20 right-[40vw] z-[2147483647] flex" />
+                  <Footer />
+                </div>
+              </Toast.Provider>
             </I18nProvider>
           </AuthProvider>
         </Theme>

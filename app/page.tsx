@@ -1,8 +1,7 @@
 'use client';
+import { Button } from '@radix-ui/themes';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-
-import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -17,7 +16,7 @@ export default function Home() {
             {t('main_page.subheader')}
           </p>
           <div className="flex gap-4 justify-center">
-            <Button size="lg" asChild>
+            <Button size="4" asChild>
               <Link href="/discover">{t('main_page.browse_restaurants')}</Link>
             </Button>
           </div>

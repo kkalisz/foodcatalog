@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex, TextField } from '@radix-ui/themes';
+import { Box, Flex, TextField, Button } from '@radix-ui/themes';
 import { AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 import LoginFormHaveAcc from '@/components/MenuForm/LoginForm/LoginFormHaveAcc';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Button } from '@/components/ui/button';
+
 import { Card } from '@/components/ui/card';
 import { RegisterWrapper } from '@/components/ui/form/wrapper/LoginFormWrapper';
 import useRegister from '@/data/hooks/useRegister';
@@ -32,7 +32,7 @@ export default function OwnerRegister() {
       confirmPassword: '',
     },
   });
-  const { register, handleSubmit } = form;
+  const { register, handleSubmit, watch } = form;
   const { error, handleRegister } = useRegister();
 
   return (

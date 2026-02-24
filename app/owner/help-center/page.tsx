@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@radix-ui/themes';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { getOwnerSession, clearOwnerSession } from '@/lib/auth';
@@ -143,6 +143,7 @@ export default function HelpCenterPage() {
             <Button
               variant="ghost"
               className="w-full justify-start text-destructive"
+              color="red"
               onClick={handleLogout}
             >
               <LogOut className="w-4 h-4 mr-2" />
