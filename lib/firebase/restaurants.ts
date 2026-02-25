@@ -79,6 +79,9 @@ export const updatePublicRestaurant = async (
   await updateDoc(ref, {
     name: data.name,
     city: data.city,
+    street: data.street,
+    postalCode: data.postalCode,
+    phone: data.phone,
     category: data.category,
     shortDescription: data.shortDescription,
     coverImage: data.coverImage,

@@ -1,9 +1,11 @@
 import { Button } from '@radix-ui/themes';
+import { useTranslation } from 'react-i18next';
 type MenuEditorProps = {
   addNewCategory?: () => void;
 };
 
 export const EmptyMenu = ({ addNewCategory, ...props }: MenuEditorProps) => {
+  const { t } = useTranslation();
   return (
     <div
       className="mt-4 
@@ -16,11 +18,11 @@ export const EmptyMenu = ({ addNewCategory, ...props }: MenuEditorProps) => {
                         flex-col 
                         items-center"
     >
-      <h1 className="text-3xl">Twoje menu jest puste</h1>
+      <h1 className="text-3xl">{t('empty_menu.title')}</h1>
       <br />
-      <p>Rozpocznij dodawanie nowej kategori (np. Danie główne, przystawka, zupa)</p>
+      <p>{t('empty_menu.description')}</p>
       <Button type="button" color="brown" onClick={addNewCategory}>
-        <span>+</span> Dodaj kategorię
+        <span>+</span> {t('empty_menu.add_category')}
       </Button>
     </div>
   );

@@ -109,7 +109,7 @@ const RestaurantPage = () => {
               <Text>
                 ({restaurant.reviewCount} {t('restaurant_detail.reviews')})
               </Text>
-              <Text>Cuisine: {restaurant.category.map((c: string) => c).join(', ')}</Text>
+              <Text>Cuisine: {restaurant.category.map((category: string) => category)}</Text>
             </Flex>
           </div>
           <Card className="p-4 sm:p-6 h-fit md:col-span-1 order-first md:order-last">

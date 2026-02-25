@@ -311,6 +311,31 @@
     "contact_title": "Contact",
     "contact_message": "If you need further assistance, please contact our support team at"
   },
+  "menu_form": {
+    "title": "Menu Editor",
+    "unsaved_changes": "You have unsaved changes",
+    "save_menu": "Save menu",
+    "add_category": "Add category",
+    "category": "category",
+    "dish": "dish",
+    "category_plural": "categories",
+    "dish_plural": "dishes"
+  },
+  "category_form": {
+    "category_name_placeholder": "Category name...",
+    "dish_name_placeholder": "Type dish name...",
+    "dish_name_min_length": "Dish name must have at least 3 letters",
+    "price_placeholder": "Price",
+    "price_min": "Price must be greater than 0",
+    "description_placeholder": "Briefly describe the dish...",
+    "description_min_length": "Minimum 10 characters",
+    "add_first_dish": "Add first dish"
+  },
+  "empty_menu": {
+    "title": "Your menu is empty",
+    "description": "Start by adding a new category (e.g., Main Course, Starter, Soup)",
+    "add_category": "Add category"
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",

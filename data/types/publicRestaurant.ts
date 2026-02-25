@@ -2,6 +2,8 @@ import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
 import { Key } from 'readline';
 
 export type PublicRestaurant = {
+  postalCode: string | undefined;
+  street: string | undefined;
   id: string;
   name: string;
   phone: string;
