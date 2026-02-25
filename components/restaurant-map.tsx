@@ -1,26 +1,29 @@
 'use client';
 
 interface RestaurantMapProps {
-  lat: number;
-  lng: number;
-  name: string;
+  address: string; // Zmieniamy lat/lng na string adresu
+  apiKey: string;
 }
 
-export function RestaurantMap({ lat, lng, name }: RestaurantMapProps) {
+export function RestaurantMap({ address, apiKey }: RestaurantMapProps) {
+  // Jeśli adres jest pusty, nie renderujemy iframe (żeby nie było błędu)
+  if (!address) {
+    return <div className="w-full h-64 bg-muted animate-pulse rounded-lg" />;
+  }
+
+  const encodedAddress = encodeURIComponent(address);
+
   return (
-    <div className="relative w-full h-64 bg-muted rounded-lg overflow-hidden">
+    <div className="relative w-full h-64 bg-muted rounded-lg overflow-hidden shadow-md">
       <iframe
         width="100%"
         height="100%"
-        frameBorder="0"
-        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDummyKeyForMVP&q=${encodeURIComponent(name)}&center=${lat},${lng}&zoom=15`}
-        allowFullScreen
+        style={{ border: 0 }}
         loading="lazy"
+        allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
+        src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodedAddress}&zoom=15`}
       />
-      <div className="absolute inset-0 pointer-events-none">
-        <p className="sr-only">Map showing location of {name}</p>
-      </div>
     </div>
   );
 }

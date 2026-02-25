@@ -13,6 +13,7 @@ import {
   TextArea,
   TextField,
   Button,
+  Card,
 } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -28,6 +29,7 @@ import {
 import { createPublickRestaurantSchema } from '@/lib/validators/createPublickRestaurantSchema';
 import { useAuth } from '@/providers/AuthContext';
 
+import { RestaurantMap } from '../restaurant-map';
 import { Input } from '../ui/input';
 
 type Props = {
@@ -42,6 +44,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<CreatePublicRestaurantForm>({
     resolver: zodResolver(createPublickRestaurantSchema),
@@ -57,7 +60,9 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       delivery: false,
     },
   });
-
+  const watchedCity = watch('city');
+  const watchedStreet = watch('street');
+  const fullAddress = `${watchedStreet || ''} ${watchedCity || ''}`.trim();
   useEffect(() => {
     if (!restaurantId || !user) {
       return;
@@ -75,6 +80,9 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       reset({
         name: restaurant.name,
         city: restaurant.city,
+        street: restaurant.street,
+        postalCode: restaurant.postalCode,
+        phone: restaurant.phone,
         category: Array.isArray(restaurant.category) ? restaurant.category : [restaurant.category],
         shortDescription: restaurant.shortDescription,
         coverImage: restaurant.coverImage,
@@ -107,62 +115,95 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
-        <Box>
-          <Heading>{t('restaurant_form.basic_info')}</Heading>
-        </Box>
-        <Box>
-          <TextField.Root
-            {...register('name')}
-            size="3"
-            variant="surface"
-            placeholder={t('restaurant_form.name_placeholder')}
-            required
-          ></TextField.Root>
-        </Box>
-        <Box>
-          <TextField.Root
-            {...register('city')}
-            placeholder={t('restaurant_form.city_placeholder')}
-            size="3"
-            variant="surface"
-            required
-          ></TextField.Root>
-        </Box>
-        <Flex gap="2">
-          <Box>
-            <TextField.Root
-              {...register('street')}
-              placeholder={t('restaurant_form.street_placeholder')}
-              size="3"
-              variant="surface"
-              required
-            ></TextField.Root>
-          </Box>
-          <Box>
-            <TextField.Root
-              {...register('postalCode')}
-              placeholder={t('restaurant_form.postalCode_placeholder')}
-              size="3"
-              variant="surface"
-              required
-            ></TextField.Root>
-          </Box>
+        <Flex direction="row" gap="5" py="7">
+          <Flex direction="column" gap="2">
+            <Box>
+              <Heading size="4">{t('restaurant_form.basic_info')}:</Heading>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('name')}
+                size="3"
+                variant="surface"
+                placeholder={t('restaurant_form.name_placeholder')}
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('city')}
+                placeholder={t('restaurant_form.city_placeholder')}
+                size="3"
+                variant="surface"
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('street')}
+                placeholder={t('restaurant_form.street_placeholder')}
+                size="3"
+                variant="surface"
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('postalCode')}
+                placeholder={t('restaurant_form.postalCode_placeholder')}
+                size="3"
+                variant="surface"
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('phone')}
+                placeholder={t('restaurant_form.phone_placeholder')}
+                size="3"
+                variant="surface"
+              ></TextField.Root>
+            </Box>
+            <Text as="label" size="2">
+              <Flex gap="2">
+                <Checkbox />
+                {t('restaurant_form.delivery')}
+              </Flex>
+            </Text>
+          </Flex>
+          <Flex width="full">
+            <Card className="p-4">
+              <Heading size="5">{t('restaurant_detail.location')}</Heading>
+              <RestaurantMap
+                address={fullAddress || 'Warszawa'}
+                apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS || ''}
+              />
+            </Card>
+          </Flex>
+          <Flex className="flex-1 w-full">
+            <Box className="w-full">
+              <CheckboxCards.Root
+                {...register('category')}
+                size="3"
+                variant="surface"
+                columns={{ initial: '1', sm: '2', md: '3' }}
+              >
+                {CUISINES.map(cuisine => (
+                  <CheckboxCards.Item key={cuisine} value={cuisine}>
+                    <Flex>
+                      <Box>{cuisine}</Box>
+                    </Flex>
+                  </CheckboxCards.Item>
+                ))}
+              </CheckboxCards.Root>
+            </Box>
+          </Flex>
         </Flex>
 
         <Box>
           <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
         </Box>
-        <Box>
-          <CheckboxCards.Root {...register('category')} size="3" variant="surface">
-            {CUISINES.map(cuisine => (
-              <CheckboxCards.Item key={cuisine} value={cuisine}>
-                <Flex direction="column" width="100%">
-                  <Box>{cuisine}</Box>
-                </Flex>
-              </CheckboxCards.Item>
-            ))}
-          </CheckboxCards.Root>
-        </Box>
+
         <Box>
           <TextArea
             {...register('shortDescription')}
@@ -171,14 +212,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             variant="surface"
           ></TextArea>
         </Box>
-        <Box>
-          <TextField.Root
-            {...register('phone')}
-            placeholder={t('restaurant_form.phone_placeholder')}
-            size="3"
-            variant="surface"
-          ></TextField.Root>
-        </Box>
+
         <Box>
           <TextField.Root
             {...register('coverImage')}
@@ -195,12 +229,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             </Button>
           </Flex>
         </Box>
-        <Text as="label" size="2">
-          <Flex gap="2">
-            <Checkbox />
-            {t('restaurant_form.delivery')}
-          </Flex>
-        </Text>
+
         <Button type="submit" disabled={isSubmitting} size="3" variant="surface">
           {isSubmitting
             ? t('restaurant_form.saving')
