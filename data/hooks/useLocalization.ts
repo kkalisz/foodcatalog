@@ -6,6 +6,12 @@ type TypePosition = {
   latitude: number;
   longitude: number;
 };
+
+type RestaurantLocalization = {
+  city: string;
+  street: string;
+  house: string;
+};
 const UseLocalization = () => {
   const { t } = useTranslation();
   const [position, setPosition] = useState<TypePosition>({
@@ -15,6 +21,25 @@ const UseLocalization = () => {
   });
   const [geolocationAllowed, setGeolocationAllowed] = useState(true);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const getRestaurantLocalization = async () => {
+    const [adress, setAdress] = useState<RestaurantLocalization>({
+      city: 'Stróża kolonia',
+      street: 'Dworsk ',
+      house: '6',
+    });
+
+    const url =
+      `https://nominatim.openstreetmap.org/search?` +
+      `street=${encodeURIComponent(adress.street)}&` +
+      `city=${encodeURIComponent(adress.city)}&` +
+      `postalcode=${encodeURIComponent(adress.house)}&` +
+      `format=json&limit=1`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  };
 
   const getCurentLocalization = () => {
     if (!navigator.geolocation) return;
