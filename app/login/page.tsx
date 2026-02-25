@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Box, Flex, TextField } from '@radix-ui/themes';
+import { Box, Button, Flex, TextField } from '@radix-ui/themes';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { AlertCircle } from 'lucide-react';
 import Link from 'next/link';

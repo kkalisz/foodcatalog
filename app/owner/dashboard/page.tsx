@@ -18,6 +18,7 @@ import { useAuth } from '@/providers/AuthContext';
 
 import { PublicRestaurant } from '../../../data/types/publicRestaurant';
 import { Button } from '@radix-ui/themes';
+import { PageHeightWrapper } from '@/components/ui/wrapper';
 
 // Mock owner data
 const OWNER_STATS = {
@@ -104,7 +105,7 @@ export default function OwnerDashboard() {
   }, [user]);
 
   return (
-    <main className="min-h-screen bg-muted/30">
+    <PageHeightWrapper>
       <div className="max-w-7xl mx-auto py-6">
         <DashboardHeader title={t('owner_dashboard.header')} />
         <p className="p-2">{t('owner_dashboard.subheader')}</p>
@@ -224,6 +225,6 @@ export default function OwnerDashboard() {
       {showEditModal && (
         <EditRestaurantModal restaurant={selectedRestaurant} onClose={handleCloseModal} />
       )}
-    </main>
+    </PageHeightWrapper>
   );
 }
