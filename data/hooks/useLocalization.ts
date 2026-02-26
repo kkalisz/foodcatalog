@@ -7,11 +7,6 @@ type TypePosition = {
   longitude: number;
 };
 
-type RestaurantLocalization = {
-  city: string;
-  street: string;
-  house: string;
-};
 const UseLocalization = () => {
   const { t } = useTranslation();
   const [position, setPosition] = useState<TypePosition>({
@@ -22,53 +17,59 @@ const UseLocalization = () => {
   const [geolocationAllowed, setGeolocationAllowed] = useState(true);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const getRestaurantLocalization = async () => {
-    const [adress, setAdress] = useState<RestaurantLocalization>({
-      city: 'Stróża kolonia',
-      street: 'Dworsk ',
-      house: '6',
-    });
-
-    const url =
-      `https://nominatim.openstreetmap.org/search?` +
-      `street=${encodeURIComponent(adress.street)}&` +
-      `city=${encodeURIComponent(adress.city)}&` +
-      `postalcode=${encodeURIComponent(adress.house)}&` +
-      `format=json&limit=1`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-  };
-
   const getCurentLocalization = () => {
-    if (!navigator.geolocation) return;
-    const succes = async (position: GeolocationPosition) => {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
+    if (!navigator.geolocation) {
+      setErrorMsg('Geolokalizacja nie jest wspierana przez Twoją przeglądarkę.');
+      return;
+    }
+
+    const success = async (pos: GeolocationPosition) => {
+      const { latitude, longitude } = pos.coords;
       setErrorMsg(null);
+      const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS}&language=pl`;
 
       try {
-        const response = await fetch(
-          `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
-        );
+        const response = await fetch(url);
         const data = await response.json();
-        setPosition({
-          place: data.address.city || data.address.town || data.address.village,
-          latitude,
-          longitude,
-        });
-        setGeolocationAllowed(true);
+
+        if (data.status === 'OK' && data.results.length > 0) {
+          const addressComponents = data.results[0].address_components;
+          const cityObj = addressComponents.find(
+            (comp: any) =>
+              comp.types.includes('locality') ||
+              comp.types.includes('postal_town') ||
+              comp.types.includes('administrative_area_level_2')
+          );
+
+          setPosition({
+            place: cityObj ? cityObj.long_name : 'Nieznana lokalizacja',
+            latitude,
+            longitude,
+          });
+          setGeolocationAllowed(true);
+        } else {
+          throw new Error(data.error_message || 'Błąd Google API');
+        }
       } catch (error: any) {
-        console.error(error);
+        console.error('Błąd geolokalizacji Google:', error);
         setErrorMsg(t('errors.location_fetch'));
       }
     };
+
     const error = () => {
       setGeolocationAllowed(false);
     };
-    navigator.geolocation.getCurrentPosition(succes, error);
+
+    navigator.geolocation.getCurrentPosition(success, error);
   };
-  return { city: position.place, position, getCurentLocalization, geolocationAllowed, errorMsg };
+
+  return {
+    city: position.place,
+    position,
+    getCurentLocalization,
+    geolocationAllowed,
+    errorMsg,
+  };
 };
+
 export default UseLocalization;
