@@ -78,15 +78,15 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       }
 
       reset({
-        name: restaurant.name,
-        city: restaurant.city,
-        street: restaurant.street,
-        postalCode: restaurant.postalCode,
-        phone: restaurant.phone,
+        name: restaurant.name ?? '',
+        city: restaurant.city ?? '',
+        street: restaurant.street ?? '',
+        postalCode: restaurant.postalCode ?? '',
+        phone: restaurant.phone ?? '',
         category: Array.isArray(restaurant.category) ? restaurant.category : [restaurant.category],
-        shortDescription: restaurant.shortDescription,
-        coverImage: restaurant.coverImage,
-        delivery: restaurant.delivery,
+        shortDescription: restaurant.shortDescription ?? '',
+        coverImage: restaurant.coverImage ?? '',
+        delivery: restaurant.delivery ?? false,
       });
     };
 
@@ -143,6 +143,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                 {...register('street')}
                 placeholder={t('restaurant_form.street_placeholder')}
                 size="3"
+                value={watchedStreet}
                 variant="surface"
                 required
               ></TextField.Root>

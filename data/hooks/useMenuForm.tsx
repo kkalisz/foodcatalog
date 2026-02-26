@@ -26,7 +26,7 @@ export const useMenuForm = ({ form, index }: FormCategoryProps) => {
     append({
       id: crypto.randomUUID(),
       name: '',
-      price: '',
+      price: null,
       description: '',
     });
   };

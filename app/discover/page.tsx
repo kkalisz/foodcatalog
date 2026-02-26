@@ -56,7 +56,7 @@ export default function DiscoverPage() {
               placeholder={t('discover_page.search_placeholder')}
             />
           </Flex>
-          <Flex direction="row" gap="2">
+          <Flex direction="row" gap="5" wrap="wrap">
             {resteurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.createdAt}
