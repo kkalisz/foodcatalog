@@ -10,7 +10,7 @@ const FooterLawInfo = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/lawinfo/termsandconditions" color="gray">
             {t('footer.law_info.terms')}
           </Link>
         </Flex>
@@ -18,7 +18,7 @@ const FooterLawInfo = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/lawinfo/privacypolicy" color="gray">
             {t('footer.law_info.privacy_policy')}
           </Link>
         </Flex>
@@ -26,7 +26,7 @@ const FooterLawInfo = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/lawinfo/cookiepolicy" color="gray">
             {t('footer.law_info.cookies_policy')}
           </Link>
         </Flex>
@@ -34,7 +34,7 @@ const FooterLawInfo = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/lawinfo/rodo" color="gray">
             {t('footer.law_info.gdpr')}
           </Link>
         </Flex>
@@ -42,7 +42,7 @@ const FooterLawInfo = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/lawinfo/contact" color="gray">
             {t('footer.law_info.contact')}
           </Link>
         </Flex>

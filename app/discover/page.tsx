@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { RestaurantCard } from '@/components/restaurant-card';
 import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
 import PageLoader from '@/components/ui/loader/PageLoader';
-import { PageSizeWrapper } from '@/components/ui/wrapper';
+import { PageHeightWrapper, PageSizeWrapper } from '@/components/ui/wrapper';
 import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
 import { useSearchParams } from 'next/navigation';
 import { Flex, Heading } from '@radix-ui/themes';
@@ -23,7 +23,7 @@ export default function DiscoverPage() {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
   return (
-    <main className="min-h-screen bg-background">
+    <PageHeightWrapper>
       {loading && resteurants.length === 0 ? (
         <EmptySearchContainer
           tittle={t('discover_page.no_results')}
@@ -31,7 +31,7 @@ export default function DiscoverPage() {
         />
       ) : (
         <PageSizeWrapper>
-          <Flex direction="column" gap="2" pt="4">
+          <Flex direction="column" gap="2">
             <Heading size="7">{t('discover_page.header')}</Heading>
             <p className="text-sm sm:text-base text-muted-foreground">
               {t('discover_page.subheader')}
@@ -69,6 +69,6 @@ export default function DiscoverPage() {
           </Flex>
         </PageSizeWrapper>
       )}
-    </main>
+    </PageHeightWrapper>
   );
 }
