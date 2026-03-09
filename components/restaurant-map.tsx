@@ -1,12 +1,17 @@
 'use client';
 
+import { useState } from 'react';
+
 interface RestaurantMapProps {
-  address: string; // Zmieniamy lat/lng na string adresu
+  address: string;
   apiKey: string;
 }
 
 export function RestaurantMap({ address, apiKey }: RestaurantMapProps) {
-  // Jeśli adres jest pusty, nie renderujemy iframe (żeby nie było błędu)
+  const [curentyPosition, setCurentyPosition] = useState({
+    lat: 0,
+    lng: 0,
+  });
   if (!address) {
     return <div className="w-full h-64 bg-muted animate-pulse rounded-lg" />;
   }

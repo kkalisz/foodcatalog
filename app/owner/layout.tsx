@@ -10,7 +10,6 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
   const { user } = useAuth();
   const { firmId, loading } = useFirmId(user?.uid);
   const { firm } = useFirm();
-  console.log(firm);
   if (loading) {
     return <PageLoader loadingText={'Ładowanie'} />;
   }

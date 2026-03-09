@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -13,8 +13,8 @@ import {
   TextArea,
   TextField,
   Button,
-  Card,
 } from '@radix-ui/themes';
+import { AdvancedMarker, useMapsLibrary, Map } from '@vis.gl/react-google-maps';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -29,7 +29,6 @@ import {
 import { createPublickRestaurantSchema } from '@/lib/validators/createPublickRestaurantSchema';
 import { useAuth } from '@/providers/AuthContext';
 
-import { RestaurantMap } from '../restaurant-map';
 import { Input } from '../ui/input';
 
 type Props = {
@@ -37,6 +36,9 @@ type Props = {
 };
 
 export const RestaurantForm = ({ restaurantId }: Props) => {
+  const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
+  const [center, setCenter] = useState<{ lat: number; lng: number }>();
+  const [localization, setLocalization] = useState<{ lat: number; lng: number } | null>(null);
   const { user } = useAuth();
   const router = useRouter();
   const { t } = useTranslation();
@@ -45,7 +47,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     handleSubmit,
     reset,
     watch,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = useForm<CreatePublicRestaurantForm>({
     resolver: zodResolver(createPublickRestaurantSchema),
     defaultValues: {
@@ -60,9 +62,10 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       delivery: false,
     },
   });
+  const geocodingLibrary = useMapsLibrary('geocoding');
   const watchedCity = watch('city');
   const watchedStreet = watch('street');
-  const fullAddress = `${watchedStreet || ''} ${watchedCity || ''}`.trim();
+  const watchedPostalCode = watch('postalCode');
   useEffect(() => {
     if (!restaurantId || !user) {
       return;
@@ -92,7 +95,22 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
     loadRestaurant();
   }, [restaurantId, user, reset]);
-
+  useEffect(() => {
+    if (!geocodingLibrary) {
+      return;
+    }
+    const loadCenterMapPosition = new geocodingLibrary.Geocoder();
+    loadCenterMapPosition.geocode(
+      { address: `${watchedPostalCode}, ${watchedCity}, ${watchedStreet}, Polska` },
+      (results, status) => {
+        if (status === 'OK' && results && results.length > 0) {
+          const location = results[0].geometry.location;
+          setCenter({ lat: location.lat(), lng: location.lng() });
+          setPosition(null);
+        }
+      }
+    );
+  }, [geocodingLibrary, watchedCity, watchedPostalCode, watchedStreet]);
   const onSubmit = async (data: CreatePublicRestaurantForm) => {
     if (!user) {
       return;
@@ -108,7 +126,6 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         router.push(`/owner/restaurants/${newRestaurantId}/menu`);
       }
     } catch (error: any) {
-      console.error(error);
       alert(error.message);
     }
   };
@@ -172,15 +189,6 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
               </Flex>
             </Text>
           </Flex>
-          <Flex width="full">
-            <Card className="p-4">
-              <Heading size="5">{t('restaurant_detail.location')}</Heading>
-              <RestaurantMap
-                address={fullAddress || 'Warszawa'}
-                apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS || ''}
-              />
-            </Card>
-          </Flex>
           <Flex className="flex-1 w-full">
             <Box className="w-full">
               <CheckboxCards.Root
@@ -238,6 +246,27 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
               ? t('restaurant_form.save_changes')
               : t('restaurant_form.add_restaurant')}
         </Button>
+
+        <Box className="border border-gray-200 w-full h-[30vh] rounded-lg overflow-hidden">
+          <Map
+            defaultZoom={13}
+            center={center || { lat: 52.2297, lng: 21.0122 }}
+            onCameraChanged={ev => setCenter(ev.detail.center)}
+            mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS}
+          >
+            <AdvancedMarker
+              position={position || center || { lat: 52.2297, lng: 21.0122 }}
+              draggable={true}
+              onDragEnd={(ev: google.maps.MapMouseEvent) => {
+                if (ev.latLng) {
+                  const lat = ev.latLng.lat();
+                  const lng = ev.latLng.lng();
+                  setLocalization({ lat, lng });
+                }
+              }}
+            />
+          </Map>
+        </Box>
       </Flex>
     </form>
   );
