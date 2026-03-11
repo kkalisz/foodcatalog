@@ -16,7 +16,7 @@ import {
 } from '@radix-ui/themes';
 import { AdvancedMarker, useMapsLibrary, Map } from '@vis.gl/react-google-maps';
 import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { CUISINES } from '@/data/constans/cusines';
@@ -47,6 +47,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     handleSubmit,
     reset,
     watch,
+    control,
     formState: { isSubmitting },
   } = useForm<CreatePublicRestaurantForm>({
     resolver: zodResolver(createPublickRestaurantSchema),
@@ -184,27 +185,40 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             </Box>
             <Text as="label" size="2">
               <Flex gap="2">
-                <Checkbox />
+                <Controller
+                  name="delivery"
+                  control={control}
+                  render={({ field }) => (
+                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                  )}
+                />
                 {t('restaurant_form.delivery')}
               </Flex>
             </Text>
           </Flex>
           <Flex className="flex-1 w-full">
             <Box className="w-full">
-              <CheckboxCards.Root
-                {...register('category')}
-                size="3"
-                variant="surface"
-                columns={{ initial: '1', sm: '2', md: '3' }}
-              >
-                {CUISINES.map(cuisine => (
-                  <CheckboxCards.Item key={cuisine} value={cuisine}>
-                    <Flex>
-                      <Box>{cuisine}</Box>
-                    </Flex>
-                  </CheckboxCards.Item>
-                ))}
-              </CheckboxCards.Root>
+              <Controller
+                name="category"
+                control={control}
+                render={({ field }) => (
+                  <CheckboxCards.Root
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    size="3"
+                    variant="surface"
+                    columns={{ initial: '1', sm: '2', md: '3' }}
+                  >
+                    {CUISINES.map(cuisine => (
+                      <CheckboxCards.Item key={cuisine} value={cuisine}>
+                        <Flex>
+                          <Box>{cuisine}</Box>
+                        </Flex>
+                      </CheckboxCards.Item>
+                    ))}
+                  </CheckboxCards.Root>
+                )}
+              />
             </Box>
           </Flex>
         </Flex>
