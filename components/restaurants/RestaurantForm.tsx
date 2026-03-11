@@ -61,6 +61,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       shortDescription: '',
       coverImage: '',
       delivery: false,
+      lat: 0,
+      lng: 0,
     },
   });
   const geocodingLibrary = useMapsLibrary('geocoding');
@@ -91,6 +93,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         shortDescription: restaurant.shortDescription ?? '',
         coverImage: restaurant.coverImage ?? '',
         delivery: restaurant.delivery ?? false,
+        lat: restaurant.lat ?? 0,
+        lng: restaurant.lng ?? 0,
       });
     };
 
@@ -116,10 +120,11 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     if (!user) {
       return;
     }
-
+    const lat = center?.lat ?? data.lat;
+    const lng = center?.lng ?? data.lng;
     try {
       if (restaurantId) {
-        await updatePublicRestaurant(restaurantId, data);
+        await updatePublicRestaurant(restaurantId, { ...data, lat, lng });
         alert(t('restaurant_form.saved_success'));
       } else {
         const newRestaurantId = await createRestaurant(data, user.uid);

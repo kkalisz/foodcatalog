@@ -8,4 +8,6 @@ export type CreatePublicRestaurantForm = {
   shortDescription: string;
   coverImage?: string;
   delivery: boolean;
+  lat: number;
+  lng: number;
 };

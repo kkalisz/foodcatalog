@@ -1,9 +1,19 @@
+'use client';
+import { useState } from 'react';
+
 import { Button, Flex, TextField } from '@radix-ui/themes';
 import { LocateIcon, SearchIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-const FiltersDiscoveryPage = () => {
+type FiltersProps = {
+  onSearchChange: (sendSearchCategory: string) => void;
+};
+
+const FiltersDiscoveryPage = ({ onSearchChange }: FiltersProps) => {
+  const [searchCategory, setSearchCategory] = useState('');
+
   const params = useSearchParams();
   const cityParams = params.get('city');
+
   return (
     <Flex gap="1" direction="row" className="w-full">
       <Flex flexGrow="1" flexBasis="50%">
@@ -11,6 +21,9 @@ const FiltersDiscoveryPage = () => {
           size="3"
           placeholder="Search restaurant, dish, cuisine..."
           className="w-full"
+          onChange={e => {
+            setSearchCategory(e.target.value);
+          }}
         >
           <TextField.Slot>
             <SearchIcon></SearchIcon>
@@ -27,7 +40,14 @@ const FiltersDiscoveryPage = () => {
             <LocateIcon></LocateIcon>
           </TextField.Slot>
         </TextField.Root>
-        <Button size="3">Search</Button>
+        <Button
+          onClick={() => {
+            onSearchChange(searchCategory);
+          }}
+          size="3"
+        >
+          Search
+        </Button>
       </Flex>
     </Flex>
   );

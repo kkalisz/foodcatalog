@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import { Flex, Heading } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { LocateIcon } from 'lucide-react';
@@ -14,11 +16,14 @@ import { PageSizeWrapper } from '@/components/ui/wrapper';
 import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
 
 export default function DiscoverPage() {
-  const { loading, resteurants, setSearchQuery, searchQuery } = usePublickRestaurants();
   const { t } = useTranslation();
   const params = useSearchParams();
   const searchParams = params.get('search');
   const cityParams = params.get('city');
+  const [currentSearch, setCurrentSearch] = useState('');
+
+  const { loading, resteurants } = usePublickRestaurants(currentSearch);
+
   if (loading && resteurants.length === 0) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
@@ -39,7 +44,7 @@ export default function DiscoverPage() {
             {t('discover_page.search_term')}
             {searchParams ? <Heading>{searchParams?.toLocaleUpperCase()}</Heading> : null}
             <Flex direction="column" gap="2">
-              <FiltersDiscoveryPage />
+              <FiltersDiscoveryPage onSearchChange={setCurrentSearch} />
             </Flex>
             <Flex gap="2" align="center">
               <Heading size="3" className="text-muted-foreground">

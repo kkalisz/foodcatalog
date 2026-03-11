@@ -18,4 +18,6 @@ export type PublicRestaurant = {
   restaurantId?: string;
   delivery: boolean;
   createdAt: Timestamp;
+  lat?: number;
+  lng?: number;
 };
