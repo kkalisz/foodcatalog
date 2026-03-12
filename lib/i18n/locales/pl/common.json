@@ -311,6 +311,31 @@
     "contact_title": "Kontakt",
     "contact_message": "Jeśli potrzebujesz dalszej pomocy, skontaktuj się z naszym zespołem wsparcia pod adresem"
   },
+  "menu_form": {
+    "title": "Edytor Menu",
+    "unsaved_changes": "Masz niezapisane zmiany",
+    "save_menu": "Zapisz menu",
+    "add_category": "Dodaj kategorię",
+    "category": "kategoria",
+    "dish": "danie",
+    "category_plural": "kategorie",
+    "dish_plural": "dania"
+  },
+  "category_form": {
+    "category_name_placeholder": "Nazwa kategorii...",
+    "dish_name_placeholder": "Wpisz nazwę dania...",
+    "dish_name_min_length": "Nazwa dania musi mieć minimum 3 litery",
+    "price_placeholder": "Cena",
+    "price_min": "Cena musi być większa od 0",
+    "description_placeholder": "Krótko opisz potrawę...",
+    "description_min_length": "Minimum 10 znaków",
+    "add_first_dish": "Dodaj pierwsze danie"
+  },
+  "empty_menu": {
+    "title": "Twoje menu jest puste",
+    "description": "Rozpocznij dodawanie nowej kategorii (np. Danie główne, przystawka, zupa)",
+    "add_category": "Dodaj kategorię"
+  },
   "common": {
     "loading": "Ładowanie...",
     "error": "Błąd",

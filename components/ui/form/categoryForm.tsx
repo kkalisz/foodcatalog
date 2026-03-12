@@ -3,6 +3,7 @@
 import { Box, Button, Flex, TextArea, TextField } from '@radix-ui/themes';
 import { MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
 import { UseFormReturn } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import { useMenuForm } from '@/data/hooks/useMenuForm';
 import { Category, MenuForm } from '@/data/types/dishMenu';
@@ -18,6 +19,7 @@ type CategoryFormProps = {
 };
 
 const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormProps) => {
+  const { t } = useTranslation();
   const { register, errors, dishes, onAddNewDish, removeDish } = useMenuForm({
     form,
     index,
@@ -37,7 +39,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
               key={category.id}
               {...register(`categories.${index}.name`)}
               size="3"
-              placeholder="Nazwa kategori..."
+              placeholder={t('category_form.category_name_placeholder')}
               variant="soft"
               className="shadow-[var(--shadow-3)]"
               color="gray"
@@ -64,12 +66,12 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
               <Flex align="center" gap="4">
                 <Box className="flex-1">
                   <TextField.Root
-                    placeholder="Wpisz nazwę dania..."
+                    placeholder={t('category_form.dish_name_placeholder')}
                     {...register(`categories.${index}.dishes.${indexDish}.name`, {
                       required: true,
                       minLength: {
                         value: 3,
-                        message: 'Nazwa dania musi mieć minimum 3 litery',
+                        message: t('category_form.dish_name_min_length'),
                       },
                     })}
                   />
@@ -80,12 +82,12 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
                 </Box>
                 <Box className="w-[140px]">
                   <TextField.Root
-                    placeholder="Cena"
+                    placeholder={t('category_form.price_placeholder')}
                     {...register(`categories.${index}.dishes.${indexDish}.price`, {
                       required: true,
                       min: {
                         value: 1,
-                        message: 'Cena musi być większa od 0',
+                        message: t('category_form.price_min'),
                       },
                     })}
                   />
@@ -109,12 +111,12 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
               </Flex>
               <Box className="mt-4">
                 <TextArea
-                  placeholder="Krótko opisz potrawę..."
+                  placeholder={t('category_form.description_placeholder')}
                   {...register(`categories.${index}.dishes.${indexDish}.description`, {
                     required: true,
                     minLength: {
                       value: 10,
-                      message: 'Minimum 10 znaków',
+                      message: t('category_form.description_min_length'),
                     },
                   })}
                 />
@@ -147,7 +149,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
                     "
         >
           <PlusIcon />
-          Add first dish
+          {t('category_form.add_first_dish')}
         </Button>
       </div>
     </div>

@@ -16,7 +16,7 @@ import {
 } from '@radix-ui/themes';
 import { AdvancedMarker, useMapsLibrary, Map } from '@vis.gl/react-google-maps';
 import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { CUISINES } from '@/data/constans/cusines';
@@ -130,7 +130,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={form.handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
         <Flex direction="row" gap="5" py="7">
           <Flex direction="column" gap="2">
@@ -215,7 +215,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
         <Box>
           <TextArea
-            {...register('shortDescription')}
+            {...form.register('shortDescription')}
             placeholder={t('restaurant_form.description_placeholder')}
             size="3"
             variant="surface"
@@ -224,7 +224,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
         <Box>
           <TextField.Root
-            {...register('coverImage')}
+            {...form.register('coverImage')}
             placeholder={t('restaurant_form.image_url_placeholder')}
             size="3"
             variant="surface"

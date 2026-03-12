@@ -1,6 +1,8 @@
 import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
 
 export type PublicRestaurant = {
+  postalCode: string | undefined;
+  street: string | undefined;
   id: string;
   name: string;
   street: string;

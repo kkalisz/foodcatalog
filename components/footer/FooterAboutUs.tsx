@@ -10,7 +10,7 @@ const FooterAboutUs = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/about/aboutUs" color="gray">
             {t('footer.about_us.about')}
           </Link>
         </Flex>
@@ -18,7 +18,7 @@ const FooterAboutUs = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/about/howitworks" color="gray">
             {t('footer.about_us.how_it_works')}
           </Link>
         </Flex>
@@ -26,7 +26,7 @@ const FooterAboutUs = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/about/faq" color="gray">
             {t('footer.about_us.faq')}
           </Link>
         </Flex>
@@ -34,7 +34,7 @@ const FooterAboutUs = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="#" color="gray">
+          <Link href="/about/blog" color="gray">
             {t('footer.about_us.blog')}
           </Link>
         </Flex>
