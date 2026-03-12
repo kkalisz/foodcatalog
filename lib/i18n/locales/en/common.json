@@ -350,5 +350,17 @@
     "next": "Next",
     "yes": "Yes",
     "no": "No"
+  },
+  "amenity": {
+    "parking": "Parking",
+    "disabled_access": "Disabled access",
+    "pet_friendly": "Pet friendly",
+    "air_conditioning": "Air conditioning",
+    "outdoor_seating": "Outdoor seating",
+    "wifi": "Wi-Fi",
+    "kids_area": "Kids area",
+    "vegan_options": "Vegan options",
+    "delivery": "Delivery",
+    "card_payments": "Card payments"
   }
 }

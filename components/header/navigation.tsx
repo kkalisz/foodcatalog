@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+
 import { Flex, Heading } from '@radix-ui/themes';
-import { LocateIcon, MapPin, Menu, Search } from 'lucide-react';
+import { LocateIcon, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import { PageSizeWrapper } from '../ui/wrapper';
+
 import HeaderSearchLocalization from '../ui/search/HeaderSearchLocalization';
+import { PageSizeWrapper } from '../ui/wrapper';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

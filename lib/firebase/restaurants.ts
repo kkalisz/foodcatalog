@@ -61,6 +61,8 @@ export const createPublicRestaurant = async (data: CreatePublicRestaurantForm, f
     shortDescription: data.shortDescription,
     coverImage: data.coverImage,
     delivery: data.delivery,
+    lat: data.lat ?? 0,
+    lng: data.lng ?? 0,
     firmId,
     slug: generateSlug(data.name),
     status: 'draft',
@@ -86,6 +88,8 @@ export const updatePublicRestaurant = async (
     shortDescription: data.shortDescription ?? '',
     coverImage: data.coverImage ?? '',
     delivery: data.delivery ?? false,
+    lat: data.lat ?? 0,
+    lng: data.lng ?? 0,
 
     slug: generateSlug(data.name),
     updatedAt: serverTimestamp(),

@@ -2,16 +2,15 @@ import '@radix-ui/themes/styles.css';
 import type React from 'react';
 
 import { Theme } from '@radix-ui/themes';
-
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
+import { Toast } from 'radix-ui';
 
-import { I18nProvider } from '@/lib/i18n/i18nProvider';
-import { AuthProvider } from '@/providers/AuthContext';
 import { Footer } from '@/components/footer/footer';
 import { Navigation } from '@/components/header/navigation';
-import { Toast } from 'radix-ui';
 import { GoogleMapsProvider } from '@/components/maps/GoogleMapsProvider';
+import { I18nProvider } from '@/lib/i18n/i18nProvider';
+import { AuthProvider } from '@/providers/AuthContext';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

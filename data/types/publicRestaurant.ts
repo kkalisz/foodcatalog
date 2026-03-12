@@ -1,5 +1,7 @@
 import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
 
+import { Amenity } from '../constans/amenity';
+
 export type PublicRestaurant = {
   postalCode: string | undefined;
   street: string | undefined;
@@ -20,4 +22,7 @@ export type PublicRestaurant = {
   restaurantId?: string;
   delivery: boolean;
   createdAt: Timestamp;
+  lat?: number;
+  lng?: number;
+  extra?: Amenity[];
 };

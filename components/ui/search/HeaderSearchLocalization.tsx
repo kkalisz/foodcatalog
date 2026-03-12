@@ -1,11 +1,13 @@
 'use client';
-import useLocalization from '@/data/hooks/useLocalization';
+import { useEffect, useState } from 'react';
+
 import { Box, Flex, TextField, Popover, Button } from '@radix-ui/themes';
 import { LocateIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Toast } from 'radix-ui';
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import useLocalization from '@/data/hooks/useLocalization';
 
 type HeaderSearchProps = {
   icon: React.ReactNode;

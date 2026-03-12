@@ -1,5 +1,6 @@
 import { useFieldArray, UseFormReturn } from 'react-hook-form';
-import { Category, Dish, MenuForm } from '../types/dishMenu';
+
+import { Category, MenuForm } from '../types/dishMenu';
 
 type FormCategoryProps = {
   form: UseFormReturn<MenuForm, any, MenuForm>;

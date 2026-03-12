@@ -1,5 +1,6 @@
 'use client';
 
+import { Flex } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { Star, MapPin } from 'lucide-react';
 import Link from 'next/link';
@@ -7,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constans/icons';
-import { Flex } from '@radix-ui/themes';
 
 interface Restaurant {
   id?: string;

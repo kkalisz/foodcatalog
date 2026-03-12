@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/firebase/client';
 
 export async function GET(_request: NextRequest, context: { params: Promise<{ id: string }> }) {
-  // ⬇️ KLUCZOWE: await params
   const { id } = await context.params;
 
   const ref = doc(db, 'public_restaurants', id);

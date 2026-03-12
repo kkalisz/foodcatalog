@@ -350,5 +350,17 @@
     "next": "Dalej",
     "yes": "Tak",
     "no": "Nie"
+  },
+  "amenity": {
+    "parking": "Parking",
+    "disabled_access": "Dostęp dla niepełnosprawnych",
+    "pet_friendly": "Przyjazne zwierzętom",
+    "air_conditioning": "Klimatyzacja",
+    "outdoor_seating": "Ogródek na zewnątrz",
+    "wifi": "Wi-Fi",
+    "kids_area": "Kącik dla dzieci",
+    "vegan_options": "Opcje wegańskie",
+    "delivery": "Dostawa",
+    "card_payments": "Płatność kartą"
   }
 }
