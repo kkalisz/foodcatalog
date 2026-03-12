@@ -1,3 +1,5 @@
+import { Amenity } from '../constans/amenity';
+
 export type CreatePublicRestaurantForm = {
   name: string;
   city: string;
@@ -10,4 +12,5 @@ export type CreatePublicRestaurantForm = {
   delivery: boolean;
   lat: number;
   lng: number;
+  extra: Amenity[];
 };

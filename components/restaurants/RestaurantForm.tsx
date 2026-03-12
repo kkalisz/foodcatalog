@@ -20,6 +20,7 @@ import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import { RESTAURANT_AMENITIES } from '@/data/constans/amenity';
 import { CUISINES } from '@/data/constans/cusines';
 import { CreatePublicRestaurantForm } from '@/data/types/createPublicRestaurantForm';
 import {
@@ -64,6 +65,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       delivery: false,
       lat: 0,
       lng: 0,
+      extra: [],
     },
   });
   const geocodingLibrary = useMapsLibrary('geocoding');
@@ -141,8 +143,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       <Flex direction="column" gap="2">
         <Flex className="w-full" direction={{ initial: 'column', md: 'row' }} gap="5" py="3">
           <Flex className="flex-none w-full md:w-1/3 " direction="column" gap="2">
-            <Card variant="surface">
-              <Flex direction="column" gap="3">
+            <Card variant="surface" className="h-full">
+              <Flex direction="column" gap="4">
                 <Heading size="4">{t('restaurant_form.basic_info')}:</Heading>
                 <TextField.Root
                   {...register('name')}
@@ -195,30 +197,58 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             </Card>
           </Flex>
           <Flex className="flex-1">
-            <Card className="w-full h-full">
-              <Controller
-                name="category"
-                control={control}
-                render={({ field }) => (
-                  <CheckboxCards.Root
-                    value={field.value}
-                    className="h-full"
-                    onValueChange={field.onChange}
-                    size="1"
-                    variant="classic"
-                    columns={{ initial: '2', sm: '2', md: '4' }}
-                  >
-                    {CUISINES.map(cuisine => (
-                      <CheckboxCards.Item key={cuisine} value={cuisine}>
-                        <Flex>
-                          <Box>{cuisine}</Box>
-                        </Flex>
-                      </CheckboxCards.Item>
-                    ))}
-                  </CheckboxCards.Root>
-                )}
-              />
-            </Card>
+            <Flex className="flex-1" direction="column" gap="2">
+              <Card className="w-full">
+                <Heading size="4" mb="3">
+                  Rodzaj kuchni
+                </Heading>
+                <Controller
+                  name="category"
+                  control={control}
+                  render={({ field }) => (
+                    <CheckboxCards.Root
+                      value={field.value}
+                      onValueChange={field.onChange}
+                      size="1"
+                      variant="classic"
+                      columns={{ initial: '2', sm: '2', md: '4' }}
+                    >
+                      {CUISINES.map(cuisine => (
+                        <CheckboxCards.Item key={cuisine} value={cuisine}>
+                          <Flex>
+                            <Box>{cuisine}</Box>
+                          </Flex>
+                        </CheckboxCards.Item>
+                      ))}
+                    </CheckboxCards.Root>
+                  )}
+                />
+              </Card>
+              <Card>
+                <Heading size="4">Dodatkowe opcje</Heading>
+                <Flex direction="column">
+                  <Controller
+                    name={'extra'}
+                    control={control}
+                    render={({ field }) => (
+                      <CheckboxCards.Root
+                        value={field.value}
+                        onValueChange={field.onChange}
+                        size="1"
+                        variant="classic"
+                        columns={{ initial: '2', sm: '2', md: '4' }}
+                      >
+                        {RESTAURANT_AMENITIES.map(amenity => (
+                          <CheckboxCards.Item key={amenity} value={amenity}>
+                            {t(`amenity.${amenity}`)}
+                          </CheckboxCards.Item>
+                        ))}
+                      </CheckboxCards.Root>
+                    )}
+                  ></Controller>
+                </Flex>
+              </Card>
+            </Flex>
           </Flex>
         </Flex>
 
