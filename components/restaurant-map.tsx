@@ -19,7 +19,7 @@ export function RestaurantMap({ address, apiKey }: RestaurantMapProps) {
   const encodedAddress = encodeURIComponent(address);
 
   return (
-    <div className="relative w-full h-64 bg-muted rounded-lg overflow-hidden shadow-md">
+    <div className=" w-full h-full bg-muted rounded-lg overflow-hidden shadow-md">
       <iframe
         width="100%"
         height="100%"

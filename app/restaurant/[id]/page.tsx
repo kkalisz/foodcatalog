@@ -11,7 +11,6 @@ import { useParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
 import { RestaurantMap } from '@/components/restaurant-map';
-
 import { Card } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { PageSizeWrapper } from '@/components/ui/wrapper';

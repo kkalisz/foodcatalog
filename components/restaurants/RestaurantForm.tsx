@@ -13,6 +13,7 @@ import {
   TextArea,
   TextField,
   Button,
+  Card,
 } from '@radix-ui/themes';
 import { AdvancedMarker, useMapsLibrary, Map } from '@vis.gl/react-google-maps';
 import { useRouter } from 'next/navigation';
@@ -138,81 +139,74 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
-        <Flex direction="row" gap="5" py="7">
-          <Flex direction="column" gap="2">
-            <Box>
-              <Heading size="4">{t('restaurant_form.basic_info')}:</Heading>
-            </Box>
-            <Box>
-              <TextField.Root
-                {...register('name')}
-                size="3"
-                variant="surface"
-                placeholder={t('restaurant_form.name_placeholder')}
-                required
-              ></TextField.Root>
-            </Box>
-            <Box>
-              <TextField.Root
-                {...register('city')}
-                placeholder={t('restaurant_form.city_placeholder')}
-                size="3"
-                variant="surface"
-                required
-              ></TextField.Root>
-            </Box>
-            <Box>
-              <TextField.Root
-                {...register('street')}
-                placeholder={t('restaurant_form.street_placeholder')}
-                size="3"
-                value={watchedStreet}
-                variant="surface"
-                required
-              ></TextField.Root>
-            </Box>
-            <Box>
-              <TextField.Root
-                {...register('postalCode')}
-                placeholder={t('restaurant_form.postalCode_placeholder')}
-                size="3"
-                variant="surface"
-                required
-              ></TextField.Root>
-            </Box>
-            <Box>
-              <TextField.Root
-                {...register('phone')}
-                placeholder={t('restaurant_form.phone_placeholder')}
-                size="3"
-                variant="surface"
-              ></TextField.Root>
-            </Box>
-            <Text as="label" size="2">
-              <Flex gap="2">
-                <Controller
-                  name="delivery"
-                  control={control}
-                  render={({ field }) => (
-                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                  )}
-                />
-                {t('restaurant_form.delivery')}
+        <Flex className="w-full" direction={{ initial: 'column', md: 'row' }} gap="5" py="3">
+          <Flex className="flex-none w-full md:w-1/3 " direction="column" gap="2">
+            <Card variant="surface">
+              <Flex direction="column" gap="3">
+                <Heading size="4">{t('restaurant_form.basic_info')}:</Heading>
+                <TextField.Root
+                  {...register('name')}
+                  size="3"
+                  variant="surface"
+                  placeholder={t('restaurant_form.name_placeholder')}
+                  required
+                ></TextField.Root>
+                <TextField.Root
+                  {...register('city')}
+                  placeholder={t('restaurant_form.city_placeholder')}
+                  size="3"
+                  variant="surface"
+                  required
+                ></TextField.Root>
+                <TextField.Root
+                  {...register('street')}
+                  placeholder={t('restaurant_form.street_placeholder')}
+                  size="3"
+                  value={watchedStreet}
+                  variant="surface"
+                  required
+                ></TextField.Root>
+                <TextField.Root
+                  {...register('postalCode')}
+                  placeholder={t('restaurant_form.postalCode_placeholder')}
+                  size="3"
+                  variant="surface"
+                  required
+                ></TextField.Root>
+                <TextField.Root
+                  {...register('phone')}
+                  placeholder={t('restaurant_form.phone_placeholder')}
+                  size="3"
+                  variant="surface"
+                ></TextField.Root>
+                <Text as="label" size="2">
+                  <Flex gap="2">
+                    <Controller
+                      name="delivery"
+                      control={control}
+                      render={({ field }) => (
+                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                      )}
+                    />
+                    {t('restaurant_form.delivery')}
+                  </Flex>
+                </Text>
               </Flex>
-            </Text>
+            </Card>
           </Flex>
-          <Flex className="flex-1 w-full">
-            <Box className="w-full">
+          <Flex className="flex-1">
+            <Card className="w-full h-full">
               <Controller
                 name="category"
                 control={control}
                 render={({ field }) => (
                   <CheckboxCards.Root
                     value={field.value}
+                    className="h-full"
                     onValueChange={field.onChange}
-                    size="3"
-                    variant="surface"
-                    columns={{ initial: '1', sm: '2', md: '3' }}
+                    size="1"
+                    variant="classic"
+                    columns={{ initial: '2', sm: '2', md: '4' }}
                   >
                     {CUISINES.map(cuisine => (
                       <CheckboxCards.Item key={cuisine} value={cuisine}>
@@ -224,7 +218,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                   </CheckboxCards.Root>
                 )}
               />
-            </Box>
+            </Card>
           </Flex>
         </Flex>
 
