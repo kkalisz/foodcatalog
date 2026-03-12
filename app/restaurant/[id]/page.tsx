@@ -189,9 +189,13 @@ const RestaurantPage = () => {
           )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <Card className="p-4">
+          <Card className="p-1 align-center justify-start">
             <Heading size="5">{t('restaurant_detail.location')}</Heading>
-            <RestaurantMap lat={restaurant.lat} lng={restaurant.lng} name={restaurant.name} />
+
+            <RestaurantMap
+              address={restaurant.city + ' ' + restaurant.street}
+              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS || ''}
+            />
           </Card>
           <div className="md:col-span-2 space-y-6">
             <Card className="p-4 sm:p-6">

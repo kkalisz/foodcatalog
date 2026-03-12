@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -14,6 +14,7 @@ import {
   TextField,
   Button,
 } from '@radix-ui/themes';
+import { AdvancedMarker, useMapsLibrary, Map } from '@vis.gl/react-google-maps';
 import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -35,10 +36,19 @@ type Props = {
 };
 
 export const RestaurantForm = ({ restaurantId }: Props) => {
+  const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
+  const [center, setCenter] = useState<{ lat: number; lng: number }>();
+  const [localization, setLocalization] = useState<{ lat: number; lng: number } | null>(null);
   const { user } = useAuth();
   const router = useRouter();
   const { t } = useTranslation();
-  const form = useForm<CreatePublicRestaurantForm>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { isSubmitting },
+  } = useForm<CreatePublicRestaurantForm>({
     resolver: zodResolver(createPublickRestaurantSchema),
     defaultValues: {
       name: '',
@@ -52,7 +62,10 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       delivery: false,
     },
   });
-
+  const geocodingLibrary = useMapsLibrary('geocoding');
+  const watchedCity = watch('city');
+  const watchedStreet = watch('street');
+  const watchedPostalCode = watch('postalCode');
   useEffect(() => {
     if (!restaurantId || !user) {
       return;
@@ -67,22 +80,37 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         return;
       }
 
-      form.reset({
-        name: restaurant.name,
-        phone: restaurant.phone,
-        city: restaurant.city,
-        street: restaurant.street,
-        postalCode: restaurant.postalCode,
+      reset({
+        name: restaurant.name ?? '',
+        city: restaurant.city ?? '',
+        street: restaurant.street ?? '',
+        postalCode: restaurant.postalCode ?? '',
+        phone: restaurant.phone ?? '',
         category: Array.isArray(restaurant.category) ? restaurant.category : [restaurant.category],
-        shortDescription: restaurant.shortDescription,
-        coverImage: restaurant.coverImage,
-        delivery: restaurant.delivery,
+        shortDescription: restaurant.shortDescription ?? '',
+        coverImage: restaurant.coverImage ?? '',
+        delivery: restaurant.delivery ?? false,
       });
     };
 
     loadRestaurant();
-  }, [restaurantId, user, form.reset]);
-
+  }, [restaurantId, user, reset]);
+  useEffect(() => {
+    if (!geocodingLibrary) {
+      return;
+    }
+    const loadCenterMapPosition = new geocodingLibrary.Geocoder();
+    loadCenterMapPosition.geocode(
+      { address: `${watchedPostalCode}, ${watchedCity}, ${watchedStreet}, Polska` },
+      (results, status) => {
+        if (status === 'OK' && results && results.length > 0) {
+          const location = results[0].geometry.location;
+          setCenter({ lat: location.lat(), lng: location.lng() });
+          setPosition(null);
+        }
+      }
+    );
+  }, [geocodingLibrary, watchedCity, watchedPostalCode, watchedStreet]);
   const onSubmit = async (data: CreatePublicRestaurantForm) => {
     if (!user) {
       return;
@@ -98,80 +126,93 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         router.push(`/owner/restaurants/${newRestaurantId}/menu`);
       }
     } catch (error: any) {
-      console.error(error);
       alert(error.message);
     }
   };
   return (
     <form onSubmit={form.handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
-        <Box>
-          <Heading>{t('restaurant_form.basic_info')}</Heading>
-        </Box>
-        <Box>
-          <TextField.Root
-            {...form.register('name')}
-            size="3"
-            variant="surface"
-            placeholder={t('restaurant_form.name_placeholder')}
-            required
-          ></TextField.Root>
-        </Box>
-        <Box>
-          <TextField.Root
-            {...form.register('city')}
-            placeholder={t('restaurant_form.city_placeholder')}
-            size="3"
-            variant="surface"
-            required
-          ></TextField.Root>
-        </Box>
-        <Flex gap="2">
-          <Box>
-            <TextField.Root
-              {...form.register('street')}
-              placeholder={t('restaurant_form.street_placeholder')}
-              size="3"
-              variant="surface"
-              required
-            ></TextField.Root>
-          </Box>
-          <Box>
-            <TextField.Root
-              {...form.register('postalCode')}
-              placeholder={t('restaurant_form.postalCode_placeholder')}
-              size="3"
-              variant="surface"
-              required
-            ></TextField.Root>
-          </Box>
-        </Flex>
-
-        <Box>
-          <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
-        </Box>
-        <Box>
-          <Controller
-            control={form.control}
-            name="category"
-            render={({ field }) => (
-              <CheckboxCards.Root
+        <Flex direction="row" gap="5" py="7">
+          <Flex direction="column" gap="2">
+            <Box>
+              <Heading size="4">{t('restaurant_form.basic_info')}:</Heading>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('name')}
                 size="3"
                 variant="surface"
-                value={field.value}
-                onValueChange={field.onChange}
+                placeholder={t('restaurant_form.name_placeholder')}
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('city')}
+                placeholder={t('restaurant_form.city_placeholder')}
+                size="3"
+                variant="surface"
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('street')}
+                placeholder={t('restaurant_form.street_placeholder')}
+                size="3"
+                value={watchedStreet}
+                variant="surface"
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('postalCode')}
+                placeholder={t('restaurant_form.postalCode_placeholder')}
+                size="3"
+                variant="surface"
+                required
+              ></TextField.Root>
+            </Box>
+            <Box>
+              <TextField.Root
+                {...register('phone')}
+                placeholder={t('restaurant_form.phone_placeholder')}
+                size="3"
+                variant="surface"
+              ></TextField.Root>
+            </Box>
+            <Text as="label" size="2">
+              <Flex gap="2">
+                <Checkbox />
+                {t('restaurant_form.delivery')}
+              </Flex>
+            </Text>
+          </Flex>
+          <Flex className="flex-1 w-full">
+            <Box className="w-full">
+              <CheckboxCards.Root
+                {...register('category')}
+                size="3"
+                variant="surface"
+                columns={{ initial: '1', sm: '2', md: '3' }}
               >
                 {CUISINES.map(cuisine => (
                   <CheckboxCards.Item key={cuisine} value={cuisine}>
-                    <Flex direction="column" width="100%">
+                    <Flex>
                       <Box>{cuisine}</Box>
                     </Flex>
                   </CheckboxCards.Item>
                 ))}
               </CheckboxCards.Root>
-            )}
-          />
+            </Box>
+          </Flex>
+        </Flex>
+
+        <Box>
+          <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
         </Box>
+
         <Box>
           <TextArea
             {...form.register('shortDescription')}
@@ -180,14 +221,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             variant="surface"
           ></TextArea>
         </Box>
-        <Box>
-          <TextField.Root
-            {...form.register('phone')}
-            placeholder={t('restaurant_form.phone_placeholder')}
-            size="3"
-            variant="surface"
-          ></TextField.Root>
-        </Box>
+
         <Box>
           <TextField.Root
             {...form.register('coverImage')}
@@ -204,19 +238,35 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             </Button>
           </Flex>
         </Box>
-        <Text as="label" size="2">
-          <Flex gap="2">
-            <Checkbox />
-            {t('restaurant_form.delivery')}
-          </Flex>
-        </Text>
-        <Button type="submit" disabled={form.formState.isSubmitting} size="3" variant="surface">
-          {form.formState.isSubmitting
+
+        <Button type="submit" disabled={isSubmitting} size="3" variant="surface">
+          {isSubmitting
             ? t('restaurant_form.saving')
             : restaurantId
               ? t('restaurant_form.save_changes')
               : t('restaurant_form.add_restaurant')}
         </Button>
+
+        <Box className="border border-gray-200 w-full h-[30vh] rounded-lg overflow-hidden">
+          <Map
+            defaultZoom={13}
+            center={center || { lat: 52.2297, lng: 21.0122 }}
+            onCameraChanged={ev => setCenter(ev.detail.center)}
+            mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS}
+          >
+            <AdvancedMarker
+              position={position || center || { lat: 52.2297, lng: 21.0122 }}
+              draggable={true}
+              onDragEnd={(ev: google.maps.MapMouseEvent) => {
+                if (ev.latLng) {
+                  const lat = ev.latLng.lat();
+                  const lng = ev.latLng.lng();
+                  setLocalization({ lat, lng });
+                }
+              }}
+            />
+          </Map>
+        </Box>
       </Flex>
     </form>
   );

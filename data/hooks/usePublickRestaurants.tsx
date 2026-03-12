@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { PublicRestaurant } from '../types/publicRestaurant';
-import { useTranslation } from 'react-i18next';
+
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import { useTranslation } from 'react-i18next';
+
 import { db } from '@/lib/firebase/client';
+
+import { PublicRestaurant } from '../types/publicRestaurant';
 
 export const usePublickRestaurants = () => {
   const [loading, setLoading] = useState(false);
