@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import { Button, Flex } from '@radix-ui/themes';
 import { doc, getDoc } from 'firebase/firestore';
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react';
-import { useFieldArray, useForm, useWatch } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
+import { useFieldArray, useForm, useWatch } from 'react-hook-form';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu';
