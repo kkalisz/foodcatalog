@@ -42,5 +42,5 @@ export const usePublickRestaurants = (filter: string) => {
     setLoading(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
-  return { loading, resteurants, searchQuery, setSearchQuery, t };
+  return { loading, restaurants: resteurants, searchQuery, setSearchQuery, t };
 };

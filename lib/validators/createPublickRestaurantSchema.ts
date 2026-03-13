@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { CUISINES } from '@/data/constans/cusines';
+import { CUISINES } from '@/data/constants/cusines';
 export const createPublickRestaurantSchema = z.object({
   name: z.string().min(3, 'Min. 3 znaki'),
   city: z.string().min(2, 'Min. 2 znaki '),

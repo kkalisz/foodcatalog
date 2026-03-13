@@ -7,15 +7,15 @@ import { LocateIcon, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-import HeaderSearchLocalization from '../ui/search/HeaderSearchLocalization';
-import { PageSizeWrapper } from '../ui/wrapper';
+import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
+import HeaderSearchLocalization from '@/components/search/header-search-localization';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   return (
     <nav className="border-b bg-card sticky top-0 z-50">
-      <PageSizeWrapper>
+      <PageWidthWrapper>
         <Flex align="center" justify="between" className="relative w-full py-4">
           <Flex align="center" gap="2">
             <Link
@@ -48,7 +48,7 @@ export function Navigation() {
             </Link>
           </div>
         )}
-      </PageSizeWrapper>
+      </PageWidthWrapper>
     </nav>
   );
 }
