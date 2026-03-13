@@ -5,7 +5,7 @@ import { Box, Flex, TextField, Popover, Button } from '@radix-ui/themes';
 import { LocateIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Toast } from 'radix-ui';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import useLocalization from '@/data/hooks/useLocalization';
 
@@ -20,7 +20,7 @@ const handleSearchCityParams = (value: string, router: any) => {
   router.push(`/discover/?${params.toString()}`);
 };
 const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [value, setValue] = useState('');
   const [city, setCity] = useState('');
   const [isDeniedLocationShown, setDeniedLocationShown] = useState(false);

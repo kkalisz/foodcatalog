@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 type TypePosition = {
   place: string;
@@ -9,7 +9,7 @@ type TypePosition = {
 };
 
 const UseLocalization = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [position, setPosition] = useState<TypePosition>({
     place: '',
     latitude: 0,

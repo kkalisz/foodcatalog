@@ -1,7 +1,7 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const LoginFormFooter = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <div className="relative my-6">
       <div className="absolute inset-0 flex items-center">

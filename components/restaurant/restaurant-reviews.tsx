@@ -4,13 +4,13 @@ import { useState } from 'react';
 
 import { Flex, Heading, Button } from '@radix-ui/themes';
 import { Star } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 
 export const RestaurantReviews = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [reviewText, setReviewText] = useState('');
   const [userRating, setUserRating] = useState(0);
 

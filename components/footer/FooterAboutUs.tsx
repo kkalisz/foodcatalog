@@ -1,9 +1,9 @@
 import { Box, Flex, Link } from '@radix-ui/themes';
 import { DotIcon } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const FooterAboutUs = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div>

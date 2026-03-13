@@ -6,7 +6,7 @@ import { Button } from '@radix-ui/themes';
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import DashboardHeader from '@/components/dashboard/dashboard-header';
@@ -45,7 +45,7 @@ export default function OwnerDashboard() {
   const { user, logout } = useAuth();
   const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([]);
   const [loading, setLodaing] = useState(false);
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const router = useRouter();
 

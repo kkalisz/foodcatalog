@@ -1,9 +1,9 @@
 import { Box, Flex, Link } from '@radix-ui/themes';
 import { PlusCircle, LayoutDashboard, User, CreditCard } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const FooterForRestauratorsInfo = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <div>
       <Box>

@@ -1,8 +1,8 @@
 import { MapPin } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const LoginFormHeader = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <div className="text-center mb-8">
       <div className="flex items-center justify-center gap-2 mb-4">

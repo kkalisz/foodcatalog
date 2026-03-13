@@ -17,8 +17,8 @@ import {
 } from '@radix-ui/themes';
 import { AdvancedMarker, useMapsLibrary, Map } from '@vis.gl/react-google-maps';
 import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
+import { Controller, useForm } from 'react-hook-form';
+import { useTranslations } from 'next-intl';
 
 import { RESTAURANT_AMENITIES } from '@/data/constants/amenity';
 import { CUISINES } from '@/data/constants/cusines';
@@ -41,7 +41,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
   const [localization, setLocalization] = useState<{ lat: number; lng: number } | null>(null);
   const { user } = useAuth();
   const router = useRouter();
-  const { t } = useTranslation();
+  const t = useTranslations();
   const {
     register,
     handleSubmit,
@@ -137,7 +137,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     }
   };
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
         <Flex className="w-full" direction={{ initial: 'column', md: 'row' }} gap="5" py="3">
           <Flex className="flex-none w-full md:w-1/3 " direction="column" gap="2">
@@ -256,7 +256,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
         <Box>
           <TextArea
-            {...form.register('shortDescription')}
+            {...register('shortDescription')}
             placeholder={t('restaurant_form.description_placeholder')}
             size="3"
             variant="surface"
@@ -265,7 +265,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
         <Box>
           <TextField.Root
-            {...form.register('coverImage')}
+            {...register('coverImage')}
             placeholder={t('restaurant_form.image_url_placeholder')}
             size="3"
             variant="surface"

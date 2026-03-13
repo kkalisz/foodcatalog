@@ -1,7 +1,7 @@
 'use client';
 import { Button, Flex } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { useAuth } from '@/providers/AuthContext';
 
@@ -13,7 +13,7 @@ import FooterElement from '../ui/footer/FooterElement';
 export const Footer = () => {
   const { user } = useAuth();
   const router = useRouter();
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <div>
       <Flex

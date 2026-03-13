@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import { Button } from '@radix-ui/themes';
 import { X } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -27,7 +27,7 @@ interface EditRestaurantModalProps {
 }
 
 export function EditRestaurantModal({ restaurant, onClose }: EditRestaurantModalProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [formData, setFormData] = useState({
     name: restaurant?.name || '',
     description: '',

@@ -1,12 +1,12 @@
 'use client';
 
 import { Flex } from '@radix-ui/themes';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 
 export const AboutUs = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <PageHeightWrapper>

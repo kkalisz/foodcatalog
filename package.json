@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3000",
     "start": "next start",
     "lint": "eslint app components lib",
     "lint:fix": "eslint app components lib --fix",
@@ -61,7 +61,6 @@
     "react-day-picker": "9.8.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.68.0",
-    "react-i18next": "^16.5.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.4",
     "sonner": "^1.7.4",

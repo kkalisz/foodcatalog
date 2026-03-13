@@ -3,7 +3,7 @@
 import { Box, Button, Flex, TextArea, TextField } from '@radix-ui/themes';
 import { MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
 import { UseFormReturn } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 import { useMenuForm } from '@/data/hooks/useMenuForm';
@@ -19,7 +19,7 @@ type CategoryFormProps = {
 };
 
 const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const { register, errors, dishes, onAddNewDish, removeDish } = useMenuForm({
     form,
     index,
