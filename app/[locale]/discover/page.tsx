@@ -35,7 +35,7 @@ export default function DiscoverPage() {
           description={t('discover_page.try_adjusting')}
         />
       ) : (
-        <div className="p-10">
+        <div>
           <Flex direction="column" gap="2">
             <Heading size="7">{t('discover_page.header')}</Heading>
             <p className="text-sm sm:text-base text-muted-foreground">
