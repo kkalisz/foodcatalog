@@ -1,10 +1,9 @@
 import { Box, Flex, Link } from '@radix-ui/themes';
-import { PlusCircle, LayoutDashboard, User, CreditCard, TrendingUp, PhoneCall } from 'lucide-react';
+import { PlusCircle, LayoutDashboard, User, CreditCard } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '@/providers/AuthContext';
+
 const FooterForRestauratorsInfo = () => {
   const { t } = useTranslation();
-  const { user } = useAuth();
   return (
     <div>
       <Box>

@@ -1,0 +1,56 @@
+import '@radix-ui/themes/styles.css';
+import type React from 'react';
+
+import { Theme } from '@radix-ui/themes';
+import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
+import { Toast } from 'radix-ui';
+
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+
+import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
+import { Footer } from '@/components/footer/footer';
+import { Navigation } from '@/components/header/navigation';
+import { GoogleMapsProvider } from '@/components/maps/GoogleMapsProvider';
+import { I18nProvider } from '@/lib/i18n/i18nProvider';
+import { AuthProvider } from '@/providers/AuthContext';
+
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale}>
+      <body className="min-h-screen bg-gray-100 font-sans antialiased">
+        <Theme appearance="light" accentColor="orange" radius="large">
+          <AuthProvider>
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <I18nProvider>
+                <Toast.Provider>
+                  <GoogleMapsProvider>
+                    <div className="flex flex-col min-h-screen bg-background">
+                      <Navigation />
+                      <PageWidthWrapper>
+                        {children}
+                        <Footer />
+                      </PageWidthWrapper>
+                      <Toast.Viewport className="fixed top-20 right-[40vw] z-[2147483647] flex" />
+                    </div>
+                  </GoogleMapsProvider>
+                </Toast.Provider>
+              </I18nProvider>
+            </NextIntlClientProvider>
+          </AuthProvider>
+        </Theme>
+        <Analytics />
+      </body>
+    </html>
+  );
+}
