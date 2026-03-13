@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@radix-ui/themes';
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
@@ -14,10 +14,9 @@ import { DashboardStats } from '@/components/dashboard/dashboard-stats';
 import { EditRestaurantModal } from '@/components/restaurant/edit-restaurant-modal';
 import { RestaurantsList } from '@/components/restaurant/restaurant-list';
 import { Card } from '@/components/ui/card';
+import { PublicRestaurant } from '@/data/types/publicRestaurant';
 import { db } from '@/lib/firebase/client';
 import { useAuth } from '@/providers/AuthContext';
-
-import { PublicRestaurant } from '../../../data/types/publicRestaurant';
 
 // Mock owner data
 const OWNER_STATS = {
@@ -49,7 +48,7 @@ export default function OwnerDashboard() {
 
   const router = useRouter();
 
-  const fetchRestaurants = async () => {
+  const fetchRestaurants = useCallback(async () => {
     if (!user) {
       return;
     }
@@ -60,10 +59,9 @@ export default function OwnerDashboard() {
       const q = query(collection(db, 'public_restaurants'), where('firmId', '==', user.uid));
 
       const snapshot = await getDocs(q);
-
-      const data = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...(doc.data() as Omit<PublicRestaurant, 'id'>),
+      const data = snapshot.docs.map(restaurantDoc => ({
+        id: restaurantDoc.id,
+        ...(restaurantDoc.data() as Omit<PublicRestaurant, 'id'>),
       }));
 
       setRestaurants(data);
@@ -72,7 +70,7 @@ export default function OwnerDashboard() {
     } finally {
       setLodaing(false);
     }
-  };
+  }, [user]);
 
   const fetchUser = async (uid: string) => {
     const ref = doc(collection(db, 'users', uid));
@@ -101,7 +99,7 @@ export default function OwnerDashboard() {
       return;
     }
     fetchRestaurants();
-  }, [user]);
+  }, [user, fetchRestaurants, router]);
 
   return (
     <PageHeightWrapper>

@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import { Button, Flex } from '@radix-ui/themes';
 import { doc, getDoc } from 'firebase/firestore';
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react';
-import { useFieldArray, useForm, useWatch } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
+import { useFieldArray, useForm, useWatch } from 'react-hook-form';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu';
@@ -77,14 +77,14 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
       const snap = await getDoc(ref);
 
       if (snap.exists()) {
-        form.reset({
+        reset({
           categories: snap.data().categories || [],
         });
       }
     };
 
     loadMenu();
-  }, [firmId, restaurantId]);
+  }, [firmId, reset, restaurantId]);
   return (
     <PageSizeWrapper>
       <Flex direction="column" gap="1">

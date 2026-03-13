@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { Box, Flex, TextField, Popover, Button } from '@radix-ui/themes';
 import { LocateIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { Toast } from 'radix-ui';
 import { useTranslations } from 'next-intl';
+import { Toast } from 'radix-ui';
 
 import useLocalization from '@/data/hooks/useLocalization';
 
