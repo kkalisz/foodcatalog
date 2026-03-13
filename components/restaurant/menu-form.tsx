@@ -6,7 +6,7 @@ import { Button, Flex } from '@radix-ui/themes';
 import { doc, getDoc } from 'firebase/firestore';
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react';
 import { useFieldArray, useForm, useWatch } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu';
@@ -18,7 +18,7 @@ import CategoryForm from './category-form';
 import { EmptyMenu } from './empty-menu';
 
 const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const { firmId, loading } = useFirmId();
   const form = useForm<MenuFormType>({
     mode: 'onSubmit',

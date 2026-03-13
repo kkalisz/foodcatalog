@@ -6,7 +6,7 @@ import { Flex, Heading } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { LocateIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import PageLoader from '@/components/common/page-loader';
@@ -16,7 +16,7 @@ import EmptySearchContainer from '@/components/ui/containers/EmptySearchContaine
 import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
 
 export default function DiscoverPage() {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const params = useSearchParams();
   const searchParams = params.get('search');
   const cityParams = params.get('city');

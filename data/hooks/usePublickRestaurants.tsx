@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { db } from '@/lib/firebase/client';
 
@@ -11,7 +11,7 @@ export const usePublickRestaurants = (filter: string) => {
   const [loading, setLoading] = useState(false);
   const [resteurants, setResteurants] = useState<PublicRestaurant[]>([]);
 
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState('');
 
   const fetchRestaurants = async () => {

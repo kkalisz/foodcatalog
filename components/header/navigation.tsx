@@ -5,14 +5,14 @@ import { useState } from 'react';
 import { Flex, Heading } from '@radix-ui/themes';
 import { LocateIcon, MapPin } from 'lucide-react';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
 import HeaderSearchLocalization from '@/components/search/header-search-localization';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <nav className="border-b bg-card sticky top-0 z-50">
       <PageWidthWrapper>

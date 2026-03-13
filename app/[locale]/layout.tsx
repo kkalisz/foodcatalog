@@ -5,14 +5,13 @@ import { Theme } from '@radix-ui/themes';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Toast } from 'radix-ui';
 
 import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
 import { Footer } from '@/components/footer/footer';
 import { Navigation } from '@/components/header/navigation';
 import { GoogleMapsProvider } from '@/components/maps/GoogleMapsProvider';
-import { I18nProvider } from '@/lib/i18n/i18nProvider';
 import { AuthProvider } from '@/providers/AuthContext';
 
 export default async function RootLayout({
@@ -23,6 +22,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
@@ -31,20 +31,18 @@ export default async function RootLayout({
         <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
-              <I18nProvider>
-                <Toast.Provider>
-                  <GoogleMapsProvider>
-                    <div className="flex flex-col min-h-screen bg-background">
-                      <Navigation />
-                      <PageWidthWrapper>
-                        {children}
-                        <Footer />
-                      </PageWidthWrapper>
-                      <Toast.Viewport className="fixed top-20 right-[40vw] z-[2147483647] flex" />
-                    </div>
-                  </GoogleMapsProvider>
-                </Toast.Provider>
-              </I18nProvider>
+              <Toast.Provider>
+                <GoogleMapsProvider>
+                  <div className="flex flex-col min-h-screen bg-background">
+                    <Navigation />
+                    <PageWidthWrapper>
+                      {children}
+                      <Footer />
+                    </PageWidthWrapper>
+                    <Toast.Viewport className="fixed top-20 right-[40vw] z-[2147483647] flex" />
+                  </div>
+                </GoogleMapsProvider>
+              </Toast.Provider>
             </NextIntlClientProvider>
           </AuthProvider>
         </Theme>

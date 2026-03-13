@@ -1,12 +1,12 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import HelpContainer from '@/components/ui/containers/HelpContainer';
 
 const Help = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <PageSizeWrapper>

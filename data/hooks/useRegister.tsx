@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 type RegisterFormValues = {
   email: string;
@@ -25,7 +25,7 @@ const useRegister = () => {
     name: '',
     companyName: '',
   });
-  const { t } = useTranslation();
+  const t = useTranslations();
   const handleRegister = async (data: RegisterFormValues) => {
     setError('');
 

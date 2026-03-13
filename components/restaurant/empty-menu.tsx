@@ -1,11 +1,11 @@
 import { Button } from '@radix-ui/themes';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 type MenuEditorProps = {
   addNewCategory?: () => void;
 };
 
 export const EmptyMenu = ({ addNewCategory, ...props }: MenuEditorProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <div
       className="mt-4 

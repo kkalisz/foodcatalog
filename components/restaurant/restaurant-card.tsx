@@ -4,7 +4,7 @@ import { Box, Flex } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { Star, MapPin } from 'lucide-react';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
@@ -31,7 +31,7 @@ interface RestaurantCardProps {
 }
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <Box style={{ flex: 1 }}>

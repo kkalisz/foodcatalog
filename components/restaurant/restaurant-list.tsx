@@ -3,7 +3,7 @@
 import { Button } from '@radix-ui/themes';
 import { Star, Edit2, Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
@@ -16,7 +16,7 @@ type RestaurantsListProps = {
 
 export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
   const router = useRouter();
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const handleDelete = async (restaurantId: string) => {
     if (!confirm(t('restaurants_list.confirm_delete'))) {

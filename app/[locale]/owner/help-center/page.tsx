@@ -7,7 +7,7 @@ import { Button } from '@radix-ui/themes';
 import { ChevronDown, LogOut, Menu, Send, Mail, Phone, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -27,7 +27,7 @@ export default function HelpCenterPage() {
     message: '',
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const FAQ_ITEMS = [
     {
