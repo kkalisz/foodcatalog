@@ -4,10 +4,9 @@ import type React from 'react';
 import { Theme } from '@radix-ui/themes';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
-import { Toast } from 'radix-ui';
-
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
+import { getMessages } from 'next-intl/server';
+import { Toast } from 'radix-ui';
 
 import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
 import { Footer } from '@/components/footer/footer';

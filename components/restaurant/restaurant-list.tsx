@@ -8,8 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
 import { PublicRestaurant } from '@/data/types/publicRestaurant';
-
-import {deletePublicRestaurant} from '@/lib/firebase/deletePublicRestaurant';
+import { deletePublicRestaurant } from '@/lib/firebase/deletePublicRestaurant';
 
 type RestaurantsListProps = {
   restaurants: PublicRestaurant[];

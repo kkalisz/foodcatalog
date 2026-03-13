@@ -2,21 +2,20 @@
 
 import { useEffect } from 'react';
 
-import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import { Button, Flex } from '@radix-ui/themes';
 import { doc, getDoc } from 'firebase/firestore';
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react';
 import { useFieldArray, useForm, useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu';
 import { db } from '@/lib/firebase/client';
 import { saveMenuToFirestore } from '@/lib/firebase/restantMenu';
+import { useFirmId } from '@/lib/firebase/useFirmId';
 
 import CategoryForm from './category-form';
-
 import { EmptyMenu } from './empty-menu';
-import {useFirmId} from '@/lib/firebase/useFirmId';
 
 const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
   const { t } = useTranslation();

@@ -1,6 +1,6 @@
 'use client';
-import { RestaurantForm } from '@/components/restaurant/restaurant-form';
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
+import { RestaurantForm } from '@/components/restaurant/restaurant-form';
 
 export const NewResteurant = () => {
   return (

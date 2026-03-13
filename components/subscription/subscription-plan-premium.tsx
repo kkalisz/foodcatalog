@@ -1,8 +1,6 @@
 import { Flex, Text } from '@radix-ui/themes';
 import { DotIcon } from 'lucide-react';
 
-import SubscriptionPlanPro from './subscription-plan-pro';
-
 const SubscriptionPlanPremium = () => {
   return (
     <Flex className="p-2 " direction="column" gap="3">

@@ -2,10 +2,10 @@
 
 import { Flex } from '@radix-ui/themes';
 
+import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
+import SubscriptionCard from '@/components/subscription/subscription-card';
 import SubscriptionPlanPremium from '@/components/subscription/subscription-plan-premium';
 import SubscriptionPlanUltra from '@/components/subscription/subscription-plan-ultra';
-import SubscriptionCard from '@/components/subscription/subscription-card';
-import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 
 export default function TestPage() {
   return (

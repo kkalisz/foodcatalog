@@ -5,10 +5,10 @@ import { MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
 import { UseFormReturn } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 import { useMenuForm } from '@/data/hooks/useMenuForm';
 import { Category, MenuForm } from '@/data/types/dishMenu';
 
-import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
 import DushLenghtInfo from './dish-length-info';
 
 type CategoryFormProps = {

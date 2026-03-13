@@ -8,12 +8,12 @@ import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from 'lucide-react'
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
+import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
+import DashboardHeader from '@/components/dashboard/dashboard-header';
 import { DashboardStats } from '@/components/dashboard/dashboard-stats';
 import { EditRestaurantModal } from '@/components/restaurant/edit-restaurant-modal';
 import { RestaurantsList } from '@/components/restaurant/restaurant-list';
 import { Card } from '@/components/ui/card';
-import DashboardHeader from '@/components/dashboard/dashboard-header';
-import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import { db } from '@/lib/firebase/client';
 import { useAuth } from '@/providers/AuthContext';
 

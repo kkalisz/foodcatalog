@@ -2,8 +2,8 @@
 
 import { useTranslation } from 'react-i18next';
 
-import HelpContainer from '@/components/ui/containers/HelpContainer';
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
+import HelpContainer from '@/components/ui/containers/HelpContainer';
 
 const Help = () => {
   const { t } = useTranslation();
