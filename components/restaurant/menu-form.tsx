@@ -77,14 +77,14 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
       const snap = await getDoc(ref);
 
       if (snap.exists()) {
-        form.reset({
+        reset({
           categories: snap.data().categories || [],
         });
       }
     };
 
     loadMenu();
-  }, [firmId, restaurantId]);
+  }, [firmId, reset, restaurantId]);
   return (
     <PageSizeWrapper>
       <Flex direction="column" gap="1">

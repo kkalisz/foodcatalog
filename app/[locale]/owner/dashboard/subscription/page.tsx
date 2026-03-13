@@ -14,13 +14,15 @@ export default function TestPage() {
         <Flex>Twój obecny plan to:</Flex>
         <Flex>Wybierz nowy plan</Flex>
         <Flex direction={{ initial: 'column', md: 'row' }} justify="center" gap="4" pt="5" pb="5">
-          <SubscriptionCard header={'Plan Pro'} price={29} children={<SubscriptionPlanPremium />} />
-          <SubscriptionCard
-            header={'Plan Premium'}
-            price={59}
-            children={<SubscriptionPlanPremium />}
-          />
-          <SubscriptionCard header={'Plan Ultra'} price={79} children={<SubscriptionPlanUltra />} />
+          <SubscriptionCard header={'Plan Pro'} price={29}>
+            <SubscriptionPlanPremium />
+          </SubscriptionCard>
+          <SubscriptionCard header={'Plan Premium'} price={59}>
+            <SubscriptionPlanPremium />
+          </SubscriptionCard>
+          <SubscriptionCard header={'Plan Ultra'} price={79}>
+            <SubscriptionPlanUltra />
+          </SubscriptionCard>
         </Flex>
       </Flex>
     </PageSizeWrapper>
