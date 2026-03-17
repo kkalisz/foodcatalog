@@ -5,7 +5,7 @@ import { Button, Flex, TextField } from '@radix-ui/themes';
 import { LocateIcon, SearchIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 type FiltersProps = {
-  onSearchChange: (sendSearchCategory: string) => void;
+  onSearchChange?: (sendSearchCategory: string) => void;
 };
 
 const FiltersDiscoveryPage = ({ onSearchChange }: FiltersProps) => {
@@ -42,7 +42,7 @@ const FiltersDiscoveryPage = ({ onSearchChange }: FiltersProps) => {
         </TextField.Root>
         <Button
           onClick={() => {
-            onSearchChange(searchCategory);
+            onSearchChange?.(searchCategory);
           }}
           size="3"
         >

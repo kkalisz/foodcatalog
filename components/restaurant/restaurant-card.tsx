@@ -14,7 +14,7 @@ interface Restaurant {
   name: string;
   slug?: string;
   city: string;
-  category?: string;
+  category?: string[];
   shortDescription?: string;
   coverImage?: string | null;
   rating?: string;
@@ -34,12 +34,12 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   const t = useTranslations();
 
   return (
-    <Box className="flex-1">
+    <Box>
       <Link href={`/restaurant/${restaurant.id}`}>
-        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
+        <Card className="align-center justify-center overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
           <div className="relative w-full aspect-video overflow-hidden">
             <img
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain hover:scale-110 transition-transform"
               src={restaurant.coverImage || restaurantImage}
               alt={restaurant.name}
             />
@@ -62,7 +62,13 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             </div>
 
             {/* Cuisine Tags */}
-            <div className="flex flex-wrap gap-1 mb-3">{restaurant.category}</div>
+            <div className="flex flex-wrap gap-1 mb-3">
+              {restaurant.category?.map(category => (
+                <span key={category} className="text-sm text-muted-foreground">
+                  {category} |
+                </span>
+              ))}
+            </div>
 
             {/* Address */}
             <div className="flex items-start gap-2 text-sm text-muted-foreground">

@@ -35,7 +35,7 @@ export default function DiscoverPage() {
           description={t('discover_page.try_adjusting')}
         />
       ) : (
-        <div>
+        <div className="w-full">
           <Flex direction="column" gap="2">
             <Heading size="7">{t('discover_page.header')}</Heading>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -60,7 +60,7 @@ export default function DiscoverPage() {
               ) : null}
             </Flex>
           </Flex>
-          <Flex direction="row" gap="5" wrap="wrap">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
             {restaurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.createdAt}
@@ -70,7 +70,7 @@ export default function DiscoverPage() {
                 }}
               />
             ))}
-          </Flex>
+          </div>
         </div>
       )}
     </PageHeightWrapper>

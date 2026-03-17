@@ -39,8 +39,9 @@
     }
   },
   "main_page": {
-    "header": "Local Gastronomy Catalog",
-    "subheader": "Find the best restaurants, bars, and cafes in your city. Support local gastronomy and discover hidden gems in your area.",
+    "title": "Local Gastronomy Catalog",
+    "description": "Find the best restaurants, bars, and cafes in your city. Support local gastronomy and discover hidden gems in your area.",
+    "search_placeholder": "Search restaurant",
     "browse_restaurants": "Browse restaurants",
     "add_restaurant": "Add restaurant"
   },

@@ -1,30 +1,33 @@
-import Link from 'next/link';
+import { Flex, Heading, Text } from '@radix-ui/themes';
 import { getTranslations } from 'next-intl/server';
 
-import { Button } from '@/components/ui/button';
+import MainSearchRestaurantPlace from '@/components/search/main-search-restaurant-place';
 import HeightWrapper from '@/components/ui/wrappers/HeightWrapper';
 
 export default async function Home() {
   const t = await getTranslations('main_page');
   return (
     <HeightWrapper>
-      <main className="flex-1 flex items-center border justify-center bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center py-12 sm:py-20">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-              {t('header')}
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">
-              {t('subheader')}
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link href="/discover">{t('browse_restaurants')}</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </main>
+      <Flex className="h-full w-full flex-1 sm:flex-row flex-col" align="stretch">
+        <Flex className="w-full bg-orange-500 flex-1 " align="center" justify="center">
+          <Flex direction="column" gap="5" justify="center" className="w-full px-2">
+            <Flex direction="column" align="center" justify="center" className="w-full h-full">
+              <Heading className="text-white" size="7">
+                {t('header')}
+              </Heading>
+              <Text className="text-white" align="center">
+                {t('subheader')}
+              </Text>
+            </Flex>
+            <MainSearchRestaurantPlace />
+          </Flex>
+        </Flex>
+        <Flex
+          className="w-full flex-[1] min-h-full bg-white bg-center bg-contain bg-no-repeat"
+          style={{ backgroundImage: "url('/img/local_gastro.png')" }}
+        ></Flex>
+      </Flex>
+      <Flex height="10vh" className="bg-gray-600"></Flex>
     </HeightWrapper>
   );
 }
