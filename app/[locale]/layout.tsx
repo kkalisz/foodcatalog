@@ -3,7 +3,6 @@ import type React from 'react';
 
 import { Theme } from '@radix-ui/themes';
 import './../globals.css';
-import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Toast } from 'radix-ui';
@@ -46,7 +45,6 @@ export default async function RootLayout({
             </NextIntlClientProvider>
           </AuthProvider>
         </Theme>
-        <Analytics />
       </body>
     </html>
   );
