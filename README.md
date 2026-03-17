@@ -31,6 +31,36 @@ Continue building your app on:
 
 ## IDE Setup
 
+...
+
+## Storybook
+
+LokalGastro uses [Storybook](https://storybook.js.org/) for component development and documentation.
+
+### Running Storybook
+
+To start the Storybook development server:
+
+```bash
+pnpm storybook
+```
+
+This will open Storybook at `http://localhost:6006`.
+
+### Building Storybook
+
+To build Storybook for production:
+
+```bash
+pnpm build-storybook
+```
+
+The static site will be generated in `storybook-static/`.
+
+### Adding Stories
+
+Stories are located in `components/**/*.stories.tsx`. When adding a new UI component, please create a corresponding story file to document its usage and variants.
+
 To see linting warnings and auto-format code in your IDE, follow these steps:
 
 ### Visual Studio Code (Recommended)

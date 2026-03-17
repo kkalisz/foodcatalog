@@ -2,7 +2,7 @@ import '@radix-ui/themes/styles.css';
 import type React from 'react';
 
 import { Theme } from '@radix-ui/themes';
-import './globals.css';
+import './../globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -27,7 +27,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className="min-h-screen bg-gray-100 font-sans antialiased">
+      <body className="font-sans antialiased">
         <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
