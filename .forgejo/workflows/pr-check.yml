@@ -2,7 +2,7 @@ name: CI - PR Check
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   lint:
@@ -39,3 +39,9 @@ jobs:
 
       - name: Lint
         run: pnpm run lint
+
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install chromium --with-deps
+
+      - name: Run unit tests
+        run: pnpm test run

@@ -6,8 +6,8 @@ type FooterElementProps = {
 };
 const FooterElement = ({ heading, children }: FooterElementProps) => {
   return (
-    <Flex direction="column" gap="2" style={{ flex: 1 }}>
-      <Card style={{ height: '100%' }}>
+    <Flex direction="column" gap="2" className="flex-1">
+      <Card className="h-full">
         <Heading size="5">{heading}</Heading>
         {children}
       </Card>

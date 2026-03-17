@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex } from '@radix-ui/themes';
+import { Box } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { Star, MapPin } from 'lucide-react';
 import Link from 'next/link';
@@ -34,19 +34,19 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
   const t = useTranslations();
 
   return (
-    <Box style={{ flex: 1 }}>
+    <Box className="flex-1">
       <Link href={`/restaurant/${restaurant.id}`}>
-        <Card className="align-center justify-center overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
-          <Flex align="center" justify="center" direction="row" className="w-[10vw] h-[10vw]">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
+          <div className="relative w-full aspect-video overflow-hidden">
             <img
-              className="align-center justify-center w-full h-full object-cover hover:scale-105 transition-transform"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               src={restaurant.coverImage || restaurantImage}
               alt={restaurant.name}
             />
-            <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-sm">
               {t('restaurant_card.price_range')}
             </div>
-          </Flex>
+          </div>
           <div className="p-4">
             <div className="mb-3">
               <h3 className="font-bold text-lg text-foreground mb-2 line-clamp-2">

@@ -1,7 +1,7 @@
-import { Button } from '@radix-ui/themes';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 
+import { Button } from '@/components/ui/button';
 import HeightWrapper from '@/components/ui/wrappers/HeightWrapper';
 
 export default async function Home() {
@@ -18,7 +18,7 @@ export default async function Home() {
               {t('subheader')}
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="4" asChild>
+              <Button size="lg" asChild>
                 <Link href="/discover">{t('browse_restaurants')}</Link>
               </Button>
             </div>
