@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../card';
+
 import { Button } from '../button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../card';
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Card',
@@ -13,7 +13,7 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
-  render: (args) => (
+  render: args => (
     <Card {...args} className="w-[350px]">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
@@ -31,7 +31,7 @@ export const Default: Story = {
 };
 
 export const Simple: Story = {
-  render: (args) => (
+  render: args => (
     <Card {...args} className="w-[350px]">
       <CardContent className="pt-6">
         <p>A simple card with only content.</p>

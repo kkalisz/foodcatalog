@@ -8,5 +8,5 @@ export const routing = defineRouting({
   defaultLocale: 'pl',
 
   // This helps when you want to use locale prefix in the URL for non-default locales
-  localePrefix: 'never'
+  localePrefix: 'never',
 });

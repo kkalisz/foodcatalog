@@ -17,7 +17,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) =>
+    Story =>
       React.createElement(
         Theme,
         { appearance: 'light', accentColor: 'orange', radius: 'large' },

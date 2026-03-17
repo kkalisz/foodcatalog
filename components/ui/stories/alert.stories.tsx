@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { Alert, AlertTitle, AlertDescription } from '../alert';
 import { Terminal, AlertCircle } from 'lucide-react';
+
+import { Alert, AlertTitle, AlertDescription } from '../alert';
 
 const meta: Meta<typeof Alert> = {
   title: 'UI/Alert',
@@ -19,7 +19,7 @@ export default meta;
 type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
-  render: (args) => (
+  render: args => (
     <Alert {...args}>
       <Terminal className="h-4 w-4" />
       <AlertTitle>Heads up!</AlertTitle>
@@ -31,13 +31,11 @@ export const Default: Story = {
 };
 
 export const Destructive: Story = {
-  render: (args) => (
+  render: args => (
     <Alert {...args} variant="destructive">
       <AlertCircle className="h-4 w-4" />
       <AlertTitle>Error</AlertTitle>
-      <AlertDescription>
-        Your session has expired. Please log in again.
-      </AlertDescription>
+      <AlertDescription>Your session has expired. Please log in again.</AlertDescription>
     </Alert>
   ),
 };

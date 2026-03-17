@@ -11,6 +11,6 @@ services:
         - NEXT_PUBLIC_FIREBASE_APP_ID=${NEXT_PUBLIC_FIREBASE_APP_ID}
         - NEXT_PUBLIC_GOOGLE_MAPS=${NEXT_PUBLIC_GOOGLE_MAPS}
     ports:
-      - "3000:3000"
+      - '3000:3000'
     env_file:
       - .env.local

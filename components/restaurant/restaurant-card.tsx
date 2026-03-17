@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex } from '@radix-ui/themes';
+import { Box } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { Star, MapPin } from 'lucide-react';
 import Link from 'next/link';
