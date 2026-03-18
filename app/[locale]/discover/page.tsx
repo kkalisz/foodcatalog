@@ -30,12 +30,10 @@ export default function DiscoverPage() {
   return (
     <PageHeightWrapper>
       {loading && restaurants.length === 0 ? (
-        <div>
-          <EmptySearchContainer
-            tittle={t('discover_page.no_results')}
-            description={t('discover_page.try_adjusting')}
-          />
-        </div>
+        <EmptySearchContainer
+          title={t('discover_page.no_results')}
+          description={t('discover_page.try_adjusting')}
+        />
       ) : (
         <div className="w-full">
           <Flex direction="column" gap="2">

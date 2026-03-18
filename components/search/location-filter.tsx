@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
-import { Button, Card, Flex, Heading, Slider, TextField } from '@radix-ui/themes';
+import { Button, Flex, Heading, Slider, TextField } from '@radix-ui/themes';
+
+import { Card } from '@/components/ui/card';
 
 const LocationFilter = () => {
   const [value, setValue] = useState([10]);
   return (
     <Flex gap="5" direction="column" align="center" justify="center">
-      <Card>
+      <Card className="p-6">
         <Flex gap="5" direction="row" align="center" justify="center">
           <Heading size="4">City: </Heading>
           <TextField.Root placeholder="City name"></TextField.Root>

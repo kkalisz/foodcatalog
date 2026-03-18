@@ -1,10 +1,10 @@
-import { Card } from '@radix-ui/themes';
+import { Card } from '@/components/ui/card';
 
-const HelpContainer = ({ tittle, description }: { tittle: string; description: string }) => {
+const HelpContainer = ({ title, description }: { title: string; description: string }) => {
   return (
-    <Card>
-      <h1>{tittle}</h1>
-      <p>{description}</p>
+    <Card className="p-6">
+      <h1 className="text-2xl font-bold mb-2">{title}</h1>
+      <p className="text-muted-foreground">{description}</p>
     </Card>
   );
 };
