@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Flex, Heading } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
@@ -19,14 +19,19 @@ export default function DiscoverPage() {
   const t = useTranslations();
   const params = useSearchParams();
   const searchParams = params.get('search');
-  const cityParams = params.get('city');
+  const searchedValueParams = params.get('serched');
   const [currentSearch, setCurrentSearch] = useState('');
 
   const { loading, restaurants } = usePublickRestaurants(currentSearch);
-
+  useEffect(() => {
+    if (searchedValueParams) {
+      setCurrentSearch(searchedValueParams);
+    }
+  }, [searchedValueParams]);
   if (loading && restaurants.length === 0) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
+
   return (
     <PageHeightWrapper>
       {loading && restaurants.length === 0 ? (
@@ -44,17 +49,20 @@ export default function DiscoverPage() {
             {t('discover_page.search_term')}
             {searchParams ? <Heading>{searchParams?.toLocaleUpperCase()}</Heading> : null}
             <Flex direction="column" gap="2">
-              <FiltersDiscoveryPage onSearchChange={setCurrentSearch} />
+              <FiltersDiscoveryPage
+                onSearchChange={setCurrentSearch}
+                curentySearch={currentSearch}
+              />
             </Flex>
             <Flex gap="2" align="center">
               <Heading size="3" className="text-muted-foreground">
                 {t('discover_page.searching_in')}
               </Heading>
-              {cityParams ? (
+              {searchedValueParams ? (
                 <Flex align="center">
                   <LocateIcon className="w-5 h-5 pr-2 text-primary" />
                   <Heading size="3" className="text-primary">
-                    {cityParams?.toLocaleUpperCase()}
+                    {searchedValueParams?.toLocaleUpperCase()}
                   </Heading>
                 </Flex>
               ) : null}

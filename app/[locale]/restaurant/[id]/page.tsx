@@ -20,13 +20,10 @@ interface RestaurantPageProps {
 const RestaurantPage = async ({ params }: RestaurantPageProps) => {
   const { id } = await params;
   const t = await getTranslations('restaurant_detail');
-
   const [restaurant, menu] = await Promise.all([getRestaurantById(id), getRestaurantMenu(id)]);
-
   if (!restaurant) {
     notFound();
   }
-
   return (
     <PageWidthWrapper>
       <div className="max-w-7xl mx-auto sm:py-8 space-y-8">

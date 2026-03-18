@@ -1,0 +1,46 @@
+'use client';
+import { useState } from 'react';
+
+import { Flex, TextField } from '@radix-ui/themes';
+import { SearchIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+
+const handleSearchCityParams = (value: string, router: any) => {
+  const params = new URLSearchParams();
+  params.set('serched', value);
+  router.push(`/discover/?${params.toString()}`);
+};
+
+const MainSearchRestaurantPlace = () => {
+  const [value, setValue] = useState('');
+  const router = useRouter();
+  return (
+    <Flex align="center" justify="center" className="w-full">
+      <style>{`
+        .main-search-root {
+          height: 70px
+        }
+        .main-search-root .rt-TextFieldInput {
+          height: 100%
+        }
+      `}</style>
+      <TextField.Root
+        onChange={e => setValue(e.target.value)}
+        onKeyDown={e => {
+          if (e.key === 'Enter') {
+            handleSearchCityParams(value, router);
+          }
+        }}
+        variant="surface"
+        size="3"
+        placeholder="Search restaurant"
+        className="w-full main-search-root px-4 rounded-xl"
+      >
+        <TextField.Slot className="pr-2">
+          <SearchIcon size={28} />
+        </TextField.Slot>
+      </TextField.Root>
+    </Flex>
+  );
+};
+export default MainSearchRestaurantPlace;

@@ -1,10 +1,12 @@
 'use client';
-import { auth, db } from '@/lib/firebase/client';
+import { useState } from 'react';
+
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+
+import { auth, db } from '@/lib/firebase/client';
 
 type RegisterFormValues = {
   email: string;
