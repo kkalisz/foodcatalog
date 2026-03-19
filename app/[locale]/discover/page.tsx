@@ -13,7 +13,7 @@ import PageLoader from '@/components/common/page-loader';
 import { RestaurantCard } from '@/components/restaurant/restaurant-card';
 import FiltersDiscoveryPage from '@/components/search/filters-discovery-page';
 import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
-import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
+import { usePublicRestaurants } from '@/data/hooks/usePublickRestaurants';
 
 export default function DiscoverPage() {
   const t = useTranslations();
@@ -22,7 +22,7 @@ export default function DiscoverPage() {
   const searchedValueParams = params.get('serched');
   const [currentSearch, setCurrentSearch] = useState('');
 
-  const { loading, restaurants } = usePublickRestaurants(currentSearch);
+  const { loading, restaurants } = usePublicRestaurants('', currentSearch);
   useEffect(() => {
     if (searchedValueParams) {
       setCurrentSearch(searchedValueParams);
