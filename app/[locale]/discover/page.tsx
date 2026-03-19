@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { Flex, Heading } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 
 import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import PageLoader from '@/components/common/page-loader';
+import DiscoverEmptyRestaurants from '@/components/discover/discover-empty-restaurants';
 import { RestaurantCard } from '@/components/restaurant/restaurant-card';
 import FiltersDiscoveryPage from '@/components/search/filters-discovery-page';
 import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
@@ -20,18 +21,14 @@ export default function DiscoverPage() {
   const params = useSearchParams();
   const searchParams = params.get('search');
   const searchedValueParams = params.get('serched');
-  const [currentSearch, setCurrentSearch] = useState('');
-
+  const [currentSearch, setCurrentSearch] = useState(searchedValueParams ?? '');
   const { loading, restaurants } = usePublicRestaurants('', currentSearch);
-  useEffect(() => {
-    if (searchedValueParams) {
-      setCurrentSearch(searchedValueParams);
-    }
-  }, [searchedValueParams]);
-  if (loading && restaurants.length === 0) {
+  if (loading) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
-
+  if (restaurants.length === 0) {
+    return <DiscoverEmptyRestaurants />;
+  }
   return (
     <PageHeightWrapper>
       {loading && restaurants.length === 0 ? (

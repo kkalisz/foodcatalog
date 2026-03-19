@@ -5,7 +5,7 @@ import { PublicRestaurant } from '../types/publicRestaurant';
 import { filterRestaurant } from './filterRestaurant';
 
 export const usePublicRestaurants = (categoryFilter: string, searchTerm: string) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([]);
 
   useEffect(() => {
