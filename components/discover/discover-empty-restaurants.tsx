@@ -1,12 +1,11 @@
-import { PageHeightWrapper } from '../common/page-height-wrapper';
+import { Flex, Heading, Text } from '@radix-ui/themes';
 
 const DiscoverEmptyRestaurants = () => {
   return (
-    <PageHeightWrapper>
-      <div>
-        <h1>Discover Empty Restaurants</h1>
-      </div>
-    </PageHeightWrapper>
+    <Flex className="h-full w-full mt-4 align-center justify-center flex flex-col items-center justify-center">
+      <Heading>Brak restauracji</Heading>
+      <Text>Spróbuj dostosować filtry</Text>
+    </Flex>
   );
 };
 

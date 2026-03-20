@@ -1,4 +1,4 @@
-import { Amenity } from '../constans/amenity';
+import { Amenity } from '../constants/amenity';
 
 export type CreatePublicRestaurantForm = {
   name: string;
@@ -8,7 +8,8 @@ export type CreatePublicRestaurantForm = {
   phone: string;
   category: string[];
   shortDescription: string;
-  coverImage?: string;
+  coverImage: string;
+  logoImage: string;
   delivery: boolean;
   lat: number;
   lng: number;

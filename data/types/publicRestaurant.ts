@@ -3,6 +3,7 @@ import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
 import { Amenity } from '../constants/amenity';
 
 export type PublicRestaurant = {
+  logoImage: string;
   postalCode?: string;
   street?: string;
   id: string;

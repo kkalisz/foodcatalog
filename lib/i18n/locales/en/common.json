@@ -155,6 +155,7 @@
     "description_placeholder": "Short restaurant description",
     "phone_placeholder": "Phone number",
     "image_url_placeholder": "Image URL",
+    "logo_url_placeholder": "Logo URL",
     "upload": "Upload",
     "delivery": "Delivery",
     "saving": "Saving...",

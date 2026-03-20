@@ -10,7 +10,7 @@ export const updatePublicRestaurant = async (
 ) => {
   const ref = doc(db, 'public_restaurants', restaurantId);
 
-  await updateDoc(ref, {
+  const updatePayload = {
     name: data.name ?? '',
     city: data.city ?? '',
     street: data.street ?? '',
@@ -19,11 +19,15 @@ export const updatePublicRestaurant = async (
     category: data.category ?? [],
     shortDescription: data.shortDescription ?? '',
     coverImage: data.coverImage ?? '',
+    logoImage: data.logoImage ?? '',
     delivery: data.delivery ?? false,
     lat: data.lat ?? 0,
     lng: data.lng ?? 0,
 
     slug: generateSlug(data.name),
     updatedAt: serverTimestamp(),
-  });
+  };
+
+  console.log('🔥 [DEBUG] Sending this exact payload to updateDoc:', updatePayload);
+  await updateDoc(ref, updatePayload);
 };
