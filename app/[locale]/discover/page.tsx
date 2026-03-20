@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import { Flex, Heading } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
-import { LocateIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -21,21 +20,22 @@ export default function DiscoverPage() {
   const params = useSearchParams();
   const searchParams = params.get('search');
   const searchedValueParams = params.get('serched');
+  // Initialize directly from URL params so first fetch already uses the correct filter
   const [currentSearch, setCurrentSearch] = useState(searchedValueParams ?? '');
   const { loading, restaurants } = usePublicRestaurants('', currentSearch);
   if (loading) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
-  if (restaurants.length === 0) {
-    return <DiscoverEmptyRestaurants />;
-  }
+
   return (
     <PageHeightWrapper>
       {loading && restaurants.length === 0 ? (
-        <EmptySearchContainer
-          tittle={t('discover_page.no_results')}
-          description={t('discover_page.try_adjusting')}
-        />
+        <div>
+          <EmptySearchContainer
+            tittle={t('discover_page.no_results')}
+            description={t('discover_page.try_adjusting')}
+          />
+        </div>
       ) : (
         <div className="w-full">
           <Flex direction="column" gap="2">
@@ -51,21 +51,9 @@ export default function DiscoverPage() {
                 curentySearch={currentSearch}
               />
             </Flex>
-            <Flex gap="2" align="center">
-              <Heading size="3" className="text-muted-foreground">
-                {t('discover_page.searching_in')}
-              </Heading>
-              {searchedValueParams ? (
-                <Flex align="center">
-                  <LocateIcon className="w-5 h-5 pr-2 text-primary" />
-                  <Heading size="3" className="text-primary">
-                    {searchedValueParams?.toLocaleUpperCase()}
-                  </Heading>
-                </Flex>
-              ) : null}
-            </Flex>
           </Flex>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+          {!restaurants.length && <DiscoverEmptyRestaurants />}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-4">
             {restaurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.createdAt}

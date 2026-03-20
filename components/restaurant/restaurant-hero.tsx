@@ -1,4 +1,4 @@
-import { Button, Flex, Heading } from '@radix-ui/themes';
+import { Avatar, Button, Flex, Heading } from '@radix-ui/themes';
 import { Star, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -17,11 +17,19 @@ export const RestaurantHero = async ({ restaurant, images }: RestaurantHeroProps
     <Flex direction="column" className="md:col-span-2">
       <Flex className="bg-orange-500 relative h-64 sm:h-80 md:h-96 bg-muted overflow-hidden mb-6">
         {restaurant.coverImage && (
-          <img
-            src={restaurant.coverImage}
-            alt={restaurant.name}
-            className="w-full h-full object-contain"
-          />
+          <Flex className="w-full h-full">
+            <Avatar
+              size="8"
+              className="absolute bottom-4 right-4 w-24 h-24 rounded-full"
+              src={restaurant.logoImage}
+              fallback={''}
+            ></Avatar>
+            <img
+              src={restaurant.coverImage}
+              alt={restaurant.name}
+              className="w-full h-full object-cover"
+            />
+          </Flex>
         )}
         <Link
           href="/discover"

@@ -10,5 +10,6 @@ export const createPublickRestaurantSchema = z.object({
   category: z.array(z.enum(CUISINES)).min(1, 'Wybierz przynajmniej jedną kuchnię'),
   shortDescription: z.string().min(20, 'Minimalna ilość znaków to 20'),
   coverImage: z.string().url('podaj poprawny URL').optional().or(z.literal('')),
+  logoImage: z.string().url('podaj poprawny URL').optional().or(z.literal('')),
   delivery: z.boolean(),
 });

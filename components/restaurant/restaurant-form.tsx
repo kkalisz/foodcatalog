@@ -60,6 +60,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       category: [],
       shortDescription: '',
       coverImage: '',
+      logoImage: '',
       delivery: false,
       lat: 0,
       lng: 0,
@@ -93,6 +94,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
         category: Array.isArray(restaurant.category) ? restaurant.category : [restaurant.category],
         shortDescription: restaurant.shortDescription ?? '',
         coverImage: restaurant.coverImage ?? '',
+        logoImage: restaurant.logoImage ?? '',
         delivery: restaurant.delivery ?? false,
         lat: restaurant.lat ?? 0,
         lng: restaurant.lng ?? 0,
@@ -267,6 +269,14 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
           <TextField.Root
             {...register('coverImage')}
             placeholder={t('restaurant_form.image_url_placeholder')}
+            size="3"
+            variant="surface"
+          ></TextField.Root>
+        </Box>
+        <Box>
+          <TextField.Root
+            {...register('logoImage')}
+            placeholder={t('restaurant_form.logo_url_placeholder')}
             size="3"
             variant="surface"
           ></TextField.Root>
