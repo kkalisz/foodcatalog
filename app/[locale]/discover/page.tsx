@@ -54,11 +54,8 @@ export default function DiscoverPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-4">
             {restaurants.map(restaurant => (
               <RestaurantCard
-                key={restaurant.createdAt}
-                restaurant={{
-                  ...restaurant,
-                  createdAt: Timestamp.fromMillis(restaurant.createdAt),
-                }}
+                key={restaurant.createdAt?.toString() ?? ''}
+                restaurant={restaurant}
               />
             ))}
           </div>

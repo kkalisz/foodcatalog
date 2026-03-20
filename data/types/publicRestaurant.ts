@@ -1,6 +1,6 @@
-import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
+import { Timestamp } from 'firebase/firestore';
 
-import { Amenity } from '../constants/amenity';
+import { Amenity } from '@/data/constants/amenity';
 
 export type PublicRestaurant = {
   logoImage: string;

@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 
-export const AboutUs = () => {
+const AboutUs = () => {
   const t = useTranslations();
 
   return (

@@ -2,7 +2,7 @@
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import { RestaurantForm } from '@/components/restaurant/restaurant-form';
 
-export const NewResteurant = () => {
+const NewResteurant = () => {
   return (
     <PageSizeWrapper>
       <RestaurantForm />
