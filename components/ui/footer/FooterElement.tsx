@@ -1,4 +1,4 @@
-import { Card, Flex, Heading } from '@radix-ui/themes';
+import { Flex, Heading } from '@radix-ui/themes';
 
 type FooterElementProps = {
   heading: string;
@@ -6,11 +6,11 @@ type FooterElementProps = {
 };
 const FooterElement = ({ heading, children }: FooterElementProps) => {
   return (
-    <Flex direction="column" gap="2" className="flex-1">
-      <Card className="h-full">
+    <Flex direction="column" gap="2" style={{ flex: 1 }}>
+      <Flex direction="column" gap="2" style={{ height: '100%' }}>
         <Heading size="5">{heading}</Heading>
         {children}
-      </Card>
+      </Flex>
     </Flex>
   );
 };

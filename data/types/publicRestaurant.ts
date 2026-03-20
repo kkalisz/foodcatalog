@@ -1,18 +1,16 @@
 import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
 
-import { Amenity } from '../constans/amenity';
+import { Amenity } from '../constants/amenity';
 
 export type PublicRestaurant = {
-  postalCode: string | undefined;
-  street: string | undefined;
+  postalCode?: string;
+  street?: string;
   id: string;
   name: string;
-  street: string;
-  postalCode: string;
   phone: string;
   slug: string;
   city: string;
-  category: string;
+  category: string[];
   shortDescription: string;
   coverImage?: string;
   rating?: string;

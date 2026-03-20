@@ -10,22 +10,24 @@ import { useTranslations } from 'next-intl';
 
 import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import PageLoader from '@/components/common/page-loader';
+import DiscoverEmptyRestaurants from '@/components/discover/discover-empty-restaurants';
 import { RestaurantCard } from '@/components/restaurant/restaurant-card';
 import FiltersDiscoveryPage from '@/components/search/filters-discovery-page';
 import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
-import { usePublickRestaurants } from '@/data/hooks/usePublickRestaurants';
+import { usePublicRestaurants } from '@/data/hooks/usePublickRestaurants';
 
 export default function DiscoverPage() {
   const t = useTranslations();
   const params = useSearchParams();
   const searchParams = params.get('search');
-  const cityParams = params.get('city');
-  const [currentSearch, setCurrentSearch] = useState('');
-
-  const { loading, restaurants } = usePublickRestaurants(currentSearch);
-
-  if (loading && restaurants.length === 0) {
+  const searchedValueParams = params.get('serched');
+  const [currentSearch, setCurrentSearch] = useState(searchedValueParams ?? '');
+  const { loading, restaurants } = usePublicRestaurants('', currentSearch);
+  if (loading) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
+  }
+  if (restaurants.length === 0) {
+    return <DiscoverEmptyRestaurants />;
   }
   return (
     <PageHeightWrapper>
@@ -35,7 +37,7 @@ export default function DiscoverPage() {
           description={t('discover_page.try_adjusting')}
         />
       ) : (
-        <div>
+        <div className="w-full">
           <Flex direction="column" gap="2">
             <Heading size="7">{t('discover_page.header')}</Heading>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -44,23 +46,26 @@ export default function DiscoverPage() {
             {t('discover_page.search_term')}
             {searchParams ? <Heading>{searchParams?.toLocaleUpperCase()}</Heading> : null}
             <Flex direction="column" gap="2">
-              <FiltersDiscoveryPage onSearchChange={setCurrentSearch} />
+              <FiltersDiscoveryPage
+                onSearchChange={setCurrentSearch}
+                curentySearch={currentSearch}
+              />
             </Flex>
             <Flex gap="2" align="center">
               <Heading size="3" className="text-muted-foreground">
                 {t('discover_page.searching_in')}
               </Heading>
-              {cityParams ? (
+              {searchedValueParams ? (
                 <Flex align="center">
                   <LocateIcon className="w-5 h-5 pr-2 text-primary" />
                   <Heading size="3" className="text-primary">
-                    {cityParams?.toLocaleUpperCase()}
+                    {searchedValueParams?.toLocaleUpperCase()}
                   </Heading>
                 </Flex>
               ) : null}
             </Flex>
           </Flex>
-          <Flex direction="row" gap="5" wrap="wrap">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
             {restaurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.createdAt}
@@ -70,7 +75,7 @@ export default function DiscoverPage() {
                 }}
               />
             ))}
-          </Flex>
+          </div>
         </div>
       )}
     </PageHeightWrapper>

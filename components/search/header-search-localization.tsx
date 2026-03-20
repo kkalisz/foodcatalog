@@ -38,8 +38,14 @@ const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
   return (
     <div>
       <Popover.Root open={isUseCurrentLocationShown} onOpenChange={setUseCurrentLocationShown}>
-        <Popover.Trigger>
-          <Flex direction="column" py="2" px="2" className="cursor-pointer">
+        <Popover.Trigger suppressHydrationWarning>
+          <Flex
+            direction="column"
+            py="2"
+            px="2"
+            className="cursor-pointer"
+            suppressHydrationWarning
+          >
             <Box>
               <TextField.Root
                 variant="soft"

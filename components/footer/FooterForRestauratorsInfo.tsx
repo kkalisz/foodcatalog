@@ -1,9 +1,14 @@
 import { Box, Flex, Link } from '@radix-ui/themes';
-import { PlusCircle, LayoutDashboard, User, CreditCard } from 'lucide-react';
+import { PlusCircle, LayoutDashboard, CreditCard } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
+import { useAuth } from '@/providers/AuthContext';
+
 const FooterForRestauratorsInfo = () => {
+  const { user } = useAuth();
   const t = useTranslations();
+  const router = useRouter();
   return (
     <div>
       <Box>
@@ -14,22 +19,26 @@ const FooterForRestauratorsInfo = () => {
           </Link>
         </Flex>
       </Box>
-      <Box>
-        <Flex gap="2" align="center">
-          <LayoutDashboard size={16} className="text-primary" />
-          <Link href="/owner/dashboard" color="gray" highContrast>
-            {t('footer.for_restaurators.panel')}
-          </Link>
-        </Flex>
-      </Box>
-      <Box>
-        <Flex gap="2" align="center">
-          <User size={16} className="text-primary" />
-          <Link href="#" color="gray" highContrast>
-            {t('footer.for_restaurators.login')}
-          </Link>
-        </Flex>
-      </Box>
+      {user ? (
+        <Box>
+          <Flex gap="2" align="center">
+            <LayoutDashboard size={16} className="text-primary" />
+            <Link href="/owner/dashboard" color="gray" highContrast>
+              {t('footer.for_restaurators.panel')}
+            </Link>
+          </Flex>
+        </Box>
+      ) : (
+        <Box>
+          <Flex gap="2" align="center">
+            <LayoutDashboard size={16} className="text-primary" />
+            <Link href="/login" color="gray" highContrast>
+              {t('footer.for_restaurators.panel')}
+            </Link>
+          </Flex>
+        </Box>
+      )}
+
       <Box>
         <Flex gap="2" align="center">
           <CreditCard size={16} className="text-primary" />
