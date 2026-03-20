@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 import { Flex, Heading } from '@radix-ui/themes';
-import { Timestamp } from 'firebase/firestore';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 

@@ -308,7 +308,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             <AdvancedMarker
               position={position || center || { lat: 52.2297, lng: 21.0122 }}
               draggable={true}
-              onDragEnd={(ev) => {
+              onDragEnd={ev => {
                 if (ev.latLng) {
                   const lat = ev.latLng.lat();
                   const lng = ev.latLng.lng();
