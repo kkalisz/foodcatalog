@@ -1,18 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import { PublicRestaurant } from '../types/publicRestaurant';
-
-import { filterRestaurant } from './filterRestaurant';
+import { FilteredRestaurant, filterRestaurant } from './filterRestaurant';
 
 export const usePublicRestaurants = (categoryFilter: string, searchTerm: string) => {
   const [loading, setLoading] = useState(true);
-  const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([]);
+  const [restaurants, setRestaurants] = useState<FilteredRestaurant[]>([]);
 
   useEffect(() => {
-    const { fetchRestaurants } = filterRestaurant(categoryFilter, searchTerm);
     const getFiteredData = async () => {
       setLoading(true);
-      const result = await fetchRestaurants();
+      const result = await filterRestaurant(categoryFilter, searchTerm);
       setRestaurants(result);
       setLoading(false);
     };

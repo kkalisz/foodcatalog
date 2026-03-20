@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 import { Flex, Heading } from '@radix-ui/themes';
-import { Timestamp } from 'firebase/firestore';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -14,12 +13,12 @@ import { RestaurantCard } from '@/components/restaurant/restaurant-card';
 import FiltersDiscoveryPage from '@/components/search/filters-discovery-page';
 import EmptySearchContainer from '@/components/ui/containers/EmptySearchContainer';
 import { usePublicRestaurants } from '@/data/hooks/usePublickRestaurants';
-
 export default function DiscoverPage() {
   const t = useTranslations();
   const params = useSearchParams();
   const searchParams = params.get('search');
   const searchedValueParams = params.get('serched');
+
   // Initialize directly from URL params so first fetch already uses the correct filter
   const [currentSearch, setCurrentSearch] = useState(searchedValueParams ?? '');
   const { loading, restaurants } = usePublicRestaurants('', currentSearch);
@@ -54,13 +53,10 @@ export default function DiscoverPage() {
           </Flex>
           {!restaurants.length && <DiscoverEmptyRestaurants />}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-4">
-            {restaurants.map(restaurant => (
+            {restaurants.map(restaurantResult => (
               <RestaurantCard
-                key={restaurant.createdAt}
-                restaurant={{
-                  ...restaurant,
-                  createdAt: Timestamp.fromMillis(restaurant.createdAt),
-                }}
+                key={restaurantResult.restaurant.createdAt}
+                filteredRestaurant={restaurantResult}
               />
             ))}
           </div>

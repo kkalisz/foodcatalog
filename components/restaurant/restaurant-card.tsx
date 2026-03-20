@@ -1,14 +1,19 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { Avatar, Box, Flex } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
 import { Star, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
-
+import { FilteredRestaurant } from '@/data/hooks/filterRestaurant';
+import { Category } from '@/data/types/dishMenu';
+import { getRestaurantMenu } from '@/lib/firebase/getRestaurantMenu';
 interface Restaurant {
   id?: string;
   name: string;
@@ -28,11 +33,24 @@ interface Restaurant {
 }
 
 interface RestaurantCardProps {
-  restaurant: Restaurant;
+  filteredRestaurant: FilteredRestaurant;
 }
 
-export function RestaurantCard({ restaurant }: RestaurantCardProps) {
+export function RestaurantCard({ filteredRestaurant }: RestaurantCardProps) {
+  const params = useSearchParams();
+  const { restaurant } = filteredRestaurant;
   const t = useTranslations();
+  const [menu, setMenu] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      if (restaurant.id) {
+        const categories = await getRestaurantMenu(restaurant.id);
+        setMenu(categories);
+      }
+    };
+    fetchMenu();
+  }, [restaurant.id]);
 
   return (
     <Box>
@@ -84,6 +102,21 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
               </div>
             </Flex>
           </Flex>
+          <Box className="p-2">
+            {menu.map(item => (
+              <div key={item.id}>
+                {item.dishes
+                  .filter(dish =>
+                    dish.name.toLowerCase().includes(params.get('serched')?.toLowerCase() || '')
+                  )
+                  .map(dish => (
+                    <Card key={dish.name} className="p-4">
+                      {dish.name.toLocaleUpperCase()} : {dish.price}zł
+                    </Card>
+                  ))}
+              </div>
+            ))}
+          </Box>
         </Card>
       </Link>
     </Box>
