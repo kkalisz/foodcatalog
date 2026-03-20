@@ -1,4 +1,6 @@
-import { Button, Card, Flex, Heading } from '@radix-ui/themes';
+import { Button, Flex, Heading } from '@radix-ui/themes';
+
+import { Card } from '@/components/ui/card';
 
 type SubscriptionCardProps = {
   header: string;
@@ -8,11 +10,13 @@ type SubscriptionCardProps = {
 const SubscriptionCard = ({ header, price, children }: SubscriptionCardProps) => {
   return (
     <Flex direction="column" gap="3" width="100%">
-      <Card>
-        <Heading className=" p-4" align="center">
+      <Card className="p-6">
+        <Heading className="mb-4" align="center">
           {header}
         </Heading>
-        <Heading size="5">Cena: {price} zł/miesiąc</Heading>
+        <Heading size="5" className="mb-4">
+          Cena: {price} zł/miesiąc
+        </Heading>
         {children}
       </Card>
       <Button size="4">Wybierz</Button>

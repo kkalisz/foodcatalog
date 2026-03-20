@@ -1,10 +1,11 @@
-import { Box, Button, Card, CheckboxCards, Flex, Heading, TextField } from '@radix-ui/themes';
+import { Box, Button, CheckboxCards, Flex, Heading, TextField } from '@radix-ui/themes';
 
+import { Card } from '@/components/ui/card';
 import { CUISINES } from '@/data/constants/cusines';
 
 const CuisineFilter = () => {
   return (
-    <Card className="w-full">
+    <Card className="w-full p-6">
       <Flex gap="5" direction="column">
         <Flex gap="2" align="center">
           <Heading size="4">Cuisine: </Heading>

@@ -1,17 +1,15 @@
-import { Card } from '@radix-ui/themes';
-import { useTranslations } from 'next-intl';
+import { Card } from '@/components/ui/card';
 
 type EmptySearchContainerProps = {
-  tittle: string;
+  title: string;
   description: string;
 };
 
-const EmptySearchContainer = ({ tittle, description }: EmptySearchContainerProps) => {
-  const t = useTranslations();
+const EmptySearchContainer = ({ title, description }: EmptySearchContainerProps) => {
   return (
     <Card className="p-8 sm:p-12 text-center">
-      {tittle}
-      {description}
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
     </Card>
   );
 };

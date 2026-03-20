@@ -10,7 +10,7 @@ const Help = () => {
 
   return (
     <PageSizeWrapper>
-      <HelpContainer tittle={t('help_page.title')} description={t('help_page.welcome')} />
+      <HelpContainer title={t('help_page.title')} description={t('help_page.welcome')} />
     </PageSizeWrapper>
   );
 };

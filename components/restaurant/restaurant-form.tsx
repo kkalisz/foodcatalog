@@ -110,7 +110,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     const loadCenterMapPosition = new geocodingLibrary.Geocoder();
     loadCenterMapPosition.geocode(
       { address: `${watchedPostalCode}, ${watchedCity}, ${watchedStreet}, Polska` },
-      (results, status) => {
+      (results: google.maps.GeocoderResult[] | null, status: google.maps.GeocoderStatus) => {
         if (status === 'OK' && results && results.length > 0) {
           const location = results[0].geometry.location;
           setCenter({ lat: location.lat(), lng: location.lng() });
@@ -308,7 +308,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             <AdvancedMarker
               position={position || center || { lat: 52.2297, lng: 21.0122 }}
               draggable={true}
-              onDragEnd={(ev: google.maps.MapMouseEvent) => {
+              onDragEnd={ev => {
                 if (ev.latLng) {
                   const lat = ev.latLng.lat();
                   const lng = ev.latLng.lng();

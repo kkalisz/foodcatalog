@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 import { Flex, Heading } from '@radix-ui/themes';
-import { Timestamp } from 'firebase/firestore';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -30,12 +29,10 @@ export default function DiscoverPage() {
   return (
     <PageHeightWrapper>
       {loading && restaurants.length === 0 ? (
-        <div>
-          <EmptySearchContainer
-            tittle={t('discover_page.no_results')}
-            description={t('discover_page.try_adjusting')}
-          />
-        </div>
+        <EmptySearchContainer
+          title={t('discover_page.no_results')}
+          description={t('discover_page.try_adjusting')}
+        />
       ) : (
         <div className="w-full">
           <Flex direction="column" gap="2">
@@ -56,11 +53,8 @@ export default function DiscoverPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-4">
             {restaurants.map(restaurant => (
               <RestaurantCard
-                key={restaurant.createdAt}
-                restaurant={{
-                  ...restaurant,
-                  createdAt: Timestamp.fromMillis(restaurant.createdAt),
-                }}
+                key={restaurant.createdAt?.toString() ?? ''}
+                restaurant={restaurant}
               />
             ))}
           </div>

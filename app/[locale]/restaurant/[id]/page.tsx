@@ -1,4 +1,3 @@
-import { Heading } from '@radix-ui/themes';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
@@ -10,9 +9,13 @@ import { RestaurantMap } from '@/components/restaurant/restaurant-map';
 import { RestaurantMenu } from '@/components/restaurant/restaurant-menu';
 import { RestaurantReviews } from '@/components/restaurant/restaurant-reviews';
 import { Card } from '@/components/ui/card';
+import { Grid } from '@/components/ui/grid';
+import { Section } from '@/components/ui/section';
+import { Stack } from '@/components/ui/stack';
 import { defaultGallery } from '@/data/constants/defaultyGallery';
 import { getRestaurantById } from '@/lib/firebase/getRestaurantById';
 import { getRestaurantMenu } from '@/lib/firebase/getRestaurantMenu';
+
 interface RestaurantPageProps {
   params: Promise<{ id: string }>;
 }
@@ -26,32 +29,31 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
   }
   return (
     <PageWidthWrapper>
-      <div className="max-w-7xl mx-auto sm:py-8 space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <RestaurantHero restaurant={restaurant} />
+      <div className="max-w-7xl mx-auto sm:py-8">
+        <Stack gap={8}>
+          <Grid cols={2} gap={8}>
+            <RestaurantHero restaurant={restaurant} />
+            <RestaurantInfo restaurant={restaurant} />
+            <Card className="md:col-span-1">
+              <p className="p-4 sm:p-6">{restaurant.shortDescription}</p>
+            </Card>
+          </Grid>
+          <RestaurantSiteGalery gallery={defaultGallery} />
+          <RestaurantMenu menu={menu} />
 
-          <RestaurantInfo restaurant={restaurant} />
-          <Card className="md:col-span-1">
-            <p className="p-4 sm:p-6">{restaurant.shortDescription}</p>
-          </Card>
-        </div>
-        <RestaurantSiteGalery gallery={defaultGallery} />
-        <RestaurantMenu menu={menu} />
+          <Grid cols={3} gap={8}>
+            <Section title={t('location')} className="md:col-span-1">
+              <Card className="p-0 overflow-hidden border h-64">
+                <RestaurantMap
+                  address={`${restaurant.city} ${restaurant.street}`}
+                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS || ''}
+                />
+              </Card>
+            </Section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <Card className="p-4 sm:p-6 h-fit">
-            <Heading size="5" className="mb-4">
-              {t('location')}
-            </Heading>
-            <div className="rounded-lg overflow-hidden border">
-              <RestaurantMap
-                address={`${restaurant.city} ${restaurant.street}`}
-                apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS || ''}
-              />
-            </div>
-          </Card>
-          <RestaurantReviews />
-        </div>
+            <RestaurantReviews />
+          </Grid>
+        </Stack>
       </div>
     </PageWidthWrapper>
   );

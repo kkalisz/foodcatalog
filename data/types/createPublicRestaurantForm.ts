@@ -1,4 +1,4 @@
-import { Amenity } from '../constants/amenity';
+import {Amenity} from '@/data/constants/amenity';
 
 export type CreatePublicRestaurantForm = {
   name: string;
