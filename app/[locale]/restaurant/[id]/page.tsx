@@ -9,6 +9,7 @@ import { RestaurantInfo } from '@/components/restaurant/restaurant-info';
 import { RestaurantMap } from '@/components/restaurant/restaurant-map';
 import { RestaurantMenu } from '@/components/restaurant/restaurant-menu';
 import { RestaurantReviews } from '@/components/restaurant/restaurant-reviews';
+import { ViewTracker } from '@/components/restaurant/tracker-entrys';
 import { Card } from '@/components/ui/card';
 import { defaultGallery } from '@/data/constants/defaultyGallery';
 import { getRestaurantById } from '@/lib/firebase/getRestaurantById';
@@ -53,6 +54,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
           <RestaurantReviews />
         </div>
       </div>
+      <ViewTracker id={id} />
     </PageWidthWrapper>
   );
 };

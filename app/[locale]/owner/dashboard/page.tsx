@@ -16,6 +16,7 @@ import { RestaurantsList } from '@/components/restaurant/restaurant-list';
 import { Card } from '@/components/ui/card';
 import { PublicRestaurant } from '@/data/types/publicRestaurant';
 import { db } from '@/lib/firebase/client';
+import RestaurantsCounter from '@/lib/firebase/restaurantsCounter';
 import { useAuth } from '@/providers/AuthContext';
 
 // Mock owner data
@@ -100,7 +101,9 @@ export default function OwnerDashboard() {
     }
     fetchRestaurants();
   }, [user, fetchRestaurants, router]);
-
+  useEffect(() => {
+    RestaurantsCounter('1');
+  }, []);
   return (
     <PageHeightWrapper>
       <div className="max-w-7xl mx-auto py-6">
@@ -109,13 +112,13 @@ export default function OwnerDashboard() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           <DashboardStats
             title={t('owner_dashboard.total_views')}
-            value={OWNER_STATS.totalViews}
+            value={restaurants.reduce((acc, restaurant) => acc + (restaurant.views || 0), 0)}
             icon={Eye}
-            trend={OWNER_STATS.monthlyTrend}
+            trend={10}
           />
           <DashboardStats
             title={t('owner_dashboard.reviews')}
-            value={OWNER_STATS.totalReviews}
+            value={100}
             icon={MessageSquare}
             trend={8}
           />
