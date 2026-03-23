@@ -2,12 +2,12 @@ import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firesto
 
 import { db } from '@/lib/firebase/client';
 
-//import { Dish } from '../types/dishMenu';
+import { Dish } from '../types/dishMenu';
 import { PublicRestaurant } from '../types/publicRestaurant';
 
 export interface FilteredRestaurant {
   restaurant: PublicRestaurant;
-  //filteredDishes: Dish[];
+  filteredDishes: Dish[];
 }
 
 export const filterRestaurant = (
@@ -25,13 +25,13 @@ export const filterRestaurant = (
       const snapshot = await getDocs(q);
       const allActiveRestaurants = snapshot.docs.map(docs => ({
         id: docs.id,
-        ...(docs.data() as Omit<PublicRestaurant, 'id'>),
-      }));
+        ...docs.data(),
+      })) as PublicRestaurant[];
 
       if (!searchTerm) {
-        //return allActiveRestaurants;
         return allActiveRestaurants.map(restaurant => ({
           restaurant,
+          filteredDishes: [],
         }));
       }
 
@@ -45,6 +45,7 @@ export const filterRestaurant = (
       if (matchedByRestaurant.length > 0) {
         return matchedByRestaurant.map(restaurant => ({
           restaurant,
+          filteredDishes: [],
         }));
       }
 
@@ -55,10 +56,18 @@ export const filterRestaurant = (
 
           if (menuSnap.exists()) {
             const menuData = menuSnap.data();
-            const hasDish = menuData.categories?.some((cat: any) =>
-              cat.dishes?.some((dish: any) => dish.name.toLowerCase().includes(searchLower))
-            );
-            return hasDish ? { restaurant: restaurant } : null;
+            const filteredDishes: Dish[] = [];
+
+            menuData.categories?.forEach((category: any) => {
+              if (category.dishes) {
+                const serchedCategory = category.dishes.filter((dish: any) =>
+                  dish.name.toLowerCase().includes(searchLower)
+                );
+                filteredDishes.push(...serchedCategory);
+              }
+            });
+
+            return filteredDishes.length > 0 ? { restaurant, filteredDishes } : null;
           }
           return null;
         })

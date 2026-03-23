@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-import { Avatar, Box, Flex } from '@radix-ui/themes';
+import { Avatar, Box, Flex, Heading, IconButton, Tooltip } from '@radix-ui/themes';
 import { Timestamp } from 'firebase/firestore';
-import { Star, MapPin } from 'lucide-react';
+import { Star, MapPin, CarIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -12,8 +12,10 @@ import { useTranslations } from 'next-intl';
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
 import { FilteredRestaurant } from '@/data/hooks/filterRestaurant';
-import { Category } from '@/data/types/dishMenu';
+import { Category, Dish } from '@/data/types/dishMenu';
 import { getRestaurantMenu } from '@/lib/firebase/getRestaurantMenu';
+
+import FiltersDiscoveryDishPage from '../search/filters-discovery-dish-page';
 interface Restaurant {
   id?: string;
   name: string;
@@ -34,9 +36,10 @@ interface Restaurant {
 
 interface RestaurantCardProps {
   filteredRestaurant: FilteredRestaurant;
+  filteredDishes: Dish[];
 }
 
-export function RestaurantCard({ filteredRestaurant }: RestaurantCardProps) {
+export function RestaurantCard({ filteredRestaurant, filteredDishes }: RestaurantCardProps) {
   const params = useSearchParams();
   const { restaurant } = filteredRestaurant;
   const t = useTranslations();
@@ -72,51 +75,50 @@ export function RestaurantCard({ filteredRestaurant }: RestaurantCardProps) {
                 alt={restaurant.name}
               />
             </Flex>
-            <Flex className="flex-1">
+            <Flex className="flex-1" align="center">
               <div className="p-4">
                 <div className="mb-3">
-                  <h3 className="font-bold text-lg text-foreground mb-2 line-clamp-2">
-                    {restaurant.name}
-                  </h3>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex items-center gap-1">
+                  <Flex align="center" justify="between">
+                    <Flex align="center" gap="1">
+                      <Heading size="4">{restaurant.name}</Heading>
                       <Star className="w-4 h-4 fill-primary text-primary" />
                       <span className="font-semibold text-foreground">{restaurant.rating}</span>
-                    </div>
+                    </Flex>
                     <span className="text-sm text-muted-foreground">
                       ({restaurant.reviewsCount})
                     </span>
-                  </div>
+                  </Flex>
+
+                  <Flex mt="2">
+                    {restaurant.delivery ? (
+                      <Flex align="center" gap="1">
+                        <Tooltip content="Na dowóz">
+                          <IconButton radius="full">
+                            <CarIcon />
+                          </IconButton>
+                        </Tooltip>
+                      </Flex>
+                    ) : (
+                      <p>Brak dostawy</p>
+                    )}
+                  </Flex>
                 </div>
-                <div className="flex flex-wrap gap-1 mb-3">
+                <Flex className="flex flex-wrap mb-3">
                   {restaurant.category?.map(category => (
-                    <span key={category} className="text-sm text-muted-foreground">
+                    <p key={category} className="text-sm text-muted-foreground">
                       {category} |
-                    </span>
+                    </p>
                   ))}
-                </div>
-                <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                </Flex>
+                <Flex className="flex items-start gap-2 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
                   <span className="line-clamp-2">{restaurant.city}</span>
-                </div>
+                </Flex>
               </div>
             </Flex>
           </Flex>
-          <Box className="p-2">
-            {menu.map(item => (
-              <div key={item.id}>
-                {item.dishes
-                  .filter(dish =>
-                    dish.name.toLowerCase().includes(params.get('serched')?.toLowerCase() || '')
-                  )
-                  .map(dish => (
-                    <Card key={dish.name} className="p-4">
-                      {dish.name.toLocaleUpperCase()} : {dish.price}zł
-                    </Card>
-                  ))}
-              </div>
-            ))}
-          </Box>
+
+          <FiltersDiscoveryDishPage filteredDishes={filteredDishes} />
         </Card>
       </Link>
     </Box>

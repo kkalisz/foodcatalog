@@ -21,7 +21,7 @@ export default function DiscoverPage() {
 
   // Initialize directly from URL params so first fetch already uses the correct filter
   const [currentSearch, setCurrentSearch] = useState(searchedValueParams ?? '');
-  const { loading, restaurants } = usePublicRestaurants('', currentSearch);
+  const { loading, restaurants, filteredDishes } = usePublicRestaurants('', currentSearch);
   if (loading) {
     return <PageLoader loadingText={t('discover_page.loading')} />;
   }
@@ -57,6 +57,7 @@ export default function DiscoverPage() {
               <RestaurantCard
                 key={restaurantResult.restaurant.createdAt}
                 filteredRestaurant={restaurantResult}
+                filteredDishes={filteredDishes}
               />
             ))}
           </div>
