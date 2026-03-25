@@ -20,7 +20,7 @@ export function Navigation() {
   return (
     <nav className="border-b bg-card sticky top-0 z-50">
       <PageWidthWrapper>
-        <Flex align="center" justify="between" className="relative w-full py-4">
+        <Flex align="center" justify="between" className="relative w-full h-[10vh] py-4">
           <Flex align="center" gap="2">
             <Link
               href={'/'}

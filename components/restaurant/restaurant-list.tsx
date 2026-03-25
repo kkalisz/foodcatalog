@@ -2,7 +2,7 @@
 
 import { Button, Flex } from '@radix-ui/themes';
 import { Star, Edit2, Trash, Eye } from 'lucide-react';
-import { useRouter } from '@/i18n/navigation';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
