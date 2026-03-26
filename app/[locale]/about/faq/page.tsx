@@ -1,30 +1,41 @@
-import { Button, Flex, Heading } from '@radix-ui/themes';
+import { Container, Grid } from '@radix-ui/themes';
 
-import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import HeaderTextContainer from '@/components/ui/containers/header-text-container';
+import ScrollAreaFaq from '@/components/ui/containers/scroll-area-faq';
 
 const FaqPage = () => {
   return (
-    <HeaderTextContainer tittle={'FAQ'}>
-      <Flex
-        className="w-full flex-[2] min-h-full bg-white bg-center bg-contain bg-no-repeat"
-        align="center"
-        justify="center"
-      >
-        <Heading size="3">O nas i naszych planach</Heading>
-      </Flex>
-      <Flex
-        direction="column"
-        className="bg-orange-500 flex-[1] p-4"
-        align="center"
-        justify="center"
-      >
-        <Heading>Nasze złożenia</Heading>
-        <p className="text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-        </p>
-        <Button color="orange">Zobacz więcej</Button>
-      </Flex>
+    <HeaderTextContainer title={'Frequently Asked Questions'}>
+      <Container className="flex flex-column justify-center bg-white">
+        <Grid columns={'1'} gap={'4'}>
+          <ScrollAreaFaq
+            question={'What is the return policy?'}
+            answer={
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
+            }
+          />
+          <ScrollAreaFaq
+            question={'What is the ?'}
+            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
+          />
+          <ScrollAreaFaq
+            question={'Is return policy?'}
+            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
+          />
+          <ScrollAreaFaq
+            question={'What is the return policy?'}
+            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
+          />
+          <ScrollAreaFaq
+            question={'What is the return policy?'}
+            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
+          />
+          <ScrollAreaFaq
+            question={'What is the return policy?'}
+            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
+          />
+        </Grid>
+      </Container>
     </HeaderTextContainer>
   );
 };

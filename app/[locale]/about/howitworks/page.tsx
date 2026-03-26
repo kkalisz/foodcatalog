@@ -1,9 +1,10 @@
 import { Button, Flex, Heading } from '@radix-ui/themes';
+
 import HeaderTextContainer from '@/components/ui/containers/header-text-container';
 
 const HowItWorksPage = () => {
   return (
-    <HeaderTextContainer tittle="How it works">
+    <HeaderTextContainer title="How it works">
       <Flex
         className="w-full flex-[2] min-h-full bg-white bg-center bg-contain bg-no-repeat"
         align="center"

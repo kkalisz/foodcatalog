@@ -1,21 +1,22 @@
-﻿import { Flex, Heading } from '@radix-ui/themes';
+import { Flex, Heading } from '@radix-ui/themes';
 
 type HeaderTextContainerProps = {
-  tittle: string;
+  title?: string;
   children: React.ReactNode;
 };
-const HeaderTextContainer = ({ tittle, children }: HeaderTextContainerProps) => {
+const HeaderTextContainer = ({ title, children }: HeaderTextContainerProps) => {
   return (
-    <Flex
-      direction="column"
-      className="h-full w-full flex-1 sm:flex-row flex-col bg-white"
-      align="center"
-    >
-      <Heading className="p-2" size="7">
-        {tittle}
+    <Flex direction="column" className="h-full w-full flex-1 sm:flex-row flex-col " align="center">
+      <Heading className="p-4" size="7">
+        {title}
       </Heading>
 
-      <Flex direction="row" className="h-full w-full flex-1 sm:flex-row flex-col" align="stretch">
+      <Flex
+        direction="row"
+        className=" h-full w-full flex-1 sm:flex-row flex-col"
+        align="stretch"
+        justify="center"
+      >
         {children}
       </Flex>
     </Flex>

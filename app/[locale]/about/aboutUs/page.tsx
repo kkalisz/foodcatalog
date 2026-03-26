@@ -9,7 +9,7 @@ export const AboutUs = () => {
   const t = useTranslations();
 
   return (
-    <HeaderTextContainer tittle={'About us'}>
+    <HeaderTextContainer title={'About us'}>
       <Flex
         className="w-full flex-[2] min-h-full bg-white bg-center bg-contain bg-no-repeat"
         align="center"

@@ -26,7 +26,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden">
         <Theme appearance="light" accentColor="orange" radius="large">
           <AuthProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
