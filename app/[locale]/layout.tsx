@@ -1,7 +1,7 @@
 import '@radix-ui/themes/styles.css';
 import type React from 'react';
 
-import { Theme } from '@radix-ui/themes';
+import { Flex, Theme } from '@radix-ui/themes';
 import './../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -32,14 +32,12 @@ export default async function RootLayout({
             <NextIntlClientProvider locale={locale} messages={messages}>
               <Toast.Provider>
                 <GoogleMapsProvider>
-                  <div className="flex flex-col min-h-screen bg-background">
+                  <Flex className="flex flex-col min-h-screen bg-background">
                     <Navigation />
-                    <PageWidthWrapper>
-                      {children}
-                      <Footer />
-                    </PageWidthWrapper>
+                    <PageWidthWrapper>{children}</PageWidthWrapper>
+                    <Footer />
                     <Toast.Viewport className="fixed top-20 right-[40vw] z-[2147483647] flex" />
-                  </div>
+                  </Flex>
                 </GoogleMapsProvider>
               </Toast.Provider>
             </NextIntlClientProvider>

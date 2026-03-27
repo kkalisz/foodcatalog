@@ -1,42 +1,22 @@
 import { Container, Grid } from '@radix-ui/themes';
 
-import HeaderTextContainer from '@/components/ui/containers/header-text-container';
-import ScrollAreaFaq from '@/components/ui/containers/scroll-area-faq';
+import CollapsibleContainer from '@/components/ui/containers/card-collapsible';
+import CardWithHeader from '@/components/ui/containers/card-with-header';
 
 const FaqPage = () => {
   return (
-    <HeaderTextContainer title={'Frequently Asked Questions'}>
-      <Container className="flex flex-column justify-center bg-white">
+    <CardWithHeader title={'FAQ'}>
+      <Container className="flex flex-column justify-start">
         <Grid columns={'1'} gap={'4'}>
-          <ScrollAreaFaq
-            question={'What is the return policy?'}
-            answer={
-              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-            }
-          />
-          <ScrollAreaFaq
-            question={'What is the ?'}
-            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
-          />
-          <ScrollAreaFaq
-            question={'Is return policy?'}
-            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
-          />
-          <ScrollAreaFaq
-            question={'What is the return policy?'}
-            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
-          />
-          <ScrollAreaFaq
-            question={'What is the return policy?'}
-            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
-          />
-          <ScrollAreaFaq
-            question={'What is the return policy?'}
-            answer={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'}
-          />
+          <CollapsibleContainer title={'What is the return policy?'}>
+            <p>aa</p>
+          </CollapsibleContainer>
+          <CollapsibleContainer title={'What is this?'}>
+            <p>bb</p>
+          </CollapsibleContainer>
         </Grid>
       </Container>
-    </HeaderTextContainer>
+    </CardWithHeader>
   );
 };
 

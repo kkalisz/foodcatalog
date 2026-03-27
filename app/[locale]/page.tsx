@@ -8,7 +8,7 @@ export default async function Home() {
   const t = await getTranslations('main_page');
   return (
     <HeightWrapper>
-      <Flex className="h-full w-full flex-1 sm:flex-row flex-col" align="stretch">
+      <Flex className="h-full w-full flex-1 sm:flex-row flex-col">
         <Flex className="w-full bg-orange-500 flex-1 " align="center" justify="center">
           <Flex direction="column" gap="5" justify="center" className="w-full px-2">
             <Flex direction="column" align="center" justify="center" className="w-full h-full">

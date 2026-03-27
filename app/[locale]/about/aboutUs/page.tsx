@@ -1,35 +1,24 @@
 'use client';
 
-import { Button, Flex, Heading } from '@radix-ui/themes';
+import { Flex, Grid } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 
-import HeaderTextContainer from '@/components/ui/containers/header-text-container';
+import CardWithHeader from '@/components/ui/containers/card-with-header';
 
 export const AboutUs = () => {
   const t = useTranslations();
 
   return (
-    <HeaderTextContainer title={'About us'}>
-      <Flex
-        className="w-full flex-[2] min-h-full bg-white bg-center bg-contain bg-no-repeat"
-        align="center"
-        justify="center"
-      >
-        <Heading size="3">O nas i naszych planach</Heading>
-      </Flex>
-      <Flex
-        direction="column"
-        className="bg-orange-500 flex-[1] p-4"
-        align="center"
-        justify="center"
-      >
-        <Heading>Nasze złożenia</Heading>
-        <p className="text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-        </p>
-        <Button color="orange">Zobacz więcej</Button>
-      </Flex>
-    </HeaderTextContainer>
+    <CardWithHeader title={'O nas'}>
+      <Grid columns={'2'} rows={'1'} className="flex-1 w-full h-full min-h-0">
+        <Flex className="bg-white  w-full h-full" align="center" justify="center">
+          About us
+        </Flex>
+        <Flex className="bg-orange-500  w-full h-full" align="center" justify="center">
+          Our mission
+        </Flex>
+      </Grid>
+    </CardWithHeader>
   );
 };
 
