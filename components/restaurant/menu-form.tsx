@@ -19,7 +19,7 @@ import { EmptyMenu } from './empty-menu';
 
 const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
   const t = useTranslations();
-  const { firmId, loading } = useFirmId();
+  const { firmId } = useFirmId();
   const form = useForm<MenuFormType>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -56,6 +56,7 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
       await saveMenuToFirestore(firmId, restaurantId, data);
       reset(data);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error saving menu:', error);
     }
   };

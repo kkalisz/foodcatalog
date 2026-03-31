@@ -28,6 +28,7 @@ export const updatePublicRestaurant = async (
     updatedAt: serverTimestamp(),
   };
 
+  // eslint-disable-next-line no-console
   console.log('🔥 [DEBUG] Sending this exact payload to updateDoc:', updatePayload);
   await updateDoc(ref, updatePayload);
 };

@@ -16,6 +16,7 @@ export const RestaurantReviews = () => {
 
   const handleSubmitReview = () => {
     // In a real app, this would call an API or Server Action
+    // eslint-disable-next-line no-console
     console.log('Submitting review:', { reviewText, userRating });
     setReviewText('');
     setUserRating(0);

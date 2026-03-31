@@ -58,5 +58,48 @@
     "vegan_options": "Vegan options",
     "delivery": "Delivery",
     "card_payments": "Card payments"
+  },
+  "terms_and_conditions": {
+    "page_title": "Terms and Conditions",
+    "title": "General Terms and Conditions for Consumers (Draft)",
+    "introduction": "These \"General Terms and Conditions for Consumers\" apply to relations between [YOUR COMPANY NAME] based in [CITY], at [ADDRESS], registered by the District Court for [COURT NAME], under KRS number: [NUMBER], NIP: [NUMBER], REGON: [NUMBER] [hereinafter: Operator], which holds the rights to the Platform [APP NAME], and Consumers.",
+    "sections": {
+      "1": {
+        "title": "1. Definitions",
+        "content": "Offer: the range of products or services offered by Partners, which can be ordered by the Consumer via the Platform.\nOrder: a declaration of intent made to the Partner by the Consumer via the Platform, resulting in the conclusion of an Agreement.\nConsumer: a natural person performing a legal action not directly related to their business or professional activity, placing an Order.\nPlatform: mobile application, website available at [URL] and any tools provided by the Operator.\nPartner: a third party (e.g. shop, restaurant, service provider) offering its products or services on the Platform.\nAccount: a personalized Consumer administration panel available after registration."
+      },
+      "2": {
+        "title": "2. Operator Details",
+        "content": "Contact details: [FULL COMPANY NAME]\naddress: ........................................\n............................................\nNIP: .......................................\ne-mail address: .............................."
+      },
+      "3": {
+        "title": "3. Application and General Provisions",
+        "content": "3.1. These Terms set out the rules for the use of Services provided electronically by the Operator.\n3.2. The Operator is not a party to the Sales/Service Agreement concluded between the Consumer and the Partner, but merely provides tools to conclude it.\n3.3. The use of the Platform requires the acceptance of these Terms."
+      },
+      "4": {
+        "title": "4. Registration and Account",
+        "content": "4.1. Consumers may create an Account by providing an e-mail address and password. Consumers must be at least [18] years of age.\n4.2. Deletion of the Account takes place upon the request of the Consumer sent to the address: [SUPPORT EMAIL ADDRESS].\n4.3. The Operator reserves the right to block the Account in case of violation of the terms and conditions, in particular the provision of false data."
+      },
+      "5": {
+        "title": "5. Placing Orders and the Agreement",
+        "content": "5.1. The conclusion of an Agreement between the Consumer and the Partner takes place when the \"[ORDER AND PAY / CONFIRM]\" button is clicked.\n5.2. The Consumer must provide true contact details and delivery address.\n5.3. In the case of age-restricted products (e.g. alcohol), the Operator or Partner has the right to verify the Consumer's age upon delivery/collection."
+      },
+      "6": {
+        "title": "6. Payments",
+        "content": "6.1. Prices visible on the Platform include VAT.\n6.2. The Consumer can make payments via Online Payment Systems: [LIST OPERATORS, E.G. BLIK, PAYU].\n6.3. Refunds in case of withdrawal from the Agreement are made up to [14] business days."
+      },
+      "7": {
+        "title": "7. Withdrawal and Complaints",
+        "content": "7.1. The Consumer has the right to withdraw from the Agreement in accordance with the Consumer Rights Act, excluding perishable or custom-made products.\n7.2. Complaints regarding the operation of the Platform (Operator's Services) should be directed to: [E-MAIL ADDRESS].\n7.3. Complaints regarding the Offer itself or product quality should be directed directly to the Partner."
+      },
+      "8": {
+        "title": "8. User Content",
+        "content": "8.1. The Consumer may publish opinions and ratings concerning Partners.\n8.2. It is forbidden to publish content of an illegal, vulgar or misleading nature.\n8.3. The Operator reserves the right to moderate and remove content violating these Terms."
+      },
+      "9": {
+        "title": "9. Final Provisions",
+        "content": "9.1. Matters not covered shall be governed by Polish law, in particular the Civil Code.\n9.2. Any disputes shall be resolved by competent common courts.\n9.3. The Operator reserves the right to amend the regulations, notifying users [7/14] days in advance."
+      }
+    }
   }
 }

@@ -5,7 +5,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase/client';
 import { useAuth } from '@/providers/AuthContext';
 
-export const useFirmId = (uid?: string | undefined) => {
+export const useFirmId = (_uid?: string | undefined) => {
   const { user } = useAuth();
   const [firmId, setFirmId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);

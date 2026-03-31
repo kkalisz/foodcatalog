@@ -1,5 +1,7 @@
+import { Box } from '@radix-ui/themes';
+
 const HeightWrapper = ({ children }: { children: React.ReactNode }) => {
-  return <div className="flex-1 flex flex-col w-full align-center justify-center">{children}</div>;
+  return <Box display={'contents'}>{children}</Box>;
 };
 
 export default HeightWrapper;

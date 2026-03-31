@@ -1,6 +1,8 @@
-import { Box, Flex, Link } from '@radix-ui/themes';
+import { Box, Flex } from '@radix-ui/themes';
 import { DotIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+
+import FooterNavLink from '../ui/links/nav-link';
 
 const FooterLawInfo = () => {
   const t = useTranslations();
@@ -10,41 +12,37 @@ const FooterLawInfo = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/lawinfo/termsandconditions" color="gray">
+          <FooterNavLink href="/lawinfo/termsandconditions">
             {t('footer.law_info.terms')}
-          </Link>
+          </FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/lawinfo/privacypolicy" color="gray">
+          <FooterNavLink href="/lawinfo/privacypolicy">
             {t('footer.law_info.privacy_policy')}
-          </Link>
+          </FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/lawinfo/cookiepolicy" color="gray">
+          <FooterNavLink href="/lawinfo/cookiepolicy">
             {t('footer.law_info.cookies_policy')}
-          </Link>
+          </FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/lawinfo/rodo" color="gray">
-            {t('footer.law_info.gdpr')}
-          </Link>
+          <FooterNavLink href="/lawinfo/rodo">{t('footer.law_info.gdpr')}</FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/lawinfo/contact" color="gray">
-            {t('footer.law_info.contact')}
-          </Link>
+          <FooterNavLink href="/lawinfo/contact">{t('footer.law_info.contact')}</FooterNavLink>
         </Flex>
       </Box>
     </div>

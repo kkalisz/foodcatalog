@@ -1,6 +1,6 @@
 import { getStorage } from 'firebase/storage';
 
 import { app } from '../firebase/client';
-const storage = getStorage(app);
+const _storage = getStorage(app);
 
-export const uploadRestaurantImage = (file: File, firmId: string) => {};
+export const uploadRestaurantImage = (_file: File, _firmId: string) => {};

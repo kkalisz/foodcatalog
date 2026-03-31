@@ -38,7 +38,7 @@ type Props = {
 export const RestaurantForm = ({ restaurantId }: Props) => {
   const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
   const [center, setCenter] = useState<{ lat: number; lng: number }>();
-  const [localization, setLocalization] = useState<{ lat: number; lng: number } | null>(null);
+  const [, setLocalization] = useState<{ lat: number; lng: number } | null>(null);
   const { user } = useAuth();
   const router = useRouter();
   const t = useTranslations();
@@ -134,8 +134,8 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
 
         router.push(`/owner/restaurants/${newRestaurantId}/menu`);
       }
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error) {
+      alert((error as Error).message);
     }
   };
   return (

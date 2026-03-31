@@ -1,4 +1,7 @@
-import { Button, Card, Flex, Heading } from '@radix-ui/themes';
+import { Button, Flex, Heading } from '@radix-ui/themes';
+import { useTranslations } from 'next-intl';
+
+import CardWithHeader from '../ui/containers/card-with-header';
 
 type SubscriptionCardProps = {
   header: string;
@@ -6,17 +9,16 @@ type SubscriptionCardProps = {
   children: React.ReactNode;
 };
 const SubscriptionCard = ({ header, price, children }: SubscriptionCardProps) => {
+  const t = useTranslations('subscription_plans');
+
   return (
-    <Flex direction="column" gap="3" width="100%">
-      <Card>
-        <Heading className=" p-4" align="center">
-          {header}
-        </Heading>
-        <Heading size="5">Cena: {price} zł/miesiąc</Heading>
+    <CardWithHeader title={header}>
+      <Flex direction="column" gap="3">
+        <Heading size="5">{t('price_per_month', { price })}</Heading>
         {children}
-      </Card>
-      <Button size="4">Wybierz</Button>
-    </Flex>
+        <Button size="4">{t('select')}</Button>
+      </Flex>
+    </CardWithHeader>
   );
 };
 

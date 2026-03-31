@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Button, Flex, TextArea, TextField } from '@radix-ui/themes';
-import { MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
+import { ImageIcon, MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { UseFormReturn } from 'react-hook-form';
 
@@ -97,7 +97,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
                   />
                 </Box>
 
-                <Box>zł</Box>
+                <Box>{t('restaurant_components.currency_pln')}</Box>
 
                 <Button
                   type="button"
@@ -124,6 +124,16 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
                   error={errors.categories?.[index]?.dishes?.[indexDish]?.description?.message}
                   id="minLength"
                 />
+              </Box>
+              <Box className="mt-4">
+                <TextField.Root
+                  placeholder="https://example.com/image.jpg"
+                  {...register(`categories.${index}.dishes.${indexDish}.imageUrl`)}
+                >
+                  <TextField.Slot>
+                    <ImageIcon />
+                  </TextField.Slot>
+                </TextField.Root>
               </Box>
             </Box>
           ))}

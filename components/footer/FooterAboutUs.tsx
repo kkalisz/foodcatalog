@@ -1,6 +1,8 @@
-import { Box, Flex, Link } from '@radix-ui/themes';
+import { Box, Flex } from '@radix-ui/themes';
 import { DotIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+
+import FooterNavLink from '../ui/links/nav-link';
 
 const FooterAboutUs = () => {
   const t = useTranslations();
@@ -10,33 +12,27 @@ const FooterAboutUs = () => {
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/about/aboutUs" color="gray">
-            {t('footer.about_us.about')}
-          </Link>
+          <FooterNavLink href="/about/aboutUs">{t('footer.about_us.about')}</FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/about/howitworks" color="gray">
+          <FooterNavLink href="/about/howitworks">
             {t('footer.about_us.how_it_works')}
-          </Link>
+          </FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/about/faq" color="gray">
-            {t('footer.about_us.faq')}
-          </Link>
+          <FooterNavLink href="/about/faq">{t('footer.about_us.faq')}</FooterNavLink>
         </Flex>
       </Box>
       <Box>
         <Flex gap="2" align="center">
           <DotIcon size={30} className="text-primary" />
-          <Link href="/about/blog" color="gray">
-            {t('footer.about_us.blog')}
-          </Link>
+          <FooterNavLink href="/about/blog">{t('footer.about_us.blog')}</FooterNavLink>
         </Flex>
       </Box>
     </div>

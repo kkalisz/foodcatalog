@@ -24,4 +24,5 @@ export type PublicRestaurant = {
   lat?: number;
   lng?: number;
   extra?: Amenity[];
+  views?: number | null;
 };

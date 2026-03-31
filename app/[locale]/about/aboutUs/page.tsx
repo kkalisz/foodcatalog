@@ -1,19 +1,32 @@
 'use client';
 
-import { Flex } from '@radix-ui/themes';
+import { Flex, Grid, Text } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 
-import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
+import CardWithHeader from '@/components/ui/containers/card-with-header';
 
 export const AboutUs = () => {
-  const t = useTranslations();
+  const t = useTranslations('footer.about_us');
 
   return (
-    <PageHeightWrapper>
-      <Flex align="center" justify="center">
-        <h1 className="">{t('about_page.header')}</h1>
-      </Flex>
-    </PageHeightWrapper>
+    <CardWithHeader title={t('heading')}>
+      <Grid
+        columns={'2'}
+        rows={'1'}
+        className="flex-1 w-full h-full min-h-[400px] overflow-hidden rounded-xl border border-gray-200 shadow-sm"
+      >
+        <Flex className="bg-white w-full h-full" align="center" justify="center">
+          <Text size="6" weight="bold" className="text-gray-800">
+            {t('about')}
+          </Text>
+        </Flex>
+        <Flex className="bg-orange-500 w-full h-full" align="center" justify="center">
+          <Text size="6" weight="bold" className="text-white">
+            {t('heading')}
+          </Text>
+        </Flex>
+      </Grid>
+    </CardWithHeader>
   );
 };
 

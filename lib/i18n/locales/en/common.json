@@ -364,5 +364,232 @@
     "vegan_options": "Vegan options",
     "delivery": "Delivery",
     "card_payments": "Card payments"
+  },
+  "terms_and_conditions": {
+    "page_title": "Terms and Conditions",
+    "title": "General Terms and Conditions for Consumers (Draft)",
+    "introduction": "These \"General Terms and Conditions for Consumers\" apply to relations between [YOUR COMPANY NAME] based in [CITY], at [ADDRESS], registered by the District Court for [COURT NAME], under KRS number: [NUMBER], NIP: [NUMBER], REGON: [NUMBER] [hereinafter: Operator], which holds the rights to the Platform [APP NAME], and Consumers.",
+    "sections": {
+      "1": {
+        "title": "1. Definitions",
+        "content": "Offer: the range of products or services offered by Partners, which can be ordered by the Consumer via the Platform.\nOrder: a declaration of intent made to the Partner by the Consumer via the Platform, resulting in the conclusion of an Agreement.\nConsumer: a natural person performing a legal action not directly related to their business or professional activity, placing an Order.\nPlatform: mobile application, website available at [URL] and any tools provided by the Operator.\nPartner: a third party (e.g. shop, restaurant, service provider) offering its products or services on the Platform.\nAccount: a personalized Consumer administration panel available after registration."
+      },
+      "2": {
+        "title": "2. Operator Details",
+        "content": "Contact details: [FULL COMPANY NAME]\naddress: ........................................\n............................................\nNIP: .......................................\ne-mail address: .............................."
+      },
+      "3": {
+        "title": "3. Application and General Provisions",
+        "content": "3.1. These Terms set out the rules for the use of Services provided electronically by the Operator.\n3.2. The Operator is not a party to the Sales/Service Agreement concluded between the Consumer and the Partner, but merely provides tools to conclude it.\n3.3. The use of the Platform requires the acceptance of these Terms."
+      },
+      "4": {
+        "title": "4. Registration and Account",
+        "content": "4.1. Consumers may create an Account by providing an e-mail address and password. Consumers must be at least [18] years of age.\n4.2. Deletion of the Account takes place upon the request of the Consumer sent to the address: [SUPPORT EMAIL ADDRESS].\n4.3. The Operator reserves the right to block the Account in case of violation of the terms and conditions, in particular the provision of false data."
+      },
+      "5": {
+        "title": "5. Placing Orders and the Agreement",
+        "content": "5.1. The conclusion of an Agreement between the Consumer and the Partner takes place when the \"[ORDER AND PAY / CONFIRM]\" button is clicked.\n5.2. The Consumer must provide true contact details and delivery address.\n5.3. In the case of age-restricted products (e.g. alcohol), the Operator or Partner has the right to verify the Consumer's age upon delivery/collection."
+      },
+      "6": {
+        "title": "6. Payments",
+        "content": "6.1. Prices visible on the Platform include VAT.\n6.2. The Consumer can make payments via Online Payment Systems: [LIST OPERATORS, E.G. BLIK, PAYU].\n6.3. Refunds in case of withdrawal from the Agreement are made up to [14] business days."
+      },
+      "7": {
+        "title": "7. Withdrawal and Complaints",
+        "content": "7.1. The Consumer has the right to withdraw from the Agreement in accordance with the Consumer Rights Act, excluding perishable or custom-made products.\n7.2. Complaints regarding the operation of the Platform (Operator's Services) should be directed to: [E-MAIL ADDRESS].\n7.3. Complaints regarding the Offer itself or product quality should be directed directly to the Partner."
+      },
+      "8": {
+        "title": "8. User Content",
+        "content": "8.1. The Consumer may publish opinions and ratings concerning Partners.\n8.2. It is forbidden to publish content of an illegal, vulgar or misleading nature.\n8.3. The Operator reserves the right to moderate and remove content violating these Terms."
+      },
+      "9": {
+        "title": "9. Final Provisions",
+        "content": "9.1. Matters not covered shall be governed by Polish law, in particular the Civil Code.\n9.2. Any disputes shall be resolved by competent common courts.\n9.3. The Operator reserves the right to amend the regulations, notifying users [7/14] days in advance."
+      }
+    }
+  },
+  "privacy_policy": {
+    "page_title": "Privacy Policy",
+    "title": "Privacy Policy of the [APP NAME] Platform",
+    "introduction": "This Privacy Policy sets out the rules for the processing and protection of personal data of users (Consumers) using the Platform managed by [YOUR COMPANY NAME] (hereinafter: Administrator).",
+    "sections": {
+      "1": {
+        "title": "1. Data Controller",
+        "content": "The personal data controller is: [FULL COMPANY NAME]\naddress: ........................................\n............................................\nNIP: .......................................\nKRS: .......................................\nContact regarding data protection: [E-MAIL ADDRESS, E.G. DPA@YOURCOMPANY.COM]"
+      },
+      "2": {
+        "title": "2. Scope of collected data",
+        "content": "The Administrator collects data necessary to provide Services and fulfill Orders, including:\nRegistration data: first name, last name, e-mail address, phone number.\nAddress data: street, house/apartment number, postal code, city (for delivery purposes).\nTechnical data: IP address, device type, cookie identifiers.\nPayment data: (if applicable) processed by external payment operators (the Administrator does not store full payment card details)."
+      },
+      "3": {
+        "title": "3. Purpose and legal basis for processing",
+        "content": "Personal data is processed for the purpose of:\nExecuting the Agreement (Art. 6(1)(b) GDPR): Account management, Order processing, communication with the Consumer.\nLegal obligations (Art. 6(1)(c) GDPR): issuing invoices, accounting, and tax reporting.\nLegitimate interest (Art. 6(1)(f) GDPR): direct marketing, pursuing claims, statistical analysis of traffic on the Platform.\nConsent (Art. 6(1)(a) GDPR): sending a newsletter or personalizing offers (if consent was given)."
+      },
+      "4": {
+        "title": "4. Data recipients",
+        "content": "Personal data may be transferred to the following entities:\nPartners (Restaurants/Shops): to the extent necessary to prepare the Order.\nCourier companies: to deliver the Order to the indicated address.\nPayment operators: to settle online transactions.\nIT service providers: hosting providers, CRM and analytical system providers."
+      },
+      "5": {
+        "title": "5. Data retention period",
+        "content": "Data will be stored for the period of:\nHaving an Account on the Platform.\nNecessary to fulfill the Order and the expiration of the limitation periods for claims (usually [3/6] years).\nRequired by tax law (5 years from the end of the calendar year)."
+      },
+      "6": {
+        "title": "6. User rights",
+        "content": "Every Consumer has the right to:\nAccess their data and receive a copy of it.\nRectify (correct) data.\nDelete data (\"right to be forgotten\").\nRestrict processing.\nData portability.\nObject to processing.\nLodge a complaint with the President of the Personal Data Protection Office (PUODO)."
+      },
+      "7": {
+        "title": "7. Cookies and Profiling",
+        "content": "7.1. The Platform uses cookies to ensure the proper functioning of the site, remember preferences, and for analytical purposes.\n7.2. The Administrator may use profiling to match the Offer to the Consumer's preferences, but does not make automated decisions with legal effects on this basis.\n7.3. The user can change cookie settings in their browser at any time."
+      },
+      "8": {
+        "title": "8. Security",
+        "content": "The Administrator uses technical and organizational measures (such as SSL encryption, secure servers) to protect data against unauthorized access, loss, or alteration."
+      },
+      "9": {
+        "title": "9. Changes to the Privacy Policy",
+        "content": "The Administrator reserves the right to update the Policy. The new version will be published on the Platform with the date of the last update.\nLast update: [DATE]"
+      }
+    }
+  },
+  "cookie_policy": {
+    "page_title": "Cookie Policy",
+    "title": "Cookie Policy of the [APP NAME] Platform",
+    "introduction": "This Policy applies to \"cookies\" and other similar technologies used by [YOUR COMPANY NAME] (hereinafter: Administrator) on the [APP NAME] Platform.",
+    "sections": {
+      "1": {
+        "title": "1. What are cookies?",
+        "content": "Cookies are small text data sent by a server and stored on the Consumer's end device (e.g., computer, smartphone, tablet). They allow the device to be recognized and properly display the website or application, tailored to the user's individual preferences."
+      },
+      "2": {
+        "title": "2. Types of cookies used",
+        "content": "Within the Platform, we use the following types of files:\nStrictly necessary: They enable the use of basic functions (e.g., maintaining a session after logging in, adding products to the cart). Without them, the Platform cannot function properly.\nAnalytical: They allow collecting information on how the Platform is used (e.g., which subpages are most frequently visited). They help us improve the structure and content of the application.\nFunctional: They remember your choices (e.g., language, region, font size) to facilitate the use of the website on subsequent visits.\nMarketing (Advertising): They are used to deliver advertisements tailored to your interests and measure the effectiveness of marketing campaigns."
+      },
+      "3": {
+        "title": "3. Purposes of using cookies",
+        "content": "The Administrator uses cookies for the purpose of:\nAuthentication: so that the Platform knows you are logged in and does not require re-entering the password on each subpage.\nSecurity: to support mechanisms preventing abuse (e.g., detecting unauthorized access attempts).\nProcesses: optimizing the ordering process (e.g., remembering the selected Restaurant/Shop).\nPerformance: collecting data on how the application handles traffic so that it runs faster and without errors."
+      },
+      "4": {
+        "title": "4. Third-party cookies",
+        "content": "Our Platform uses external tools that may place their own cookies:\nGoogle Analytics (statistics and traffic analysis) - [LINK TO GOOGLE POLICY].\nFacebook Pixel (measuring ad effectiveness) - [LINK TO FACEBOOK POLICY].\nPayment Systems (e.g., PayU, BLIK) for processing transactions."
+      },
+      "5": {
+        "title": "5. Managing cookies",
+        "content": "5.1. Most web browsers allow storing cookies by default. The Consumer can change these settings at any time.\n5.2. You can: Automatically block cookies in your browser. Force a notification every time cookies are placed on the device. Manually delete saved files from the browser memory.\n5.3. Note: Restricting the use of cookies may affect some functionalities of the Platform or completely prevent you from placing an Order."
+      },
+      "6": {
+        "title": "6. Other technologies (e.g., Local Storage, Geolocation)",
+        "content": "In addition to cookies, the Platform may use Local Storage technology (storing data in the browser with larger capacity) and Geolocation (with your consent) to point out Partners located closest to your current location."
+      }
+    }
+  },
+  "rodo": {
+    "page_title": "GDPR",
+    "title": "RODO (GDPR) Information Clause [APP NAME]",
+    "introduction": "In accordance with Art. 13 sec. 1 and 2 of the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 (GDPR), we inform about the rules of processing your personal data:",
+    "sections": {
+      "1": {
+        "title": "1. Data Controller",
+        "content": "The administrator of your personal data is [YOUR COMPANY NAME / YOUR NAME AND SURNAME] based in [ADDRESS], e-mail: [E-MAIL ADDRESS]."
+      },
+      "2": {
+        "title": "2. Purposes and legal basis for processing",
+        "content": "Your data is processed for the purpose of:\nConcluding and implementing the contract (order processing, contact regarding delivery) - based on Art. 6 sec. 1 lit. b GDPR.\nFulfilling legal obligations (issuing invoices, keeping accounting documentation) - based on Art. 6 sec. 1 lit. c GDPR.\nImplementing legitimate interests (direct marketing, pursuing claims, traffic analytics in the application) - based on Art. 6 sec. 1 lit. f GDPR.\nSending commercial information (if you have voluntarily consented to the newsletter) - based on Art. 6 sec. 1 lit. a GDPR."
+      },
+      "3": {
+        "title": "3. Data recipients",
+        "content": "Your data may be shared with:\nPlatform Partners (e.g. restaurants, shops) - only to the extent necessary to prepare your order.\nCourier companies/suppliers - so they know where to deliver the goods.\nSupporting entities - online payment operators, hosting companies, legal or accounting services."
+      },
+      "4": {
+        "title": "4. Transferring data to third countries",
+        "content": "The Administrator [does not transfer / transfers] your data outside the European Economic Area. (If you use e.g. servers in the USA via Google/AWS, add: \"Data may be transferred to third countries based on standard contractual clauses ensuring an adequate level of protection\")."
+      },
+      "5": {
+        "title": "5. Data retention period",
+        "content": "Your data will be processed:\nFor the duration of your account in the application.\nFor the period required by tax law (5 years from the end of the financial year).\nUntil the statute of limitations for any claims arising from the contract."
+      },
+      "6": {
+        "title": "6. Your rights",
+        "content": "You have the right to:\nAccess your data and request a copy of it.\nRectification, deletion or limitation of processing.\nObject to processing (especially for marketing purposes).\nData portability to another administrator.\nLodge a complaint with the President of the Personal Data Protection Office (PUODO)."
+      },
+      "7": {
+        "title": "7. Voluntary data provision",
+        "content": "Providing data is voluntary, but necessary to set up an account and place orders. Without providing your name, address, and phone number, we will not be able to complete your delivery."
+      }
+    }
+  },
+  "contact_policy": {
+    "page_title": "Contact",
+    "title": "Contact – [YOUR APP NAME]",
+    "introduction": "Please contact us if you have any questions. Below you will find the contact details of the relevant departments.",
+    "sections": {
+      "1": {
+        "title": "1. Customer Service (Consumers)",
+        "content": "Do you have a question about your order or how the app works? We are at your disposal!\nHelp Center: [LINK TO FAQ / FREQUENTLY ASKED QUESTIONS]\nE-mail: help@.......................... (we respond within [24h])\nHelpline: +48 .......................... (open [08:00 – 22:00])\nLive chat: Available directly in the app under the “My Orders” tab."
+      },
+      "2": {
+        "title": "2. Business Cooperation (Partners)",
+        "content": "Do you want to join our network and sell your products on the Platform?\nBecome a Partner: [LINK TO REGISTRATION FORM]\nE-mail for Partners: cooperation@..........................\nTechnical support for active Partners: +48 .........................."
+      },
+      "3": {
+        "title": "3. Company Registration Data (Administrator)",
+        "content": "Official correspondence and legal inquiries:\n[FULL NAME OF YOUR LLC / COMPANY]\naddress: ........................................\n............................................\nNIP: .......................................\nREGON: .....................................\nKRS: ......................................."
+      },
+      "4": {
+        "title": "4. Press and Marketing",
+        "content": "Inquiries about patronage, interviews, and press materials:\nE-mail: press@.........................."
+      },
+      "5": {
+        "title": "5. Data Protection Officer (GDPR)",
+        "content": "For matters concerning your personal data, its change or deletion:\nE-mail: iod@.........................."
+      }
+    }
+  },
+  "blog_page": {
+    "header": "Blog",
+    "posts": {
+      "1": {
+        "title": "Principles of the typographic craft",
+        "description": "Three fundamental aspects of typography are legibility, readability, and aesthetics. Although in a non-technical sense legible and readable are often used synonymously, typographically they are separate but related concepts. Legibility describes how easily individual characters can be distinguished from one another."
+      },
+      "2": {
+        "title": "The art of readable design",
+        "description": "Readability is concerned with how easy it is to read the text as a whole, as opposed to the legibility of individual characters. Readability is affected by the choice of typeface, size, line length, line spacing, and letter spacing."
+      },
+      "3": {
+        "title": "Aesthetic choices in typography",
+        "description": "The aesthetic aspects of typography are concerned with the overall appearance of the text. This includes the choice of typeface, size, line length, line spacing, and letter spacing. The goal is to create a visually appealing and harmonious layout."
+      }
+    }
+  },
+  "subscription_plans": {
+    "promo_description": "\"The Premium Plan is a complete growth tool for restaurants that refuse compromises. Take full control of the guest experience with priority visibility and proprietary loyalty systems. It’s not just a web presence – it’s your restaurant in VIP mode, integrated with the latest marketing tools working for your profit 24/7.\"",
+    "what_you_get": "What you'll get:",
+    "full_presentation": "Full menu and photo gallery presentation",
+    "choose_plan": "Choose a new plan",
+    "current_plan": "Your current plan is:",
+    "basic_plan": "Basic Plan",
+    "pro_plan": "Pro Plan",
+    "price_per_month": "Price: {price} PLN/month",
+    "select": "Select"
+  },
+  "restaurant_components": {
+    "currency_pln": "PLN",
+    "ingredients_placeholder": "Ingredients (comma separated)",
+    "delivery": "Delivery available",
+    "no_delivery": "No delivery available",
+    "place_order": "Place order",
+    "views": "Views:",
+    "reviews": "Reviews:",
+    "dish_name": "Dish name",
+    "price": "Price",
+    "description": "Description",
+    "add_dish": "Add dish"
+  },
+  "components_misc": {
+    "view_more": "View more",
+    "view_more_photos": "View more photos of dishes and restaurant attractions",
+    "loading": "Loading",
+    "location_disabled": "Location permission is disabled",
+    "try_adjusting_filters": "Try adjusting the filters"
   }
 }

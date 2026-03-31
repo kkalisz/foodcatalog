@@ -16,7 +16,6 @@ import { getOwnerSession, clearOwnerSession } from '@/lib/auth';
 export default function HelpCenterPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -77,7 +76,6 @@ export default function HelpCenterPage() {
     if (!session) {
       router.push('/owner/login');
     } else {
-      setUser(session.user);
       setIsLoading(false);
     }
   }, [router]);
