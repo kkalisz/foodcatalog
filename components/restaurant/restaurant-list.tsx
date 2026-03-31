@@ -17,6 +17,7 @@ type RestaurantsListProps = {
 export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
   const router = useRouter();
   const t = useTranslations();
+  const tRest = useTranslations('restaurant_components');
 
   const handleDelete = async (restaurantId: string) => {
     if (!confirm(t('restaurants_list.confirm_delete'))) {
@@ -61,13 +62,13 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 </div>
 
                 <Flex className="flex items-center gap-1">
-                  <p>Recenzje:</p>
+                  <p>{tRest('reviews')}</p>
                   <Star className="w-4 h-4 text-primary" />
                   <span className="font-semibold">{restaurant.rating}</span>
                 </Flex>
                 <Flex className="flex items-center gap-1">
-                  <p>Wyświetlenia:</p>
-                  <Eye className="w-4 h-4text-primary" />
+                  <p>{tRest('views')}</p>
+                  <Eye className="w-4 h-4 text-primary" />
                   <span className="font-semibold">{restaurant.views}</span>
                 </Flex>
               </Flex>

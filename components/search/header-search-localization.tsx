@@ -21,9 +21,8 @@ const handleSearchCityParams = (value: string, router: any) => {
 };
 const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
   const t = useTranslations();
+  const tMisc = useTranslations('components_misc');
   const [value, setValue] = useState('');
-  const [city, setCity] = useState('');
-  const [isDeniedLocationShown, setDeniedLocationShown] = useState(false);
   const [isUseCurrentLocationShown, setUseCurrentLocationShown] = useState(false);
   const [isInfoLocalizationDenided, setInfoLocalizationDenided] = useState(false);
   const router = useRouter();
@@ -31,10 +30,9 @@ const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
   const [info, setInfo] = useState('');
   useEffect(() => {
     if (!geolocationAllowed) {
-      setInfo('Zezwolenie na lokalizację jest wyłączone');
-      setDeniedLocationShown(true);
+      setInfo(tMisc('location_disabled'));
     }
-  }, [geolocationAllowed]);
+  }, [geolocationAllowed, tMisc]);
   return (
     <div>
       <Popover.Root open={isUseCurrentLocationShown} onOpenChange={setUseCurrentLocationShown}>
@@ -59,7 +57,6 @@ const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
                 onKeyDown={e => {
                   if (e.key === 'Enter') {
                     handleSearchCityParams(value, router);
-                    setCity(value);
                     setValue('');
                     setUseCurrentLocationShown(false);
                   }
@@ -79,7 +76,6 @@ const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
               onClick={() => {
                 setUseCurrentLocationShown(false);
                 getCurentLocalization();
-                setCity(value);
                 setValue(myCity);
                 setInfoLocalizationDenided(true);
               }}

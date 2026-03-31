@@ -1,8 +1,10 @@
 import { Box, Flex, Heading } from '@radix-ui/themes';
+import { useTranslations } from 'next-intl';
 
 import { Dish } from '@/data/types/dishMenu';
 
 const FiltersDiscoveryDishPage = ({ filteredDishes }: { filteredDishes: Dish[] }) => {
+  const t = useTranslations('restaurant_components');
   return (
     <Box className="p-2">
       {filteredDishes.map(dish => (
@@ -20,7 +22,9 @@ const FiltersDiscoveryDishPage = ({ filteredDishes }: { filteredDishes: Dish[] }
               <Heading size="3">{dish.name.toLocaleUpperCase()}</Heading>
             </Flex>
             <Flex align="center">
-              <p>{dish.price}zł</p>
+              <p>
+                {dish.price} {t('currency_pln')}
+              </p>
             </Flex>
           </Flex>
           <p>{dish.description}</p>

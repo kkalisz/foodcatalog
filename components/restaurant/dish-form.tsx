@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
 import { Dish } from '@/data/types/dishMenu';
@@ -14,6 +15,8 @@ type DishFormData = {
 };
 const DishForm = ({ onAddDish }: MenuDishFormProps) => {
   const { register, handleSubmit, reset } = useForm<DishFormData>();
+  const t = useTranslations('restaurant_components');
+
   const onSubmit = (data: DishFormData) => {
     const newDish: Dish = {
       id: Date.now().toString(),
@@ -27,29 +30,29 @@ const DishForm = ({ onAddDish }: MenuDishFormProps) => {
       <div className="flex flex-col gap-4">
         <input
           {...register('name')}
-          placeholder="Nazwa dania"
+          placeholder={t('dish_name')}
           className="w-full p-2 border rounded"
           required
         />
         <input
           {...register('price', { valueAsNumber: true })}
           type="number"
-          placeholder="Cena"
+          placeholder={t('price')}
           className="w-full p-2 border rounded"
           required
         />
         <textarea
           {...register('description')}
-          placeholder="Opis"
+          placeholder={t('description')}
           className="w-full h-50 p-2 border rounded"
         />
         <input
           {...register('ingriediens')}
-          placeholder="Składniki (oddziel przecinkami)"
+          placeholder={t('ingredients_placeholder')}
           className="w-full p-2 border rounded"
         />
         <button type="submit" className="p-2 border rounded bg-green-600 text-white">
-          Dodaj danie
+          {t('add_dish')}
         </button>
       </div>
     </form>

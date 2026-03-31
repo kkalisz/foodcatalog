@@ -1,4 +1,5 @@
 import { Button, Flex, Tooltip } from '@radix-ui/themes';
+import { useTranslations } from 'next-intl';
 
 import { defaultGallery } from '@/data/constants/defaultyGallery';
 
@@ -12,6 +13,8 @@ type RestaurantSiteGaleryProps = {
 };
 
 const RestaurantSiteGalery = ({ gallery = defaultGallery }: RestaurantSiteGaleryProps) => {
+  const t = useTranslations('components_misc');
+
   return (
     <Flex gap="4">
       {gallery.map(item => (
@@ -24,8 +27,8 @@ const RestaurantSiteGalery = ({ gallery = defaultGallery }: RestaurantSiteGalery
         </Flex>
       ))}
       <Flex position="absolute" p="4">
-        <Tooltip content="Zobacz więcej zdjęć dań jak i atrakcji restauracji">
-          <Button>Zobacz więcej</Button>
+        <Tooltip content={t('view_more_photos')}>
+          <Button>{t('view_more')}</Button>
         </Tooltip>
       </Flex>
     </Flex>

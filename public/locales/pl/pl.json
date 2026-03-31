@@ -55,5 +55,48 @@
     "vegan_options": "Opcje wegańskie",
     "delivery": "Dostawa",
     "card_payments": "Płatność kartą"
+  },
+  "terms_and_conditions": {
+    "page_title": "Regulamin i Warunki",
+    "title": "Ogólne warunki świadczenia usług na rzecz Konsumentów (Projekt)",
+    "introduction": "Niniejsze „Ogólne warunki świadczenia usług na rzecz Konsumentów” mają zastosowanie do stosunków pomiędzy [NAZWA TWOJEJ SPÓŁKI] z siedzibą w [MIASTO], przy ul. [ADRES], zarejestrowanej przez Sąd Rejonowy dla [NAZWA SĄDU], pod numerem KRS: [NUMER], NIP: [NUMER], REGON: [NUMER] [dalej: Operator], której przysługują prawa do Platformy [NAZWA APLIKACJI], a Konsumentami.",
+    "sections": {
+      "1": {
+        "title": "1. Definicje",
+        "content": "Oferta: asortyment produktów lub usług oferowanych przez Partnerów, które mogą być zamówione przez Konsumenta za pośrednictwem Platformy.\nZamówienie: oświadczenie woli składane Partnerowi przez Konsumenta za pośrednictwem Platformy, skutkujące zawarciem Umowy.\nKonsument: osoba fizyczna dokonująca czynności prawnej niezwiązanej bezpośrednio z jej działalnością gospodarczą, składająca Zamówienie.\nPlatforma: aplikacja mobilna, strona internetowa dostępna pod adresem [ADRES URL] oraz wszelkie narzędzia udostępniane przez Operatora.\nPartner: podmiot trzeci (np. sklep, restauracja, usługodawca) oferujący swoje produkty lub usługi na Platformie.\nKonto: spersonalizowany panel administracyjny Konsumenta dostępny po rejestracji."
+      },
+      "2": {
+        "title": "2. Dane Operatora",
+        "content": "Dane teleadresowe: [PEŁNA NAZWA FIRMY]\nul. ........................................\n............................................\nNIP: .......................................\nadres e-mail: .............................."
+      },
+      "3": {
+        "title": "3. Zastosowanie i postanowienia ogólne",
+        "content": "3.1. Niniejsze Warunki określają zasady korzystania z Usług świadczonych drogą elektroniczną przez Operatora.\n3.2. Operator nie jest stroną Umowy sprzedaży/świadczenia usług zawieranej między Konsumentem a Partnerem, a jedynie udostępnia narzędzia do jej zawarcia.\n3.3. Korzystanie z Platformy wymaga akceptacji niniejszych Warunków."
+      },
+      "4": {
+        "title": "4. Rejestracja i Konto",
+        "content": "4.1. Konsumenci mogą utworzyć Konto, podając adres e-mail oraz hasło. Wymagane jest ukończenie [18] roku życia.\n4.2. Usunięcie Konta następuje na wniosek Konsumenta przesłany na adres: [ADRES E-MAIL DO OBSŁUGI].\n4.3. Operator zastrzega sobie prawo do zablokowania Konta w przypadku naruszenia regulaminu, w szczególności podania fałszywych danych."
+      },
+      "5": {
+        "title": "5. Składanie Zamówień i Umowa",
+        "content": "5.1. Zawarcie Umowy między Konsumentem a Partnerem następuje w momencie kliknięcia przycisku „[ZAMAWIAM I PŁACĘ / POTWIERDZAM]”.\n5.2. Konsument jest zobowiązany do podania prawdziwych danych kontaktowych i adresu dostawy.\n5.3. W przypadku produktów z ograniczeniem wiekowym (np. alkohol), Operator lub Partner mają prawo zweryfikować wiek Konsumenta przy odbiorze."
+      },
+      "6": {
+        "title": "6. Płatności",
+        "content": "6.1. Ceny widoczne na Platformie zawierają podatek VAT.\n6.2. Konsument może dokonać płatności za pośrednictwem Systemów Płatności Online: [WYMIENIĆ OPERATORÓW, NP. BLIK, PAYU].\n6.3. Zwrot środków w przypadku odstąpienia od Umowy następuje w terminie do [14] dni roboczych."
+      },
+      "7": {
+        "title": "7. Odstąpienie od Umowy i Reklamacje",
+        "content": "7.1. Konsumentowi przysługuje prawo do odstąpienia od Umowy zgodnie z ustawą o prawach konsumenta, z wyłączeniem produktów łatwo psujących się lub przygotowanych pod indywidualne zamówienie.\n7.2. Reklamacje dotyczące działania Platformy (Usług Operatora) należy kierować na adres: [ADRES E-MAIL].\n7.3. Reklamacje dotyczące samej Oferty lub jakości produktów należy kierować bezpośrednio do Partnera."
+      },
+      "8": {
+        "title": "8. Treści Użytkownika",
+        "content": "8.1. Konsument może publikować opinie i oceny dotyczące Partnerów.\n8.2. Zabrania się publikowania treści o charakterze bezprawnym, wulgarnym lub wprowadzającym w błąd.\n8.3. Operator zastrzega sobie prawo do moderacji i usuwania treści naruszających niniejsze Warunki."
+      },
+      "9": {
+        "title": "9. Postanowienia końcowe",
+        "content": "9.1. W sprawach nieuregulowanych zastosowanie mają przepisy prawa polskiego, w szczególności Kodeksu cywilnego.\n9.2. Wszelkie spory będą rozstrzygane przez właściwe sądy powszechne.\n9.3. Operator zastrzega sobie prawo do zmiany regulaminu, o czym poinformuje użytkowników z wyprzedzeniem [7/14] dni."
+      }
+    }
   }
 }

@@ -1,38 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 import { Avatar, Box, Flex, Heading, IconButton, Tooltip } from '@radix-ui/themes';
-import { Timestamp } from 'firebase/firestore';
 import { Star, MapPin, CarIcon } from 'lucide-react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
 import { FilteredRestaurant } from '@/data/hooks/filterRestaurant';
-import { Category, Dish } from '@/data/types/dishMenu';
-import { getRestaurantMenu } from '@/lib/firebase/getRestaurantMenu';
+import { Dish } from '@/data/types/dishMenu';
 
 import FiltersDiscoveryDishPage from '../search/filters-discovery-dish-page';
-interface Restaurant {
-  id?: string;
-  name: string;
-  slug?: string;
-  city: string;
-  category?: string[];
-  shortDescription?: string;
-  coverImage?: string | null;
-  logoImage?: string | null;
-  rating?: string;
-  reviewsCount?: string;
-  status?: string;
-  firmId?: string;
-  restaurantId?: string;
-  delivery?: boolean;
-  createdAt?: Timestamp;
-}
 
 interface RestaurantCardProps {
   filteredRestaurant: FilteredRestaurant;
@@ -40,20 +18,8 @@ interface RestaurantCardProps {
 }
 
 export function RestaurantCard({ filteredRestaurant, filteredDishes }: RestaurantCardProps) {
-  const params = useSearchParams();
   const { restaurant } = filteredRestaurant;
-  const t = useTranslations();
-  const [menu, setMenu] = useState<Category[]>([]);
-
-  useEffect(() => {
-    const fetchMenu = async () => {
-      if (restaurant.id) {
-        const categories = await getRestaurantMenu(restaurant.id);
-        setMenu(categories);
-      }
-    };
-    fetchMenu();
-  }, [restaurant.id]);
+  const tRest = useTranslations('restaurant_components');
 
   return (
     <Box>
@@ -92,14 +58,14 @@ export function RestaurantCard({ filteredRestaurant, filteredDishes }: Restauran
                   <Flex mt="2">
                     {restaurant.delivery ? (
                       <Flex align="center" gap="1">
-                        <Tooltip content="Na dowóz">
+                        <Tooltip content={tRest('delivery')}>
                           <IconButton radius="full">
                             <CarIcon />
                           </IconButton>
                         </Tooltip>
                       </Flex>
                     ) : (
-                      <p>Brak dostawy</p>
+                      <p>{tRest('no_delivery')}</p>
                     )}
                   </Flex>
                 </div>

@@ -9,9 +9,10 @@ interface RestaurantMenuProps {
 
 export const RestaurantMenu = async ({ menu }: RestaurantMenuProps) => {
   const t = await getTranslations('restaurant_detail');
+  const tMenu = await getTranslations('restaurant_components');
 
   return (
-    <div className="mb-8 sm:mb-10 border p-5 pb-8 sm:pb-10 rounded-lg bg-white">
+    <div className="mb-8 p-5 pb-8 sm:pb-10 rounded-lg bg-white shadow-sm border border-gray-100">
       <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">
         {t('our_menu')}
       </h2>
@@ -35,7 +36,7 @@ export const RestaurantMenu = async ({ menu }: RestaurantMenuProps) => {
                     )}
                   </div>
                   <span className="text-sm sm:text-base font-medium text-foreground whitespace-nowrap">
-                    {Number(dish.price).toFixed(2)} zł
+                    {Number(dish.price).toFixed(2)} {tMenu('currency_pln')}
                   </span>
                 </div>
               ))}

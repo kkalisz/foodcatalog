@@ -7,11 +7,11 @@ import { PublicRestaurant } from '@/data/types/publicRestaurant';
 
 interface RestaurantHeroProps {
   restaurant: PublicRestaurant;
-  images?: string[];
 }
 
-export const RestaurantHero = async ({ restaurant, images }: RestaurantHeroProps) => {
+export const RestaurantHero = async ({ restaurant }: RestaurantHeroProps) => {
   const t = await getTranslations('restaurant_detail');
+  const tRest = await getTranslations('restaurant_components');
 
   return (
     <Flex direction="column" className="md:col-span-2">
@@ -40,7 +40,7 @@ export const RestaurantHero = async ({ restaurant, images }: RestaurantHeroProps
       </Flex>
       <Flex>
         <Button size="3" variant="solid" color="gray">
-          Złóż zamówienie
+          {tRest('place_order')}
         </Button>
       </Flex>
 

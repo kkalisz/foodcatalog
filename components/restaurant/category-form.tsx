@@ -97,7 +97,7 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
                   />
                 </Box>
 
-                <Box>zł</Box>
+                <Box>{t('restaurant_components.currency_pln')}</Box>
 
                 <Button
                   type="button"
