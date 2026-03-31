@@ -12,6 +12,7 @@ export const RestaurantsCounter = async (restaurantId: string) => {
       views: increment(1),
     });
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 };

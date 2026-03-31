@@ -4,7 +4,7 @@ type MenuEditorProps = {
   addNewCategory?: () => void;
 };
 
-export const EmptyMenu = ({ addNewCategory, ...props }: MenuEditorProps) => {
+export const EmptyMenu = ({ addNewCategory }: MenuEditorProps) => {
   const t = useTranslations();
   return (
     <div

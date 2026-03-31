@@ -1,4 +1,4 @@
-export function setOwnerSession(user: any, token: string) {
+export function setOwnerSession(user: Record<string, unknown>, token: string) {
   if (typeof window !== 'undefined') {
     localStorage.setItem('ownerToken', token);
     localStorage.setItem('ownerUser', JSON.stringify(user));

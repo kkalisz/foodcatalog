@@ -48,8 +48,9 @@ const OwnerLogin = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/owner/dashboard');
-    } catch (error: any) {
-      setGlobalError(error.code || error.message || 'An error occurred during login');
+    } catch (error: unknown) {
+      const err = error as { code?: string; message?: string };
+      setGlobalError(err.code || err.message || 'An error occurred during login');
     } finally {
       setLoading(false);
     }

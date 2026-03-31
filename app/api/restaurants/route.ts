@@ -63,7 +63,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(results);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch restaurants' }, { status: 500 });
   }
 }
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to create restaurant' }, { status: 500 });
   }
 }

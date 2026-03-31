@@ -47,21 +47,21 @@ export const RestaurantInfo = async ({ restaurant }: RestaurantInfoProps) => {
           <div>
             <div className="text-sm text-muted-foreground">{t('opening_hours')}</div>
             {/* The original code had restaurant.hours, let's assume it exists even if not in the type */}
-            <div className="font-medium">{(restaurant as any).hours}</div>
+            <div className="font-medium">{(restaurant as unknown as { hours?: string }).hours}</div>
           </div>
         </div>
 
-        {(restaurant as any).website && (
+        {(restaurant as unknown as { website?: string }).website && (
           <div className="flex items-start gap-3">
             <Globe className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
             <div>
               <div className="text-sm text-muted-foreground">{t('website')}</div>
               <Link
-                href={`https://${(restaurant as any).website}`}
+                href={`https://${(restaurant as unknown as { website?: string }).website}`}
                 className="font-medium text-primary hover:underline"
                 target="_blank"
               >
-                {(restaurant as any).website}
+                {(restaurant as unknown as { website?: string }).website}
               </Link>
             </div>
           </div>

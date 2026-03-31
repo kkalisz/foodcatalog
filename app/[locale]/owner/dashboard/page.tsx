@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@radix-ui/themes';
-import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -24,27 +24,15 @@ const OWNER_STATS = {
   totalViews: 2451,
   totalReviews: 145,
   averageRating: 4.7,
-  monthlyTrend: 12,
 };
-
-const OWNER_RESTAURANTS = [
-  {
-    id: 1,
-    name: 'La Familia Trattoria',
-    status: 'active',
-    views: 1203,
-    reviews: 89,
-    rating: 4.8,
-    image: '/italian-restaurant-interior.jpg',
-  },
-];
 
 export default function OwnerDashboard() {
   const [showEditModal, setShowEditModal] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedRestaurant, setSelectedRestaurant] = useState<any>(null);
   const { user, logout } = useAuth();
   const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([]);
-  const [loading, setLodaing] = useState(false);
+  const [, setLodaing] = useState(false);
   const t = useTranslations();
 
   const router = useRouter();
@@ -67,27 +55,12 @@ export default function OwnerDashboard() {
 
       setRestaurants(data);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error fetching restaurants:', error);
     } finally {
       setLodaing(false);
     }
   }, [user]);
-
-  const fetchUser = async (uid: string) => {
-    const ref = doc(collection(db, 'users', uid));
-    const snap = await getDoc(ref);
-
-    if (!snap.exists()) {
-      throw new Error('Dane uzytkownika nie istenieja');
-    }
-
-    return snap.data()?.companyName;
-  };
-
-  const handleEditRestaurant = (restaurant: any) => {
-    setSelectedRestaurant(restaurant);
-    setShowEditModal(true);
-  };
 
   const handleCloseModal = () => {
     setShowEditModal(false);

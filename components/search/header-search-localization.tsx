@@ -14,6 +14,7 @@ type HeaderSearchProps = {
   placeholder: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleSearchCityParams = (value: string, router: any) => {
   const params = new URLSearchParams();
   params.set('city', value);

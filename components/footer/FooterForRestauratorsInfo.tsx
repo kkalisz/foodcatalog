@@ -1,6 +1,5 @@
 import { Box, Flex } from '@radix-ui/themes';
 import { PlusCircle, LayoutDashboard, CreditCard } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { useAuth } from '@/providers/AuthContext';
@@ -10,7 +9,6 @@ import FooterNavLink from '../ui/links/nav-link';
 const FooterForRestauratorsInfo = () => {
   const { user } = useAuth();
   const t = useTranslations();
-  const router = useRouter();
   return (
     <div>
       <Box>

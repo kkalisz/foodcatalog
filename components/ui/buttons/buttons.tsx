@@ -6,15 +6,8 @@ interface SearchButtonProps {
   onClick: () => void;
   disabled?: boolean;
   initialLabel: string;
-  loadingLabel: string;
 }
-export const SearchButton = ({
-  onClick,
-  label,
-  disabled,
-  initialLabel,
-  loadingLabel,
-}: SearchButtonProps) => {
+export const SearchButton = ({ onClick, label, disabled, initialLabel }: SearchButtonProps) => {
   return (
     <Button onClick={onClick} disabled={disabled}>
       {initialLabel} {label}

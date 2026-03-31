@@ -3,7 +3,7 @@ type ErrorLabelProps = {
   error?: string | null;
   role?: string;
 };
-const ErrorLabel = ({ id, error, role }: ErrorLabelProps) => {
+const ErrorLabel = ({ error }: ErrorLabelProps) => {
   if (!error) {
     return null;
   }

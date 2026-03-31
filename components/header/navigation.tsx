@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { Avatar, Box, Flex, Heading } from '@radix-ui/themes';
 import { LocateIcon, MapPin } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
@@ -13,10 +12,9 @@ import HeaderSearchLocalization from '@/components/search/header-search-localiza
 import { useAuth } from '@/providers/AuthContext';
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, _setIsOpen] = useState(false);
   const t = useTranslations();
   const { user } = useAuth();
-  const router = useRouter();
   return (
     <nav className="border-b bg-card sticky top-0 z-50">
       <PageWidthWrapper>

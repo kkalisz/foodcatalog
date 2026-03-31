@@ -1,5 +1,7 @@
 'use client';
+
 import type React from 'react';
+
 import { useTranslations } from 'next-intl';
 
 import PageLoader from '@/components/common/page-loader';

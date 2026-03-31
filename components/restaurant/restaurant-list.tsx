@@ -28,6 +28,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
       alert(t('restaurants_list.deleted_success'));
       router.refresh();
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error deleting restaurant:', error);
     }
   };

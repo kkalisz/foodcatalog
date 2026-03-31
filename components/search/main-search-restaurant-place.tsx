@@ -5,6 +5,7 @@ import { Flex, TextField } from '@radix-ui/themes';
 import { SearchIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleSearchCityParams = (value: string, router: any) => {
   const params = new URLSearchParams();
   params.set('serched', value);
