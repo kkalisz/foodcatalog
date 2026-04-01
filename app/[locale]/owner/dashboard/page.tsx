@@ -21,7 +21,6 @@ import { useAuth } from '@/providers/AuthContext';
 
 // Mock owner data
 const OWNER_STATS = {
-  totalViews: 2451,
   totalReviews: 145,
   averageRating: 4.7,
 };
@@ -103,7 +102,7 @@ export default function OwnerDashboard() {
           />
           <DashboardStats
             title={t('owner_dashboard.active_listings')}
-            value={2}
+            value={restaurants.filter(r => r.status === 'active').length}
             icon={BarChart3}
             trend={0}
           />

@@ -22,11 +22,10 @@ export const Footer = () => {
           <FooterForRestauratorsInfo />
         </FooterElement>
       </Flex>
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center">
-        <span className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} {t('app_name')}. {t('all_rights_reserved')}
-        </span>
-      </div>
+
+      <p className="text-sm text-muted-foreground text-center p-4">
+        &copy; {new Date().getFullYear()} {t('app_name')}. {t('all_rights_reserved')}
+      </p>
     </div>
   );
 };
