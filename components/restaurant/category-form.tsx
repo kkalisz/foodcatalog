@@ -70,9 +70,9 @@ const CategoryForm = ({
           </Box>
         </Flex>
 
-        <Flex direction="column" gap="6">
+        <Flex direction="column" gap="2">
           {dishes.map((dish, indexDish) => (
-            <Box key={dish.id} className=" pl-10 pr-10 pb-5 bg-white">
+            <Box key={dish.id} className="rounded-md px-5 py-5 bg-white">
               <Flex align="center" gap="4">
                 <Box className="flex-1">
                   <TextField.Root
