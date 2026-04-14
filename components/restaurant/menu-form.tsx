@@ -34,7 +34,7 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
     formState: { isDirty },
     reset,
   } = form;
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append, remove, move } = useFieldArray({
     name: 'categories',
     control,
   });
@@ -46,6 +46,14 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
       dishes: [],
     };
     append(category);
+  };
+
+  const onHandleMoveCategory = (categoryIndex: number, direction: 'up' | 'down') => {
+    if (direction === 'up' && categoryIndex > 0) {
+      move(categoryIndex, categoryIndex - 1);
+    } else if (direction === 'down' && categoryIndex < fields.length - 1) {
+      move(categoryIndex, categoryIndex + 1);
+    }
   };
 
   const onHandleSubmit = async (data: MenuFormType) => {
@@ -115,6 +123,7 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
                   index={indexCategory}
                   category={category as Category}
                   onRemoveCategory={() => remove(indexCategory)}
+                  onHandleMoveCategory={onHandleMoveCategory}
                 />
               ))
             )}

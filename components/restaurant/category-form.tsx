@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Button, Flex, TextArea, TextField } from '@radix-ui/themes';
-import { ImageIcon, MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
+import { ImageIcon, MoveDownIcon, MoveUpIcon, PlusIcon, TrashIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { UseFormReturn } from 'react-hook-form';
 
@@ -16,9 +16,16 @@ type CategoryFormProps = {
   index: number;
   category: Category;
   onRemoveCategory: () => void;
+  onHandleMoveCategory: (categoryIndex: number, direction: 'up' | 'down') => void;
 };
 
-const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormProps) => {
+const CategoryForm = ({
+  form,
+  index,
+  category,
+  onRemoveCategory,
+  onHandleMoveCategory,
+}: CategoryFormProps) => {
   const t = useTranslations();
   const { register, errors, dishes, onAddNewDish, removeDish } = useMenuForm({
     form,
@@ -31,8 +38,11 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
     <div className="pt-2">
       <Flex key={category.id} direction="column" gap="4" className="p-2 mt-4 border rounded-md ">
         <Flex className="flex items-center gap-2" height="100px">
-          <Button type="button" variant="ghost" size="2" radius="medium" color="gray">
+          <Button onClick={() => onHandleMoveCategory(index, 'up')} size="2">
             <MoveUpIcon />
+          </Button>
+          <Button onClick={() => onHandleMoveCategory(index, 'down')} color="orange">
+            <MoveDownIcon />
           </Button>
           <Box width="80vw">
             <TextField.Root
@@ -60,9 +70,9 @@ const CategoryForm = ({ form, index, category, onRemoveCategory }: CategoryFormP
           </Box>
         </Flex>
 
-        <Flex direction="column" gap="6">
+        <Flex direction="column" gap="2">
           {dishes.map((dish, indexDish) => (
-            <Box key={dish.id} className=" pl-10 pr-10 pb-5 bg-white">
+            <Box key={dish.id} className="rounded-md px-5 py-5 bg-white">
               <Flex align="center" gap="4">
                 <Box className="flex-1">
                   <TextField.Root

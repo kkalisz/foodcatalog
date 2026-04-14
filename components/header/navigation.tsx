@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { Avatar, Box, Flex, Heading } from '@radix-ui/themes';
-import { LocateIcon, MapPin } from 'lucide-react';
+import { LocateIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -23,9 +23,7 @@ export function Navigation() {
             <Link
               href={'/'}
               className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center"
-            >
-              <MapPin className="w-5 h-5 text-primary-foreground" />
-            </Link>
+            ></Link>
             <Link href={'/'}>
               <Heading size="4">{t('app_name')}</Heading>
             </Link>

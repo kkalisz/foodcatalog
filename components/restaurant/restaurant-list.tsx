@@ -85,6 +85,13 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 <Edit2 className="w-4 h-4 mr-2" />
                 {t('restaurants_list.edit')}
               </Button>
+              <Button
+                type="button"
+                color="orange"
+                onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menus`)}
+              >
+                Menu
+              </Button>
               <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)}>
                 {t('restaurants_list.add_edit_menu')}
               </Button>
