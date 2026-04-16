@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { Button, DropdownMenu, Flex, Spinner } from '@radix-ui/themes';
-import { useParams } from 'next/navigation';
+import { Button, Flex, Spinner, DropdownMenu } from '@radix-ui/themes';
+import { useParams, useRouter } from 'next/navigation';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import CardWithHeader from '@/components/ui/containers/card-with-header';
@@ -37,38 +37,54 @@ export const Menus = () => {
     fetchMenu();
   }, [restaurantId]);
 
+  const router = useRouter();
+
   if (loading) {
     return <Spinner />;
   }
-  console.log(menu);
   return (
     <PageSizeWrapper>
       <CardWithHeader title="Menu">
-        <Flex direction="row" gap="2">
+        <Flex direction="row" gap="2" justify="between" align="center">
           <Flex
             align="center"
-            justify="center"
+            justify="between"
             className="border border-gray-200 rounded-lg p-2 w-2/3"
           >
-            <div className="text-center">
-              {menu.length > 0 ? (
-                menu.map(cat => <p key={cat.id}>{cat.name}</p>)
-              ) : (
-                <p>Brak kategorii w menu</p>
-              )}
-            </div>
-          </Flex>
-
-          <Flex align="center" justify="center" className="p-2 flex-1">
-            <DropdownMenu.Root>
+            <Flex>
+              <p>Menu 1</p>
+            </Flex>
+            <DropdownMenu.Root modal={false}>
               <DropdownMenu.Trigger>
-                <Button size="3">Wybór menu </Button>
+                <Button>...</Button>
               </DropdownMenu.Trigger>
-              <DropdownMenu.Content size="2">
-                <DropdownMenu.Item>Menu 1</DropdownMenu.Item>
+              <DropdownMenu.Content color="orange" align="end" side="bottom">
+                <DropdownMenu.Item
+                  onClick={() => router.push(`/owner/restaurants/${restaurantId}/edit`)}
+                >
+                  Edit
+                </DropdownMenu.Item>
+                <DropdownMenu.Item>Duplicate</DropdownMenu.Item>
+                <DropdownMenu.Separator />
+                <DropdownMenu.Sub>
+                  <DropdownMenu.SubTrigger>More</DropdownMenu.SubTrigger>
+                </DropdownMenu.Sub>
+
+                <DropdownMenu.Separator />
+                <DropdownMenu.Item>Share</DropdownMenu.Item>
+                <DropdownMenu.Item>Add to favorites</DropdownMenu.Item>
+                <DropdownMenu.Separator />
+                <DropdownMenu.Item>Delete</DropdownMenu.Item>
               </DropdownMenu.Content>
             </DropdownMenu.Root>
           </Flex>
+
+          <Button
+            size="3"
+            onClick={() => router.push(`/owner/restaurants/${restaurantId}/menu-create`)}
+          >
+            Dodaj menu
+          </Button>
         </Flex>
       </CardWithHeader>
     </PageSizeWrapper>
