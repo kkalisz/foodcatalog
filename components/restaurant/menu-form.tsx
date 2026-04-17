@@ -42,7 +42,6 @@ const MenuForm = ({ restaurantId }: { restaurantId: string }) => {
   const onAddNewCategory = () => {
     const category: Category = {
       id: crypto.randomUUID(),
-      name: '',
       dishes: [],
     };
     append(category);

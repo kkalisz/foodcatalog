@@ -10,6 +10,7 @@ export const saveMenuToFirestore = async (firmId: string, restaurantId: string, 
 
   const payload = {
     categories: data.categories,
+    menuName: data.menuName,
     updatedAt: serverTimestamp(),
   };
 
@@ -28,6 +29,7 @@ export const saveNewMenuToFirestore = async (
 
   const payload = {
     categories: data.categories,
+    menuName: data.menuName,
     updatedAt: serverTimestamp(),
   };
 

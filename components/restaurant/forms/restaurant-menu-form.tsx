@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Flex, Heading } from '@radix-ui/themes';
+import { Button, Flex, Heading, TextField } from '@radix-ui/themes';
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useFieldArray, UseFormReturn, useWatch } from 'react-hook-form';
@@ -45,7 +45,6 @@ const MenuRestaurantCreateForm = ({
   const onAddNewCategory = () => {
     const category: Category = {
       id: crypto.randomUUID(),
-      name: '',
       dishes: [],
     };
     append(category);
@@ -74,6 +73,10 @@ const MenuRestaurantCreateForm = ({
           <p>{`${fields.length} ${fields.length === 1 ? t('menu_form.category') : t('menu_form.category_plural')}, ${dishesCount} ${dishesCount === 1 ? t('menu_form.dish') : t('menu_form.dish_plural')}`}</p>
         </Flex>
         <div className="flex p-2 items-center justify-between">
+          <Flex gap="2" align="center">
+            <Heading>Nazwa menu</Heading>
+            <TextField.Root {...form.register('menuName')} size="3" placeholder={'Nazwa menu'} />
+          </Flex>
           <Flex direction="column" gap="2">
             {isDirty ? (
               <div className="flex gap-2 text-amber-700 pt-3">

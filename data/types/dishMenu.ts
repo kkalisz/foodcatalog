@@ -8,10 +8,11 @@ export type Dish = {
 };
 
 export type Category = {
-  name: string;
+  name?: string;
   id: string;
   dishes: Dish[];
 };
 export type MenuForm = {
+  menuName: string;
   categories: Category[];
 };
