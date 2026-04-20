@@ -1,6 +1,6 @@
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 
-import { Category } from '@/data/types/dishMenu';
+import { Category, MenuForm } from '@/data/types/dishMenu';
 import { db } from '@/lib/firebase/client';
 
 export const getRestaurantMenu = async (restaurantId: string): Promise<Category[]> => {
@@ -22,4 +22,17 @@ export const getRestaurantMenuIds = async (
     id: docs.id,
     name: docs.data().menuName || 'Menu (Brak nazwy)',
   }));
+};
+
+export const getRestaurantMenuById = async (
+  firmId: string,
+  restaurantId: string,
+  menuId: string
+): Promise<MenuForm | null> => {
+  const menuRef = doc(db, 'firms', firmId, 'restaurants', restaurantId, 'menu', menuId);
+  const menuSnap = await getDoc(menuRef);
+  if (menuSnap.exists()) {
+    return menuSnap.data() as MenuForm;
+  }
+  return null;
 };

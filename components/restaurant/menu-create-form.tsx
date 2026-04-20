@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { Button, Flex, Heading, TextField } from '@radix-ui/themes';
 import { MessageSquareWarningIcon, PlusIcon, SaveIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -7,7 +9,8 @@ import { useFieldArray, useForm, useWatch } from 'react-hook-form';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import type { Category, MenuForm as MenuFormType } from '@/data/types/dishMenu';
-import { saveMenuToFirestore } from '@/lib/firebase/restantMenu';
+import { getRestaurantMenuById } from '@/lib/firebase/getRestaurantMenu';
+import { saveNewMenuToFirestore } from '@/lib/firebase/restantMenu';
 import { useFirmId } from '@/lib/firebase/useFirmId';
 
 import EmptyCategoryForm from './empty-category-form';
@@ -15,16 +18,42 @@ import { EmptyMenu } from './empty-menu';
 
 // const MenuCreateForm = ({ restaurantId }: { form: UseFormReturn<MenuFormType>, onHandleSubmit: string }) => {
 
-const MenuRestaurantCreateForm = ({ restaurantId }: { restaurantId: string }) => {
+const MenuRestaurantCreateForm = ({
+  restaurantId,
+  menuId,
+}: {
+  restaurantId: string;
+  menuId?: string;
+}) => {
   const t = useTranslations();
   const { firmId } = useFirmId();
   const form = useForm<MenuFormType>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
     defaultValues: {
+      menuName: '',
       categories: [],
     },
   });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      if (firmId && restaurantId && menuId) {
+        setIsLoading(true);
+        const data = await getRestaurantMenuById(firmId, restaurantId, menuId);
+        if (data) {
+          form.reset({
+            menuName: data.menuName || '',
+            categories: data.categories || [],
+          });
+        }
+        setIsLoading(false);
+      }
+    };
+    fetchMenu();
+  }, [firmId, restaurantId, menuId, form]);
 
   const {
     control,
@@ -58,8 +87,8 @@ const MenuRestaurantCreateForm = ({ restaurantId }: { restaurantId: string }) =>
       if (!firmId) {
         return;
       }
-      const menuId = crypto.randomUUID();
-      await saveMenuToFirestore(firmId, restaurantId, data);
+      const targetMenuId = menuId || crypto.randomUUID();
+      await saveNewMenuToFirestore(firmId, restaurantId, targetMenuId, data);
       reset(data);
     } catch (error) {
       // eslint-disable-next-line no-console
@@ -83,9 +112,9 @@ const MenuRestaurantCreateForm = ({ restaurantId }: { restaurantId: string }) =>
         </Flex>
         <div className="flex p-2 items-center justify-between">
           <Flex direction="column" gap="2">
-            <Flex direction="row" gap="2">
+            <Flex direction="row" gap="2" align="center">
               <Heading>Nazwa menu:</Heading>
-              <TextField.Root />
+              <TextField.Root {...form.register('menuName')} size="3" placeholder="Nazwa menu" />
             </Flex>
             {isDirty ? (
               <div className="flex gap-2 text-amber-700 pt-3">
@@ -93,7 +122,13 @@ const MenuRestaurantCreateForm = ({ restaurantId }: { restaurantId: string }) =>
               </div>
             ) : null}
           </Flex>
-          <Button color="brown" type="submit" size="3" onClick={handleSubmit(onHandleSubmit)}>
+          <Button
+            color="brown"
+            type="submit"
+            size="3"
+            onClick={handleSubmit(onHandleSubmit)}
+            disabled={isLoading}
+          >
             <SaveIcon /> {t('menu_form.save_menu')}
           </Button>
         </div>

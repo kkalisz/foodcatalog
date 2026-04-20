@@ -1,5 +1,5 @@
 'use client';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
 import MenuRestaurantCreateForm from '@/components/restaurant/forms/restaurant-menu-form';
@@ -11,6 +11,7 @@ export const CreateMenu = () => {
   const params = useParams<{ id: string }>();
   const restaurantId = params?.id;
   const { firmId } = useFirmId();
+  const router = useRouter();
   const form = useForm<MenuFormType>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -26,6 +27,7 @@ export const CreateMenu = () => {
       }
       const id = crypto.randomUUID();
       await saveNewMenuToFirestore(firmId, restaurantId, id, data);
+      router.push(`/owner/restaurants/${restaurantId}/menus`);
       form.reset();
     } catch (error) {
       // eslint-disable-next-line no-console

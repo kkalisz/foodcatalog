@@ -8,6 +8,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import CardWithHeader from '@/components/ui/containers/card-with-header';
 import { Category } from '@/data/types/dishMenu';
+import { deleteRestaurantMenu } from '@/lib/firebase/deletePublicRestaurant';
 import { getRestaurantMenu, getRestaurantMenuIds } from '@/lib/firebase/getRestaurantMenu';
 import { useFirmId } from '@/lib/firebase/useFirmId';
 
@@ -58,6 +59,19 @@ export const Menus = () => {
 
   const router = useRouter();
 
+  const handleDelete = async (menuId: string) => {
+    if (!firmId || !restaurantId) {
+      return;
+    }
+
+    try {
+      await deleteRestaurantMenu(firmId, restaurantId, menuId);
+      setMenuIds(prev => prev.filter(m => m.id !== menuId));
+      router.refresh();
+    } catch (error) {
+      console.error('Błąd usuwania menu:', error);
+    }
+  };
   if (loading) {
     return <Spinner />;
   }
@@ -82,21 +96,19 @@ export const Menus = () => {
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content color="orange" align="end" side="bottom">
                     <DropdownMenu.Item
-                      onClick={() => router.push(`/owner/restaurants/${restaurantId}/edit`)}
+                      onClick={() =>
+                        router.push(`/owner/restaurants/${restaurantId}/menu/${menuObj.id}`)
+                      }
                     >
                       Edytuj
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item>Duplikuj</DropdownMenu.Item>
-                    <DropdownMenu.Separator />
-                    <DropdownMenu.Sub>
-                      <DropdownMenu.SubTrigger>Wiadomo</DropdownMenu.SubTrigger>
-                    </DropdownMenu.Sub>
-
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item>Udostępnij</DropdownMenu.Item>
                     <DropdownMenu.Item>Ulubione</DropdownMenu.Item>
                     <DropdownMenu.Separator />
-                    <DropdownMenu.Item color="red">Usuń</DropdownMenu.Item>
+                    <DropdownMenu.Item onClick={() => handleDelete(menuObj.id)} color="red">
+                      Usuń
+                    </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Root>
               </Flex>
