@@ -72,23 +72,24 @@ const MenuRestaurantCreateForm = ({
           <Heading>{t('menu_form.title')}</Heading>
           <p>{`${fields.length} ${fields.length === 1 ? t('menu_form.category') : t('menu_form.category_plural')}, ${dishesCount} ${dishesCount === 1 ? t('menu_form.dish') : t('menu_form.dish_plural')}`}</p>
         </Flex>
-        <div className="flex p-2 items-center justify-between">
-          <Flex gap="2" align="center">
-            <Heading>Nazwa menu</Heading>
-            <TextField.Root {...form.register('menuName')} size="3" placeholder={'Nazwa menu'} />
-          </Flex>
-          <Flex direction="column" gap="2">
-            {isDirty ? (
-              <div className="flex gap-2 text-amber-700 pt-3">
-                <MessageSquareWarningIcon /> {t('menu_form.unsaved_changes')}
-              </div>
-            ) : null}
-          </Flex>
-          <Button color="brown" type="submit" size="3" onClick={handleSubmit(onHandleSubmit)}>
-            <SaveIcon /> {t('menu_form.save_menu')}
-          </Button>
-        </div>
         <form onSubmit={handleSubmit(onHandleSubmit)}>
+          <div className="flex p-2 items-center justify-between">
+            <Flex gap="2" align="center">
+              <Heading>Nazwa menu</Heading>
+              <TextField.Root {...form.register('menuName')} size="3" placeholder={'Nazwa menu'} />
+            </Flex>
+            <Flex direction="column" gap="2">
+              {isDirty ? (
+                <div className="flex gap-2 text-amber-700 pt-3">
+                  <MessageSquareWarningIcon /> {t('menu_form.unsaved_changes')}
+                </div>
+              ) : null}
+            </Flex>
+            <Button color="brown" type="submit" size="3" onClick={handleSubmit(onHandleSubmit)}>
+              <SaveIcon /> {t('menu_form.save_menu')}
+            </Button>
+          </div>
+
           <div>
             {fields.length === 0 ? (
               <EmptyMenu addNewCategory={onAddNewCategory} />

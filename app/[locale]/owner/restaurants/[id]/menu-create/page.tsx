@@ -16,6 +16,7 @@ export const CreateMenu = () => {
     reValidateMode: 'onSubmit',
     defaultValues: {
       categories: [],
+      menuName: '',
     },
   });
   const onHandleSubmit = async (data: MenuFormType) => {

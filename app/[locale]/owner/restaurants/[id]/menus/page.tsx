@@ -63,7 +63,7 @@ export const Menus = () => {
   }
   return (
     <PageSizeWrapper>
-      <CardWithHeader title="Menu">
+      <CardWithHeader title={`Ilość menu: ${menuIds.length}`}>
         <Flex direction="row" gap="2" justify="between" align="center">
           <Flex direction="column" gap="4" className="w-full">
             {menuIds.map((menuObj, index) => (
