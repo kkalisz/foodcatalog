@@ -37,7 +37,6 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
       {restaurants.map(restaurant => (
         <Card key={restaurant.id} className="p-4 hover:shadow-md transition-shadow">
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* Image */}
             <Flex className="w-full sm:w-32 h-32 bg-muted rounded-lg overflow-hidden">
               <img
                 src={restaurant.coverImage || restaurantImage}
@@ -45,8 +44,6 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 className="w-full h-full object-cover"
               />
             </Flex>
-
-            {/* Info */}
             <Flex direction="column" className="flex-1">
               <Flex direction="column">
                 <h3 className="font-bold text-lg">{restaurant.name}</h3>
@@ -74,8 +71,6 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 </Flex>
               </Flex>
             </Flex>
-
-            {/* Actions */}
             <div className="flex gap-2 sm:flex-col">
               <Button
                 size="2"
@@ -91,9 +86,6 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menus`)}
               >
                 Menu
-              </Button>
-              <Button onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menu`)}>
-                {t('restaurants_list.add_edit_menu')}
               </Button>
               <Button size="2" color="red" onClick={() => handleDelete(restaurant.id)}>
                 <Trash className="w-4 h-4 mr-2" />
