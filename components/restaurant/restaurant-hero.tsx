@@ -44,23 +44,26 @@ export const RestaurantHero = async ({ restaurant }: RestaurantHeroProps) => {
         </Button>
       </Flex>
 
-      <Flex py="3" direction="row" gap="4" align="center">
-        <Heading size="7">{restaurant.name}</Heading>
-        <Flex direction="row" gap="2" align="center">
-          <Star className="w-5 h-5 fill-primary text-primary" />
-          <span>{restaurant.rating}</span>
-        </Flex>
-        <span>
-          ({restaurant.reviewsCount} {t('reviews')})
-        </span>
-        {restaurant.category && (
-          <span>
-            Cuisine:{' '}
-            {Array.isArray(restaurant.category)
-              ? restaurant.category.join(' | ')
-              : restaurant.category}
+      <Flex py="3" direction="column" gap="2">
+        <Heading size="7" className="leading-tight">
+          {restaurant.name}
+        </Heading>
+        <Flex direction="row" gap="3" align="center" wrap="wrap">
+          <Flex direction="row" gap="2" align="center">
+            <Star className="w-5 h-5 fill-primary text-primary" />
+            <span className="font-semibold">{restaurant.rating}</span>
+          </Flex>
+          <span className="text-muted-foreground text-sm">
+            ({restaurant.reviewsCount} {t('reviews')})
           </span>
-        )}
+          {restaurant.category && (
+            <span className="text-sm text-muted-foreground">
+              {Array.isArray(restaurant.category)
+                ? restaurant.category.join(' · ')
+                : restaurant.category}
+            </span>
+          )}
+        </Flex>
       </Flex>
     </Flex>
   );

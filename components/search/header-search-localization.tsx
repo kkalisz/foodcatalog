@@ -88,7 +88,7 @@ const HeaderSearchLocalization = ({ icon, placeholder }: HeaderSearchProps) => {
       </Popover.Root>
       {!geolocationAllowed ? (
         <Toast.Root
-          className="w-[20vw] h-[10pvh] flex flex-row justify-center items-center rounded-lg border border-orange-400 gap-4 bg-white shadow-md p-[15px] [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[state=closed]:animate-hide data-[state=open]:animate-slideIn data-[swipe=end]:animate-swipeOut data-[swipe=cancel]:transition-[transform_200ms_ease-out]"
+          className="w-[80vw] max-w-sm flex flex-row justify-center items-center rounded-lg border border-orange-400 gap-4 bg-white shadow-md p-[15px] [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[state=closed]:animate-hide data-[state=open]:animate-slideIn data-[swipe=end]:animate-swipeOut data-[swipe=cancel]:transition-[transform_200ms_ease-out]"
           open={isInfoLocalizationDenided}
           onOpenChange={setInfoLocalizationDenided}
         >

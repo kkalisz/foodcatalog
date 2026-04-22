@@ -25,32 +25,44 @@ export function RestaurantCard({ filteredRestaurant, filteredDishes }: Restauran
     <Box>
       <Link href={`/restaurant/${restaurant.id}`}>
         <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
-          <Flex direction="row">
-            <Flex position="absolute" className="rounded-full p-2">
-              <Avatar
-                className="bg-white border-1 border-white"
-                size="7"
-                src={restaurant.logoImage || restaurantImage}
-                fallback={''}
-              />
-            </Flex>
-            <Flex className="h-48 overflow-hidden flex-1">
+          {/* Mobile: column layout. md+: row layout */}
+          <Flex direction="column" className="md:flex-row">
+            {/* Cover image */}
+            <Flex className="relative h-48 md:h-auto md:w-48 overflow-hidden shrink-0">
               <img
-                className="w-full h-full object-cover hover:scale-110 transition-transform"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 src={restaurant.coverImage || restaurantImage}
                 alt={restaurant.name}
               />
+              {/* Avatar overlaid on image */}
+              <Flex
+                position="absolute"
+                className="bottom-2 left-2 rounded-full p-1 bg-white/80 backdrop-blur-sm"
+              >
+                <Avatar
+                  className="border border-white"
+                  size="3"
+                  src={restaurant.logoImage || restaurantImage}
+                  fallback={''}
+                />
+              </Flex>
             </Flex>
-            <Flex className="flex-1" align="center">
-              <div className="p-4">
+
+            {/* Content */}
+            <Flex className="flex-1" align="start">
+              <div className="p-4 w-full">
                 <div className="mb-3">
-                  <Flex align="center" justify="between">
-                    <Flex align="center" gap="1">
-                      <Heading size="4">{restaurant.name}</Heading>
-                      <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="font-semibold text-foreground">{restaurant.rating}</span>
+                  <Flex align="center" justify="between" wrap="wrap" gap="1">
+                    <Flex align="center" gap="1" className="min-w-0">
+                      <Heading size="4" className="truncate">
+                        {restaurant.name}
+                      </Heading>
+                      <Star className="w-4 h-4 fill-primary text-primary shrink-0" />
+                      <span className="font-semibold text-foreground shrink-0">
+                        {restaurant.rating}
+                      </span>
                     </Flex>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-muted-foreground shrink-0">
                       ({restaurant.reviewsCount})
                     </span>
                   </Flex>
@@ -59,25 +71,30 @@ export function RestaurantCard({ filteredRestaurant, filteredDishes }: Restauran
                     {restaurant.delivery ? (
                       <Flex align="center" gap="1">
                         <Tooltip content={tRest('delivery')}>
-                          <IconButton radius="full">
-                            <CarIcon />
+                          <IconButton radius="full" size="1">
+                            <CarIcon className="w-3 h-3" />
                           </IconButton>
                         </Tooltip>
                       </Flex>
                     ) : (
-                      <p>{tRest('no_delivery')}</p>
+                      <p className="text-sm text-muted-foreground">{tRest('no_delivery')}</p>
                     )}
                   </Flex>
                 </div>
-                <Flex className="flex flex-wrap mb-3">
+
+                <Flex className="flex flex-wrap gap-1 mb-3">
                   {restaurant.category?.map(category => (
-                    <p key={category} className="text-sm text-muted-foreground">
-                      {category} |
-                    </p>
+                    <span
+                      key={category}
+                      className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full"
+                    >
+                      {category}
+                    </span>
                   ))}
                 </Flex>
-                <Flex className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+
+                <Flex className="items-start gap-2 text-sm text-muted-foreground">
+                  <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                   <span className="line-clamp-2">{restaurant.city}</span>
                 </Flex>
               </div>
