@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-import { Flex, TextField } from '@radix-ui/themes';
+import { Button, Flex, TextField } from '@radix-ui/themes';
 import { SearchIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -39,6 +39,16 @@ const MainSearchRestaurantPlace = () => {
       >
         <TextField.Slot className="pr-2">
           <SearchIcon size={28} />
+        </TextField.Slot>
+        <TextField.Slot className="pr-2">
+          <Button
+            type="button"
+            variant="solid"
+            onClick={() => handleSearchCityParams(value, router)}
+            size="4"
+          >
+            search
+          </Button>
         </TextField.Slot>
       </TextField.Root>
     </Flex>

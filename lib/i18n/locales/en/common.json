@@ -9,7 +9,8 @@
     "login": "Login",
     "sign_in": "Sign In",
     "search_location_placeholder": "Search by location",
-    "use_current_location": "Use current location"
+    "use_current_location": "Use current location",
+    "search_cta": "Search"
   },
   "footer": {
     "login_as_owner": "Login as owner",

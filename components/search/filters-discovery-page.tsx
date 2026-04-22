@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { Button, Flex, TextField } from '@radix-ui/themes';
 import { LocateIcon, SearchIcon } from 'lucide-react';
+
 type FiltersProps = {
   onSearchChange?: (sendSearchCategory: string) => void;
   curentySearch: string;
@@ -11,26 +12,27 @@ type FiltersProps = {
 const FiltersDiscoveryPage = ({ onSearchChange, curentySearch }: FiltersProps) => {
   const [searchCategory, setSearchCategory] = useState(curentySearch);
   return (
-    <Flex gap="1" direction="row" className="w-full">
-      <Flex flexGrow="1" flexBasis="50%">
-        <TextField.Root
-          size="3"
-          placeholder="Search restaurant, dish, cuisine..."
-          className="w-full"
-          defaultValue={curentySearch}
-          onChange={e => {
-            setSearchCategory(e.target.value);
-          }}
-        >
+    <Flex gap="2" direction="column" className="w-full">
+      {/* Main search — full width on all screens */}
+      <TextField.Root
+        size="3"
+        placeholder="Search restaurant, dish, cuisine..."
+        className="w-full"
+        defaultValue={curentySearch}
+        onChange={e => {
+          setSearchCategory(e.target.value);
+        }}
+      >
+        <TextField.Slot>
+          <SearchIcon />
+        </TextField.Slot>
+      </TextField.Root>
+
+      {/* Location + Button — row on all screens */}
+      <Flex gap="2" className="w-full">
+        <TextField.Root size="3" placeholder="Find my place" className="flex-1 min-w-0">
           <TextField.Slot>
-            <SearchIcon></SearchIcon>
-          </TextField.Slot>
-        </TextField.Root>
-      </Flex>
-      <Flex gap="2" flexGrow="1" flexBasis="50%">
-        <TextField.Root size="3" placeholder="Find my place" className="w-full">
-          <TextField.Slot>
-            <LocateIcon></LocateIcon>
+            <LocateIcon />
           </TextField.Slot>
         </TextField.Root>
         <Button
@@ -38,6 +40,7 @@ const FiltersDiscoveryPage = ({ onSearchChange, curentySearch }: FiltersProps) =
             onSearchChange?.(searchCategory);
           }}
           size="3"
+          className="shrink-0"
         >
           Search
         </Button>
