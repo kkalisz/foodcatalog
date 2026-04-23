@@ -3,8 +3,8 @@
 import type React from 'react';
 import { useEffect, useState } from 'react';
 
-import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { getOwnerSession } from '@/lib/auth';
 

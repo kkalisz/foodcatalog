@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 
 import { Button, Flex, Spinner, DropdownMenu } from '@radix-ui/themes';
-import { useTranslations } from 'next-intl';
 import { useParams, useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import CardWithHeader from '@/components/ui/containers/card-with-header';

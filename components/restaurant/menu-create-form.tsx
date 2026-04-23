@@ -114,7 +114,11 @@ const MenuRestaurantCreateForm = ({
           <Flex direction="column" gap="2">
             <Flex direction="row" gap="2" align="center">
               <Heading>{t('menu_form.menu_name')}:</Heading>
-              <TextField.Root {...form.register('menuName')} size="3" placeholder={t('menu_form.menu_name')} />
+              <TextField.Root
+                {...form.register('menuName')}
+                size="3"
+                placeholder={t('menu_form.menu_name')}
+              />
             </Flex>
             {isDirty ? (
               <div className="flex gap-2 text-amber-700 pt-3">

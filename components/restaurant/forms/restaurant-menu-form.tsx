@@ -76,7 +76,11 @@ const MenuRestaurantCreateForm = ({
           <div className="flex p-2 items-center justify-between">
             <Flex gap="2" align="center">
               <Heading>{t('menu_form.menu_name')}</Heading>
-              <TextField.Root {...form.register('menuName')} size="3" placeholder={t('menu_form.menu_name')} />
+              <TextField.Root
+                {...form.register('menuName')}
+                size="3"
+                placeholder={t('menu_form.menu_name')}
+              />
             </Flex>
             <Flex direction="column" gap="2">
               {isDirty ? (

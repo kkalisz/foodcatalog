@@ -3,9 +3,8 @@ import { useState } from 'react';
 
 import { Button, Flex, TextField } from '@radix-ui/themes';
 import { SearchIcon } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-
+import { useTranslations } from 'next-intl';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleSearchCityParams = (value: string, router: any) => {

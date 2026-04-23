@@ -3,7 +3,6 @@
 import { Flex, Heading } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 
-
 import SubscriptionCard from '@/components/subscription/subscription-card';
 import SubscriptionPlanPremium from '@/components/subscription/subscription-plan-premium';
 import SubscriptionPlanUltra from '@/components/subscription/subscription-plan-ultra';
