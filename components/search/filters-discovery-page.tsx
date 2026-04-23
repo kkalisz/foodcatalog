@@ -32,7 +32,11 @@ const FiltersDiscoveryPage = ({ onSearchChange, curentySearch }: FiltersProps) =
 
       {/* Location + Button — row on all screens */}
       <Flex gap="2" className="w-full">
-        <TextField.Root size="3" placeholder={t('discover_page.find_my_place')} className="flex-1 min-w-0">
+        <TextField.Root
+          size="3"
+          placeholder={t('discover_page.find_my_place')}
+          className="flex-1 min-w-0"
+        >
           <TextField.Slot>
             <LocateIcon />
           </TextField.Slot>
