@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import { Button, Flex, Spinner, DropdownMenu } from '@radix-ui/themes';
+import { useTranslations } from 'next-intl';
 import { useParams, useRouter } from 'next/navigation';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
@@ -58,6 +59,8 @@ export const Menus = () => {
   }, [restaurantId, firmId]);
 
   const router = useRouter();
+  const t = useTranslations('menus_page');
+  const tCommon = useTranslations('common');
 
   const handleDelete = async (menuId: string) => {
     if (!firmId || !restaurantId) {
@@ -77,7 +80,7 @@ export const Menus = () => {
   }
   return (
     <PageSizeWrapper>
-      <CardWithHeader title={`Ilość menu: ${menuIds.length}`}>
+      <CardWithHeader title={t('menu_count', { count: menuIds.length })}>
         <Flex direction="row" gap="2" justify="between" align="center">
           <Flex direction="column" gap="4" className="w-full">
             {menuIds.map((menuObj, index) => (
@@ -92,7 +95,7 @@ export const Menus = () => {
                 </Flex>
                 <DropdownMenu.Root modal={false}>
                   <DropdownMenu.Trigger>
-                    <Button variant="soft">Opcje</Button>
+                    <Button variant="soft">{t('options')}</Button>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content color="orange" align="end" side="bottom">
                     <DropdownMenu.Item
@@ -100,14 +103,14 @@ export const Menus = () => {
                         router.push(`/owner/restaurants/${restaurantId}/menu/${menuObj.id}`)
                       }
                     >
-                      Edytuj
+                      {tCommon('edit')}
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
-                    <DropdownMenu.Item>Udostępnij</DropdownMenu.Item>
-                    <DropdownMenu.Item>Ulubione</DropdownMenu.Item>
+                    <DropdownMenu.Item>{t('share')}</DropdownMenu.Item>
+                    <DropdownMenu.Item>{t('favorites')}</DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item onClick={() => handleDelete(menuObj.id)} color="red">
-                      Usuń
+                      {tCommon('delete')}
                     </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Root>
@@ -119,7 +122,7 @@ export const Menus = () => {
             size="3"
             onClick={() => router.push(`/owner/restaurants/${restaurantId}/menu-create`)}
           >
-            Dodaj menu
+            {t('add_menu')}
           </Button>
         </Flex>
       </CardWithHeader>

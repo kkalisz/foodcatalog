@@ -68,8 +68,7 @@ export const RestaurantReviews = () => {
       <Card className="p-4 sm:p-6">
         <Heading size="5">{t('restaurant_detail.recent_reviews')}</Heading>
         <p className="text-muted-foreground text-sm mt-4">
-          {/* Recent reviews would go here */}
-          No reviews yet.
+          {t('restaurant_detail.no_reviews')}
         </p>
       </Card>
     </div>

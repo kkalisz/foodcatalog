@@ -3,6 +3,7 @@
 import { Flex, Heading } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 
+
 import SubscriptionCard from '@/components/subscription/subscription-card';
 import SubscriptionPlanPremium from '@/components/subscription/subscription-plan-premium';
 import SubscriptionPlanUltra from '@/components/subscription/subscription-plan-ultra';
@@ -10,9 +11,10 @@ import CardWithHeader from '@/components/ui/containers/card-with-header';
 
 export default function TestPage() {
   const t = useTranslations('subscription_plans');
+  const tPage = useTranslations('subscription_page');
 
   return (
-    <CardWithHeader title="Subscription">
+    <CardWithHeader title={tPage('subscription')}>
       <Flex gap="" align="center" justify="center" direction="column">
         <Flex>{t('current_plan')}</Flex>
         <Heading>{t('choose_plan')}</Heading>

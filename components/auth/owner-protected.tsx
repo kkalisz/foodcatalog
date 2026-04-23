@@ -3,12 +3,14 @@
 import type React from 'react';
 import { useEffect, useState } from 'react';
 
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 import { getOwnerSession } from '@/lib/auth';
 
 export function OwnerProtected({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const t = useTranslations('common');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export function OwnerProtected({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen flex items-center justify-center bg-muted/30">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-muted-foreground">Loading...</p>
+          <p className="text-muted-foreground">{t('loading')}</p>
         </div>
       </div>
     );

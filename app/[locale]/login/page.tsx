@@ -11,8 +11,8 @@ import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
 import LoginFormFooter from '@/components/auth/login-form-footer';
-import LoginFormHeader from '@/components/auth/login-form-header';
 import LoginFormWrapper from '@/components/auth/login-form-wrapper';
+import { PageHeightWrapper } from '@/components/common/page-height-wrapper';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card } from '@/components/ui/card';
 import ErrorLabel from '@/components/ui/form/label/ErrorLabel';
@@ -71,66 +71,67 @@ const OwnerLogin = () => {
   };
   return (
     <HeightWrapper>
-      <LoginFormWrapper>
-        <LoginFormHeader />
-        <Card className="p-6 sm:p-8">
-          {globalError && (
-            <Alert variant="destructive" className="mb-6">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{globalError}</AlertDescription>
-            </Alert>
-          )}
-          <form onSubmit={handleSubmit(onHandleSubmit)}>
-            <Flex direction="column" gap="4">
-              <Box>
-                <Flex>
-                  <FormInputLabel
-                    label={t('login_page.email_label')}
-                    required={validationSchema.email.required.value}
+      <PageHeightWrapper>
+        <LoginFormWrapper>
+          <Card className="p-6 sm:p-8">
+            {globalError && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>{globalError}</AlertDescription>
+              </Alert>
+            )}
+            <form onSubmit={handleSubmit(onHandleSubmit)}>
+              <Flex direction="column" gap="4">
+                <Box>
+                  <Flex>
+                    <FormInputLabel
+                      label={t('login_page.email_label')}
+                      required={validationSchema.email.required.value}
+                    />
+                  </Flex>
+                  <TextField.Root
+                    size="3"
+                    variant="surface"
+                    type="email"
+                    placeholder={t('login_page.email_placeholder')}
+                    {...register('email', validationSchema.email)}
                   />
-                </Flex>
-                <TextField.Root
-                  size="3"
-                  variant="surface"
-                  type="email"
-                  placeholder={t('login_page.email_placeholder')}
-                  {...register('email', validationSchema.email)}
-                />
-                <ErrorLabel error={errors.email?.message} id="email" />
-              </Box>
-              <Box>
-                <Flex>
-                  <FormInputLabel
-                    label={t('login_page.password_label')}
-                    required={validationSchema.password.required.value}
+                  <ErrorLabel error={errors.email?.message} id="email" />
+                </Box>
+                <Box>
+                  <Flex>
+                    <FormInputLabel
+                      label={t('login_page.password_label')}
+                      required={validationSchema.password.required.value}
+                    />
+                  </Flex>
+                  <TextField.Root
+                    size="3"
+                    variant="surface"
+                    type="password"
+                    placeholder={t('login_page.password_placeholder')}
+                    {...register('password', validationSchema.password)}
                   />
-                </Flex>
-                <TextField.Root
-                  size="3"
-                  variant="surface"
-                  type="password"
-                  placeholder={t('login_page.password_placeholder')}
-                  {...register('password', validationSchema.password)}
-                />
-                <ErrorLabel error={errors.password?.message} id="password" />
-              </Box>
-              <Button type="submit" className="w-full h-11 text-base mt-4" disabled={loading}>
-                {loading ? t('login_page.signing_in') : t('login_page.login_button')}
-              </Button>
-            </Flex>
-          </form>
-          <LoginFormFooter />
-          <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
-            <Link href="/register">{t('login_page.create_account')}</Link>
-          </Button>
-        </Card>
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          {t('login_page.looking_for_dining')}{' '}
-          <Link href="/" className="text-primary hover:underline font-medium">
-            {t('login_page.browse_restaurants')}
-          </Link>
-        </p>
-      </LoginFormWrapper>
+                  <ErrorLabel error={errors.password?.message} id="password" />
+                </Box>
+                <Button type="submit" className="w-full h-11 text-base mt-4" disabled={loading}>
+                  {loading ? t('login_page.signing_in') : t('login_page.login_button')}
+                </Button>
+              </Flex>
+            </form>
+            <LoginFormFooter />
+            <Button variant="outline" className="w-full h-11 text-base bg-transparent" asChild>
+              <Link href="/register">{t('login_page.create_account')}</Link>
+            </Button>
+          </Card>
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            {t('login_page.looking_for_dining')}{' '}
+            <Link href="/" className="text-primary hover:underline font-medium">
+              {t('login_page.browse_restaurants')}
+            </Link>
+          </p>
+        </LoginFormWrapper>
+      </PageHeightWrapper>
     </HeightWrapper>
   );
 };

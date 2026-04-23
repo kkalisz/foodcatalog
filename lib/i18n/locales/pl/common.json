@@ -10,7 +10,10 @@
     "sign_in": "Zaloguj się",
     "search_location_placeholder": "Szukaj po lokalizacji",
     "use_current_location": "Użyj obecnej lokalizacji",
-    "search_cta": "Znajdź"
+    "search_cta": "Znajdź",
+    "restaurants": "Restauracje",
+    "cuisines": "Kuchnie",
+    "catalog_subtitle": "KATALOG LOKALNEJ GASTRONOMII"
   },
   "footer": {
     "login_as_owner": "Zaloguj się jako właściciel",
@@ -42,6 +45,7 @@
   "main_page": {
     "header": "Katalog lokalnej gastronomii",
     "subheader": "Znajdź najlepsze restauracje, bary i kawiarnie w swoim mieście. Wspieraj lokalną gastronomię i odkrywaj ukryte perełki w swojej okolicy.",
+    "search_placeholder": "Szukaj restauracji",
     "browse_restaurants": "Przeglądaj restauracje",
     "add_restaurant": "Dodaj restaurację"
   },
@@ -56,7 +60,8 @@
     "search_term": "Wyszukiwana rzecz:",
     "location_accepted": "Zaakceptowano lokalizację",
     "location_denied": "Nie zaakceptowano lokalizacji",
-    "searching_in": "Wyszukujesz w:"
+    "searching_in": "Wyszukujesz w:",
+    "find_my_place": "Znajdź moje miejsce"
   },
   "about_page": {
     "header": "O nas"
@@ -143,7 +148,8 @@
     "confirm_delete": "Czy na pewno chcesz usunąć tę restaurację?",
     "deleted_success": "Restauracja została usunięta",
     "active": "aktywny",
-    "inactive": "nieaktywny"
+    "inactive": "nieaktywny",
+    "menu_button": "Menu"
   },
   "restaurant_form": {
     "basic_info": "Podstawowe informacje",
@@ -184,7 +190,8 @@
     "your_review": "Twoja opinia",
     "describe_experience": "Opisz swoje doświadczenia...",
     "add_review": "Dodaj recenzję",
-    "recent_reviews": "Ostatnie oceny"
+    "recent_reviews": "Ostatnie oceny",
+    "no_reviews": "Brak recenzji."
   },
   "edit_restaurant_modal": {
     "title": "Edytuj restaurację",
@@ -200,6 +207,13 @@
   "menu": {
     "search_placeholder": "Szukaj pozycji w menu...",
     "no_items_found": "Nie znaleziono pozycji menu pasujących do"
+  },
+  "menus_page": {
+    "menu_count": "Ilość menu: {count}",
+    "options": "Opcje",
+    "share": "Udostępnij",
+    "favorites": "Ulubione",
+    "add_menu": "Dodaj menu"
   },
   "subscription_page": {
     "title": "Subskrypcja i płatności",
@@ -321,7 +335,8 @@
     "category": "kategoria",
     "dish": "danie",
     "category_plural": "kategorie",
-    "dish_plural": "dania"
+    "dish_plural": "dania",
+    "menu_name": "Nazwa menu"
   },
   "category_form": {
     "category_name_placeholder": "Nazwa kategorii...",
@@ -570,7 +585,10 @@
     "basic_plan": "Plan Podstawowy",
     "pro_plan": "Plan Pro",
     "price_per_month": "Cena: {price} zł/miesiąc",
-    "select": "Wybierz"
+    "select": "Wybierz",
+    "selected_plan": "Wybrany plan: {id}",
+    "price_for": "Cena za {name} to {price}.",
+    "plan_not_found": "Nie znaleziono takiego planu."
   },
   "restaurant_components": {
     "currency_pln": "zł",
@@ -591,5 +609,16 @@
     "loading": "Ładowanie",
     "location_disabled": "Zezwolenie na lokalizację jest wyłączone",
     "try_adjusting_filters": "Spróbuj dostosować filtry"
+  },
+  "owner_page": {
+    "title": "Panel właściciela"
+  },
+  "search": {
+    "city": "Miasto:",
+    "city_placeholder": "Nazwa miasta",
+    "find": "Znajdź",
+    "radius": "Promień:",
+    "cuisine": "Kuchnia:",
+    "cuisine_placeholder": "Znajdź kuchnię"
   }
 }

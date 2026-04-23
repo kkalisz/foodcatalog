@@ -1,4 +1,9 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 const OwnerPage = () => {
-  return <div>Owner Page</div>;
+  const t = useTranslations('owner_page');
+  return <div>{t('title')}</div>;
 };
 export default OwnerPage;
