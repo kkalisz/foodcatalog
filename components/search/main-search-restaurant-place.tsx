@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button, Flex, TextField } from '@radix-ui/themes';
 import { SearchIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleSearchCityParams = (value: string, router: any) => {
@@ -15,6 +16,8 @@ const handleSearchCityParams = (value: string, router: any) => {
 const MainSearchRestaurantPlace = () => {
   const [value, setValue] = useState('');
   const router = useRouter();
+  const t = useTranslations('main_page');
+  const tNav = useTranslations('nav');
   return (
     <Flex align="center" justify="center" className="w-full">
       <style>{`
@@ -34,7 +37,7 @@ const MainSearchRestaurantPlace = () => {
         }}
         variant="surface"
         size="3"
-        placeholder="Search restaurant"
+        placeholder={t('search_placeholder')}
         className="w-full main-search-root px-4 rounded-xl"
       >
         <TextField.Slot className="pr-2">
@@ -47,7 +50,7 @@ const MainSearchRestaurantPlace = () => {
             onClick={() => handleSearchCityParams(value, router)}
             size="4"
           >
-            search
+            {tNav('search_cta')}
           </Button>
         </TextField.Slot>
       </TextField.Root>
