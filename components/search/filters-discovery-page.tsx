@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { Button, Flex, TextField } from '@radix-ui/themes';
 import { LocateIcon, SearchIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 type FiltersProps = {
   onSearchChange?: (sendSearchCategory: string) => void;
@@ -11,12 +12,13 @@ type FiltersProps = {
 
 const FiltersDiscoveryPage = ({ onSearchChange, curentySearch }: FiltersProps) => {
   const [searchCategory, setSearchCategory] = useState(curentySearch);
+  const t = useTranslations();
   return (
     <Flex gap="2" direction="column" className="w-full">
       {/* Main search — full width on all screens */}
       <TextField.Root
         size="3"
-        placeholder="Search restaurant, dish, cuisine..."
+        placeholder={t('discover_page.search_placeholder')}
         className="w-full"
         defaultValue={curentySearch}
         onChange={e => {
@@ -30,7 +32,11 @@ const FiltersDiscoveryPage = ({ onSearchChange, curentySearch }: FiltersProps) =
 
       {/* Location + Button — row on all screens */}
       <Flex gap="2" className="w-full">
-        <TextField.Root size="3" placeholder="Find my place" className="flex-1 min-w-0">
+        <TextField.Root
+          size="3"
+          placeholder={t('discover_page.find_my_place')}
+          className="flex-1 min-w-0"
+        >
           <TextField.Slot>
             <LocateIcon />
           </TextField.Slot>
@@ -42,7 +48,7 @@ const FiltersDiscoveryPage = ({ onSearchChange, curentySearch }: FiltersProps) =
           size="3"
           className="shrink-0"
         >
-          Search
+          {t('nav.search_cta')}
         </Button>
       </Flex>
     </Flex>

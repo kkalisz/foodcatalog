@@ -85,7 +85,7 @@ export const RestaurantsList = ({ restaurants }: RestaurantsListProps) => {
                 color="orange"
                 onClick={() => router.push(`/owner/restaurants/${restaurant.id}/menus`)}
               >
-                Menu
+                {t('restaurants_list.menu_button')}
               </Button>
               <Button size="2" color="red" onClick={() => handleDelete(restaurant.id)}>
                 <Trash className="w-4 h-4 mr-2" />

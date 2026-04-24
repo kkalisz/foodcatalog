@@ -14,13 +14,11 @@ export default async function SubscriptionPage({ params }: { params: Promise<{ i
 
   return (
     <div>
-      <h1>Wybrany plan: {id}</h1>
+      <h1>{t('selected_plan', { id })}</h1>
       {selectedPlan ? (
-        <p>
-          Cena za {selectedPlan.name} to {selectedPlan.price}.
-        </p>
+        <p>{t('price_for', { name: selectedPlan.name, price: selectedPlan.price })}</p>
       ) : (
-        <p>Nie znaleziono takiego planu.</p>
+        <p>{t('plan_not_found')}</p>
       )}
     </div>
   );
