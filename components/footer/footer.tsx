@@ -30,7 +30,10 @@ export const Footer = () => {
 
   const restaurantLinks: ColumnLink[] = [
     { href: user ? '/owner/dashboard' : '/login', label: t('footer.for_restaurators.panel') },
-    { href: '/owner/dashboard/subscription', label: t('footer.for_restaurators.pricing') },
+    {
+      href: user ? '/owner/dashboard/subscription' : '/login',
+      label: t('footer.for_restaurators.pricing'),
+    },
   ];
 
   const year = new Date().getFullYear();

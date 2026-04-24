@@ -9,7 +9,7 @@ function FooterColumns({ label, links }: { label: string; links: ColumnLink[] })
       </h3>
       <ul className="flex flex-col gap-2.5">
         {links.map(link => (
-          <li key={link.href}>
+          <li key={link.label}>
             <Link
               href={link.href}
               className="group inline-flex items-center gap-1.5 text-sm text-foreground/85 hover:text-primary transition-colors"
