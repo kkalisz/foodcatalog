@@ -192,7 +192,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
               </Flex>
             </Card>
           </Flex>
-          <Box className="border border-gray-200 w-full h-[320vh] rounded-lg overflow-hidden">
+          <Box className="border border-gray-200 w-full h-[33vh] rounded-lg overflow-hidden">
             <Map
               defaultZoom={13}
               center={center || { lat: 52.2297, lng: 21.0122 }}
