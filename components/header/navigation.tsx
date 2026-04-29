@@ -46,15 +46,7 @@ export function Navigation() {
           </div>
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
             <Link href="/" className="flex flex-col items-center">
-              <span className="block text-[9px] uppercase tracking-[0.3em] text-muted-foreground font-medium whitespace-nowrap">
-                — EST. 2025 —
-              </span>
-              <span className="text-2xl md:text-4xl font-bold tracking-tighter text-[#1A1A1A] leading-none flex items-baseline">
-                szamanie<span className="text-[#FF6B35] italic font-serif ml-0.5">.pl</span>
-              </span>
-              <span className="block text-[9px] uppercase tracking-[0.25em] text-muted-foreground font-medium whitespace-nowrap">
-                {t('catalog_subtitle')}
-              </span>
+              <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
             </Link>
           </div>
           <div className="flex items-center justify-end z-10">

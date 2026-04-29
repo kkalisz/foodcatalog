@@ -33,6 +33,7 @@ export const setMenuAsMain = async (
     categories: data.categories,
     menuName: data.menuName,
     updatedAt: serverTimestamp(),
+    sourceMenuId: menuId,
   });
 };
 

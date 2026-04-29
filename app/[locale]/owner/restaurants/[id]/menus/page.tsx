@@ -10,7 +10,11 @@ import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-wi
 import CardWithHeader from '@/components/ui/containers/card-with-header';
 import { Category } from '@/data/types/dishMenu';
 import { deleteRestaurantMenu } from '@/lib/firebase/deletePublicRestaurant';
-import { getRestaurantMenu, getRestaurantMenuIds } from '@/lib/firebase/getRestaurantMenu';
+import {
+  getRestaurantMenu,
+  getRestaurantMenuIds,
+  getMainMenuSourceId,
+} from '@/lib/firebase/getRestaurantMenu';
 import { setMenuAsMain } from '@/lib/firebase/restantMenu';
 import { useFirmId } from '@/lib/firebase/useFirmId';
 
@@ -50,8 +54,12 @@ export const Menus = () => {
       }
 
       try {
-        const ids = await getRestaurantMenuIds(firmId, restaurantId);
+        const [ids, sourceId] = await Promise.all([
+          getRestaurantMenuIds(firmId, restaurantId),
+          getMainMenuSourceId(restaurantId),
+        ]);
         setMenuIds(ids);
+        setMainMenuId(sourceId);
       } catch (error) {
         console.error('Błąd pobierania ID:', error);
       }
