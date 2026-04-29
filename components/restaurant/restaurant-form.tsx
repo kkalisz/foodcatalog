@@ -110,7 +110,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     const loadCenterMapPosition = new geocodingLibrary.Geocoder();
     loadCenterMapPosition.geocode(
       { address: `${watchedPostalCode}, ${watchedCity}, ${watchedStreet}, Polska` },
-      (results, status) => {
+      (results: string | any[], status: string) => {
         if (status === 'OK' && results && results.length > 0) {
           const location = results[0].geometry.location;
           setCenter({ lat: location.lat(), lng: location.lng() });
@@ -181,29 +181,70 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                   size="3"
                   variant="surface"
                 ></TextField.Root>
-                <Text as="label" size="2">
-                  <Flex gap="2">
-                    <Controller
-                      name="delivery"
-                      control={control}
-                      render={({ field }) => (
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      )}
-                    />
-                    {t('restaurant_form.delivery')}
-                  </Flex>
-                </Text>
+                <Box>
+                  <TextArea
+                    {...register('shortDescription')}
+                    placeholder={t('restaurant_form.description_placeholder')}
+                    size="3"
+                    variant="surface"
+                  ></TextArea>
+                </Box>
               </Flex>
             </Card>
           </Flex>
-          <Flex className="flex-1">
-            <Flex className="flex-1" direction="column" gap="2">
-              <Card className="w-full">
-                <Heading size="4" mb="3">
-                  Rodzaj kuchni
-                </Heading>
+          <Box className="border border-gray-200 w-full h-[33vh] rounded-lg overflow-hidden">
+            <Map
+              defaultZoom={13}
+              center={center || { lat: 52.2297, lng: 21.0122 }}
+              onCameraChanged={ev => setCenter(ev.detail.center)}
+              mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS}
+            >
+              <AdvancedMarker
+                position={position || center || { lat: 52.2297, lng: 21.0122 }}
+                draggable={true}
+                onDragEnd={(ev: google.maps.MapMouseEvent) => {
+                  if (ev.latLng) {
+                    const lat = ev.latLng.lat();
+                    const lng = ev.latLng.lng();
+                    setLocalization({ lat, lng });
+                  }
+                }}
+              />
+            </Map>
+          </Box>
+        </Flex>
+        <Flex className="flex-1">
+          <Flex className="flex-1" direction="column" gap="2">
+            <Card className="w-full">
+              <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
+
+              <Controller
+                name="category"
+                control={control}
+                render={({ field }) => (
+                  <CheckboxCards.Root
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    size="1"
+                    variant="classic"
+                    columns={{ initial: '2', sm: '2', md: '4' }}
+                  >
+                    {CUISINES.map(cuisine => (
+                      <CheckboxCards.Item key={cuisine} value={cuisine}>
+                        <Flex>
+                          <Box>{cuisine}</Box>
+                        </Flex>
+                      </CheckboxCards.Item>
+                    ))}
+                  </CheckboxCards.Root>
+                )}
+              />
+            </Card>
+            <Card>
+              <Heading size="4">Dodatkowe opcje</Heading>
+              <Flex direction="column">
                 <Controller
-                  name="category"
+                  name={'extra'}
                   control={control}
                   render={({ field }) => (
                     <CheckboxCards.Root
@@ -213,58 +254,18 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
                       variant="classic"
                       columns={{ initial: '2', sm: '2', md: '4' }}
                     >
-                      {CUISINES.map(cuisine => (
-                        <CheckboxCards.Item key={cuisine} value={cuisine}>
-                          <Flex>
-                            <Box>{cuisine}</Box>
-                          </Flex>
+                      {RESTAURANT_AMENITIES.map(amenity => (
+                        <CheckboxCards.Item key={amenity} value={amenity}>
+                          {t(`amenity.${amenity}`)}
                         </CheckboxCards.Item>
                       ))}
                     </CheckboxCards.Root>
                   )}
-                />
-              </Card>
-              <Card>
-                <Heading size="4">Dodatkowe opcje</Heading>
-                <Flex direction="column">
-                  <Controller
-                    name={'extra'}
-                    control={control}
-                    render={({ field }) => (
-                      <CheckboxCards.Root
-                        value={field.value}
-                        onValueChange={field.onChange}
-                        size="1"
-                        variant="classic"
-                        columns={{ initial: '2', sm: '2', md: '4' }}
-                      >
-                        {RESTAURANT_AMENITIES.map(amenity => (
-                          <CheckboxCards.Item key={amenity} value={amenity}>
-                            {t(`amenity.${amenity}`)}
-                          </CheckboxCards.Item>
-                        ))}
-                      </CheckboxCards.Root>
-                    )}
-                  ></Controller>
-                </Flex>
-              </Card>
-            </Flex>
+                ></Controller>
+              </Flex>
+            </Card>
           </Flex>
         </Flex>
-
-        <Box>
-          <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
-        </Box>
-
-        <Box>
-          <TextArea
-            {...register('shortDescription')}
-            placeholder={t('restaurant_form.description_placeholder')}
-            size="3"
-            variant="surface"
-          ></TextArea>
-        </Box>
-
         <Box>
           <TextField.Root
             {...register('coverImage')}
@@ -297,27 +298,6 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
               ? t('restaurant_form.save_changes')
               : t('restaurant_form.add_restaurant')}
         </Button>
-
-        <Box className="border border-gray-200 w-full h-[30vh] rounded-lg overflow-hidden">
-          <Map
-            defaultZoom={13}
-            center={center || { lat: 52.2297, lng: 21.0122 }}
-            onCameraChanged={ev => setCenter(ev.detail.center)}
-            mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS}
-          >
-            <AdvancedMarker
-              position={position || center || { lat: 52.2297, lng: 21.0122 }}
-              draggable={true}
-              onDragEnd={(ev: google.maps.MapMouseEvent) => {
-                if (ev.latLng) {
-                  const lat = ev.latLng.lat();
-                  const lng = ev.latLng.lng();
-                  setLocalization({ lat, lng });
-                }
-              }}
-            />
-          </Map>
-        </Box>
       </Flex>
     </form>
   );

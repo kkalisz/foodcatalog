@@ -41,14 +41,14 @@ export const Footer = () => {
   return (
     <footer className="w-full bg-card border-t border-border mt-4">
       <PageWidthWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 py-8 md:py-12 justify-items-center">
           <FooterColumns label={t('footer.about_us.heading')} links={aboutLinks} />
           <FooterColumns label={t('footer.law_info.heading')} links={lawLinks} />
           <FooterColumns label={t('footer.for_restaurators.heading')} links={restaurantLinks} />
         </div>
 
-        <div className="border-t border-border py-6 px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground">
+        <div className="border-t border-border py-6 px-4 flex flex-col md:flex-row items-center justify-center gap-4">
+          <p className="text-xs text-muted-foreground text-center">
             &copy; {year} {t('app_name')}.pl · {t('all_rights_reserved')}
           </p>
         </div>

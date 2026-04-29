@@ -3,8 +3,8 @@ import { ArrowUpRight } from 'lucide-react';
 type ColumnLink = { href: string; label: string; external?: boolean };
 function FooterColumns({ label, links }: { label: string; links: ColumnLink[] }) {
   return (
-    <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
-      <h3 className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-medium">
+    <div className="flex flex-col gap-4 items-center text-center">
+      <h3 className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-medium text-center">
         {label}
       </h3>
       <ul className="flex flex-col gap-2.5">
