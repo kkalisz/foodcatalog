@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import { Avatar } from '@radix-ui/themes';
-import { ChevronDown, Globe, Menu, X } from 'lucide-react';
+import { Avatar, Button, DropdownMenu } from '@radix-ui/themes';
+import { Globe, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -11,11 +11,10 @@ import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
 import { useAuth } from '@/providers/AuthContext';
 
 export function Navigation() {
-  const { user } = useAuth();
   const t = useTranslations('nav');
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const { user, logout } = useAuth();
   const NAV_LINKS = [
     { href: '/discover', label: t('restaurants') },
     { href: '/discover', label: t('cuisines') },
@@ -51,18 +50,25 @@ export function Navigation() {
           </div>
           <div className="flex items-center justify-end z-10">
             {user ? (
-              <button className="hidden md:flex items-center gap-2 pl-1 pr-3 py-1 rounded-full hover:border-border hover:bg-white transition-all">
-                <Avatar
-                  size="2"
-                  radius="full"
-                  src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=96&h=96&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
-                  fallback="M"
-                />
-                <span className="inline text-sm font-bold text-foreground whitespace-nowrap max-w-[150px] truncate">
-                  {user.email}
-                </span>
-                <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
-              </button>
+              <div className="hidden md:flex items-center gap-2">
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger>
+                    <Button variant="ghost">
+                      <Avatar
+                        size="3"
+                        radius="full"
+                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=96&h=96&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
+                        fallback="M"
+                      />
+                      {user.email}
+                      <DropdownMenu.TriggerIcon />
+                    </Button>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Content align="end">
+                    <DropdownMenu.Item onClick={logout}>Logout</DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu.Root>
+              </div>
             ) : (
               <Link
                 href="/login"
