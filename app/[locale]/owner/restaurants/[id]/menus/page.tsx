@@ -10,7 +10,12 @@ import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-wi
 import CardWithHeader from '@/components/ui/containers/card-with-header';
 import { Category } from '@/data/types/dishMenu';
 import { deleteRestaurantMenu } from '@/lib/firebase/deletePublicRestaurant';
-import { getRestaurantMenu, getRestaurantMenuIds } from '@/lib/firebase/getRestaurantMenu';
+import {
+  getRestaurantMenu,
+  getRestaurantMenuIds,
+  getMainMenuSourceId,
+} from '@/lib/firebase/getRestaurantMenu';
+import { setMenuAsMain } from '@/lib/firebase/restantMenu';
 import { useFirmId } from '@/lib/firebase/useFirmId';
 
 export const Menus = () => {
@@ -21,6 +26,7 @@ export const Menus = () => {
   const [menu, setMenu] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [menuIds, setMenuIds] = useState<{ id: string; name: string }[]>([]);
+  const [mainMenuId, setMainMenuId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchMenu = async () => {
@@ -48,8 +54,12 @@ export const Menus = () => {
       }
 
       try {
-        const ids = await getRestaurantMenuIds(firmId, restaurantId);
+        const [ids, sourceId] = await Promise.all([
+          getRestaurantMenuIds(firmId, restaurantId),
+          getMainMenuSourceId(restaurantId),
+        ]);
         setMenuIds(ids);
+        setMainMenuId(sourceId);
       } catch (error) {
         console.error('Błąd pobierania ID:', error);
       }
@@ -61,6 +71,18 @@ export const Menus = () => {
   const router = useRouter();
   const t = useTranslations('menus_page');
   const tCommon = useTranslations('common');
+
+  const handleSetAsMain = async (menuId: string) => {
+    if (!firmId || !restaurantId) {
+      return;
+    }
+    try {
+      await setMenuAsMain(firmId, restaurantId, menuId);
+      setMainMenuId(menuId);
+    } catch (error) {
+      console.error('Błąd ustawiania menu głównego:', error);
+    }
+  };
 
   const handleDelete = async (menuId: string) => {
     if (!firmId || !restaurantId) {
@@ -92,12 +114,17 @@ export const Menus = () => {
               >
                 <Flex direction="column">
                   <p className="font-bold">{menuObj.name}</p>
+                  {menuObj.id === mainMenuId && <p>Główne menu</p>}
                 </Flex>
                 <DropdownMenu.Root modal={false}>
                   <DropdownMenu.Trigger>
                     <Button variant="soft">{t('options')}</Button>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content color="orange" align="end" side="bottom">
+                    <DropdownMenu.Item onClick={() => handleSetAsMain(menuObj.id)}>
+                      Ustaw jako menu główne
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Separator />
                     <DropdownMenu.Item
                       onClick={() =>
                         router.push(`/owner/restaurants/${restaurantId}/menu/${menuObj.id}`)

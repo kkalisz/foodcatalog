@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import { Avatar } from '@radix-ui/themes';
 import { ChevronDown, Globe, Menu, X } from 'lucide-react';
+import { Avatar, Button, DropdownMenu } from '@radix-ui/themes';
+import { Globe, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -15,6 +17,11 @@ export function Navigation() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const NAV_LINKS = [
+    { href: '/discover', label: t('restaurants') },
+    { href: '/discover', label: t('cuisines') },
+  ];
 
   const NAV_LINKS = [
     { href: '/discover', label: t('restaurants') },
@@ -46,31 +53,30 @@ export function Navigation() {
           </div>
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
             <Link href="/" className="flex flex-col items-center">
-              <span className="block text-[9px] uppercase tracking-[0.3em] text-muted-foreground font-medium whitespace-nowrap">
-                — EST. 2025 —
-              </span>
-              <span className="text-2xl md:text-4xl font-bold tracking-tighter text-[#1A1A1A] leading-none flex items-baseline">
-                szamanie<span className="text-[#FF6B35] italic font-serif ml-0.5">.pl</span>
-              </span>
-              <span className="block text-[9px] uppercase tracking-[0.25em] text-muted-foreground font-medium whitespace-nowrap">
-                {t('catalog_subtitle')}
-              </span>
+              <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
             </Link>
           </div>
           <div className="flex items-center justify-end z-10">
             {user ? (
-              <button className="hidden md:flex items-center gap-2 pl-1 pr-3 py-1 rounded-full hover:border-border hover:bg-white transition-all">
-                <Avatar
-                  size="2"
-                  radius="full"
-                  src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=96&h=96&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
-                  fallback="M"
-                />
-                <span className="inline text-sm font-bold text-foreground whitespace-nowrap max-w-[150px] truncate">
-                  {user.email}
-                </span>
-                <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
-              </button>
+              <div className="hidden md:flex items-center gap-2">
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger>
+                    <Button variant="ghost">
+                      <Avatar
+                        size="3"
+                        radius="full"
+                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=96&h=96&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
+                        fallback="M"
+                      />
+                      {user.email}
+                      <DropdownMenu.TriggerIcon />
+                    </Button>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Content align="end">
+                    <DropdownMenu.Item onClick={logout}>Logout</DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu.Root>
+              </div>
             ) : (
               <Link
                 href="/login"

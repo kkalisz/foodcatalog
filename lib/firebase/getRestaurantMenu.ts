@@ -12,6 +12,15 @@ export const getRestaurantMenu = async (restaurantId: string): Promise<Category[
   return [];
 };
 
+export const getMainMenuSourceId = async (restaurantId: string): Promise<string | null> => {
+  const menuRef = doc(db, 'public_restaurants', restaurantId, 'menu', 'main');
+  const menuSnap = await getDoc(menuRef);
+  if (menuSnap.exists()) {
+    return menuSnap.data().sourceMenuId || null;
+  }
+  return null;
+};
+
 export const getRestaurantMenuIds = async (
   firmId: string,
   restaurantId: string
