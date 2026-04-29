@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { Avatar } from '@radix-ui/themes';
+import { ChevronDown, Globe, Menu, X } from 'lucide-react';
 import { Avatar, Button, DropdownMenu } from '@radix-ui/themes';
 import { Globe, Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -11,10 +13,16 @@ import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
 import { useAuth } from '@/providers/AuthContext';
 
 export function Navigation() {
+  const { user } = useAuth();
   const t = useTranslations('nav');
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, logout } = useAuth();
+  const NAV_LINKS = [
+    { href: '/discover', label: t('restaurants') },
+    { href: '/discover', label: t('cuisines') },
+  ];
+
   const NAV_LINKS = [
     { href: '/discover', label: t('restaurants') },
     { href: '/discover', label: t('cuisines') },
