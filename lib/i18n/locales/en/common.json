@@ -215,7 +215,9 @@
     "options": "Options",
     "share": "Share",
     "favorites": "Favorites",
-    "add_menu": "Add menu"
+    "add_menu": "Add menu",
+    "main_menu": "main menu",
+    "set_as_main": "Set as main menu"
   },
   "subscription_page": {
     "title": "Subscription & Billing",

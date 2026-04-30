@@ -213,7 +213,9 @@
     "options": "Opcje",
     "share": "Udostępnij",
     "favorites": "Ulubione",
-    "add_menu": "Dodaj menu"
+    "add_menu": "Dodaj menu",
+    "main_menu": "menu główne",
+    "set_as_main": "Ustaw jako menu główne"
   },
   "subscription_page": {
     "title": "Subskrypcja i płatności",

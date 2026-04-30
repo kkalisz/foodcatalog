@@ -3,18 +3,16 @@
 import { useEffect, useState } from 'react';
 
 import { Button, Flex, Spinner, DropdownMenu } from '@radix-ui/themes';
+import { StarIcon } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-width-wrapper';
 import CardWithHeader from '@/components/ui/containers/card-with-header';
-import { Category } from '@/data/types/dishMenu';
+import CustomTag from '@/components/ui/tag/tag';
+import { Colors } from '@/components/ui/tag/tag-colors';
 import { deleteRestaurantMenu } from '@/lib/firebase/deletePublicRestaurant';
-import {
-  getRestaurantMenu,
-  getRestaurantMenuIds,
-  getMainMenuSourceId,
-} from '@/lib/firebase/getRestaurantMenu';
+import { getRestaurantMenuIds, getMainMenuSourceId } from '@/lib/firebase/getRestaurantMenu';
 import { setMenuAsMain } from '@/lib/firebase/restantMenu';
 import { useFirmId } from '@/lib/firebase/useFirmId';
 
@@ -23,7 +21,6 @@ export const Menus = () => {
   const restaurantId = params?.id;
   const { firmId } = useFirmId();
 
-  const [menu, setMenu] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [menuIds, setMenuIds] = useState<{ id: string; name: string }[]>([]);
   const [mainMenuId, setMainMenuId] = useState<string | null>(null);
@@ -36,8 +33,6 @@ export const Menus = () => {
 
       try {
         setLoading(true);
-        const data = await getRestaurantMenu(restaurantId);
-        setMenu(data);
       } catch (error) {
         console.error('Błąd pobierania menu:', error);
       } finally {
@@ -104,8 +99,8 @@ export const Menus = () => {
     <PageSizeWrapper>
       <CardWithHeader title={t('menu_count', { count: menuIds.length })}>
         <Flex direction="row" gap="2" justify="between" align="center">
-          <Flex direction="column" gap="4" className="w-full">
-            {menuIds.map((menuObj, index) => (
+          <Flex direction="column" gap="2" className="w-full">
+            {menuIds.map(menuObj => (
               <Flex
                 key={menuObj.id}
                 align="center"
@@ -114,33 +109,42 @@ export const Menus = () => {
               >
                 <Flex direction="column">
                   <p className="font-bold">{menuObj.name}</p>
-                  {menuObj.id === mainMenuId && <p>Główne menu</p>}
                 </Flex>
-                <DropdownMenu.Root modal={false}>
-                  <DropdownMenu.Trigger>
-                    <Button variant="soft">{t('options')}</Button>
-                  </DropdownMenu.Trigger>
-                  <DropdownMenu.Content color="orange" align="end" side="bottom">
-                    <DropdownMenu.Item onClick={() => handleSetAsMain(menuObj.id)}>
-                      Ustaw jako menu główne
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Separator />
-                    <DropdownMenu.Item
-                      onClick={() =>
-                        router.push(`/owner/restaurants/${restaurantId}/menu/${menuObj.id}`)
-                      }
-                    >
-                      {tCommon('edit')}
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Separator />
-                    <DropdownMenu.Item>{t('share')}</DropdownMenu.Item>
-                    <DropdownMenu.Item>{t('favorites')}</DropdownMenu.Item>
-                    <DropdownMenu.Separator />
-                    <DropdownMenu.Item onClick={() => handleDelete(menuObj.id)} color="red">
-                      {tCommon('delete')}
-                    </DropdownMenu.Item>
-                  </DropdownMenu.Content>
-                </DropdownMenu.Root>
+                <Flex gap="2">
+                  {menuObj.id === mainMenuId && (
+                    <CustomTag
+                      title={t('main_menu')}
+                      color={Colors.green}
+                      rightIcon={<StarIcon size="15" />}
+                    />
+                  )}
+
+                  <DropdownMenu.Root modal={false}>
+                    <DropdownMenu.Trigger>
+                      <Flex className="cursor-pointer">...</Flex>
+                    </DropdownMenu.Trigger>
+                    <DropdownMenu.Content color="orange" align="end" side="bottom">
+                      <DropdownMenu.Item onClick={() => handleSetAsMain(menuObj.id)}>
+                        {t('set_as_main')}
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Separator />
+                      <DropdownMenu.Item
+                        onClick={() =>
+                          router.push(`/owner/restaurants/${restaurantId}/menu/${menuObj.id}`)
+                        }
+                      >
+                        {tCommon('edit')}
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Separator />
+                      <DropdownMenu.Item>{t('share')}</DropdownMenu.Item>
+                      <DropdownMenu.Item>{t('favorites')}</DropdownMenu.Item>
+                      <DropdownMenu.Separator />
+                      <DropdownMenu.Item onClick={() => handleDelete(menuObj.id)} color="red">
+                        {tCommon('delete')}
+                      </DropdownMenu.Item>
+                    </DropdownMenu.Content>
+                  </DropdownMenu.Root>
+                </Flex>
               </Flex>
             ))}
           </Flex>
