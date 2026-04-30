@@ -11,13 +11,8 @@ import { PageWidthWrapper as PageSizeWrapper } from '@/components/common/page-wi
 import CardWithHeader from '@/components/ui/containers/card-with-header';
 import CustomTag from '@/components/ui/tag/tag';
 import { Colors } from '@/components/ui/tag/tag-colors';
-import { Category } from '@/data/types/dishMenu';
 import { deleteRestaurantMenu } from '@/lib/firebase/deletePublicRestaurant';
-import {
-  getRestaurantMenu,
-  getRestaurantMenuIds,
-  getMainMenuSourceId,
-} from '@/lib/firebase/getRestaurantMenu';
+import { getRestaurantMenuIds, getMainMenuSourceId } from '@/lib/firebase/getRestaurantMenu';
 import { setMenuAsMain } from '@/lib/firebase/restantMenu';
 import { useFirmId } from '@/lib/firebase/useFirmId';
 
@@ -26,7 +21,6 @@ export const Menus = () => {
   const restaurantId = params?.id;
   const { firmId } = useFirmId();
 
-  const [menu, setMenu] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [menuIds, setMenuIds] = useState<{ id: string; name: string }[]>([]);
   const [mainMenuId, setMainMenuId] = useState<string | null>(null);
@@ -39,8 +33,6 @@ export const Menus = () => {
 
       try {
         setLoading(true);
-        const data = await getRestaurantMenu(restaurantId);
-        setMenu(data);
       } catch (error) {
         console.error('Błąd pobierania menu:', error);
       } finally {
@@ -108,7 +100,7 @@ export const Menus = () => {
       <CardWithHeader title={t('menu_count', { count: menuIds.length })}>
         <Flex direction="row" gap="2" justify="between" align="center">
           <Flex direction="column" gap="2" className="w-full">
-            {menuIds.map((menuObj, index) => (
+            {menuIds.map(menuObj => (
               <Flex
                 key={menuObj.id}
                 align="center"
