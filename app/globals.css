@@ -4,6 +4,7 @@
 @import '@radix-ui/colors/violet.css';
 
 @import 'tailwindcss';
+@source "../components";
 @import 'tw-animate-css';
 @import '@radix-ui/themes/styles.css';
 
