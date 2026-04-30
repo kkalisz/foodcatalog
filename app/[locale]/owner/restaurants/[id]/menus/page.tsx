@@ -121,7 +121,7 @@ export const Menus = () => {
                 <Flex gap="2">
                   {menuObj.id === mainMenuId && (
                     <CustomTag
-                      title={'menu główne'}
+                      title={t('main_menu')}
                       color={Colors.green}
                       rightIcon={<StarIcon size="15" />}
                     />
@@ -133,7 +133,7 @@ export const Menus = () => {
                     </DropdownMenu.Trigger>
                     <DropdownMenu.Content color="orange" align="end" side="bottom">
                       <DropdownMenu.Item onClick={() => handleSetAsMain(menuObj.id)}>
-                        Ustaw jako menu główne
+                        {t('set_as_main')}
                       </DropdownMenu.Item>
                       <DropdownMenu.Separator />
                       <DropdownMenu.Item
