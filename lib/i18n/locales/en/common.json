@@ -603,7 +603,8 @@
     "dish_name": "Dish name",
     "price": "Price",
     "description": "Description",
-    "add_dish": "Add dish"
+    "add_dish": "Add dish",
+    "no_dishes_found": "No dishes found"
   },
   "components_misc": {
     "view_more": "View more",

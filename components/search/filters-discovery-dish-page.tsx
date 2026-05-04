@@ -5,10 +5,9 @@ import { Dish } from '@/data/types/dishMenu';
 
 const FiltersDiscoveryDishPage = ({ filteredDishes }: { filteredDishes: Dish[] }) => {
   const t = useTranslations('restaurant_components');
-  if (!filteredDishes.length) return null;
-
   return (
     <div className="p-2 h-48 overflow-y-scroll">
+      {filteredDishes.length === 0 && <p>{t('no_dishes_found')}</p>}
       {filteredDishes.map(dish => (
         <Flex key={dish.name} direction="column" p="3">
           <Flex justify="between" mb="2">

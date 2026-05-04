@@ -601,7 +601,8 @@
     "dish_name": "Nazwa dania",
     "price": "Cena",
     "description": "Opis",
-    "add_dish": "Dodaj danie"
+    "add_dish": "Dodaj danie",
+    "no_dishes_found": "Nie znaleziono dań"
   },
   "components_misc": {
     "view_more": "Zobacz więcej",
