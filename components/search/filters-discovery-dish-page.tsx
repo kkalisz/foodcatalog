@@ -1,12 +1,14 @@
-import { Box, Flex, Heading } from '@radix-ui/themes';
+import { Flex, Heading } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 
 import { Dish } from '@/data/types/dishMenu';
 
 const FiltersDiscoveryDishPage = ({ filteredDishes }: { filteredDishes: Dish[] }) => {
   const t = useTranslations('restaurant_components');
+  if (!filteredDishes.length) return null;
+
   return (
-    <Box className="p-2">
+    <div className="p-2 h-48 overflow-y-scroll">
       {filteredDishes.map(dish => (
         <Flex key={dish.name} direction="column" p="3">
           <Flex justify="between" mb="2">
@@ -30,7 +32,7 @@ const FiltersDiscoveryDishPage = ({ filteredDishes }: { filteredDishes: Dish[] }
           <p>{dish.description}</p>
         </Flex>
       ))}
-    </Box>
+    </div>
   );
 };
 export default FiltersDiscoveryDishPage;

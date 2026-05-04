@@ -22,13 +22,13 @@ export function RestaurantCard({ filteredRestaurant, filteredDishes }: Restauran
   const tRest = useTranslations('restaurant_components');
 
   return (
-    <Box>
-      <Link href={`/restaurant/${restaurant.id}`}>
-        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
+    <Box className="h-full">
+      <Link href={`/restaurant/${restaurant.id}`} className="h-full flex">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full flex flex-col">
           {/* Mobile: column layout. md+: row layout */}
           <Flex direction="column" className="md:flex-row">
             {/* Cover image */}
-            <Flex className="relative h-48 md:h-auto md:w-48 overflow-hidden shrink-0">
+            <Flex className="relative w-full h-48 overflow-hidden shrink-0">
               <img
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 src={restaurant.coverImage || restaurantImage}
