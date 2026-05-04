@@ -8,17 +8,15 @@ import { useTranslations } from 'next-intl';
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
 import { FilteredRestaurant } from '@/data/hooks/filterRestaurant';
-import { Dish } from '@/data/types/dishMenu';
 
 import FiltersDiscoveryDishPage from '../search/filters-discovery-dish-page';
 
 interface RestaurantCardProps {
   filteredRestaurant: FilteredRestaurant;
-  filteredDishes: Dish[];
 }
 
-export function RestaurantCard({ filteredRestaurant, filteredDishes }: RestaurantCardProps) {
-  const { restaurant } = filteredRestaurant;
+export function RestaurantCard({ filteredRestaurant }: RestaurantCardProps) {
+  const { restaurant, filteredDishes } = filteredRestaurant;
   const tRest = useTranslations('restaurant_components');
 
   return (

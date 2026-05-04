@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 import { db } from '@/lib/firebase/client';
 
@@ -51,25 +51,25 @@ export const filterRestaurant = (
 
       const filteredByDish: (FilteredRestaurant | null)[] = await Promise.all(
         allActiveRestaurants.map(async restaurant => {
-          const menuRef = doc(db, 'public_restaurants', restaurant.id, 'menu', 'main');
-          const menuSnap = await getDoc(menuRef);
+          // Fetch ALL menus from the 'menu' subcollection (not just hardcoded 'main')
+          const menuCollectionRef = collection(db, 'public_restaurants', restaurant.id, 'menu');
+          const menuSnapshot = await getDocs(menuCollectionRef);
 
-          if (menuSnap.exists()) {
-            const menuData = menuSnap.data();
-            const filteredDishes: Dish[] = [];
+          const filteredDishes: Dish[] = [];
 
+          menuSnapshot.docs.forEach(menuDoc => {
+            const menuData = menuDoc.data();
             menuData.categories?.forEach((category: any) => {
               if (category.dishes) {
-                const serchedCategory = category.dishes.filter((dish: any) =>
+                const matched = category.dishes.filter((dish: any) =>
                   dish.name.toLowerCase().includes(searchLower)
                 );
-                filteredDishes.push(...serchedCategory);
+                filteredDishes.push(...matched);
               }
             });
+          });
 
-            return filteredDishes.length > 0 ? { restaurant, filteredDishes } : null;
-          }
-          return null;
+          return filteredDishes.length > 0 ? { restaurant, filteredDishes } : null;
         })
       );
 
