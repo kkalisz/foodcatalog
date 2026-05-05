@@ -1,6 +1,15 @@
-import { Building2, ExternalLink, Handshake, Headphones, Mail, MessageCircle, Phone, Shield } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import {
+  Building2,
+  ExternalLink,
+  Handshake,
+  Headphones,
+  Mail,
+  MessageCircle,
+  Phone,
+  Shield,
+} from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import ContactForm from './contact-form';
 
@@ -58,7 +67,10 @@ const ContactPage = () => {
           <ul className="mb-5 space-y-2.5">
             <li className="flex items-center gap-2 text-sm text-gray-300">
               <Mail className="h-4 w-4 shrink-0 text-orange-400" />
-              <a href={`mailto:${t('cards.business.email')}`} className="hover:text-white hover:underline">
+              <a
+                href={`mailto:${t('cards.business.email')}`}
+                className="hover:text-white hover:underline"
+              >
                 {t('cards.business.email')}
               </a>
             </li>
