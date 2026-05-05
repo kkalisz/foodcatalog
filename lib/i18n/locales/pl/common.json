@@ -216,7 +216,35 @@
     "add_menu": "Dodaj menu"
   },
   "subscription_page": {
-    "title": "Subskrypcja i płatności",
+    "title": "Subskrypcja",
+    "heading": "Rozwiń skrzydła swojej restauracji",
+    "subheading": "Wybierz plan dopasowany do Twoich potrzeb",
+    "plan_pro_header": "Plan Pro",
+    "plan_pro_tagline": "Idealny start dla małych lokali.",
+    "plan_premium_header": "Plan Premium",
+    "plan_premium_tagline": "Narzędzia do budowy lojalności i zwiększania zysków.",
+    "plan_ultra_header": "Plan Ultra",
+    "plan_ultra_tagline": "Pełna dominacja w sieci dla wymagających.",
+    "most_popular": "Najpopularniejszy",
+    "price_unit": "zł / mies.",
+    "choose_plan": "Wybierz plan",
+    "plan_pro": {
+      "feature_1": "Pełna prezentacja menu",
+      "feature_2": "Galeria zdjęć (do 10 zdjęć)",
+      "feature_3": "Podstawowe statystyki"
+    },
+    "plan_premium": {
+      "all_from_pro": "Wszystko co w PRO, oraz:",
+      "feature_1": "Autorski system lojalnościowy",
+      "feature_2": "Priorytetowa widoczność w wyszukiwarce",
+      "feature_3": "Nielimitowana galeria zdjęć"
+    },
+    "plan_ultra": {
+      "all_from_premium": "Wszystko co w PREMIUM, oraz:",
+      "feature_1": "Osobisty opiekun marketingowy VIP",
+      "feature_2": "Integracja z social mediami",
+      "feature_3": "Promowanie na stronie głównej Szamanie.pl"
+    },
     "manage_plan": "Zarządzaj planem i metodami płatności",
     "current_plan": "Aktualny plan",
     "current_plan_free": "Aktualny plan: Darmowy",
@@ -225,7 +253,6 @@
     "available_plans": "Dostępne plany",
     "plan_free": "Darmowy",
     "plan_basic": "Podstawowy",
-    "plan_premium": "Premium",
     "forever": "Na zawsze",
     "per_month": "miesięcznie",
     "perfect_for_starting": "Idealny na start",
