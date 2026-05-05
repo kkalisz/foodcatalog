@@ -12,7 +12,7 @@ const FeatureItem = ({ text }: { text: string }) => (
 );
 
 const SubscriptionPlanPremium = () => {
-  const t = useTranslations('subscription_page.plan_premium');
+  const t = useTranslations('owner_dashboard.subscription_page.plan_premium');
 
   return (
     <Flex direction="column" gap="3">

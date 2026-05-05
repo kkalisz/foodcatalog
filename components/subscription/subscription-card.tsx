@@ -18,7 +18,7 @@ const SubscriptionCard = ({
   children,
   isPopular = false,
 }: SubscriptionCardProps) => {
-  const t = useTranslations('subscription_page');
+  const t = useTranslations('owner_dashboard.subscription_page');
 
   return (
     <div

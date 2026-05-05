@@ -139,7 +139,84 @@
     "subscription_plan_period_monthly": "Miesięczny",
     "subscription_plan_amount": "Kwota",
     "subscription_plan_price": "49 PLN/miesiąc",
-    "manage_subscription": "Zarządzaj subskrypcją"
+    "manage_subscription": "Zarządzaj subskrypcją",
+    "subscription_page": {
+      "title": "Subskrypcja",
+      "heading": "Rozwiń skrzydła swojej restauracji",
+      "subheading": "Wybierz plan dopasowany do Twoich potrzeb",
+      "plan_pro_header": "Plan Pro",
+      "plan_pro_tagline": "Idealny start dla małych lokali.",
+      "plan_premium_header": "Plan Premium",
+      "plan_premium_tagline": "Narzędzia do budowy lojalności i zwiększania zysków.",
+      "plan_ultra_header": "Plan Ultra",
+      "plan_ultra_tagline": "Pełna dominacja w sieci dla wymagających.",
+      "most_popular": "Najpopularniejszy",
+      "price_unit": "zł / mies.",
+      "choose_plan": "Wybierz plan",
+      "plan_pro": {
+        "feature_1": "Pełna prezentacja menu",
+        "feature_2": "Galeria zdjęć (do 10 zdjęć)",
+        "feature_3": "Podstawowe statystyki"
+      },
+      "plan_premium": {
+        "all_from_pro": "Wszystko co w PRO, oraz:",
+        "feature_1": "Autorski system lojalnościowy",
+        "feature_2": "Priorytetowa widoczność w wyszukiwarce",
+        "feature_3": "Nielimitowana galeria zdjęć"
+      },
+      "plan_ultra": {
+        "all_from_premium": "Wszystko co w PREMIUM, oraz:",
+        "feature_1": "Osobisty opiekun marketingowy VIP",
+        "feature_2": "Integracja z social mediami",
+        "feature_3": "Promowanie na stronie głównej Szamanie.pl"
+      },
+      "manage_plan": "Zarządzaj planem i metodami płatności",
+      "current_plan": "Aktualny plan",
+      "current_plan_free": "Aktualny plan: Darmowy",
+      "upgrade_message": "Aktualnie korzystasz z planu darmowego. Ulepsz, aby odblokować więcej funkcji.",
+      "upgrade_now": "Ulepsz teraz",
+      "available_plans": "Dostępne plany",
+      "plan_free": "Darmowy",
+      "plan_basic": "Podstawowy",
+      "forever": "Na zawsze",
+      "per_month": "miesięcznie",
+      "perfect_for_starting": "Idealny na start",
+      "for_growing": "Dla rozwijających się restauracji",
+      "for_established": "Dla ugruntowanych firm",
+      "upgrade_to": "Ulepsz do",
+      "billing_history": "Historia płatności",
+      "date": "Data",
+      "amount": "Kwota",
+      "status": "Status",
+      "invoice": "Faktura",
+      "download": "Pobierz",
+      "free_plan": "Plan darmowy",
+      "payment_methods": "Metody płatności",
+      "add_payment_method": "Dodaj metodę płatności",
+      "expires": "Wygasa",
+      "edit": "Edytuj",
+      "loading": "Ładowanie...",
+      "logout": "Wyloguj się",
+      "dashboard": "Panel",
+      "subscription": "Subskrypcja",
+      "help_center": "Centrum pomocy",
+      "features": {
+        "1_restaurant": "1 restauracja",
+        "basic_menu": "Podstawowe menu",
+        "5_reviews_limit": "Limit 5 recenzji",
+        "limited_analytics": "Ograniczone analizy",
+        "up_to_3_restaurants": "Do 3 restauracji",
+        "advanced_menu": "Zaawansowane menu",
+        "unlimited_reviews": "Nieograniczone recenzje",
+        "basic_analytics": "Podstawowe analizy",
+        "email_support": "Wsparcie email",
+        "unlimited_restaurants": "Nieograniczone restauracje",
+        "advanced_menu_images": "Zaawansowane menu ze zdjęciami",
+        "advanced_analytics": "Zaawansowane analizy",
+        "priority_support": "Priorytetowe wsparcie",
+        "promotions_deals": "Promocje i oferty"
+      }
+    }
   },
   "restaurants_list": {
     "edit": "Edytuj",
@@ -214,83 +291,6 @@
     "share": "Udostępnij",
     "favorites": "Ulubione",
     "add_menu": "Dodaj menu"
-  },
-  "subscription_page": {
-    "title": "Subskrypcja",
-    "heading": "Rozwiń skrzydła swojej restauracji",
-    "subheading": "Wybierz plan dopasowany do Twoich potrzeb",
-    "plan_pro_header": "Plan Pro",
-    "plan_pro_tagline": "Idealny start dla małych lokali.",
-    "plan_premium_header": "Plan Premium",
-    "plan_premium_tagline": "Narzędzia do budowy lojalności i zwiększania zysków.",
-    "plan_ultra_header": "Plan Ultra",
-    "plan_ultra_tagline": "Pełna dominacja w sieci dla wymagających.",
-    "most_popular": "Najpopularniejszy",
-    "price_unit": "zł / mies.",
-    "choose_plan": "Wybierz plan",
-    "plan_pro": {
-      "feature_1": "Pełna prezentacja menu",
-      "feature_2": "Galeria zdjęć (do 10 zdjęć)",
-      "feature_3": "Podstawowe statystyki"
-    },
-    "plan_premium": {
-      "all_from_pro": "Wszystko co w PRO, oraz:",
-      "feature_1": "Autorski system lojalnościowy",
-      "feature_2": "Priorytetowa widoczność w wyszukiwarce",
-      "feature_3": "Nielimitowana galeria zdjęć"
-    },
-    "plan_ultra": {
-      "all_from_premium": "Wszystko co w PREMIUM, oraz:",
-      "feature_1": "Osobisty opiekun marketingowy VIP",
-      "feature_2": "Integracja z social mediami",
-      "feature_3": "Promowanie na stronie głównej Szamanie.pl"
-    },
-    "manage_plan": "Zarządzaj planem i metodami płatności",
-    "current_plan": "Aktualny plan",
-    "current_plan_free": "Aktualny plan: Darmowy",
-    "upgrade_message": "Aktualnie korzystasz z planu darmowego. Ulepsz, aby odblokować więcej funkcji.",
-    "upgrade_now": "Ulepsz teraz",
-    "available_plans": "Dostępne plany",
-    "plan_free": "Darmowy",
-    "plan_basic": "Podstawowy",
-    "forever": "Na zawsze",
-    "per_month": "miesięcznie",
-    "perfect_for_starting": "Idealny na start",
-    "for_growing": "Dla rozwijających się restauracji",
-    "for_established": "Dla ugruntowanych firm",
-    "upgrade_to": "Ulepsz do",
-    "billing_history": "Historia płatności",
-    "date": "Data",
-    "amount": "Kwota",
-    "status": "Status",
-    "invoice": "Faktura",
-    "download": "Pobierz",
-    "free_plan": "Plan darmowy",
-    "payment_methods": "Metody płatności",
-    "add_payment_method": "Dodaj metodę płatności",
-    "expires": "Wygasa",
-    "edit": "Edytuj",
-    "loading": "Ładowanie...",
-    "logout": "Wyloguj się",
-    "dashboard": "Panel",
-    "subscription": "Subskrypcja",
-    "help_center": "Centrum pomocy",
-    "features": {
-      "1_restaurant": "1 restauracja",
-      "basic_menu": "Podstawowe menu",
-      "5_reviews_limit": "Limit 5 recenzji",
-      "limited_analytics": "Ograniczone analizy",
-      "up_to_3_restaurants": "Do 3 restauracji",
-      "advanced_menu": "Zaawansowane menu",
-      "unlimited_reviews": "Nieograniczone recenzje",
-      "basic_analytics": "Podstawowe analizy",
-      "email_support": "Wsparcie email",
-      "unlimited_restaurants": "Nieograniczone restauracje",
-      "advanced_menu_images": "Zaawansowane menu ze zdjęciami",
-      "advanced_analytics": "Zaawansowane analizy",
-      "priority_support": "Priorytetowe wsparcie",
-      "promotions_deals": "Promocje i oferty"
-    }
   },
   "help_center_page": {
     "title": "Centrum pomocy",
@@ -562,27 +562,76 @@
   "contact_policy": {
     "page_title": "Kontakt",
     "title": "Kontakt – [NAZWA TWOJEJ APLIKACJI]",
-    "introduction": "Skontaktuj się z nami w razie jakichkolwiek pytań. Poniżej znajdziesz dane kontaktowe odpowiednich działów.",
+    "introduction": "Skontaktuj się z odpowiednim zespołem. Jesteśmy tu, aby pomóc z zamówieniami, partnerstwem i wszystkim pomiędzy.",
+    "partner_cta": "Zostań Partnerem",
+    "cards": {
+      "support": {
+        "description": "Pytanie o zamówienie lub działanie aplikacji? Jesteśmy do Twojej dyspozycji.",
+        "email": "pomoc@twojaapp.pl",
+        "phone": "+48 000 000 000",
+        "hours": "08:00 – 22:00",
+        "chat_label": "Czat na żywo w zakładce „Moje Zamówienia\""
+      },
+      "business": {
+        "description": "Chcesz dołączyć do naszej sieci i sprzedawać produkty na Platformie?",
+        "email": "wspolpraca@twojaapp.pl",
+        "phone": "+48 000 000 000"
+      },
+      "press": {
+        "description": "Zapytania o patronaty, wywiady i materiały prasowe.",
+        "email": "press@twojaapp.pl"
+      },
+      "gdpr": {
+        "description": "Sprawy dotyczące danych osobowych, ich zmiany lub usunięcia.",
+        "email": "iod@twojaapp.pl"
+      },
+      "legal": {
+        "description": "Oficjalna korespondencja i zapytania prawne.",
+        "company_name": "[PEŁNA NAZWA TWOJEJ SPÓŁKI Z O.O.]",
+        "address": "[UL. TWOJEGO ADRESU]",
+        "city": "[MIASTO, KOD POCZTOWY]",
+        "nip": "000-000-00-00",
+        "regon": "000000000",
+        "krs": "0000000000"
+      }
+    },
+    "form": {
+      "title": "Napisz do nas",
+      "subtitle": "W sprawach ogólnych wypełnij formularz, a odpowiemy w ciągu 24 godzin.",
+      "name_label": "Imię i nazwisko",
+      "name_placeholder": "Jan Kowalski",
+      "email_label": "Adres e-mail",
+      "email_placeholder": "jan@przyklad.pl",
+      "subject_label": "Temat",
+      "subject_placeholder": "Jak możemy pomóc?",
+      "message_label": "Wiadomość",
+      "message_placeholder": "Opisz nam swoje zapytanie...",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success_title": "Wiadomość wysłana!",
+      "success_body": "Odpowiemy w ciągu 24 godzin.",
+      "error": "Coś poszło nie tak. Spróbuj ponownie."
+    },
     "sections": {
       "1": {
-        "title": "1. Biuro Obsługi Klienta (Konsumenci)",
-        "content": "Masz pytanie dotyczące swojego zamówienia lub działania aplikacji? Jesteśmy do Twojej dyspozycji!\nCentrum Pomocy: [LINK DO FAQ / CZĘSTO ZADAWANYCH PYTAŃ]\nE-mail: pomoc@.......................... (odpowiadamy w ciągu [24h])\nInfolinia: +48 .......................... (czynna w godzinach [08:00 – 22:00])\nCzat na żywo: Dostępny bezpośrednio w aplikacji w zakładce „Moje Zamówienia”."
+        "title": "Obsługa Klienta",
+        "short_title": "Obsługa Klienta"
       },
       "2": {
-        "title": "2. Współpraca dla Biznesu (Partnerzy)",
-        "content": "Chcesz dołączyć do naszej sieci i sprzedawać swoje produkty na Platformie?\nZostań Partnerem: [LINK DO FORMULARZA REJESTRACYJNEGO]\nE-mail dla Partnerów: wspolpraca@..........................\nWsparcie techniczne dla aktywnych Partnerów: +48 .........................."
+        "title": "Współpraca Biznesowa",
+        "short_title": "Współpraca Biznesowa"
       },
       "3": {
-        "title": "3. Dane Rejestrowe Spółki (Administrator)",
-        "content": "Oficjalna korespondencja oraz zapytania prawne:\n[PEŁNA NAZWA TWOJEJ SPÓŁKI Z O.O. / FIRMY]\nul. ........................................\n............................................\nNIP: .......................................\nREGON: .....................................\nKRS: ......................................."
+        "title": "Dane Rejestrowe Spółki",
+        "short_title": "Dane Rejestrowe Spółki"
       },
       "4": {
-        "title": "4. Dla Prasy i Marketingu",
-        "content": "Zapytania o patronaty, wywiady i materiały prasowe:\nE-mail: press@.........................."
+        "title": "Prasa i Marketing",
+        "short_title": "Prasa i Marketing"
       },
       "5": {
-        "title": "5. Inspektor Ochrony Danych (RODO)",
-        "content": "W sprawach dotyczących Twoich danych osobowych, ich zmiany lub usunięcia:\nE-mail: iod@.........................."
+        "title": "Ochrona Danych (RODO)",
+        "short_title": "Ochrona Danych (RODO)"
       }
     }
   },

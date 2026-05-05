@@ -8,12 +8,20 @@ import SubscriptionPlanPremium from '@/components/subscription/subscription-plan
 import SubscriptionPlanPro from '@/components/subscription/subscription-plan-pro';
 import SubscriptionPlanUltra from '@/components/subscription/subscription-plan-ultra';
 import CardWithHeader from '@/components/ui/containers/card-with-header';
+import { useAuth } from '@/providers/AuthContext';
 
 export default function SubscriptionPage() {
-  const t = useTranslations('subscription_page');
+  const { userProfile } = useAuth();
+  const t = useTranslations('owner_dashboard.subscription_page');
 
   return (
     <CardWithHeader title={t('title')}>
+      <Flex align="center">
+        <Heading size="4" className="text-center">
+          {t('current_plan')}:
+          <span className="font-bold p-2 text-orange-700">{userProfile?.plan?.toUpperCase()}</span>
+        </Heading>
+      </Flex>
       <Flex direction="column" align="center" gap="1" pt="4" pb="2">
         <Heading size="6" className="text-center">
           {t('heading')}

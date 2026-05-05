@@ -141,7 +141,84 @@
     "subscription_plan_period_monthly": "Monthly",
     "subscription_plan_amount": "Amount",
     "subscription_plan_price": "49 PLN/month",
-    "manage_subscription": "Manage subscription"
+    "manage_subscription": "Manage subscription",
+    "subscription_page": {
+      "title": "Subscription",
+      "heading": "Spread the wings of your restaurant",
+      "subheading": "Choose a plan tailored to your needs",
+      "plan_pro_header": "Pro Plan",
+      "plan_pro_tagline": "The ideal start for small venues.",
+      "plan_premium_header": "Premium Plan",
+      "plan_premium_tagline": "Tools to build loyalty and increase profits.",
+      "plan_ultra_header": "Ultra Plan",
+      "plan_ultra_tagline": "Full online dominance for the demanding.",
+      "most_popular": "Most popular",
+      "price_unit": "PLN / month",
+      "choose_plan": "Choose plan",
+      "plan_pro": {
+        "feature_1": "Full menu presentation",
+        "feature_2": "Photo gallery (up to 10 photos)",
+        "feature_3": "Basic statistics"
+      },
+      "plan_premium": {
+        "all_from_pro": "Everything in PRO, plus:",
+        "feature_1": "Custom loyalty system",
+        "feature_2": "Priority search visibility",
+        "feature_3": "Unlimited photo gallery"
+      },
+      "plan_ultra": {
+        "all_from_premium": "Everything in PREMIUM, plus:",
+        "feature_1": "Personal VIP marketing manager",
+        "feature_2": "Social media integration",
+        "feature_3": "Featured on Szamanie.pl homepage"
+      },
+      "manage_plan": "Manage your plan and payment methods",
+      "current_plan": "Current Plan",
+      "current_plan_free": "Current Plan: Free",
+      "upgrade_message": "You are currently on the Free plan. Upgrade to unlock more features.",
+      "upgrade_now": "Upgrade Now",
+      "available_plans": "Available Plans",
+      "plan_free": "Free",
+      "plan_basic": "Basic",
+      "forever": "Forever",
+      "per_month": "per month",
+      "perfect_for_starting": "Perfect for getting started",
+      "for_growing": "For growing restaurants",
+      "for_established": "For established businesses",
+      "upgrade_to": "Upgrade to",
+      "billing_history": "Billing History",
+      "date": "Date",
+      "amount": "Amount",
+      "status": "Status",
+      "invoice": "Invoice",
+      "download": "Download",
+      "free_plan": "Free Plan",
+      "payment_methods": "Payment Methods",
+      "add_payment_method": "Add Payment Method",
+      "expires": "Expires",
+      "edit": "Edit",
+      "loading": "Loading...",
+      "logout": "Logout",
+      "dashboard": "Dashboard",
+      "subscription": "Subscription",
+      "help_center": "Help Center",
+      "features": {
+        "1_restaurant": "1 restaurant",
+        "basic_menu": "Basic menu",
+        "5_reviews_limit": "5 reviews limit",
+        "limited_analytics": "Limited analytics",
+        "up_to_3_restaurants": "Up to 3 restaurants",
+        "advanced_menu": "Advanced menu",
+        "unlimited_reviews": "Unlimited reviews",
+        "basic_analytics": "Basic analytics",
+        "email_support": "Email support",
+        "unlimited_restaurants": "Unlimited restaurants",
+        "advanced_menu_images": "Advanced menu with images",
+        "advanced_analytics": "Advanced analytics",
+        "priority_support": "Priority support",
+        "promotions_deals": "Promotions & deals"
+      }
+    }
   },
   "restaurants_list": {
     "edit": "Edit",
@@ -216,83 +293,6 @@
     "share": "Share",
     "favorites": "Favorites",
     "add_menu": "Add menu"
-  },
-  "subscription_page": {
-    "title": "Subscription",
-    "heading": "Spread the wings of your restaurant",
-    "subheading": "Choose a plan tailored to your needs",
-    "plan_pro_header": "Pro Plan",
-    "plan_pro_tagline": "The ideal start for small venues.",
-    "plan_premium_header": "Premium Plan",
-    "plan_premium_tagline": "Tools to build loyalty and increase profits.",
-    "plan_ultra_header": "Ultra Plan",
-    "plan_ultra_tagline": "Full online dominance for the demanding.",
-    "most_popular": "Most popular",
-    "price_unit": "PLN / month",
-    "choose_plan": "Choose plan",
-    "plan_pro": {
-      "feature_1": "Full menu presentation",
-      "feature_2": "Photo gallery (up to 10 photos)",
-      "feature_3": "Basic statistics"
-    },
-    "plan_premium": {
-      "all_from_pro": "Everything in PRO, plus:",
-      "feature_1": "Custom loyalty system",
-      "feature_2": "Priority search visibility",
-      "feature_3": "Unlimited photo gallery"
-    },
-    "plan_ultra": {
-      "all_from_premium": "Everything in PREMIUM, plus:",
-      "feature_1": "Personal VIP marketing manager",
-      "feature_2": "Social media integration",
-      "feature_3": "Featured on Szamanie.pl homepage"
-    },
-    "manage_plan": "Manage your plan and payment methods",
-    "current_plan": "Current Plan",
-    "current_plan_free": "Current Plan: Free",
-    "upgrade_message": "You are currently on the Free plan. Upgrade to unlock more features.",
-    "upgrade_now": "Upgrade Now",
-    "available_plans": "Available Plans",
-    "plan_free": "Free",
-    "plan_basic": "Basic",
-    "forever": "Forever",
-    "per_month": "per month",
-    "perfect_for_starting": "Perfect for getting started",
-    "for_growing": "For growing restaurants",
-    "for_established": "For established businesses",
-    "upgrade_to": "Upgrade to",
-    "billing_history": "Billing History",
-    "date": "Date",
-    "amount": "Amount",
-    "status": "Status",
-    "invoice": "Invoice",
-    "download": "Download",
-    "free_plan": "Free Plan",
-    "payment_methods": "Payment Methods",
-    "add_payment_method": "Add Payment Method",
-    "expires": "Expires",
-    "edit": "Edit",
-    "loading": "Loading...",
-    "logout": "Logout",
-    "dashboard": "Dashboard",
-    "subscription": "Subscription",
-    "help_center": "Help Center",
-    "features": {
-      "1_restaurant": "1 restaurant",
-      "basic_menu": "Basic menu",
-      "5_reviews_limit": "5 reviews limit",
-      "limited_analytics": "Limited analytics",
-      "up_to_3_restaurants": "Up to 3 restaurants",
-      "advanced_menu": "Advanced menu",
-      "unlimited_reviews": "Unlimited reviews",
-      "basic_analytics": "Basic analytics",
-      "email_support": "Email support",
-      "unlimited_restaurants": "Unlimited restaurants",
-      "advanced_menu_images": "Advanced menu with images",
-      "advanced_analytics": "Advanced analytics",
-      "priority_support": "Priority support",
-      "promotions_deals": "Promotions & deals"
-    }
   },
   "help_center_page": {
     "title": "Help Center",
@@ -564,27 +564,76 @@
   "contact_policy": {
     "page_title": "Contact",
     "title": "Contact – [YOUR APP NAME]",
-    "introduction": "Please contact us if you have any questions. Below you will find the contact details of the relevant departments.",
+    "introduction": "Get in touch with the right team. We are here to help with orders, partnerships, and everything in between.",
+    "partner_cta": "Join as a Partner",
+    "cards": {
+      "support": {
+        "description": "Questions about your order or how the app works? We are here for you.",
+        "email": "help@yourapp.com",
+        "phone": "+48 000 000 000",
+        "hours": "08:00 – 22:00",
+        "chat_label": "Live chat in the \"My Orders\" tab"
+      },
+      "business": {
+        "description": "Want to join our network and sell your products on the Platform?",
+        "email": "cooperation@yourapp.com",
+        "phone": "+48 000 000 000"
+      },
+      "press": {
+        "description": "Patronage inquiries, interviews and press materials.",
+        "email": "press@yourapp.com"
+      },
+      "gdpr": {
+        "description": "Personal data inquiries, modifications or deletion requests.",
+        "email": "iod@yourapp.com"
+      },
+      "legal": {
+        "description": "Official correspondence and legal inquiries.",
+        "company_name": "[YOUR COMPANY NAME LLC]",
+        "address": "[YOUR STREET ADDRESS]",
+        "city": "[CITY, ZIP CODE]",
+        "nip": "000-000-00-00",
+        "regon": "000000000",
+        "krs": "0000000000"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "For general inquiries, fill out the form and we will respond within 24 hours.",
+      "name_label": "Full Name",
+      "name_placeholder": "John Doe",
+      "email_label": "Email Address",
+      "email_placeholder": "john@example.com",
+      "subject_label": "Subject",
+      "subject_placeholder": "How can we help you?",
+      "message_label": "Message",
+      "message_placeholder": "Tell us more about your inquiry...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success_title": "Message sent!",
+      "success_body": "We will get back to you within 24 hours.",
+      "error": "Something went wrong. Please try again."
+    },
     "sections": {
       "1": {
-        "title": "1. Customer Service (Consumers)",
-        "content": "Do you have a question about your order or how the app works? We are at your disposal!\nHelp Center: [LINK TO FAQ / FREQUENTLY ASKED QUESTIONS]\nE-mail: help@.......................... (we respond within [24h])\nHelpline: +48 .......................... (open [08:00 – 22:00])\nLive chat: Available directly in the app under the “My Orders” tab."
+        "title": "Customer Support",
+        "short_title": "Customer Support"
       },
       "2": {
-        "title": "2. Business Cooperation (Partners)",
-        "content": "Do you want to join our network and sell your products on the Platform?\nBecome a Partner: [LINK TO REGISTRATION FORM]\nE-mail for Partners: cooperation@..........................\nTechnical support for active Partners: +48 .........................."
+        "title": "Business Partnerships",
+        "short_title": "Business Partnerships"
       },
       "3": {
-        "title": "3. Company Registration Data (Administrator)",
-        "content": "Official correspondence and legal inquiries:\n[FULL NAME OF YOUR LLC / COMPANY]\naddress: ........................................\n............................................\nNIP: .......................................\nREGON: .....................................\nKRS: ......................................."
+        "title": "Company Registration",
+        "short_title": "Company Registration"
       },
       "4": {
-        "title": "4. Press and Marketing",
-        "content": "Inquiries about patronage, interviews, and press materials:\nE-mail: press@.........................."
+        "title": "Press & Marketing",
+        "short_title": "Press & Marketing"
       },
       "5": {
-        "title": "5. Data Protection Officer (GDPR)",
-        "content": "For matters concerning your personal data, its change or deletion:\nE-mail: iod@.........................."
+        "title": "Data Protection (GDPR)",
+        "short_title": "Data Protection (GDPR)"
       }
     }
   },
