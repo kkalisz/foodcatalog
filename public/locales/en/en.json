@@ -59,6 +59,17 @@
     "delivery": "Delivery",
     "card_payments": "Card payments"
   },
+  "subscription_page": {
+    "title": "Subscription",
+    "heading": "Spread the wings of your restaurant",
+    "subheading": "Choose a plan tailored to your needs",
+    "plan_pro_header": "Pro Plan",
+    "plan_pro_tagline": "The ideal start for small venues.",
+    "plan_premium_header": "Premium Plan",
+    "plan_premium_tagline": "Tools to build loyalty and increase profits.",
+    "plan_ultra_header": "Ultra Plan",
+    "plan_ultra_tagline": "Full online dominance for the demanding."
+  },
   "terms_and_conditions": {
     "page_title": "Terms and Conditions",
     "title": "General Terms and Conditions for Consumers (Draft)",

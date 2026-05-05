@@ -56,6 +56,17 @@
     "delivery": "Dostawa",
     "card_payments": "Płatność kartą"
   },
+  "subscription_page": {
+    "title": "Subskrypcja",
+    "heading": "Rozwiń skrzydła swojej restauracji",
+    "subheading": "Wybierz plan dopasowany do Twoich potrzeb",
+    "plan_pro_header": "Plan Pro",
+    "plan_pro_tagline": "Idealny start dla małych lokali.",
+    "plan_premium_header": "Plan Premium",
+    "plan_premium_tagline": "Narzędzia do budowy lojalności i zwiększania zysków.",
+    "plan_ultra_header": "Plan Ultra",
+    "plan_ultra_tagline": "Pełna dominacja w sieci dla wymagających."
+  },
   "terms_and_conditions": {
     "page_title": "Regulamin i Warunki",
     "title": "Ogólne warunki świadczenia usług na rzecz Konsumentów (Projekt)",

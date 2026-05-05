@@ -1,6 +1,7 @@
 'use client';
 
 import { Flex, Heading, Text } from '@radix-ui/themes';
+import { useTranslations } from 'next-intl';
 
 import SubscriptionCard from '@/components/subscription/subscription-card';
 import SubscriptionPlanPremium from '@/components/subscription/subscription-plan-premium';
@@ -9,14 +10,16 @@ import SubscriptionPlanUltra from '@/components/subscription/subscription-plan-u
 import CardWithHeader from '@/components/ui/containers/card-with-header';
 
 export default function SubscriptionPage() {
+  const t = useTranslations('subscription_page');
+
   return (
-    <CardWithHeader title="Subskrypcja">
+    <CardWithHeader title={t('title')}>
       <Flex direction="column" align="center" gap="1" pt="4" pb="2">
         <Heading size="6" className="text-center">
-          Rozwiń skrzydła swojej restauracji
+          {t('heading')}
         </Heading>
         <Text size="3" className="text-center" style={{ color: 'var(--gray-10)' }}>
-          Wybierz plan dopasowany do Twoich potrzeb
+          {t('subheading')}
         </Text>
       </Flex>
 
@@ -31,8 +34,8 @@ export default function SubscriptionPage() {
       >
         <div className="w-full max-w-[280px] flex flex-col">
           <SubscriptionCard
-            header="Plan Pro"
-            tagline="Idealny start dla małych lokali."
+            header={t('plan_pro_header')}
+            tagline={t('plan_pro_tagline')}
             price={29}
           >
             <SubscriptionPlanPro />
@@ -41,8 +44,8 @@ export default function SubscriptionPage() {
 
         <div className="w-full max-w-[280px] flex flex-col">
           <SubscriptionCard
-            header="Plan Premium"
-            tagline="Narzędzia do budowy lojalności i zwiększania zysków."
+            header={t('plan_premium_header')}
+            tagline={t('plan_premium_tagline')}
             price={59}
             isPopular
           >
@@ -52,8 +55,8 @@ export default function SubscriptionPage() {
 
         <div className="w-full max-w-[280px] flex flex-col">
           <SubscriptionCard
-            header="Plan Ultra"
-            tagline="Pełna dominacja w sieci dla wymagających."
+            header={t('plan_ultra_header')}
+            tagline={t('plan_ultra_tagline')}
             price={79}
           >
             <SubscriptionPlanUltra />
