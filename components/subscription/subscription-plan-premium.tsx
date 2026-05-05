@@ -1,5 +1,8 @@
-import { Check } from 'lucide-react';
+'use client';
+
 import { Flex, Text } from '@radix-ui/themes';
+import { Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const FeatureItem = ({ text }: { text: string }) => (
   <div className="flex items-center gap-2">
@@ -9,14 +12,16 @@ const FeatureItem = ({ text }: { text: string }) => (
 );
 
 const SubscriptionPlanPremium = () => {
+  const t = useTranslations('subscription_page.plan_premium');
+
   return (
     <Flex direction="column" gap="3">
       <Text size="1" weight="medium" className="text-gray-400 uppercase tracking-wide">
-        Wszystko co w PRO, oraz:
+        {t('all_from_pro')}
       </Text>
-      <FeatureItem text="Autorski system lojalnościowy" />
-      <FeatureItem text="Priorytetowa widoczność w wyszukiwarce" />
-      <FeatureItem text="Nielimitowana galeria zdjęć" />
+      <FeatureItem text={t('feature_1')} />
+      <FeatureItem text={t('feature_2')} />
+      <FeatureItem text={t('feature_3')} />
     </Flex>
   );
 };

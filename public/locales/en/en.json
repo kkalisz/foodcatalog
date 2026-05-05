@@ -68,7 +68,27 @@
     "plan_premium_header": "Premium Plan",
     "plan_premium_tagline": "Tools to build loyalty and increase profits.",
     "plan_ultra_header": "Ultra Plan",
-    "plan_ultra_tagline": "Full online dominance for the demanding."
+    "plan_ultra_tagline": "Full online dominance for the demanding.",
+    "most_popular": "Most popular",
+    "price_unit": "PLN / month",
+    "choose_plan": "Choose plan",
+    "plan_pro": {
+      "feature_1": "Full menu presentation",
+      "feature_2": "Photo gallery (up to 10 photos)",
+      "feature_3": "Basic statistics"
+    },
+    "plan_premium": {
+      "all_from_pro": "Everything in PRO, plus:",
+      "feature_1": "Custom loyalty system",
+      "feature_2": "Priority search visibility",
+      "feature_3": "Unlimited photo gallery"
+    },
+    "plan_ultra": {
+      "all_from_premium": "Everything in PREMIUM, plus:",
+      "feature_1": "Personal VIP marketing manager",
+      "feature_2": "Social media integration",
+      "feature_3": "Featured on Szamanie.pl homepage"
+    }
   },
   "terms_and_conditions": {
     "page_title": "Terms and Conditions",

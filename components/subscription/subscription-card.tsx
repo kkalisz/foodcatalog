@@ -1,4 +1,7 @@
+'use client';
+
 import { Button } from '@radix-ui/themes';
+import { useTranslations } from 'next-intl';
 
 type SubscriptionCardProps = {
   header: string;
@@ -8,7 +11,15 @@ type SubscriptionCardProps = {
   isPopular?: boolean;
 };
 
-const SubscriptionCard = ({ header, tagline, price, children, isPopular = false }: SubscriptionCardProps) => {
+const SubscriptionCard = ({
+  header,
+  tagline,
+  price,
+  children,
+  isPopular = false,
+}: SubscriptionCardProps) => {
+  const t = useTranslations('subscription_page');
+
   return (
     <div
       className={[
@@ -21,7 +32,7 @@ const SubscriptionCard = ({ header, tagline, price, children, isPopular = false 
       {isPopular && (
         <div className="absolute -top-4 inset-x-0 flex justify-center">
           <span className="bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
-            Najpopularniejszy
+            {t('most_popular')}
           </span>
         </div>
       )}
@@ -33,7 +44,7 @@ const SubscriptionCard = ({ header, tagline, price, children, isPopular = false 
 
       <div className="flex items-baseline gap-1 mt-5 mb-6">
         <span className="text-5xl font-extrabold text-gray-900">{price}</span>
-        <span className="text-sm text-gray-400 ml-1">zł / mies.</span>
+        <span className="text-sm text-gray-400 ml-1">{t('price_unit')}</span>
       </div>
 
       <div className="flex-1 mb-6">{children}</div>
@@ -44,7 +55,7 @@ const SubscriptionCard = ({ header, tagline, price, children, isPopular = false 
         variant={isPopular ? 'solid' : 'outline'}
         style={{ width: '100%', cursor: 'pointer' }}
       >
-        Wybierz plan
+        {t('choose_plan')}
       </Button>
     </div>
   );

@@ -65,7 +65,27 @@
     "plan_premium_header": "Plan Premium",
     "plan_premium_tagline": "Narzędzia do budowy lojalności i zwiększania zysków.",
     "plan_ultra_header": "Plan Ultra",
-    "plan_ultra_tagline": "Pełna dominacja w sieci dla wymagających."
+    "plan_ultra_tagline": "Pełna dominacja w sieci dla wymagających.",
+    "most_popular": "Najpopularniejszy",
+    "price_unit": "zł / mies.",
+    "choose_plan": "Wybierz plan",
+    "plan_pro": {
+      "feature_1": "Pełna prezentacja menu",
+      "feature_2": "Galeria zdjęć (do 10 zdjęć)",
+      "feature_3": "Podstawowe statystyki"
+    },
+    "plan_premium": {
+      "all_from_pro": "Wszystko co w PRO, oraz:",
+      "feature_1": "Autorski system lojalnościowy",
+      "feature_2": "Priorytetowa widoczność w wyszukiwarce",
+      "feature_3": "Nielimitowana galeria zdjęć"
+    },
+    "plan_ultra": {
+      "all_from_premium": "Wszystko co w PREMIUM, oraz:",
+      "feature_1": "Osobisty opiekun marketingowy VIP",
+      "feature_2": "Integracja z social mediami",
+      "feature_3": "Promowanie na stronie głównej Szamanie.pl"
+    }
   },
   "terms_and_conditions": {
     "page_title": "Regulamin i Warunki",
