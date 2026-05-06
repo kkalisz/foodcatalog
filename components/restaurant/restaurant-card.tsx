@@ -67,15 +67,17 @@ export function RestaurantCard({ filteredRestaurant }: RestaurantCardProps) {
 
                   <Flex mt="2">
                     {restaurant.delivery ? (
-                      <Flex align="center" gap="1">
+                      <Flex height="20px" align="center" gap="1">
                         <Tooltip content={tRest('delivery')}>
                           <IconButton radius="full" size="1">
-                            <CarIcon className="w-3 h-3" />
+                            <CarIcon />
                           </IconButton>
                         </Tooltip>
                       </Flex>
                     ) : (
-                      <p className="text-sm text-muted-foreground">{tRest('no_delivery')}</p>
+                      <Flex height="20px">
+                        <p className="text-sm text-muted-foreground">{tRest('no_delivery')}</p>
+                      </Flex>
                     )}
                   </Flex>
                 </div>
