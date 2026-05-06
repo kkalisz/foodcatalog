@@ -1,24 +1,27 @@
+'use client';
+
 import { Flex, Text } from '@radix-ui/themes';
-import { DotIcon } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+const FeatureItem = ({ text }: { text: string }) => (
+  <div className="flex items-center gap-2">
+    <Check className="text-green-500 shrink-0" size={16} />
+    <Text size="2">{text}</Text>
+  </div>
+);
+
 const SubscriptionPlanPremium = () => {
-  const t = useTranslations('subscription_plans');
+  const t = useTranslations('owner_dashboard.subscription_page.plan_premium');
 
   return (
-    <Flex className="p-2 " direction="column" gap="3">
-      <Text size="3">{t('promo_description')}</Text>
-      <Flex direction="column" gap="3" align="center">
-        <Text size="4" weight="bold">
-          {t('what_you_get')}
-        </Text>
-        <Flex>
-          <DotIcon />{' '}
-          <Text size="3" weight="bold">
-            {t('full_presentation')}
-          </Text>{' '}
-        </Flex>
-      </Flex>
+    <Flex direction="column" gap="3">
+      <Text size="1" weight="medium" className="text-gray-400 uppercase tracking-wide">
+        {t('all_from_pro')}
+      </Text>
+      <FeatureItem text={t('feature_1')} />
+      <FeatureItem text={t('feature_2')} />
+      <FeatureItem text={t('feature_3')} />
     </Flex>
   );
 };

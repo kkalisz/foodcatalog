@@ -14,6 +14,7 @@ type RegisterFormValues = {
   confirmPassword: string;
   name: string;
   companyName: string;
+  plan: string;
 };
 
 const useRegister = () => {
@@ -26,6 +27,7 @@ const useRegister = () => {
     confirmPassword: '',
     name: '',
     companyName: '',
+    plan: 'free',
   });
   const t = useTranslations();
   const handleRegister = async (data: RegisterFormValues) => {
@@ -57,6 +59,7 @@ const useRegister = () => {
         companyName: data.companyName,
         role: 'owner',
         createdAt: serverTimestamp(),
+        plan: 'free',
       });
 
       router.push('/owner/dashboard');

@@ -1,33 +1,75 @@
 'use client';
 
-import { Flex, Heading } from '@radix-ui/themes';
+import { Flex, Heading, Text } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 
 import SubscriptionCard from '@/components/subscription/subscription-card';
 import SubscriptionPlanPremium from '@/components/subscription/subscription-plan-premium';
+import SubscriptionPlanPro from '@/components/subscription/subscription-plan-pro';
 import SubscriptionPlanUltra from '@/components/subscription/subscription-plan-ultra';
 import CardWithHeader from '@/components/ui/containers/card-with-header';
+import { useAuth } from '@/providers/AuthContext';
 
-export default function TestPage() {
-  const t = useTranslations('subscription_plans');
-  const tPage = useTranslations('subscription_page');
+export default function SubscriptionPage() {
+  const { userProfile } = useAuth();
+  const t = useTranslations('owner_dashboard.subscription_page');
 
   return (
-    <CardWithHeader title={tPage('subscription')}>
-      <Flex gap="" align="center" justify="center" direction="column">
-        <Flex>{t('current_plan')}</Flex>
-        <Heading>{t('choose_plan')}</Heading>
-        <Flex direction={{ initial: 'column', md: 'row' }} justify="center" gap="4" pt="5" pb="5">
-          <SubscriptionCard header={'Plan Pro'} price={29}>
+    <CardWithHeader title={t('title')}>
+      <Flex align="center">
+        <Heading size="4" className="text-center">
+          {t('current_plan')}:
+          <span className="font-bold p-2 text-orange-700">{userProfile?.plan?.toUpperCase()}</span>
+        </Heading>
+      </Flex>
+      <Flex direction="column" align="center" gap="1" pt="4" pb="2">
+        <Heading size="6" className="text-center">
+          {t('heading')}
+        </Heading>
+        <Text size="3" className="text-center" style={{ color: 'var(--gray-10)' }}>
+          {t('subheading')}
+        </Text>
+      </Flex>
+
+      <Flex
+        direction={{ initial: 'column', md: 'row' }}
+        justify="center"
+        align={{ initial: 'center', md: 'stretch' }}
+        gap="5"
+        pt="8"
+        pb="8"
+        px="4"
+      >
+        <div className="w-full max-w-[280px] flex flex-col">
+          <SubscriptionCard
+            header={t('plan_pro_header')}
+            tagline={t('plan_pro_tagline')}
+            price={29}
+          >
+            <SubscriptionPlanPro />
+          </SubscriptionCard>
+        </div>
+
+        <div className="w-full max-w-[280px] flex flex-col">
+          <SubscriptionCard
+            header={t('plan_premium_header')}
+            tagline={t('plan_premium_tagline')}
+            price={59}
+            isPopular
+          >
             <SubscriptionPlanPremium />
           </SubscriptionCard>
-          <SubscriptionCard header={'Plan Premium'} price={59}>
-            <SubscriptionPlanPremium />
-          </SubscriptionCard>
-          <SubscriptionCard header={'Plan Ultra'} price={79}>
+        </div>
+
+        <div className="w-full max-w-[280px] flex flex-col">
+          <SubscriptionCard
+            header={t('plan_ultra_header')}
+            tagline={t('plan_ultra_tagline')}
+            price={79}
+          >
             <SubscriptionPlanUltra />
           </SubscriptionCard>
-        </Flex>
+        </div>
       </Flex>
     </CardWithHeader>
   );
