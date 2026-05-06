@@ -8,27 +8,25 @@ import { useTranslations } from 'next-intl';
 import { Card } from '@/components/ui/card';
 import { restaurantImage } from '@/data/constants/icons';
 import { FilteredRestaurant } from '@/data/hooks/filterRestaurant';
-import { Dish } from '@/data/types/dishMenu';
 
 import FiltersDiscoveryDishPage from '../search/filters-discovery-dish-page';
 
 interface RestaurantCardProps {
   filteredRestaurant: FilteredRestaurant;
-  filteredDishes: Dish[];
 }
 
-export function RestaurantCard({ filteredRestaurant, filteredDishes }: RestaurantCardProps) {
-  const { restaurant } = filteredRestaurant;
+export function RestaurantCard({ filteredRestaurant }: RestaurantCardProps) {
+  const { restaurant, filteredDishes } = filteredRestaurant;
   const tRest = useTranslations('restaurant_components');
 
   return (
-    <Box>
-      <Link href={`/restaurant/${restaurant.id}`}>
-        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full">
+    <Box className="h-full">
+      <Link href={`/restaurant/${restaurant.id}`} className="h-full flex">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-full flex flex-col">
           {/* Mobile: column layout. md+: row layout */}
           <Flex direction="column" className="md:flex-row">
             {/* Cover image */}
-            <Flex className="relative h-48 md:h-auto md:w-48 overflow-hidden shrink-0">
+            <Flex className="relative w-full h-48 overflow-hidden shrink-0">
               <img
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 src={restaurant.coverImage || restaurantImage}
@@ -69,15 +67,17 @@ export function RestaurantCard({ filteredRestaurant, filteredDishes }: Restauran
 
                   <Flex mt="2">
                     {restaurant.delivery ? (
-                      <Flex align="center" gap="1">
+                      <Flex height="20px" align="center" gap="1">
                         <Tooltip content={tRest('delivery')}>
                           <IconButton radius="full" size="1">
-                            <CarIcon className="w-3 h-3" />
+                            <CarIcon />
                           </IconButton>
                         </Tooltip>
                       </Flex>
                     ) : (
-                      <p className="text-sm text-muted-foreground">{tRest('no_delivery')}</p>
+                      <Flex height="20px">
+                        <p className="text-sm text-muted-foreground">{tRest('no_delivery')}</p>
+                      </Flex>
                     )}
                   </Flex>
                 </div>

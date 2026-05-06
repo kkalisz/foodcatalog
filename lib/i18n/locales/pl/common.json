@@ -290,7 +290,9 @@
     "options": "Opcje",
     "share": "Udostępnij",
     "favorites": "Ulubione",
-    "add_menu": "Dodaj menu"
+    "add_menu": "Dodaj menu",
+    "main_menu": "menu główne",
+    "set_as_main": "Ustaw jako menu główne"
   },
   "help_center_page": {
     "title": "Centrum pomocy",
@@ -677,7 +679,8 @@
     "dish_name": "Nazwa dania",
     "price": "Cena",
     "description": "Opis",
-    "add_dish": "Dodaj danie"
+    "add_dish": "Dodaj danie",
+    "no_dishes_found": "Nie znaleziono dań"
   },
   "components_misc": {
     "view_more": "Zobacz więcej",

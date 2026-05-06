@@ -292,7 +292,9 @@
     "options": "Options",
     "share": "Share",
     "favorites": "Favorites",
-    "add_menu": "Add menu"
+    "add_menu": "Add menu",
+    "main_menu": "main menu",
+    "set_as_main": "Set as main menu"
   },
   "help_center_page": {
     "title": "Help Center",
@@ -679,7 +681,8 @@
     "dish_name": "Dish name",
     "price": "Price",
     "description": "Description",
-    "add_dish": "Add dish"
+    "add_dish": "Add dish",
+    "no_dishes_found": "No dishes found"
   },
   "components_misc": {
     "view_more": "View more",
