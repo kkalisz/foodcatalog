@@ -87,6 +87,10 @@
       "feature_3": "Promowanie na stronie głównej Szamanie.pl"
     }
   },
+  "owner_dashboard": {
+    "free_plan_banner": "Twój plan to plan darmowy. Ulepsz, aby zyskać więcej funkcji.",
+    "upgrade": "Ulepsz"
+  },
   "terms_and_conditions": {
     "page_title": "Regulamin i Warunki",
     "title": "Ogólne warunki świadczenia usług na rzecz Konsumentów (Projekt)",

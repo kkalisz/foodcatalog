@@ -140,6 +140,8 @@
     "subscription_plan_amount": "Kwota",
     "subscription_plan_price": "49 PLN/miesiąc",
     "manage_subscription": "Zarządzaj subskrypcją",
+    "free_plan_banner": "Twój plan to plan darmowy. Ulepsz, aby zyskać więcej funkcji.",
+    "upgrade": "Ulepsz",
     "subscription_page": {
       "title": "Subskrypcja",
       "heading": "Rozwiń skrzydła swojej restauracji",

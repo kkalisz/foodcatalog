@@ -142,6 +142,8 @@
     "subscription_plan_amount": "Amount",
     "subscription_plan_price": "49 PLN/month",
     "manage_subscription": "Manage subscription",
+    "free_plan_banner": "Your plan is free. Upgrade to unlock more features.",
+    "upgrade": "Upgrade",
     "subscription_page": {
       "title": "Subscription",
       "heading": "Spread the wings of your restaurant",

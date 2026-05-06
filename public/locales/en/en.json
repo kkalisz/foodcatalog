@@ -90,6 +90,10 @@
       "feature_3": "Featured on Szamanie.pl homepage"
     }
   },
+  "owner_dashboard": {
+    "free_plan_banner": "Your plan is free. Upgrade to unlock more features.",
+    "upgrade": "Upgrade"
+  },
   "terms_and_conditions": {
     "page_title": "Terms and Conditions",
     "title": "General Terms and Conditions for Consumers (Draft)",

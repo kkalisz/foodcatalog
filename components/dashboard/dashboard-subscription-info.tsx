@@ -21,7 +21,7 @@ export const DashboardSubscriptionInfo = () => {
           className="mb-2 mt-2 py-2 bg-orange-500 "
         >
           <Heading className="text-white" size="5">
-            Twoj plan to plan darmowy, ulesz aby zyskatc wiecej funkcji
+            {t('free_plan_banner')}
           </Heading>
           <Button
             onClick={() => router.push('/owner/dashboard/subscription')}
@@ -29,7 +29,7 @@ export const DashboardSubscriptionInfo = () => {
             color="orange"
             variant="surface"
           >
-            Upgrade
+            {t('upgrade')}
           </Button>
         </Flex>
       ) : null}

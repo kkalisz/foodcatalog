@@ -9,6 +9,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Toast } from 'radix-ui';
 
 import { PageWidthWrapper } from '@/components/common/page-width-wrapper';
+import { DashboardSubscriptionInfo } from '@/components/dashboard/dashboard-subscription-info';
 import { Footer } from '@/components/footer/footer';
 import { Navigation } from '@/components/header/navigation';
 import { GoogleMapsProvider } from '@/components/maps/GoogleMapsProvider';
@@ -40,6 +41,7 @@ export default async function RootLayout({
                 <GoogleMapsProvider>
                   <Flex className="flex flex-col min-h-screen bg-background">
                     <Navigation />
+                    <DashboardSubscriptionInfo />
                     <PageWidthWrapper>{children}</PageWidthWrapper>
                     <Footer />
                     <Toast.Viewport className="fixed top-20 right-[40vw] z-[2147483647] flex" />
