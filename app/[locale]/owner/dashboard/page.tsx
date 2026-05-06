@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@radix-ui/themes';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { BarChart3, Eye, LogOut, MessageSquare, TrendingUp } from 'lucide-react';
+import { BarChart3, Eye, MessageSquare, TrendingUp } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -29,7 +29,7 @@ export default function OwnerDashboard() {
   const [showEditModal, setShowEditModal] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedRestaurant, setSelectedRestaurant] = useState<any>(null);
-  const { user, logout } = useAuth();
+  const { user, userProfile } = useAuth();
   const [restaurants, setRestaurants] = useState<PublicRestaurant[]>([]);
   const [, setLodaing] = useState(false);
   const t = useTranslations();
@@ -123,14 +123,6 @@ export default function OwnerDashboard() {
             </Card>
           </div>
           <div className="space-y-4 sm:space-y-6">
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-destructive"
-              onClick={logout}
-            >
-              <LogOut className="w-4 h-4 mr-2" />
-              {t('owner_dashboard.logout')}
-            </Button>
             <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
               <DashboardHeader title={t('owner_dashboard.premium_plan_header')} />
               <p className="text-xs sm:text-sm text-muted-foreground mb-4">
@@ -153,42 +145,46 @@ export default function OwnerDashboard() {
                 {t('owner_dashboard.need_help_button')}
               </Button>
             </Card>
-            <Card className="p-4 sm:p-6">
-              <DashboardHeader title={t('owner_dashboard.subscription_header')} />
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">
-                    {t('owner_dashboard.subscription_plan')}
-                  </span>
-                  <span className="text-xs sm:text-sm font-medium text-foreground">
-                    {t('owner_dashboard.subscription_plan_starter')}
-                  </span>
+            {userProfile?.plan !== 'free' ? (
+              <Card className="p-4 sm:p-6">
+                <DashboardHeader title={t('owner_dashboard.subscription_header')} />
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
+                      {t('owner_dashboard.subscription_plan')}
+                    </span>
+                    <span className="text-xs sm:text-sm font-medium text-foreground">
+                      {t('owner_dashboard.subscription_plan_starter')}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
+                      {t('owner_dashboard.subscription_plan_period')}
+                    </span>
+                    <span className="text-xs sm:text-sm font-medium text-foreground">
+                      {t('owner_dashboard.subscription_plan_period_monthly')}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
+                      {t('owner_dashboard.subscription_plan_amount')}
+                    </span>
+                    <span className="text-xs sm:text-sm font-medium text-foreground">
+                      {t('owner_dashboard.subscription_plan_price')}
+                    </span>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full mt-4 bg-transparent text-sm h-10 sm:h-11"
+                    onClick={() => router.push('dashboard/subscription')}
+                  >
+                    {t('owner_dashboard.manage_subscription')}
+                  </Button>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">
-                    {t('owner_dashboard.subscription_plan_period')}
-                  </span>
-                  <span className="text-xs sm:text-sm font-medium text-foreground">
-                    {t('owner_dashboard.subscription_plan_period_monthly')}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">
-                    {t('owner_dashboard.subscription_plan_amount')}
-                  </span>
-                  <span className="text-xs sm:text-sm font-medium text-foreground">
-                    {t('owner_dashboard.subscription_plan_price')}
-                  </span>
-                </div>
-                <Button
-                  variant="outline"
-                  className="w-full mt-4 bg-transparent text-sm h-10 sm:h-11"
-                  onClick={() => router.push('dashboard/subscription')}
-                >
-                  {t('owner_dashboard.manage_subscription')}
-                </Button>
-              </div>
-            </Card>
+              </Card>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </div>
