@@ -1,6 +1,6 @@
 import { S3Client } from '@aws-sdk/client-s3';
 
-if (!process.env.S3_ACCESS_KEY_ID || !process.env.S3_SECRET_ACCESS_KEY) {
+if (!process.env.S3_ACCESS_KEY_ID || !process.env.S3_SECRET_ACCESS_KEY || !process.env.S3_BUCKET_NAME) {
   // We don't throw error here to allow build to pass if variables are missing
   // but we should warn in development
   if (process.env.NODE_ENV === 'development') {
@@ -16,7 +16,11 @@ export const s3Client = new S3Client({
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
   },
   forcePathStyle: true, // Needed for SeaweedFS and other S3-compatible storages
-});
+  // Disable automatic checksums to prevent BadDigest errors with S3-compatible storage like SeaweedFS
+  // when uploading from the browser without sending checksum headers.
+  requestChecksumCalculation: 'WHEN_REQUIRED',
+  responseChecksumValidation: 'WHEN_REQUIRED',
+} as any);
 
 export const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 export const S3_PUBLIC_URL = process.env.S3_PUBLIC_URL;

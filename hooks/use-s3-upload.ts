@@ -49,7 +49,8 @@ export function useS3Upload() {
         });
 
         xhr.open('PUT', uploadUrl);
-        xhr.setRequestHeader('Content-Type', file.type);
+        const effectiveContentType = file.type || 'application/octet-stream';
+        xhr.setRequestHeader('Content-Type', effectiveContentType);
         xhr.send(file);
       });
     } catch (err) {

@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { useS3Upload } from '@/hooks/use-s3-upload';
+
 import { Loader2, Upload } from 'lucide-react';
 import { toast } from 'sonner';
+
+import { Button } from '@/components/ui/button';
+import { useS3Upload } from '@/hooks/use-s3-upload';
 
 interface S3ImageUploadProps {
   onUploadComplete?: (key: string) => void;
@@ -17,7 +19,9 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (!file) return;
+    if (!file) {
+      return;
+    }
 
     // Basic validation
     if (!file.type.startsWith('image/')) {
@@ -59,9 +63,9 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
         onChange={handleFileChange}
         disabled={isUploading}
       />
-      
-      <Button 
-        onClick={triggerFileInput} 
+
+      <Button
+        onClick={triggerFileInput}
         disabled={isUploading}
         variant="outline"
         className="w-full"
@@ -78,16 +82,16 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
           </>
         )}
       </Button>
-      
+
       {isUploading && (
         <div className="w-full bg-secondary h-2 rounded-full overflow-hidden">
-          <div 
-            className="bg-primary h-full transition-all duration-300" 
+          <div
+            className="bg-primary h-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
       )}
-      
+
       {error && <p className="text-xs text-destructive mt-1">{error}</p>}
     </div>
   );

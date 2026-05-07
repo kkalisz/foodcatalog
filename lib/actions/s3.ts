@@ -1,10 +1,10 @@
 'use server';
 
-import { PutObjectCommand } from '@aws-sdk/client-s3';
+import { PutObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { v4 as uuidv4 } from 'uuid';
 
-import { s3Client, S3_BUCKET_NAME } from '../s3-client';
+import { s3Client, S3_BUCKET_NAME, S3_PUBLIC_URL } from '../s3-client';
 
 /**
  * Generates a presigned URL for uploading a file to S3.
@@ -25,15 +25,31 @@ export async function getUploadUrl(fileName: string, contentType: string) {
 
   const fileExtension = fileName.split('.').pop();
   const key = `uploads/${uuidv4()}.${fileExtension}`;
+  const effectiveContentType = contentType || 'application/octet-stream';
 
   const command = new PutObjectCommand({
     Bucket: S3_BUCKET_NAME,
     Key: key,
-    ContentType: contentType,
+    ContentType: effectiveContentType,
   });
 
+  // Explicitly remove flexible checksums middleware to prevent the SDK from adding
+  // x-amz-checksum-crc32 query parameters to the presigned URL, which causes
+  // BadDigest errors in SeaweedFS when no checksum is provided by the browser.
+  if (command.middlewareStack && typeof command.middlewareStack.removeByTag === 'function') {
+    command.middlewareStack.removeByTag('flexibleChecksums');
+    command.middlewareStack.removeByTag('flexibleChecksumsMiddleware');
+  }
+  if (command.middlewareStack && typeof command.middlewareStack.remove === 'function') {
+    command.middlewareStack.remove('flexibleChecksumsMiddleware');
+    command.middlewareStack.remove('flexibleChecksums');
+  }
+
   try {
-    const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+    const uploadUrl = await getSignedUrl(s3Client, command, {
+      expiresIn: 3600,
+      signableHeaders: new Set(['host', 'content-type']),
+    });
     return { uploadUrl, key };
   } catch (error) {
     console.error('Error generating presigned URL:', error);
@@ -48,6 +64,47 @@ export async function getUploadUrl(fileName: string, contentType: string) {
  * @returns {string} - The public URL
  */
 export async function getPublicUrl(key: string) {
-  const publicBaseUrl = process.env.S3_PUBLIC_URL || `${process.env.S3_ENDPOINT}/${S3_BUCKET_NAME}`;
-  return `${publicBaseUrl}/${key}`;
+  if (!S3_BUCKET_NAME) {
+    throw new Error('S3_BUCKET_NAME is not configured');
+  }
+
+  if (!S3_PUBLIC_URL) {
+    throw new Error('S3_PUBLIC_URL is not configured');
+  }
+
+  return `${S3_PUBLIC_URL}/${S3_BUCKET_NAME}/${key}`;
+}
+
+/**
+ * Lists all objects in the S3 bucket.
+ *
+ * @returns {Promise<{ key: string, url: string }[]>}
+ */
+export async function listImages() {
+  if (!S3_BUCKET_NAME) {
+    throw new Error('S3_BUCKET_NAME is not configured');
+  }
+
+  if (!S3_PUBLIC_URL) {
+    throw new Error('S3_PUBLIC_URL is not configured');
+  }
+
+  const command = new ListObjectsV2Command({
+    Bucket: S3_BUCKET_NAME,
+  });
+
+  try {
+    const response = await s3Client.send(command);
+    const contents = response.Contents || [];
+
+    return contents
+      .filter(item => item.Key)
+      .map(item => ({
+        key: item.Key!,
+        url: `${S3_PUBLIC_URL}/${S3_BUCKET_NAME}/${item.Key}`,
+      }));
+  } catch (error) {
+    console.error('Error listing objects from S3:', error);
+    throw new Error('Failed to list images');
+  }
 }
