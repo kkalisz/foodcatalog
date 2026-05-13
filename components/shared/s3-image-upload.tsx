@@ -145,10 +145,18 @@ export function S3ImageUpload({
       {dishImagesOnly ? (
         (() => {
           const displayUrl = latestUploadedUrl ?? selectedImageUrl;
-          if (!displayUrl) return null;
+          if (!displayUrl) {
+            return null;
+          }
           return (
             <div className="relative w-32 h-32 rounded-xl overflow-hidden border bg-muted shadow-sm mt-2">
-              <Image src={displayUrl} alt="Zdjęcie dania" fill className="object-cover" sizes="128px" />
+              <Image
+                src={displayUrl}
+                alt="Zdjęcie dania"
+                fill
+                className="object-cover"
+                sizes="128px"
+              />
             </div>
           );
         })()
