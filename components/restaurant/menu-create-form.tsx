@@ -147,6 +147,7 @@ const MenuRestaurantCreateForm = ({
                   form={form}
                   index={indexCategory}
                   category={category as Category}
+                  restaurantId={restaurantId}
                   onRemoveCategory={() => remove(indexCategory)}
                   onHandleMoveCategory={onHandleMoveCategory}
                 />

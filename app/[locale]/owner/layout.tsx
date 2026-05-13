@@ -2,6 +2,7 @@
 
 import type React from 'react';
 
+import { redirect } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import PageLoader from '@/components/common/page-loader';
@@ -18,6 +19,9 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
 
   if (loading) {
     return <PageLoader loadingText={t('loading')} />;
+  }
+  if (!user) {
+    redirect('/login');
   }
   return (
     <>

@@ -1,12 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Box,
-  Text,
-  Checkbox,
   CheckboxCards,
   Flex,
   Heading,
@@ -29,13 +27,14 @@ import { updatePublicRestaurant } from '@/lib/firebase/updatePublicRestaurant';
 import { createPublickRestaurantSchema } from '@/lib/validators/createPublickRestaurantSchema';
 import { useAuth } from '@/providers/AuthContext';
 
-import { Input } from '../ui/input';
+import { S3ImageUpload } from '../shared/s3-image-upload';
 
 type Props = {
   restaurantId?: string;
+  children?: ReactNode;
 };
 
-export const RestaurantForm = ({ restaurantId }: Props) => {
+export const RestaurantForm = ({ restaurantId, children }: Props) => {
   const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
   const [center, setCenter] = useState<{ lat: number; lng: number }>();
   const [, setLocalization] = useState<{ lat: number; lng: number } | null>(null);
@@ -48,6 +47,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     reset,
     watch,
     control,
+    setValue,
     formState: { isSubmitting },
   } = useForm<CreatePublicRestaurantForm>({
     resolver: zodResolver(createPublickRestaurantSchema),
@@ -71,8 +71,10 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
   const watchedCity = watch('city');
   const watchedStreet = watch('street');
   const watchedPostalCode = watch('postalCode');
+  const userId = user?.uid;
+
   useEffect(() => {
-    if (!restaurantId || !user) {
+    if (!restaurantId || !userId) {
       return;
     }
 
@@ -81,7 +83,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
       if (!restaurant) {
         return;
       }
-      if (restaurant.firmId !== user.uid) {
+      if (restaurant.firmId !== userId) {
         return;
       }
 
@@ -102,7 +104,7 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
     };
 
     loadRestaurant();
-  }, [restaurantId, user, reset]);
+  }, [restaurantId, userId, reset]);
   useEffect(() => {
     if (!geocodingLibrary) {
       return;
@@ -141,8 +143,17 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex direction="column" gap="2">
+        <S3ImageUpload
+          restaurantId={restaurantId}
+          cover={true}
+          onUploadComplete={url => {
+            setValue('coverImage', url);
+            router.refresh();
+          }}
+        />
+
         <Flex className="w-full" direction={{ initial: 'column', md: 'row' }} gap="5" py="3">
-          <Flex className="flex-none w-full md:w-1/3 " direction="column" gap="2">
+          <Flex className="flex-none min-h-60 w-full md:w-3/6 " direction="column" gap="2">
             <Card variant="surface" className="h-full">
               <Flex direction="column" gap="4">
                 <Heading size="4">{t('restaurant_form.basic_info')}:</Heading>
@@ -213,11 +224,11 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             </Map>
           </Box>
         </Flex>
+        <S3ImageUpload restaurantId={restaurantId} onUploadComplete={() => router.refresh()} />
         <Flex className="flex-1">
           <Flex className="flex-1" direction="column" gap="2">
             <Card className="w-full">
               <Heading>{t('restaurant_form.cuisine_type')}:</Heading>
-
               <Controller
                 name="category"
                 control={control}
@@ -266,31 +277,17 @@ export const RestaurantForm = ({ restaurantId }: Props) => {
             </Card>
           </Flex>
         </Flex>
-        <Box>
-          <TextField.Root
-            {...register('coverImage')}
-            placeholder={t('restaurant_form.image_url_placeholder')}
-            size="3"
-            variant="surface"
-          ></TextField.Root>
-        </Box>
-        <Box>
-          <TextField.Root
-            {...register('logoImage')}
-            placeholder={t('restaurant_form.logo_url_placeholder')}
-            size="3"
-            variant="surface"
-          ></TextField.Root>
-        </Box>
-        <Box>
-          <Flex gap="2" align="center">
-            <Input type="file" className="w-[10vw] m-2" />
-            <Button size="3" variant="surface">
-              {t('restaurant_form.upload')}
-            </Button>
-          </Flex>
-        </Box>
 
+        <S3ImageUpload
+          restaurantId={restaurantId}
+          logo={true}
+          onUploadComplete={url => {
+            setValue('logoImage', url);
+            router.refresh();
+          }}
+        />
+
+        {children}
         <Button type="submit" disabled={isSubmitting} size="3" variant="surface">
           {isSubmitting
             ? t('restaurant_form.saving')

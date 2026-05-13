@@ -33,6 +33,7 @@ export default async function Home() {
                 {t('subheader')}
               </Text>
             </Flex>
+
             <MainSearchRestaurantPlace />
           </Flex>
         </Flex>
