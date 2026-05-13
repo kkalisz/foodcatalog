@@ -3,10 +3,21 @@ import Image from 'next/image';
 import { listImages } from '@/lib/actions/s3';
 import { cn } from '@/lib/utils';
 
-export async function S3ImageList({ className }: { className?: string }) {
+export async function S3ImageList({
+  className,
+  restaurantId,
+  logoOnly,
+}: {
+  className?: string;
+  restaurantId?: string;
+  logoOnly?: boolean;
+}) {
   let images = [];
   try {
-    images = await listImages();
+    const all = await listImages(restaurantId);
+    images = logoOnly
+      ? all.filter(img => img.key.includes('/logo/'))
+      : all.filter(img => !img.key.includes('/logo/'));
   } catch (error) {
     return (
       <div className="p-4 border border-destructive/50 bg-destructive/10 rounded-md">
@@ -18,10 +29,33 @@ export async function S3ImageList({ className }: { className?: string }) {
     );
   }
 
+  if (logoOnly) {
+    const logo = images[images.length - 1];
+    return (
+      <div className={cn('flex flex-col gap-2', className)}>
+        {logo ? (
+          <div className="relative w-32 h-32 rounded-xl overflow-hidden border bg-muted shadow-sm">
+            <Image
+              src={logo.url}
+              alt="Logo restauracji"
+              fill
+              className="object-contain"
+              sizes="128px"
+            />
+          </div>
+        ) : (
+          <div className="flex items-center justify-center w-32 h-32 rounded-xl border border-dashed bg-muted/30">
+            <p className="text-xs text-muted-foreground text-center px-2">Brak logo</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   if (images.length === 0) {
     return (
       <div className="text-center py-12 border border-dashed rounded-lg bg-muted/30 w-full">
-        <p className="text-muted-foreground italic">Your S3 bucket is empty</p>
+        <p className="text-muted-foreground italic">Brak zdjęć w galerii</p>
       </div>
     );
   }
@@ -47,11 +81,7 @@ export async function S3ImageList({ className }: { className?: string }) {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
             />
           </div>
-          <div className="p-2 bg-background/80 backdrop-blur-sm border-t">
-            <p className="text-[10px] font-medium truncate" title={image.key}>
-              {image.key.split('/').pop()}
-            </p>
-          </div>
+          <div className="p-2 bg-background/80 backdrop-blur-sm border-t"></div>
         </div>
       ))}
     </div>

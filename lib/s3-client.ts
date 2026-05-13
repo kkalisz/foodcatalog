@@ -1,6 +1,10 @@
 import { S3Client } from '@aws-sdk/client-s3';
 
-if (!process.env.S3_ACCESS_KEY_ID || !process.env.S3_SECRET_ACCESS_KEY || !process.env.S3_BUCKET_NAME) {
+if (
+  !process.env.S3_ACCESS_KEY_ID ||
+  !process.env.S3_SECRET_ACCESS_KEY ||
+  !process.env.S3_BUCKET_NAME
+) {
   // We don't throw error here to allow build to pass if variables are missing
   // but we should warn in development
   if (process.env.NODE_ENV === 'development') {

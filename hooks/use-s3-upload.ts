@@ -9,19 +9,30 @@ export function useS3Upload() {
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
 
-  const uploadFile = async (file: File) => {
+  const uploadFile = async (
+    file: File,
+    restaurantId?: string,
+    logo?: boolean,
+    cover?: boolean,
+    dishImagesOnly?: boolean
+  ) => {
     setIsUploading(true);
     setError(null);
     setProgress(0);
 
     try {
-      // 1. Get presigned URL from server action
-      const { uploadUrl, key } = await getUploadUrl(file.name, file.type);
+      const { uploadUrl, key, publicUrl } = await getUploadUrl(
+        file.name,
+        file.type,
+        restaurantId,
+        logo,
+        cover,
+        dishImagesOnly
+      );
 
-      // 2. Upload file directly to S3 using the presigned URL
       const xhr = new XMLHttpRequest();
 
-      return new Promise<{ key: string }>((resolve, reject) => {
+      return new Promise<{ key: string; publicUrl: string }>((resolve, reject) => {
         xhr.upload.addEventListener('progress', event => {
           if (event.lengthComputable) {
             const percentComplete = (event.loaded / event.total) * 100;
@@ -32,7 +43,7 @@ export function useS3Upload() {
         xhr.addEventListener('load', () => {
           if (xhr.status >= 200 && xhr.status < 300) {
             setIsUploading(false);
-            resolve({ key });
+            resolve({ key, publicUrl });
           } else {
             const errorMsg = `Upload failed with status: ${xhr.status}`;
             setError(errorMsg);

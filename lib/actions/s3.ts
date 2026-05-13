@@ -14,7 +14,14 @@ import { s3Client, S3_BUCKET_NAME, S3_PUBLIC_URL } from '../s3-client';
  * @param contentType - MIME type of the file
  * @returns {Promise<{ uploadUrl: string, key: string }>}
  */
-export async function getUploadUrl(fileName: string, contentType: string) {
+export async function getUploadUrl(
+  fileName: string,
+  contentType: string,
+  restaurantId?: string,
+  logo?: boolean,
+  cover?: boolean,
+  dishImagesOnly?: boolean | undefined
+) {
   // Authentication check should be performed here
   // For now, we assume the user is logged in if they can reach this action
   // In a real app, you would verify the session/token
@@ -24,7 +31,15 @@ export async function getUploadUrl(fileName: string, contentType: string) {
   }
 
   const fileExtension = fileName.split('.').pop();
-  const key = `uploads/${uuidv4()}.${fileExtension}`;
+  const baseFolder = restaurantId ? `uploads/${restaurantId}` : 'uploads';
+  const folder = logo
+    ? `${baseFolder}/logo`
+    : cover
+      ? `${baseFolder}/cover`
+      : dishImagesOnly
+        ? `${baseFolder}/dish`
+        : baseFolder;
+  const key = `${folder}/${uuidv4()}.${fileExtension}`;
   const effectiveContentType = contentType || 'application/octet-stream';
 
   const command = new PutObjectCommand({
@@ -45,12 +60,17 @@ export async function getUploadUrl(fileName: string, contentType: string) {
     command.middlewareStack.remove('flexibleChecksums');
   }
 
+  if (!S3_PUBLIC_URL) {
+    throw new Error('S3_PUBLIC_URL is not configured');
+  }
+
   try {
     const uploadUrl = await getSignedUrl(s3Client, command, {
       expiresIn: 3600,
       signableHeaders: new Set(['host', 'content-type']),
     });
-    return { uploadUrl, key };
+    const publicUrl = `${S3_PUBLIC_URL}/buckets/${S3_BUCKET_NAME}/${key}`;
+    return { uploadUrl, key, publicUrl };
   } catch (error) {
     console.error('Error generating presigned URL:', error);
     throw new Error('Failed to generate upload URL');
@@ -72,7 +92,7 @@ export async function getPublicUrl(key: string) {
     throw new Error('S3_PUBLIC_URL is not configured');
   }
 
-  return `${S3_PUBLIC_URL}/${S3_BUCKET_NAME}/${key}`;
+  return `${S3_PUBLIC_URL}/buckets/${S3_BUCKET_NAME}/${key}`;
 }
 
 /**
@@ -80,7 +100,7 @@ export async function getPublicUrl(key: string) {
  *
  * @returns {Promise<{ key: string, url: string }[]>}
  */
-export async function listImages() {
+export async function listImages(restaurantId?: string) {
   if (!S3_BUCKET_NAME) {
     throw new Error('S3_BUCKET_NAME is not configured');
   }
@@ -91,6 +111,7 @@ export async function listImages() {
 
   const command = new ListObjectsV2Command({
     Bucket: S3_BUCKET_NAME,
+    Prefix: restaurantId ? `uploads/${restaurantId}/` : undefined,
   });
 
   try {
@@ -101,7 +122,8 @@ export async function listImages() {
       .filter(item => item.Key)
       .map(item => ({
         key: item.Key!,
-        url: `${S3_PUBLIC_URL}/${S3_BUCKET_NAME}/${item.Key}`,
+        url: `${S3_PUBLIC_URL}/buckets/${S3_BUCKET_NAME}/${item.Key}`,
+        lastModified: item.LastModified,
       }));
   } catch (error) {
     console.error('Error listing objects from S3:', error);

@@ -2,8 +2,6 @@ import { Flex, Heading, Text } from '@radix-ui/themes';
 import { getTranslations } from 'next-intl/server';
 
 import MainSearchRestaurantPlace from '@/components/search/main-search-restaurant-place';
-import { S3ImageList } from '@/components/shared/s3-image-list';
-import { S3ImageUpload } from '@/components/shared/s3-image-upload';
 import HeightWrapper from '@/components/ui/wrappers/HeightWrapper';
 
 export default async function Home() {
@@ -35,8 +33,7 @@ export default async function Home() {
                 {t('subheader')}
               </Text>
             </Flex>
-            <S3ImageUpload />
-            <S3ImageList />
+
             <MainSearchRestaurantPlace />
           </Flex>
         </Flex>

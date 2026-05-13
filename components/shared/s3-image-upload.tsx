@@ -1,21 +1,58 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
+import { Flex } from '@radix-ui/themes';
+import { Timestamp } from 'firebase/firestore';
 import { Loader2, Upload } from 'lucide-react';
+import Image from 'next/image';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
+import type { ImageBucket } from '@/data/types/image';
 import { useS3Upload } from '@/hooks/use-s3-upload';
+import { addImage } from '@/lib/firebase/addImage';
+import { useFirmId } from '@/lib/firebase/useFirmId';
+
+import { S3ImageListClient } from './s3-image-list-client';
 
 interface S3ImageUploadProps {
-  onUploadComplete?: (key: string) => void;
+  onUploadComplete?: (url: string) => void;
   onUploadError?: (error: Error) => void;
+  restaurantId?: string;
+  logo?: boolean;
+  cover?: boolean;
+  dishImagesOnly?: boolean;
+  selectedImageUrl?: string;
 }
 
-export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUploadProps) {
+function getBucket(logo?: boolean, cover?: boolean, dishImagesOnly?: boolean): ImageBucket {
+  if (logo) {
+    return 'logo';
+  }
+  if (cover) {
+    return 'background';
+  }
+  if (dishImagesOnly) {
+    return 'dish';
+  }
+  return 'gallery';
+}
+
+export function S3ImageUpload({
+  onUploadComplete,
+  onUploadError,
+  restaurantId,
+  logo,
+  cover,
+  dishImagesOnly,
+  selectedImageUrl,
+}: S3ImageUploadProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { uploadFile, isUploading, progress, error } = useS3Upload();
+  const { firmId } = useFirmId();
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [latestUploadedUrl, setLatestUploadedUrl] = useState<string | undefined>();
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -23,38 +60,42 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
       return;
     }
 
-    // Basic validation
     if (!file.type.startsWith('image/')) {
       toast.error('Please upload an image file');
       return;
     }
 
     try {
-      const { key } = await uploadFile(file);
+      const { publicUrl, key } = await uploadFile(file, restaurantId, logo, cover, dishImagesOnly);
+      setLatestUploadedUrl(publicUrl);
+      setRefreshKey(k => k + 1);
+      if (firmId && restaurantId) {
+        await addImage(firmId, restaurantId, getBucket(logo, cover, dishImagesOnly), {
+          url: publicUrl,
+          s3key: key,
+          restaurantId: restaurantId,
+          uploadedAt: Timestamp.now(),
+          order: Date.now(),
+        });
+      }
       toast.success('Image uploaded successfully');
       if (onUploadComplete) {
-        onUploadComplete(key);
+        onUploadComplete(publicUrl);
       }
     } catch (err) {
-      console.error('Upload error:', err);
       toast.error(err instanceof Error ? err.message : 'Upload failed');
       if (onUploadError) {
         onUploadError(err instanceof Error ? err : new Error('Upload failed'));
       }
     } finally {
-      // Reset input
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
       }
     }
   };
 
-  const triggerFileInput = () => {
-    fileInputRef.current?.click();
-  };
-
   return (
-    <div className="flex flex-col gap-2 w-full max-w-sm">
+    <Flex direction="column" gap="2" width="100%">
       <input
         type="file"
         accept="image/*"
@@ -65,10 +106,11 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
       />
 
       <Button
-        onClick={triggerFileInput}
+        type="button"
+        onClick={() => fileInputRef.current?.click()}
         disabled={isUploading}
-        variant="outline"
-        className="w-full"
+        variant="default"
+        className="w-full max-w-sm"
       >
         {isUploading ? (
           <>
@@ -78,13 +120,19 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
         ) : (
           <>
             <Upload className="mr-2 h-4 w-4" />
-            Upload Image
+            {logo
+              ? 'Dodaj logo restauracji'
+              : cover
+                ? 'Dodaj zdjęcie okładki restauracji'
+                : dishImagesOnly
+                  ? 'Dodaj zdjęcie dania'
+                  : 'Dodaj zdjęcie galerii głównej restauracji'}
           </>
         )}
       </Button>
 
       {isUploading && (
-        <div className="w-full bg-secondary h-2 rounded-full overflow-hidden">
+        <div className="w-full max-w-sm bg-secondary h-2 rounded-full overflow-hidden">
           <div
             className="bg-primary h-full transition-all duration-300"
             style={{ width: `${progress}%` }}
@@ -92,7 +140,28 @@ export function S3ImageUpload({ onUploadComplete, onUploadError }: S3ImageUpload
         </div>
       )}
 
-      {error && <p className="text-xs text-destructive mt-1">{error}</p>}
-    </div>
+      {error && <p className="text-xs text-destructive">{error}</p>}
+
+      {dishImagesOnly ? (
+        (() => {
+          const displayUrl = latestUploadedUrl ?? selectedImageUrl;
+          if (!displayUrl) return null;
+          return (
+            <div className="relative w-32 h-32 rounded-xl overflow-hidden border bg-muted shadow-sm mt-2">
+              <Image src={displayUrl} alt="Zdjęcie dania" fill className="object-cover" sizes="128px" />
+            </div>
+          );
+        })()
+      ) : (
+        <S3ImageListClient
+          restaurantId={restaurantId}
+          logoOnly={logo}
+          coverOnly={cover}
+          dishImagesOnly={dishImagesOnly}
+          refreshKey={refreshKey}
+          latestUploadedUrl={latestUploadedUrl}
+        />
+      )}
+    </Flex>
   );
 }
